@@ -1,7 +1,7 @@
 import { Elysia, Static, t } from "elysia";
-import { HttpError } from "../../server/plugins/error";
+import { HttpError } from "#/plugins/error";
 import { jwt } from "@elysiajs/jwt";
-import { db } from "../../lib/db";
+import { db } from "lib/db";
 import { sql } from "kysely";
 import { getRequestEvent } from "solid-js/web";
 import bcrypt from "bcryptjs";
