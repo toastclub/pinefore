@@ -4,6 +4,7 @@ import { jwt } from "@elysiajs/jwt";
 import { db } from "../../lib/db";
 import { sql } from "kysely";
 import { getRequestEvent } from "solid-js/web";
+import bcrypt from "bcryptjs";
 
 const jwtType = t.Object({
   id: t.Number(),
@@ -149,3 +150,19 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
         return error;
       }
     });
+
+export async function validatePw(password: string, userId?: number) {
+  const user = await db
+    .selectFrom("users")
+    .select(["password", "id"])
+    .$if(userId != undefined, (eb) => eb.where("id", "=", userId!))
+    .executeTakeFirst();
+  if (!user) {
+    throw new HttpError(404, "User not found!");
+  }
+  const match = await bcrypt.compare(password, user.password);
+  if (!match) {
+    throw new HttpError(401, undefined, ["password", "Incorrect password"]);
+  }
+  return user;
+}
