@@ -17,7 +17,8 @@ if (!process?.env.JWT_SECRET && getRequestEvent()) {
 }
 export const authPlugin = new Elysia({ name: "authPlugin" }).use(
   jwt({
-    secret: process?.env.JWT_SECRET! || "TEMP_AT_SERVER_BOOT",
+    // it doesn't matter if this is undefined when there isn't a request.
+    secret: process?.env.JWT_SECRET || "TEMP_AT_SERVER_BOOT",
     name: "jwt",
     exp: "20m",
     //schema: jwtType,

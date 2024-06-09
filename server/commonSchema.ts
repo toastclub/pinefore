@@ -1,16 +1,17 @@
 import { t } from "elysia";
 
+let tag = t.Array(t.String({ maxLength: 75 }), {
+  maxItems: 25,
+  description: "repeating query string, like `&tag=growing-up&tag=filmmaking`",
+  examples: [["growing-up", "filmmaking"]],
+});
 export default {
-  tag: t.Optional(
+  tag,
+  tags: t.Optional(
     t.Union([
-      t.Array(t.String({ maxLength: 75 }), {
-        maxItems: 100,
-        description:
-          "repeating query string, like `&tag=growing-up&tag=filmmaking`",
-        examples: [["growing-up", "filmmaking"]],
-      }),
+      tag,
       t.String({
-        maxLength: 75,
+        maxLength: 76 * 25,
         description: "space-delimited list of tags",
         examples: [["growing-up filmmaking"]],
       }),
