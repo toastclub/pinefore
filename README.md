@@ -8,4 +8,9 @@ We are not taking investments. That would be contrary to our goals.
 
 ## OSS
 
-Given the nature of our service, most of our "proprietary technology" would be beneficial to the web community as a whole. As a result, we've open sourced most of the interesting bits. We believe a rising tide lifts all boats.
+Given the nature of our service, most of our "proprietary technology" would be beneficial to the web community as a whole. As a result, we've open sourced most of the interesting bits. We believe a rising tide lifts all boats. All the code here is identical to what is in production.
+
+OSS has the following additional advantages:
+
+- Documentation is inherently more ambiguous than code
+- Users can verify their data is stored responsibly
