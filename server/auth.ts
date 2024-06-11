@@ -167,3 +167,19 @@ export async function validatePw(password: string, userId?: number) {
   }
   return user;
 }
+
+export async function updatePasswordForAuthenticatedUser(
+  newPassword: string,
+  userId: string
+) {
+  const user = await db
+    .updateTable("users")
+    .set({
+      password: await bcrypt.hash(newPassword, bcrypt.genSaltSync(12)),
+    })
+    .where("id", "=", userId)
+    .executeTakeFirst();
+  if (!user) {
+    throw new HttpError(404, "User not found!");
+  }
+}
