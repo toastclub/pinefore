@@ -23,12 +23,17 @@ const errorStringMap = {
 const SITEVERIFY_URL =
   "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
-export async function captcha(context: { ip?: string; response: string }) {
-  if (import.meta.env.VITE_ENV == "development") {
-    if (context.response == "") return;
-  }
+const NOT_SO_SECRET_TESTING_KEYS = {
+  always_pass: "1x0000000000000000000000000000000AA",
+  always_fail: "2x0000000000000000000000000000000AA",
+  token_already_spent: "3x0000000000000000000000000000000AA",
+};
 
-  const secret = process.env.CAPTCHA_SECRET!;
+export async function captcha(context: { ip?: string; response: string }) {
+  const secret =
+    import.meta.env.VITE_ENV == "development"
+      ? NOT_SO_SECRET_TESTING_KEYS.always_pass
+      : process.env.CAPTCHA_SECRET!;
   const formData = new FormData();
   formData.set("secret", secret);
   formData.set("response", context.response);
