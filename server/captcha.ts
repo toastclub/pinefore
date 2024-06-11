@@ -33,7 +33,7 @@ export async function captcha(context: { ip?: string; response: string }) {
   const secret =
     import.meta.env.VITE_ENV == "development"
       ? NOT_SO_SECRET_TESTING_KEYS.always_pass
-      : process.env.CAPTCHA_SECRET!;
+      : process.env.CAPTCHA_PRIVATEKEY!;
   const formData = new FormData();
   formData.set("secret", secret);
   formData.set("response", context.response);
