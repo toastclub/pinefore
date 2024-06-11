@@ -18,6 +18,9 @@ if (!process?.env.JWT_SECRET && getRequestEvent()) {
 export const authPlugin = new Elysia({ name: "authPlugin" }).use(
   jwt({
     // it doesn't matter if this is undefined when there isn't a request.
+    // because the code above would've thrown. afaik, the cf runtime runs everything once
+    // as a sanity check, and for some reason doesn't populate process.env
+    // still, this is a hack and I should feel ashamed.
     secret: process?.env.JWT_SECRET || "TEMP_AT_SERVER_BOOT",
     name: "jwt",
     exp: "20m",
@@ -72,9 +75,9 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
         | Static<typeof jwtType>;
       if (!user) {
         if (cookie.refresh_token.value && cookie.token.value) {
-          // THIS IS A SANITY CHECK AND *NOT* A SECURITY FEATURE. IF REFRESH TOKENS ARE LEAKED, IT IS GAME OVER
-          // THE JWT IS *NOT* VERIFIED. ATTACKER COULD PUT ANY ID IN IT. BUT ONCE AGAIN, THIS IS JUST THE STANDARD
-          // REFRESH FLOW, IF THEY GOT THE REFRESH TOKEN THEY GOT THE REFRESH TOKEN!! SO LIKE THIS IS +0.001% SECURITY BUT WHY NOT
+          // THIS IS A SANITY CHECK AND *NOT* A SECURITY FEATURE. We do not check if the token was
+          // *ever* signed by us here, we just filter in case it helps the query planner.
+          // if the attacker has the user's refresh token, it is already game over.
           const jwtPayload = JSON.parse(atob(cookie.token.value.split(".")[1]));
           let user = await db
             .selectFrom("tokens")
