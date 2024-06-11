@@ -152,11 +152,11 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
       }
     });
 
-export async function validatePw(password: string, userId?: number) {
+export async function validatePw(password: string, userId: number) {
   const user = await db
     .selectFrom("users")
     .select(["password", "id"])
-    .$if(userId != undefined, (eb) => eb.where("id", "=", userId!))
+    .where("id", "=", userId)
     .executeTakeFirst();
   if (!user) {
     throw new HttpError(404, "User not found!");
@@ -170,7 +170,7 @@ export async function validatePw(password: string, userId?: number) {
 
 export async function updatePasswordForAuthenticatedUser(
   newPassword: string,
-  userId: string
+  userId: number
 ) {
   const user = await db
     .updateTable("users")
