@@ -31,7 +31,7 @@ const NOT_SO_SECRET_TESTING_KEYS = {
 
 export async function captcha(context: { ip?: string; response: string }) {
   const secret =
-    import.meta.env.VITE_ENV == "development"
+    import.meta.env.MODE == "development"
       ? NOT_SO_SECRET_TESTING_KEYS.always_pass
       : process.env.CAPTCHA_PRIVATEKEY!;
   const formData = new FormData();
