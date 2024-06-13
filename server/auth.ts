@@ -58,7 +58,18 @@ if the token isn't correct (likely expired) or there is no token
             return unauthorized
 */
 
-export const requireAuth = <T extends boolean>(allowRead: T) =>
+interface AuthResponse {
+  id: number;
+  archival_enabled: boolean;
+  account_status: string;
+}
+
+export const requireAuth = <
+  T extends boolean,
+  R = T extends true ? AuthResponse | undefined : AuthResponse
+>(
+  allowRead: T
+) =>
   new Elysia({ name: "requireAuth" })
     .use(authPlugin)
     .derive({ as: "scoped" }, async ({ jwt, cookie, request }) => {
@@ -110,7 +121,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
             cookie.refresh_token.expires = undefined;
             cookie.token.expires = undefined;
             if (allowUnauthenticated) {
-              return { user: undefined };
+              return { user: undefined as R };
             } else {
               throw new HttpError(401, "Unauthorized");
             }
@@ -130,24 +141,25 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
           let newJwt = await jwt.sign({
             id: user.id,
             account_status: user.account_status,
+            // @ts-expect-error
             archival_enabled: user.archival_enabled,
           });
           let newJwtVerified = (await jwt.verify(newJwt)) as
             | false
             | Static<typeof jwtType>;
           cookie.token.value = newJwt;
-          return { user: newJwtVerified || undefined };
+          return { user: (newJwtVerified || undefined) as R };
         }
         cookie.refresh_token.expires = undefined;
         cookie.token.expires = undefined;
         if (allowUnauthenticated) {
-          return { user: undefined };
+          return { user: undefined as R };
         } else {
           throw new HttpError(401, "Unauthorized");
         }
       }
 
-      return { user: user || undefined };
+      return { user: (user || undefined) as R };
     })
     .onError(({ error }) => {
       if (error instanceof Response) {
