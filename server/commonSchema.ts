@@ -5,6 +5,33 @@ let tag = t.Array(t.String({ maxLength: 75 }), {
   description: "repeating query string, like `&tag=growing-up&tag=filmmaking`",
   examples: [["growing-up", "filmmaking"]],
 });
+
+let importers: {
+  [key: string]: {
+    title: string;
+    fileTypes: string[];
+    fileExtensions: string[];
+  };
+} = {
+  html: {
+    title: "HTML Bookmarks",
+    fileTypes: ["text/html"],
+    fileExtensions: [".html"],
+  },
+  delicious: {
+    title: "Delicious XML",
+    fileTypes: ["text/xml"],
+    fileExtensions: [".xml"],
+  },
+  pinboard: {
+    title: "Pinboard JSON",
+    fileTypes: ["application/json"],
+    fileExtensions: [".json"],
+  },
+};
+
+export { importers };
+
 export default {
   tag,
   tags: t.Optional(
