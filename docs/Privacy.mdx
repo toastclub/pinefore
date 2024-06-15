@@ -1,0 +1,39 @@
+# Privacy
+
+Data is stored with Hetzner and Cloudflare, in Germany and the US respectively, and is subject to their privacy policy and terms.
+
+Hosting for the site is provided by Cloudflare.
+
+In addition to the hosting providers, Stripe and/or Paddle is used to collect payments.
+
+In addition to the data you explicitly input into the service, anonymous usage data may be collected. The data is publicly available in aggregate.
+
+I do not wish to see the things people privately do, if I can avoid it. If you make your stuff public, users might see it by circumstance.
+
+I will never sell your data. That is the freedom a paid service allows for. Your data will never be used to train generative AI, if I can help it.
+
+## Your Data
+
+Passwords are stored using state of the art hashing — bcrypt with 12 rounds. This is verifiable [here](https://github.com/boehs/pinefore/blob/9f1dd551ea5fe98dec1d39eb6c3b7a54d9d14d54/server/auth.ts#L178)
+
+Exports contain all data with your user id attached to it in our database, without the password. Additional data may be stored with the partners listed above, but that data may not be included in exports. Contact them to export or delete data that may be stored there.
+
+### Deletions
+
+Handling deletions of things like your pins is difficult. If we delete it from our database, clients with offline replication have no way to know that the item was deleted when they come online and request recent changes (as the server has no knowledge it ever existed). Therefore, they will desync. Still, we believe in the right to be forgotten. Our compromise?: When you request to delete an *item*, it will be sent to the "graveyard". The graveyard has the following schema:
+
+```ts
+export interface GraveyardTable {
+  id: Generated<number>;
+  item_id: number;
+  user_id: number
+  deleted_at: Generated<Date>;
+  type: string
+}
+```
+
+As you can see, there is no identifiable information stored in the graveyard, just markers that can be used for replication. If you wish to purge the graveyard, you may do so by clicking [here](/me/purge?t=graveyard)
+
+#### Deleting your account
+
+Account deletions will delete all data stored on our servers that is attached to your UUID. Accounts that are queued for deletion (either by user action or an expired subscription) will be deleted 29.5-30.5 days after you request it.
