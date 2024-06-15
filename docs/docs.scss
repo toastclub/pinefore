@@ -43,4 +43,11 @@
   a {
     text-decoration: underline;
   }
+
+  pre {
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    padding: 0.5rem;
+    overflow: scroll;
+  }
 }
