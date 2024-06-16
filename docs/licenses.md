@@ -170,7 +170,6 @@ The following projects have been included in the tree in some way. Not all may b
 | Apache-2.0 | [b4a](https://github.com/holepunchto/b4a#readme) | 1.6.6 | Holepunch |
 | MIT | [babel-plugin-jsx-dom-expressions](https://www.npmjs.com/package/babel-plugin-jsx-dom-expressions) | 0.37.19 | Ryan Carniato |
 | MIT | [babel-preset-solid](https://github.com/solidjs/solid/blob/main/packages/babel-preset-solid#readme) | 1.8.16 | Ryan Carniato |
-| MIT | [bail](https://github.com/wooorm/bail#readme) | 1.0.5 | Titus Wormer |
 | MIT | [balanced-match](https://github.com/juliangruber/balanced-match) | 1.0.2 | Julian Gruber |
 | Apache-2.0 | [bare-events](https://github.com/holepunchto/bare-events#readme) | 2.2.2 | Holepunch |
 | MIT | [base64-js](https://github.com/beatgammit/base64-js) | 1.5.1 | T. Jameson Little |
@@ -196,12 +195,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [call-me-maybe](https://github.com/limulus/call-me-maybe#readme) | 1.0.2 | Eric McCarthy |
 | MIT | [camelcase](https://github.com/sindresorhus/camelcase#readme) | 7.0.1 | Sindre Sorhus |
 | CC-BY-4.0 | [caniuse-lite](https://github.com/browserslist/caniuse-lite#readme) | 1.0.30001606 | Ben Briggs |
-| MIT | [ccount](https://github.com/wooorm/ccount#readme) | 2.0.1 | Titus Wormer |
 | MIT | [chalk](https://github.com/chalk/chalk#readme) | 5.3.0 |  |
-| MIT | [character-entities](https://github.com/wooorm/character-entities#readme) | 2.0.2 | Titus Wormer |
-| MIT | [character-entities-html4](https://github.com/wooorm/character-entities-html4#readme) | 2.1.0 | Titus Wormer |
-| MIT | [character-entities-legacy](https://github.com/wooorm/character-entities-legacy#readme) | 3.0.0 | Titus Wormer |
-| MIT | [character-reference-invalid](https://github.com/wooorm/character-reference-invalid#readme) | 2.0.1 | Titus Wormer |
 | MIT | [chokidar](https://github.com/paulmillr/chokidar) | 3.6.0 | Paul Miller |
 | ISC | [chownr](https://github.com/isaacs/chownr#readme) | 2.0.0 | Isaac Z. Schlueter |
 | MIT | [citty](https://github.com/unjs/citty#readme) | 0.1.6 |  |
@@ -209,12 +203,10 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [clipboardy](https://github.com/sindresorhus/clipboardy#readme) | 4.0.0 | Sindre Sorhus |
 | ISC | [cliui](https://github.com/yargs/cliui#readme) | 8.0.1 | Ben Coe |
 | Apache-2.0 | [cluster-key-slot](https://github.com/Salakar/cluster-key-slot#readme) | 1.1.2 | Mike Diarmid |
-| MIT | [collapse-white-space](https://github.com/wooorm/collapse-white-space#readme) | 2.1.0 | Titus Wormer |
 | MIT | [color-convert](https://github.com/Qix-/color-convert#readme) | 1.9.3 | Heather Arthur |
 | MIT | [color-name](https://github.com/dfcreative/color-name) | 1.1.3 | DY |
 | ISC | [color-support](https://github.com/isaacs/color-support#readme) | 1.1.3 | Isaac Z. Schlueter |
 | MIT | [colorette](https://github.com/jorgebucaran/colorette#readme) | 2.0.20 | Jorge Bucaran |
-| MIT | [comma-separated-tokens](https://github.com/wooorm/comma-separated-tokens#readme) | 2.0.3 | Titus Wormer |
 | MIT | [commander](https://github.com/tj/commander.js#readme) | 4.1.1 | TJ Holowaychuk |
 | MIT | [commondir](https://github.com/substack/node-commondir#readme) | 1.0.1 | James Halliday |
 | MIT | [compress-commons](https://github.com/archiverjs/node-compress-commons) | 6.0.2 | Chris Talkington |
@@ -239,7 +231,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [dax-sh](https://github.com/dsherret/dax#readme) | 0.39.2 |  |
 | MIT | [db0](https://github.com/unjs/db0#readme) | 0.1.4 |  |
 | MIT | [debug](https://github.com/visionmedia/debug#readme) | 2.6.9 | TJ Holowaychuk |
-| MIT | [decode-named-character-reference](https://github.com/wooorm/decode-named-character-reference#readme) | 1.0.2 | Titus Wormer |
 | MIT | [deepmerge](https://github.com/TehShrike/deepmerge) | 4.3.1 |  |
 | MIT | [default-browser](https://github.com/sindresorhus/default-browser#readme) | 4.0.0 | Sindre Sorhus |
 | MIT | [default-browser-id](https://github.com/sindresorhus/default-browser-id#readme) | 3.0.0 | Sindre Sorhus |
@@ -253,7 +244,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [destr](https://github.com/unjs/destr#readme) | 2.0.3 |  |
 | MIT | [destroy](https://github.com/stream-utils/destroy#readme) | 1.2.0 | Jonathan Ong |
 | Apache-2.0 | [detect-libc](https://github.com/lovell/detect-libc#readme) | 2.0.3 | Lovell Fuller |
-| MIT | [devlop](https://github.com/wooorm/devlop#readme) | 1.1.0 | Titus Wormer |
 | MIT | [dir-glob](https://github.com/kevva/dir-glob#readme) | 3.0.1 | Kevin Mårtensson |
 | MIT | [discontinuous-range](https://github.com/dtudury/discontinuous-range) | 1.0.0 | David Tudury |
 | MIT | [dom-serializer](https://github.com/cheeriojs/dom-serializer#readme) | 2.0.0 | Felix Boehm |
@@ -281,11 +271,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [escape-html](https://github.com/component/escape-html#readme) | 1.0.3 |  |
 | MIT | [escape-string-regexp](https://github.com/sindresorhus/escape-string-regexp#readme) | 5.0.0 | Sindre Sorhus |
 | BSD-2-Clause | [esprima](http://esprima.org) | 4.0.1 | Ariya Hidayat |
-| MIT | [estree-util-attach-comments](https://github.com/syntax-tree/estree-util-attach-comments#readme) | 3.0.0 | Titus Wormer |
-| MIT | [estree-util-build-jsx](https://github.com/syntax-tree/estree-util-build-jsx#readme) | 3.0.1 | Titus Wormer |
-| MIT | [estree-util-is-identifier-name](https://github.com/syntax-tree/estree-util-is-identifier-name#readme) | 3.0.0 | Titus Wormer |
-| MIT | [estree-util-to-js](https://github.com/syntax-tree/estree-util-to-js#readme) | 2.0.0 | Titus Wormer |
-| MIT | [estree-util-visit](https://github.com/syntax-tree/estree-util-visit#readme) | 2.0.0 | Titus Wormer |
 | MIT | [estree-walker](https://github.com/Rich-Harris/estree-walker#readme) | 2.0.2 | Rich Harris |
 | MIT | [etag](https://github.com/jshttp/etag#readme) | 1.8.1 |  |
 | MIT | [event-target-shim](https://github.com/mysticatea/event-target-shim) | 5.0.1 | Toru Nagashima |
@@ -333,9 +318,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [has-symbols](https://github.com/ljharb/has-symbols#readme) | 1.0.3 | Jordan Harband |
 | ISC | [has-unicode](https://github.com/iarna/has-unicode) | 2.0.1 | Rebecca Turner |
 | MIT | [hasown](https://github.com/inspect-js/hasOwn#readme) | 2.0.2 | Jordan Harband |
-| MIT | [hast-util-to-estree](https://github.com/syntax-tree/hast-util-to-estree#readme) | 3.1.0 | Titus Wormer |
-| MIT | [hast-util-to-jsx-runtime](https://github.com/syntax-tree/hast-util-to-jsx-runtime#readme) | 2.3.0 | Titus Wormer |
-| MIT | [hast-util-whitespace](https://github.com/syntax-tree/hast-util-whitespace#readme) | 3.0.0 | Titus Wormer |
 | MIT | [hookable](https://github.com/unjs/hookable#readme) | 5.5.3 |  |
 | MIT | [html-entities](https://github.com/mdevils/html-entities#readme) | 2.3.3 | Marat Dulin |
 | MIT | [html-escaper](https://github.com/WebReflection/html-escaper) | 3.0.3 | Andrea Giammarchi |
@@ -354,30 +336,6 @@ The following projects have been included in the tree in some way. Not all may b
 | ISC | [inherits](https://github.com/isaacs/inherits#readme) | 2.0.4 |  |
 | MIT | [inline-style-parser](https://github.com/remarkablemark/inline-style-parser#readme) | 0.2.3 |  |
 | MIT | [iron-webcrypto](https://github.com/brc-dd/iron-webcrypto#readme) | 1.1.0 | Divyansh Singh |
-| MIT | [is-alphabetical](https://github.com/wooorm/is-alphabetical#readme) | 2.0.1 | Titus Wormer |
-| MIT | [is-alphanumerical](https://github.com/wooorm/is-alphanumerical#readme) | 2.0.1 | Titus Wormer |
-| MIT | [is-binary-path](https://github.com/sindresorhus/is-binary-path#readme) | 2.1.0 | Sindre Sorhus |
-| MIT | [is-buffer](https://github.com/feross/is-buffer#readme) | 2.0.5 | Feross Aboukhadijeh |
-| MIT | [is-builtin-module](https://github.com/sindresorhus/is-builtin-module#readme) | 3.2.1 | Sindre Sorhus |
-| MIT | [is-core-module](https://github.com/inspect-js/is-core-module) | 2.13.1 | Jordan Harband |
-| MIT | [is-decimal](https://github.com/wooorm/is-decimal#readme) | 2.0.1 | Titus Wormer |
-| MIT | [is-docker](https://github.com/sindresorhus/is-docker#readme) | 2.2.1 | Sindre Sorhus |
-| MIT | [is-extglob](https://github.com/jonschlinkert/is-extglob) | 2.1.1 | Jon Schlinkert |
-| MIT | [is-fullwidth-code-point](https://github.com/sindresorhus/is-fullwidth-code-point#readme) | 3.0.0 | Sindre Sorhus |
-| MIT | [is-glob](https://github.com/micromatch/is-glob) | 4.0.3 | Jon Schlinkert |
-| MIT | [is-hexadecimal](https://github.com/wooorm/is-hexadecimal#readme) | 2.0.1 | Titus Wormer |
-| MIT | [is-inside-container](https://github.com/sindresorhus/is-inside-container#readme) | 1.0.0 | Sindre Sorhus |
-| MIT | [is-module](https://github.com/component/is-module#readme) | 1.0.0 | Jonathan Ong |
-| MIT | [is-number](https://github.com/jonschlinkert/is-number) | 7.0.0 | Jon Schlinkert |
-| MIT | [is-plain-obj](https://github.com/sindresorhus/is-plain-obj#readme) | 2.1.0 | Sindre Sorhus |
-| MIT | [is-primitive](https://github.com/jonschlinkert/is-primitive) | 3.0.1 | Jon Schlinkert |
-| MIT | [is-reference](https://github.com/Rich-Harris/is-reference#readme) | 1.2.1 | Rich Harris |
-| MIT | [is-stream](https://github.com/sindresorhus/is-stream#readme) | 3.0.0 | Sindre Sorhus |
-| MIT | [is-what](https://github.com/mesqueeb/is-what#readme) | 4.1.16 | Luca Ban - Mesqueeb |
-| MIT | [is-wsl](https://github.com/sindresorhus/is-wsl#readme) | 3.1.0 | Sindre Sorhus |
-| MIT | [is64bit](https://github.com/sindresorhus/is64bit#readme) | 2.0.0 | Sindre Sorhus |
-| MIT | [isarray](https://github.com/juliangruber/isarray) | 1.0.0 | Julian Gruber |
-| ISC | [isexe](https://github.com/isaacs/isexe#readme) | 3.1.1 | Isaac Z. Schlueter |
 | BlueOak-1.0.0 | [jackspeak](https://github.com/isaacs/jackspeak#readme) | 2.3.6 | Isaac Z. Schlueter |
 | MIT | [jiti](https://github.com/unjs/jiti#readme) | 1.21.0 |  |
 | MIT | [jose](https://github.com/panva/jose) | 4.15.5 | Filip Skokan |
@@ -407,67 +365,15 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [lodash.defaults](https://lodash.com/) | 4.2.0 | John-David Dalton |
 | MIT | [lodash.isarguments](https://lodash.com/) | 3.1.0 | John-David Dalton |
 | MIT | [lodash.sortby](https://lodash.com/) | 4.7.0 | John-David Dalton |
-| MIT | [longest-streak](https://github.com/wooorm/longest-streak#readme) | 3.1.0 | Titus Wormer |
 | ISC | [lru-cache](https://github.com/isaacs/node-lru-cache#readme) | 10.2.0 | Isaac Z. Schlueter |
 | MIT | [magic-string](https://github.com/rich-harris/magic-string#readme) | 0.30.9 | Rich Harris |
 | MIT | [magicast](https://github.com/unjs/magicast#readme) | 0.2.11 |  |
 | MIT | [make-dir](https://github.com/sindresorhus/make-dir#readme) | 3.1.0 | Sindre Sorhus |
 | MIT | [markdown-extensions](https://github.com/sindresorhus/markdown-extensions#readme) | 2.0.0 | Sindre Sorhus |
-| MIT | [markdown-table](https://github.com/wooorm/markdown-table#readme) | 3.0.3 | Titus Wormer |
-| MIT | [mdast-util-find-and-replace](https://github.com/syntax-tree/mdast-util-find-and-replace#readme) | 3.0.1 | Titus Wormer |
-| MIT | [mdast-util-from-markdown](https://github.com/syntax-tree/mdast-util-from-markdown#readme) | 2.0.0 | Titus Wormer |
-| MIT | [mdast-util-gfm](https://github.com/syntax-tree/mdast-util-gfm#readme) | 3.0.0 | Titus Wormer |
-| MIT | [mdast-util-gfm-autolink-literal](https://github.com/syntax-tree/mdast-util-gfm-autolink-literal#readme) | 2.0.0 | Titus Wormer |
-| MIT | [mdast-util-gfm-footnote](https://github.com/syntax-tree/mdast-util-gfm-footnote#readme) | 2.0.0 | Titus Wormer |
-| MIT | [mdast-util-gfm-strikethrough](https://github.com/syntax-tree/mdast-util-gfm-strikethrough#readme) | 2.0.0 | Titus Wormer |
-| MIT | [mdast-util-gfm-table](https://github.com/syntax-tree/mdast-util-gfm-table#readme) | 2.0.0 | Titus Wormer |
-| MIT | [mdast-util-gfm-task-list-item](https://github.com/syntax-tree/mdast-util-gfm-task-list-item#readme) | 2.0.0 | Titus Wormer |
-| MIT | [mdast-util-mdx](https://github.com/syntax-tree/mdast-util-mdx#readme) | 3.0.0 | Titus Wormer |
-| MIT | [mdast-util-mdx-expression](https://github.com/syntax-tree/mdast-util-mdx-expression#readme) | 2.0.0 | Titus Wormer |
-| MIT | [mdast-util-mdx-jsx](https://github.com/syntax-tree/mdast-util-mdx-jsx#readme) | 3.1.2 | Titus Wormer |
-| MIT | [mdast-util-mdxjs-esm](https://github.com/syntax-tree/mdast-util-mdxjs-esm#readme) | 2.0.1 | Titus Wormer |
-| MIT | [mdast-util-phrasing](https://github.com/syntax-tree/mdast-util-phrasing#readme) | 4.1.0 | Victor Felder |
-| MIT | [mdast-util-to-hast](https://github.com/syntax-tree/mdast-util-to-hast#readme) | 13.1.0 | Titus Wormer |
-| MIT | [mdast-util-to-markdown](https://github.com/syntax-tree/mdast-util-to-markdown#readme) | 2.1.0 | Titus Wormer |
-| MIT | [mdast-util-to-string](https://github.com/syntax-tree/mdast-util-to-string#readme) | 4.0.0 | Titus Wormer |
 | CC0-1.0 | [mdn-data](https://developer.mozilla.org) | 2.0.30 | Mozilla Developer Network |
 | MIT | [merge-anything](https://github.com/mesqueeb/merge-anything#readme) | 5.1.7 | Luca Ban - Mesqueeb |
 | MIT | [merge-stream](https://github.com/grncdr/merge-stream#readme) | 2.0.0 | Stephen Sugden |
 | MIT | [merge2](https://github.com/teambition/merge2) | 1.4.1 |  |
-| MIT | [micromark](https://github.com/micromark/micromark/tree/main#readme) | 4.0.0 | Titus Wormer |
-| MIT | [micromark-core-commonmark](https://github.com/micromark/micromark/tree/main#readme) | 2.0.1 | Titus Wormer |
-| MIT | [micromark-extension-gfm](https://github.com/micromark/micromark-extension-gfm#readme) | 3.0.0 | Titus Wormer |
-| MIT | [micromark-extension-gfm-autolink-literal](https://github.com/micromark/micromark-extension-gfm-autolink-literal#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-extension-gfm-footnote](https://github.com/micromark/micromark-extension-gfm-footnote#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-extension-gfm-strikethrough](https://github.com/micromark/micromark-extension-gfm-strikethrough#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-extension-gfm-table](https://github.com/micromark/micromark-extension-gfm-table#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-extension-gfm-tagfilter](https://github.com/micromark/micromark-extension-gfm-tagfilter#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-extension-gfm-task-list-item](https://github.com/micromark/micromark-extension-gfm-task-list-item#readme) | 2.0.1 | Titus Wormer |
-| MIT | [micromark-extension-mdx-expression](https://github.com/micromark/micromark-extension-mdx-expression/tree/main#readme) | 3.0.0 | Titus Wormer |
-| MIT | [micromark-extension-mdx-jsx](https://github.com/micromark/micromark-extension-mdx-jsx#readme) | 3.0.0 | Titus Wormer |
-| MIT | [micromark-extension-mdx-md](https://github.com/micromark/micromark-extension-mdx-md#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-extension-mdxjs](https://github.com/micromark/micromark-extension-mdxjs#readme) | 3.0.0 | Titus Wormer |
-| MIT | [micromark-extension-mdxjs-esm](https://github.com/micromark/micromark-extension-mdxjs-esm#readme) | 3.0.0 | Titus Wormer |
-| MIT | [micromark-factory-destination](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-factory-label](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-factory-mdx-expression](https://github.com/micromark/micromark-extension-mdx-expression/tree/main#readme) | 2.0.1 | Titus Wormer |
-| MIT | [micromark-factory-space](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-factory-title](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-factory-whitespace](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-character](https://github.com/micromark/micromark/tree/main#readme) | 2.1.0 | Titus Wormer |
-| MIT | [micromark-util-chunked](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-classify-character](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-combine-extensions](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-decode-numeric-character-reference](https://github.com/micromark/micromark/tree/main#readme) | 2.0.1 | Titus Wormer |
-| MIT | [micromark-util-decode-string](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-encode](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-events-to-acorn](https://github.com/micromark/micromark-extension-mdx-expression/tree/main#readme) | 2.0.2 | Titus Wormer |
-| MIT | [micromark-util-html-tag-name](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-normalize-identifier](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-resolve-all](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-sanitize-uri](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
-| MIT | [micromark-util-subtokenize](https://github.com/micromark/micromark/tree/main#readme) | 2.0.1 | Titus Wormer |
-| MIT | [micromark-util-symbol](https://github.com/micromark/micromark/tree/main#readme) | 2.0.0 | Titus Wormer |
 | MIT | [micromatch](https://github.com/micromatch/micromatch) | 4.0.5 | Jon Schlinkert |
 | MIT | [mime](https://github.com/broofa/mime#readme) | 3.0.0 | Robert Kieffer |
 | MIT | [mimic-fn](https://github.com/sindresorhus/mimic-fn#readme) | 4.0.0 | Sindre Sorhus |
@@ -511,7 +417,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [openapi-typescript](https://openapi-ts.pages.dev) | 6.7.5 | Drew Powers |
 | MIT | [p-limit](https://github.com/sindresorhus/p-limit#readme) | 3.1.0 | Sindre Sorhus |
 | MIT | [p-locate](https://github.com/sindresorhus/p-locate#readme) | 5.0.0 | Sindre Sorhus |
-| MIT | [parse-entities](https://github.com/wooorm/parse-entities#readme) | 4.0.1 | Titus Wormer |
 | MIT | [parseurl](https://github.com/pillarjs/parseurl#readme) | 1.3.3 |  |
 | MIT | [path-exists](https://github.com/sindresorhus/path-exists#readme) | 4.0.0 | Sindre Sorhus |
 | MIT | [path-is-absolute](https://github.com/sindresorhus/path-is-absolute#readme) | 1.0.1 | Sindre Sorhus |
@@ -548,7 +453,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [pretty-bytes](https://github.com/sindresorhus/pretty-bytes#readme) | 6.1.1 | Sindre Sorhus |
 | MIT | [process](https://github.com/shtylman/node-process#readme) | 0.11.10 | Roman Shtylman |
 | MIT | [process-nextick-args](https://github.com/calvinmetcalf/process-nextick-args) | 2.0.1 |  |
-| MIT | [property-information](https://github.com/wooorm/property-information#readme) | 6.5.0 | Titus Wormer |
 | MIT | [punycode](https://mths.be/punycode) | 2.3.1 | Mathias Bynens |
 | MIT | [queue-microtask](https://github.com/feross/queue-microtask) | 1.2.3 | Feross Aboukhadijeh |
 | MIT | [queue-tick](https://github.com/mafintosh/queue-tick) | 1.0.1 | Mathias Buus |
@@ -562,11 +466,6 @@ The following projects have been included in the tree in some way. Not all may b
 | Apache-2.0 | [readdir-glob](https://github.com/Yqnn/node-readdir-glob) | 1.1.3 | Yann Armelin |
 | MIT | [readdirp](https://github.com/paulmillr/readdirp) | 3.6.0 | Thorsten Lorenz |
 | MIT | [recast](http://github.com/benjamn/recast) | 0.23.6 | Ben Newman |
-| MIT | [remark-gfm](https://github.com/remarkjs/remark-gfm#readme) | 4.0.0 | Titus Wormer |
-| MIT | [remark-mdx](https://mdxjs.com) | 3.0.1 | Titus Wormer |
-| MIT | [remark-parse](https://remark.js.org) | 11.0.0 | Titus Wormer |
-| MIT | [remark-rehype](https://github.com/remarkjs/remark-rehype#readme) | 11.1.0 | Titus Wormer |
-| MIT | [remark-stringify](https://remark.js.org) | 11.0.0 | Titus Wormer |
 | MIT | [require-directory](https://github.com/troygoode/node-require-directory/) | 2.1.1 | Troy Goode |
 | MIT | [requires-port](https://github.com/unshiftio/requires-port) | 1.0.0 | Arnout Kazemier |
 | MIT | [resolve](https://github.com/browserify/resolve#readme) | 1.22.8 | James Halliday |
@@ -608,7 +507,6 @@ The following projects have been included in the tree in some way. Not all may b
 | BSD-3-Clause | [source-map](https://github.com/mozilla/source-map) | 0.8.0-beta.0 | Nick Fitzgerald |
 | BSD-3-Clause | [source-map-js](https://github.com/7rulnik/source-map-js) | 1.2.0 | Valentin 7rulnik Semirulnik |
 | MIT | [source-map-support](https://github.com/evanw/node-source-map-support#readme) | 0.5.21 |  |
-| MIT | [space-separated-tokens](https://github.com/wooorm/space-separated-tokens#readme) | 2.0.2 | Titus Wormer |
 | ISC | [split2](https://github.com/mcollina/split2#readme) | 4.2.0 | Matteo Collina |
 | MIT | [stackframe](https://www.stacktracejs.com) | 1.3.4 |  |
 | MIT | [standard-as-callback](https://github.com/luin/asCallback#readme) | 2.1.0 | luin |
@@ -619,7 +517,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [string_decoder](https://github.com/nodejs/string_decoder) | 1.3.0 |  |
 | MIT | [string-argv](https://github.com/mccormicka/string-argv) | 0.3.2 | Anthony McCormick |
 | MIT | [string-width](https://github.com/sindresorhus/string-width#readme) | 5.1.2 | Sindre Sorhus |
-| MIT | [stringify-entities](https://github.com/wooorm/stringify-entities#readme) | 4.0.4 | Titus Wormer |
 | MIT | [strip-ansi](https://github.com/chalk/strip-ansi#readme) | 7.1.0 | Sindre Sorhus |
 | MIT | [strip-final-newline](https://github.com/sindresorhus/strip-final-newline#readme) | 3.0.0 | Sindre Sorhus |
 | MIT | [strip-literal](https://github.com/antfu/strip-literal#readme) | 1.3.0 | Anthony Fu |
@@ -642,8 +539,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [totalist](https://github.com/lukeed/totalist#readme) | 3.0.1 | Luke Edwards |
 | MIT | [tr46](https://github.com/Sebmaster/tr46.js#readme) | 1.0.1 | Sebastian Mayr |
 | MIT | [tree-kill](https://github.com/pkrumins/node-tree-kill) | 1.2.2 | Peteris Krumins |
-| MIT | [trim-lines](https://github.com/wooorm/trim-lines#readme) | 3.0.1 | Titus Wormer |
-| MIT | [trough](https://github.com/wooorm/trough#readme) | 1.0.5 | Titus Wormer |
 | ISC | [ts-deepmerge](https://github.com/voodoocreation/ts-deepmerge#readme) | 7.0.0 | Raice Hannay |
 | Apache-2.0 | [ts-interface-checker](https://github.com/gristlabs/ts-interface-checker#readme) | 0.1.13 | Dmitry S, Grist Labs |
 | MIT | [tsconfck](https://github.com/dominikg/tsconfck/tree/main/packages/tsconfck#readme) | 3.1.0 | dominikg |
@@ -659,15 +554,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [undici](https://undici.nodejs.org) | 5.28.4 |  |
 | MIT | [unenv](https://github.com/unjs/unenv#readme) | 1.9.0 |  |
 | MIT | [unicorn-magic](https://github.com/sindresorhus/unicorn-magic#readme) | 0.1.0 | Sindre Sorhus |
-| MIT | [unified](https://unifiedjs.com) | 9.2.2 | Titus Wormer |
 | MIT | [unimport](https://github.com/unjs/unimport#readme) | 3.7.1 |  |
-| MIT | [unist-util-is](https://github.com/syntax-tree/unist-util-is#readme) | 6.0.0 | Titus Wormer |
-| MIT | [unist-util-position](https://github.com/syntax-tree/unist-util-position#readme) | 5.0.0 | Titus Wormer |
-| MIT | [unist-util-position-from-estree](https://github.com/syntax-tree/unist-util-position-from-estree#readme) | 2.0.0 | Titus Wormer |
-| MIT | [unist-util-remove-position](https://github.com/syntax-tree/unist-util-remove-position#readme) | 5.0.0 | Titus Wormer |
-| MIT | [unist-util-stringify-position](https://github.com/syntax-tree/unist-util-stringify-position#readme) | 3.0.3 | Titus Wormer |
-| MIT | [unist-util-visit](https://github.com/syntax-tree/unist-util-visit#readme) | 5.0.0 | Titus Wormer |
-| MIT | [unist-util-visit-parents](https://github.com/syntax-tree/unist-util-visit-parents#readme) | 6.0.1 | Titus Wormer |
 | MIT | [universalify](https://github.com/RyanZim/universalify#readme) | 2.0.1 | Ryan Zimmerman |
 | MIT | [unocss](https://github.com/unocss/unocss#readme) | 0.58.3 | Anthony Fu |
 | MIT | [unplugin](https://github.com/unjs/unplugin#readme) | 1.10.1 |  |
@@ -681,8 +568,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [urlpattern-polyfill](https://github.com/kenchris/urlpattern-polyfill#readme) | 8.0.2 |  |
 | MIT | [util-deprecate](https://github.com/TooTallNate/util-deprecate) | 1.0.2 | Nathan Rajlich |
 | ISC | [validate-html-nesting](https://github.com/MananTank/validate-html-nesting#readme) | 1.2.2 | Manan Tank |
-| MIT | [vfile](https://github.com/vfile/vfile#readme) | 5.3.7 | Titus Wormer |
-| MIT | [vfile-message](https://github.com/vfile/vfile-message#readme) | 3.1.4 | Titus Wormer |
 | Unknown | [vinxi](https://www.npmjs.com/package/vinxi) | 0.3.11 | Nikhil Saraf |
 | MIT | [vite](https://vitejs.dev) | 5.2.8 | Evan You |
 | MIT | [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect#readme) | 0.7.42 | Anthony Fu |
@@ -708,4 +593,3 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [yocto-queue](https://github.com/sindresorhus/yocto-queue#readme) | 0.1.0 | Sindre Sorhus |
 | MIT | [zip-stream](https://github.com/archiverjs/node-zip-stream) | 6.0.1 | Chris Talkington |
 | MIT | [zod](https://zod.dev) | 3.22.4 | Colin McDonnell |
-| MIT | [zwitch](https://github.com/wooorm/zwitch#readme) | 2.0.4 | Titus Wormer |
