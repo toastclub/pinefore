@@ -230,7 +230,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [csstype](https://github.com/frenic/csstype#readme) | 3.1.3 | Fredrik Nicol |
 | MIT | [dax-sh](https://github.com/dsherret/dax#readme) | 0.39.2 |  |
 | MIT | [db0](https://github.com/unjs/db0#readme) | 0.1.4 |  |
-| MIT | [debug](https://github.com/visionmedia/debug#readme) | 2.6.9 | TJ Holowaychuk |
+| MIT | [debug](https://github.com/debug-js/debug#readme) | 4.3.4 | Josh Junon |
 | MIT | [deepmerge](https://github.com/TehShrike/deepmerge) | 4.3.1 |  |
 | MIT | [default-browser](https://github.com/sindresorhus/default-browser#readme) | 4.0.0 | Sindre Sorhus |
 | MIT | [default-browser-id](https://github.com/sindresorhus/default-browser-id#readme) | 3.0.0 | Sindre Sorhus |
@@ -366,7 +366,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [lodash.isarguments](https://lodash.com/) | 3.1.0 | John-David Dalton |
 | MIT | [lodash.sortby](https://lodash.com/) | 4.7.0 | John-David Dalton |
 | ISC | [lru-cache](https://github.com/isaacs/node-lru-cache#readme) | 10.2.0 | Isaac Z. Schlueter |
-| MIT | [magic-string](https://github.com/rich-harris/magic-string#readme) | 0.30.9 | Rich Harris |
+| MIT | [magic-string](https://github.com/rich-harris/magic-string#readme) | 0.30.10 | Rich Harris |
 | MIT | [magicast](https://github.com/unjs/magicast#readme) | 0.2.11 |  |
 | MIT | [make-dir](https://github.com/sindresorhus/make-dir#readme) | 3.1.0 | Sindre Sorhus |
 | MIT | [markdown-extensions](https://github.com/sindresorhus/markdown-extensions#readme) | 2.0.0 | Sindre Sorhus |
@@ -386,7 +386,7 @@ The following projects have been included in the tree in some way. Not all may b
 | BSD-3-Clause | [moo](https://github.com/tjvr/moo#readme) | 0.5.2 | Tim Radvan |
 | MIT | [mri](https://github.com/lukeed/mri#readme) | 1.2.0 | Luke Edwards |
 | MIT | [mrmime](https://github.com/lukeed/mrmime#readme) | 2.0.0 | Luke Edwards |
-| MIT | [ms](https://github.com/vercel/ms#readme) | 2.1.3 |  |
+| MIT | [ms](https://github.com/zeit/ms#readme) | 2.1.2 |  |
 | MIT | [mz](https://github.com/normalize/mz#readme) | 2.7.0 | Jonathan Ong |
 | MIT | [nanoid](https://github.com/ai/nanoid#readme) | 3.3.7 | Andrey Sitnik |
 | MIT | [napi-wasm](https://github.com/devongovett/napi-wasm#readme) | 1.1.0 | Devon Govett |
@@ -407,7 +407,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [object-assign](https://github.com/sindresorhus/object-assign#readme) | 4.1.1 | Sindre Sorhus |
 | MIT | [object-hash](https://github.com/puleos/object-hash) | 2.2.0 | Scott Puleo |
 | MIT | [object-keys](https://github.com/ljharb/object-keys#readme) | 1.1.1 | Jordan Harband |
-| MIT | [obuf](https://github.com/indutny/offset-buffer) | 1.1.2 | Fedor Indutny |
 | MIT | [ofetch](https://github.com/unjs/ofetch#readme) | 1.3.4 |  |
 | MIT | [ohash](https://github.com/unjs/ohash#readme) | 1.1.3 |  |
 | MIT | [on-finished](https://github.com/jshttp/on-finished#readme) | 2.4.1 |  |
@@ -433,7 +432,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [pg-connection-string](https://github.com/brianc/node-postgres/tree/master/packages/pg-connection-string) | 2.6.4 | Blaine Bublitz |
 | ISC | [pg-int8](https://github.com/charmander/pg-int8#readme) | 1.0.1 |  |
 | MIT | [pg-mem](https://github.com/oguimbal/pg-mem#readme) | 2.8.1 | Olivier Guimbal |
-| ISC | [pg-numeric](https://github.com/charmander/pg-numeric#readme) | 1.0.2 |  |
 | MIT | [pg-pool](https://github.com/brianc/node-pg-pool#readme) | 3.6.2 | Brian M. Carlson |
 | MIT | [pg-protocol](https://github.com/brianc/node-postgres#readme) | 1.6.1 |  |
 | MIT | [pg-types](https://github.com/brianc/node-pg-types) | 2.2.0 | Brian M. Carlson |
@@ -449,7 +447,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [postgres-bytea](https://github.com/bendrucker/postgres-bytea#readme) | 1.0.0 | Ben Drucker |
 | MIT | [postgres-date](https://github.com/bendrucker/postgres-date#readme) | 1.0.7 | Ben Drucker |
 | MIT | [postgres-interval](https://github.com/bendrucker/postgres-interval#readme) | 1.2.0 | Ben Drucker |
-| MIT | [postgres-range](https://github.com/martianboy/postgres-range#readme) | 1.1.4 | Abbas Mashayekh |
 | MIT | [pretty-bytes](https://github.com/sindresorhus/pretty-bytes#readme) | 6.1.1 | Sindre Sorhus |
 | MIT | [process](https://github.com/shtylman/node-process#readme) | 0.11.10 | Roman Shtylman |
 | MIT | [process-nextick-args](https://github.com/calvinmetcalf/process-nextick-args) | 2.0.1 |  |
