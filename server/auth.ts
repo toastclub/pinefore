@@ -5,6 +5,7 @@ import { db } from "lib/db";
 import { sql } from "kysely";
 import { getRequestEvent } from "solid-js/web";
 import bcrypt from "bcryptjs";
+import { createHash } from "node:crypto";
 
 const jwtType = t.Object({
   id: t.Number(),
@@ -203,4 +204,30 @@ export async function updatePasswordForAuthenticatedUser(
   if (!user) {
     throw new HttpError(404, "User not found!");
   }
+}
+
+export async function haveIBeenPwned(password: string) {
+  let hash = createHash("sha1").update(password).digest("hex").toUpperCase();
+  let hasBeenPwned = await fetch(
+    `https://api.pwnedpasswords.com/range/${hash.slice(0, 5)}`
+  )
+    .then((r) => r.text())
+    .then((r) => r.split("\n").map((x) => x.split(":")))
+    .then((r) => r.some(([hashSuffix]) => hashSuffix == hash.slice(5)));
+  if (hasBeenPwned) {
+    throw new HttpError(401, undefined, [
+      [
+        "password",
+        "Please choose a password that hasn't been leaked in a data breach.",
+      ],
+    ]);
+  }
+}
+
+export async function deleteOldTokens(userId: number) {
+  await db
+    .deleteFrom("tokens")
+    .where("for", "=", userId)
+    .where("expires", "<", new Date())
+    .execute();
 }
