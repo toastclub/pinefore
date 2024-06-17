@@ -8,6 +8,10 @@ The following projects have been included in the tree in some way. Not all may b
 | Apache-2.0 | [@ampproject/remapping](https://github.com/ampproject/remapping#readme) | 2.3.0 | Justin Ridgewell |
 | MIT | [@antfu/install-pkg](https://github.com/antfu/install-pkg#readme) | 0.1.1 | Anthony Fu |
 | MIT | [@antfu/utils](https://github.com/antfu/utils#readme) | 0.7.7 | Anthony Fu |
+| Apache-2.0 | [@aws-crypto/sha256-browser](https://github.com/aws/aws-sdk-js-crypto-helpers/tree/master/packages/sha256-browser) | 5.2.0 | AWS Crypto Tools Team |
+| Apache-2.0 | [@aws-crypto/sha256-js](https://github.com/aws/aws-sdk-js-crypto-helpers/tree/master/packages/sha256-js) | 5.2.0 | AWS Crypto Tools Team |
+| Apache-2.0 | [@aws-crypto/supports-web-crypto](https://github.com/aws/aws-sdk-js-crypto-helpers/tree/master/packages/supports-web-crypto) | 5.2.0 | AWS Crypto Tools Team |
+| Apache-2.0 | [@aws-crypto/util](https://github.com/aws/aws-sdk-js-crypto-helpers/tree/master/packages/util) | 5.2.0 | AWS Crypto Tools Team |
 | MIT | [@babel/code-frame](https://babel.dev/docs/en/next/babel-code-frame) | 7.24.2 | The Babel Team |
 | MIT | [@babel/compat-data](https://github.com/babel/babel#readme) | 7.24.4 | The Babel Team |
 | MIT | [@babel/core](https://babel.dev/docs/en/next/babel-core) | 7.24.4 | The Babel Team |
@@ -178,6 +182,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [binary-extensions](https://github.com/sindresorhus/binary-extensions#readme) | 2.3.0 | Sindre Sorhus |
 | MIT | [bindings](https://github.com/TooTallNate/node-bindings) | 1.5.0 | Nathan Rajlich |
 | ISC | [boolbase](https://github.com/fb55/boolbase) | 1.0.0 | Felix Boehm |
+| MIT | [bowser](https://github.com/lancedikson/bowser) | 2.11.0 | Dustin Diaz |
 | MIT | [boxen](https://github.com/sindresorhus/boxen#readme) | 7.1.1 | Sindre Sorhus |
 | MIT | [bplist-parser](https://github.com/nearinfinity/node-bplist-parser) | 0.2.0 | Joe Ferner |
 | MIT | [brace-expansion](https://github.com/juliangruber/brace-expansion) | 1.1.11 | Julian Gruber |
@@ -230,7 +235,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [csstype](https://github.com/frenic/csstype#readme) | 3.1.3 | Fredrik Nicol |
 | MIT | [dax-sh](https://github.com/dsherret/dax#readme) | 0.39.2 |  |
 | MIT | [db0](https://github.com/unjs/db0#readme) | 0.1.4 |  |
-| MIT | [debug](https://github.com/debug-js/debug#readme) | 4.3.4 | Josh Junon |
+| MIT | [debug](https://github.com/visionmedia/debug#readme) | 2.6.9 | TJ Holowaychuk |
 | MIT | [deepmerge](https://github.com/TehShrike/deepmerge) | 4.3.1 |  |
 | MIT | [default-browser](https://github.com/sindresorhus/default-browser#readme) | 4.0.0 | Sindre Sorhus |
 | MIT | [default-browser-id](https://github.com/sindresorhus/default-browser-id#readme) | 3.0.0 | Sindre Sorhus |
@@ -282,6 +287,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [fast-fifo](https://github.com/mafintosh/fast-fifo) | 1.3.2 | Mathias Buus |
 | MIT | [fast-glob](https://github.com/mrmlnc/fast-glob#readme) | 3.3.2 | Denis Malinochkin |
 | MIT | [fast-querystring](https://github.com/anonrig/fast-querystring#readme) | 1.1.2 | Yagiz Nizipli |
+| MIT | [fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser#readme) | 4.2.5 | Amit Gupta |
 | ISC | [fastq](https://github.com/mcollina/fastq#readme) | 1.17.1 | Matteo Collina |
 | MIT | [file-uri-to-path](https://github.com/TooTallNate/file-uri-to-path) | 1.0.0 | Nathan Rajlich |
 | MIT | [fill-range](https://github.com/jonschlinkert/fill-range) | 7.0.1 | Jon Schlinkert |
@@ -307,7 +313,6 @@ The following projects have been included in the tree in some way. Not all may b
 | ISC | [glob-parent](https://github.com/gulpjs/glob-parent#readme) | 5.1.2 | Gulp Team |
 | MIT | [globals](https://github.com/sindresorhus/globals#readme) | 11.12.0 | Sindre Sorhus |
 | MIT | [globby](https://github.com/sindresorhus/globby#readme) | 14.0.1 | Sindre Sorhus |
-| MIT | [globrex](https://github.com/terkelg/globrex#readme) | 0.1.2 | Terkel Gjervig |
 | MIT | [gopd](https://github.com/ljharb/gopd#readme) | 1.0.1 | Jordan Harband |
 | ISC | [graceful-fs](https://github.com/isaacs/node-graceful-fs#readme) | 4.2.11 |  |
 | MIT | [gzip-size](https://github.com/sindresorhus/gzip-size#readme) | 7.0.0 | Sindre Sorhus |
@@ -386,7 +391,7 @@ The following projects have been included in the tree in some way. Not all may b
 | BSD-3-Clause | [moo](https://github.com/tjvr/moo#readme) | 0.5.2 | Tim Radvan |
 | MIT | [mri](https://github.com/lukeed/mri#readme) | 1.2.0 | Luke Edwards |
 | MIT | [mrmime](https://github.com/lukeed/mrmime#readme) | 2.0.0 | Luke Edwards |
-| MIT | [ms](https://github.com/zeit/ms#readme) | 2.1.2 |  |
+| MIT | [ms](https://github.com/vercel/ms#readme) | 2.1.3 |  |
 | MIT | [mz](https://github.com/normalize/mz#readme) | 2.7.0 | Jonathan Ong |
 | MIT | [nanoid](https://github.com/ai/nanoid#readme) | 3.3.7 | Andrey Sitnik |
 | MIT | [napi-wasm](https://github.com/devongovett/napi-wasm#readme) | 1.1.0 | Devon Govett |
@@ -470,7 +475,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [ret](https://github.com/fent/ret.js#readme) | 0.1.15 | Roly Fentanes |
 | MIT | [reusify](https://github.com/mcollina/reusify#readme) | 1.0.4 | Matteo Collina |
 | ISC | [rimraf](https://github.com/isaacs/rimraf#readme) | 3.0.2 | Isaac Z. Schlueter |
-| MIT | [rollup](https://rollupjs.org/) | 3.29.4 | Rich Harris |
+| MIT | [rollup](https://rollupjs.org/) | 4.14.0 | Rich Harris |
 | MIT | [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer) | 5.12.0 | Denis Bardadym |
 | MIT | [run-applescript](https://github.com/sindresorhus/run-applescript#readme) | 5.0.0 | Sindre Sorhus |
 | MIT | [run-parallel](https://github.com/feross/run-parallel) | 1.2.0 | Feross Aboukhadijeh |
@@ -517,6 +522,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [strip-ansi](https://github.com/chalk/strip-ansi#readme) | 7.1.0 | Sindre Sorhus |
 | MIT | [strip-final-newline](https://github.com/sindresorhus/strip-final-newline#readme) | 3.0.0 | Sindre Sorhus |
 | MIT | [strip-literal](https://github.com/antfu/strip-literal#readme) | 1.3.0 | Anthony Fu |
+| MIT | [strnum](https://github.com/NaturalIntelligence/strnum#readme) | 1.0.5 | Amit Gupta |
 | MIT | [style-to-object](https://github.com/remarkablemark/style-to-object#readme) | 1.0.6 | Mark |
 | MIT | [sucrase](https://github.com/alangpierce/sucrase#readme) | 3.35.0 | Alan Pierce |
 | MIT | [supports-color](https://github.com/chalk/supports-color#readme) | 9.4.0 | Sindre Sorhus |
@@ -538,7 +544,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [tree-kill](https://github.com/pkrumins/node-tree-kill) | 1.2.2 | Peteris Krumins |
 | ISC | [ts-deepmerge](https://github.com/voodoocreation/ts-deepmerge#readme) | 7.0.0 | Raice Hannay |
 | Apache-2.0 | [ts-interface-checker](https://github.com/gristlabs/ts-interface-checker#readme) | 0.1.13 | Dmitry S, Grist Labs |
-| MIT | [tsconfck](https://github.com/dominikg/tsconfck/tree/main/packages/tsconfck#readme) | 3.1.0 | dominikg |
 | 0BSD | [tslib](https://www.typescriptlang.org/) | 2.6.2 | Microsoft Corp. |
 | MIT | [tsup](https://tsup.egoist.dev/) | 6.7.0 | EGOIST |
 | MIT | [type-detect](https://github.com/chaijs/type-detect#readme) | 4.0.8 | Jake Luer |
@@ -564,12 +569,12 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [uqr](https://github.com/unjs/uqr#readme) | 0.1.2 | Anthony Fu |
 | MIT | [urlpattern-polyfill](https://github.com/kenchris/urlpattern-polyfill#readme) | 8.0.2 |  |
 | MIT | [util-deprecate](https://github.com/TooTallNate/util-deprecate) | 1.0.2 | Nathan Rajlich |
+| MIT | [uuid](https://github.com/uuidjs/uuid#readme) | 9.0.1 |  |
 | ISC | [validate-html-nesting](https://github.com/MananTank/validate-html-nesting#readme) | 1.2.2 | Manan Tank |
 | Unknown | [vinxi](https://www.npmjs.com/package/vinxi) | 0.3.11 | Nikhil Saraf |
 | MIT | [vite](https://vitejs.dev) | 5.2.8 | Evan You |
 | MIT | [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect#readme) | 0.7.42 | Anthony Fu |
 | MIT | [vite-plugin-solid](https://github.com/solidjs/vite-plugin-solid#readme) | 2.9.1 | Alexandre Mouton-Brady |
-| MIT | [vite-tsconfig-paths](https://github.com/aleclarson/vite-tsconfig-paths#readme) | 4.3.2 | aleclarson |
 | MIT | [vitefu](https://github.com/svitejs/vitefu#readme) | 0.2.5 |  |
 | BSD-2-Clause | [webidl-conversions](https://github.com/jsdom/webidl-conversions#readme) | 4.0.2 | Domenic Denicola |
 | MIT | [webpack-sources](https://github.com/webpack/webpack-sources#readme) | 3.2.3 | Tobias Koppers @sokra |
