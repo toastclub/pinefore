@@ -176,7 +176,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
 export async function validatePw(password: string, userId: number) {
   const user = await db
     .selectFrom("users")
-    .select(["password", "id"])
+    .select(["password", "id", "email"])
     .where("id", "=", userId)
     .executeTakeFirst();
   if (!user) {
