@@ -25,6 +25,7 @@ export const templateTypes = [
   "security/password-changed",
   "security/password-reset-done",
   "security/password-reset-request",
+  "security/token-created",
   "sign-up",
   "deleted-account",
 ] as const;
@@ -34,9 +35,18 @@ let layouts = layout()
 
 export const sendEmail = async (
   to: string,
-  template: (typeof templateTypes)[number]
+  template: (typeof templateTypes)[number],
+  data?: Record<string, string>
 ) => {
   const client = createClient();
+  let target= _templates[template];
+  let targetText = target.contents;
+  if (data) {
+    targetText = targetText.replace(
+      /{([^}]+)}/g,
+      (match, key) => data[key] || match
+    );
+  }
   const command = new SendEmailCommand({
     Source: '"📀 The Pinefore Computer" <computer@pinefore.com>',
     Destination: {
@@ -45,12 +55,12 @@ export const sendEmail = async (
     ReplyToAddresses: ["evan@boehs.org"],
     Message: {
       Subject: {
-        Data: _templates[template].title,
+        Data: target.title,
       },
       Body: {
         Html: {
           Charset: "UTF-8",
-          Data: layouts.replace('{title}', _templates[template].title).replace('{contents}', _templates[template].contents),
+          Data: layouts.replace('{title}', target.title).replace('{contents}', targetText),
         },
         Text: {
           Charset: "UTF-8",
