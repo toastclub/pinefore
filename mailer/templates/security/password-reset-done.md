@@ -2,4 +2,4 @@ You reset your password
 
 Hi! Your password has been reset.
 
-If you did not click the password reset link, somebody else has access to your email account at {{emailDomain}}
+If you did not click the password reset link, somebody else has access to your email account at {emailDomain}.

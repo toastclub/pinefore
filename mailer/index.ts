@@ -47,6 +47,7 @@ export const sendEmail = async (
       (match, key) => data[key] || match
     );
   }
+  let htmlData = layouts.replace('{title}', target.title).replace('{contents}', targetText)
   const command = new SendEmailCommand({
     Source: '"📀 The Pinefore Computer" <computer@pinefore.com>',
     Destination: {
@@ -60,7 +61,7 @@ export const sendEmail = async (
       Body: {
         Html: {
           Charset: "UTF-8",
-          Data: layouts.replace('{title}', target.title).replace('{contents}', targetText),
+          Data: htmlData,
         },
         Text: {
           Charset: "UTF-8",

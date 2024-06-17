@@ -1,4 +1,5 @@
 import { readdirSync, readFileSync } from "node:fs";
+import parse from "oss/server/helpers/snarkdown";
 
 export function templates(): {
   [key: string]: {
@@ -19,7 +20,7 @@ export function templates(): {
         file.toString().replace(".md", ""),
         {
           title,
-          contents: contents.join("\n"),
+          contents: parse(contents.join("\n")),
         },
       ];
     })
