@@ -1,3 +1,5 @@
+Your password reset link
+
 Hi! You asked to reset your password, and I'm happy to oblige. Here’s the link:
 
 {{link}}

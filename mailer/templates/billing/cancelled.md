@@ -1,3 +1,5 @@
+You cancelled your Pinefore subscription
+
 Hi!
 
 As I'm sure you know, you cancelled your account, so you won't be charged unless you renew it. Once your subscription expires, there will be a 30 day courtesy period where your account will remain read-only, but then I'll delete it for your privacy.
