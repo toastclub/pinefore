@@ -2,7 +2,7 @@ You just subscribed to Pinefore!
 
 Oh, Hi!
 
-Thank you for joining Pinefore! Your subscription accelerates our mission of connecting the independent web. For your records, you were charged a total of <dollars>, for Pinefore, Archive and Tax.
+Thank you for joining Pinefore! Your subscription accelerates our mission of connecting the independent web.
 
 Please reply to this email if you need anything!
 

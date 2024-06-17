@@ -1,4 +1,5 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { templates, layout } from "./macros" with { type: 'macro' };
 
 const createClient = () => {
   return new SESClient({
@@ -28,22 +29,35 @@ export const templateTypes = [
   "deleted-account",
 ] as const;
 
+let _templates = templates()
+let layouts = layout()
+
 export const sendEmail = async (
   to: string,
   template: (typeof templateTypes)[number]
 ) => {
   const client = createClient();
   const command = new SendEmailCommand({
+    Source: "computer@pinefore.com",
     Destination: {
       ToAddresses: [to],
     },
+    ReplyToAddresses: ["evan@boehs.org"],
     Message: {
+      Subject: {
+        Data: _templates[template].title,
+      },
       Body: {
         Html: {
+          Charset: "UTF-8",
+          Data: layouts.replace('{title}', _templates[template].title).replace('{contents}', _templates[template].contents),
+        },
+        Text: {
           Charset: "UTF-8",
           Data: "",
         },
       },
     },
   });
+  await client.send(command).catch(console.error)
 };
