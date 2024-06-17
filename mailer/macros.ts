@@ -16,7 +16,7 @@ export function templates(): {
       let title = contents.shift();
       contents.shift();
       return [
-        file,
+        file.toString().replace(".md", ""),
         {
           title,
           contents: contents.join("\n"),

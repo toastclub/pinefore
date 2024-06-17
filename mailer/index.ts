@@ -38,7 +38,7 @@ export const sendEmail = async (
 ) => {
   const client = createClient();
   const command = new SendEmailCommand({
-    Source: "computer@pinefore.com",
+    Source: '"📀 The Pinefore Computer" <computer@pinefore.com>',
     Destination: {
       ToAddresses: [to],
     },
