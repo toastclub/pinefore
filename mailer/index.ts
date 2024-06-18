@@ -1,7 +1,7 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { templates, layout } from "./macros" with { type: 'macro' };
 
-const createClient = () => {
+export const createClient = () => {
   return new SESClient({
     region: process.env.AWS_REGION,
     credentials: {
