@@ -1,0 +1,13 @@
+- Create API
+  - Pinboard Compatibility
+    - API Docs
+    - API Authentication
+      - JWT Support
+      - Token Generation
+        - Database
+        - Migrations
+        - Tests
+        - Auth Middleware
+    - API Implementation
+- Create Frontend
+  -
