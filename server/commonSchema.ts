@@ -50,6 +50,8 @@ export default {
     pattern: "^[a-z0-9_-]*$",
     description: "Username must be lowercase with only a-z0-9_-",
   }),
-  email: t.Lowercase(t.String({ format: "email", maxLength: 320 })),
+  email: t.Lowercase(
+    t.String({ format: "email", maxLength: 320, examples: ["evan@boehs.org"] })
+  ),
   password: t.String({ minLength: 8, maxLength: 128 }),
 };
