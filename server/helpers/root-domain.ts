@@ -1,12 +1,25 @@
-// adapted from https://stackoverflow.com/questions/41604540/get-root-domain-name-without-extension-javascript
+import psl from "psl";
 export function rootDomain(url: string) {
-  let rightPeriodIndex, noExtension;
-  for (let i = url.length - 1; i >= 0; i--) {
-    if (url[i] == ".") {
-      rightPeriodIndex = i;
-      noExtension = url.substr(0, i);
-      break;
-    }
-  }
-  return noExtension?.substring(noExtension.lastIndexOf(".") + 1);
+  let parsed = psl.parse(url);
+  if (parsed.error) return null;
+  if (
+    parsed.subdomain &&
+    [
+      "www",
+      "m",
+      "en",
+      "es",
+      "fr",
+      "de",
+      "it",
+      "ja",
+      "ko",
+      "pt",
+      "ru",
+      "zh",
+    ].includes(parsed.subdomain)
+  )
+    return parsed.sld;
+  // honestly just always return the sld
+  return parsed.sld;
 }
