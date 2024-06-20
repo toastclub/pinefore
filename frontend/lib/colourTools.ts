@@ -25,5 +25,5 @@ export function colourSaturation(rgb: [number, number, number], s: number) {
   arr[min] = Math.round(x * (1 - s));
   arr[mid] = Math.round(x * (1 - s + (s * b) / a));
 
-  return arr;
+  return arr as [number, number, number];
 }
