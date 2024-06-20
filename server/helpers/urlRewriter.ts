@@ -5,13 +5,7 @@ export default async function urlRewriter(url: string) {
   if (u.hostname == "youtu.be") {
     return "https://youtube.com/watch?v=" + u.pathname.slice(1);
   }
-  if (
-    (u.hostname == "www.google.com" || u.hostname == "www.bing.com") &&
-    u.pathname.startsWith("/amp/s/")
-  ) {
-    return urlRewriter("https://" + u.pathname.slice(6));
-  }
-  // remove link shorteners
+  // remove url shorteners
   if (
     [
       "d.to",
@@ -26,6 +20,7 @@ export default async function urlRewriter(url: string) {
       "dub.sh",
       "goo.gl",
       "buff.ly",
+      "url.zip",
       "tiny.cc",
       "rebrand.ly",
       "shorturl.at",
@@ -39,7 +34,13 @@ export default async function urlRewriter(url: string) {
       return urlRewriter(loc);
     });
   }
-  // remove ampproject
+  // amputator
+  if (
+    (u.hostname == "www.google.com" || u.hostname == "www.bing.com") &&
+    u.pathname.startsWith("/amp/s/")
+  ) {
+    return urlRewriter("https://" + u.pathname.slice(7));
+  }
   if (u.hostname == "www.ampproject.org") {
     return urlRewriter("https://" + u.searchParams.get("url")!);
   }
