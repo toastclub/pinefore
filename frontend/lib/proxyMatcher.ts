@@ -12,5 +12,5 @@ export function toProxyURL(url: string): string | null {
   const u = new URL(url);
   const match = proxyMatcher(u);
   if (!match) return null;
-  return `/api/helper/mediaproxy/${match[0]}/${match[1]}`;
+  return `/api/helper/media/proxy/${match[0]}/${match[1]}`;
 }
