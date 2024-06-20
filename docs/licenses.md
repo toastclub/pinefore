@@ -36,7 +36,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [@babel/helper-validator-option](https://github.com/babel/babel#readme) | 7.23.5 | The Babel Team |
 | MIT | [@babel/helpers](https://babel.dev/docs/en/next/babel-helpers) | 7.24.4 | The Babel Team |
 | MIT | [@babel/highlight](https://babel.dev/docs/en/next/babel-highlight) | 7.24.2 | The Babel Team |
-| MIT | [@babel/parser](https://babel.dev/docs/en/next/babel-parser) | 7.24.4 | The Babel Team |
+| MIT | [@babel/parser](https://babel.dev/docs/en/next/babel-parser) | 7.24.7 | The Babel Team |
 | MIT | [@babel/plugin-syntax-jsx](https://babel.dev/docs/en/next/babel-plugin-syntax-jsx) | 7.24.1 | The Babel Team |
 | MIT | [@babel/plugin-syntax-typescript](https://babel.dev/docs/en/next/babel-plugin-syntax-typescript) | 7.24.1 | The Babel Team |
 | MIT | [@babel/plugin-transform-modules-commonjs](https://babel.dev/docs/en/next/babel-plugin-transform-modules-commonjs) | 7.24.1 | The Babel Team |
@@ -53,7 +53,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [@elysiajs/jwt](https://github.com/elysiajs/elysia-jwt) | 1.0.2 | saltyAom |
 | MIT | [@elysiajs/stream](https://github.com/elysiajs/elysia-static) | 1.0.0-rc.0 | saltyAom |
 | MIT | [@elysiajs/swagger](https://github.com/elysiajs/elysia-swagger) | 1.0.5 | saltyAom |
-| MIT | [@esbuild/darwin-arm64](https://github.com/evanw/esbuild#readme) | 0.20.2 |  |
+| MIT | [@esbuild/darwin-arm64](https://github.com/evanw/esbuild#readme) | 0.21.5 |  |
 | MIT | [@fastify/busboy](https://github.com/fastify/busboy#readme) | 2.1.1 | Brian White |
 | MIT | [@floating-ui/core](https://floating-ui.com) | 1.6.2 | atomiks |
 | MIT | [@floating-ui/dom](https://floating-ui.com) | 1.6.5 | atomiks |
@@ -167,6 +167,7 @@ The following projects have been included in the tree in some way. Not all may b
 | ISC | [are-we-there-yet](https://github.com/npm/are-we-there-yet) | 2.0.0 | GitHub Inc. |
 | Python-2.0 | [argparse](https://github.com/nodeca/argparse#readme) | 2.0.1 |  |
 | MIT | [array-union](https://github.com/sindresorhus/array-union#readme) | 2.1.0 | Sindre Sorhus |
+| MIT | [ast-kit](https://github.com/sxzz/ast-kit#readme) | 0.12.2 |  |
 | MIT | [ast-types](http://github.com/benjamn/ast-types) | 0.16.1 | Ben Newman |
 | MIT | [astring](https://github.com/davidbonnet/astring#readme) | 1.8.6 | David Bonnet |
 | MIT | [async](https://caolan.github.io/async/) | 3.2.5 | Caolan McMahon |
@@ -181,7 +182,6 @@ The following projects have been included in the tree in some way. Not all may b
 | Unlicense | [big-integer](https://github.com/peterolson/BigInteger.js#readme) | 1.6.52 | Peter Olson |
 | MIT | [binary-extensions](https://github.com/sindresorhus/binary-extensions#readme) | 2.3.0 | Sindre Sorhus |
 | MIT | [bindings](https://github.com/TooTallNate/node-bindings) | 1.5.0 | Nathan Rajlich |
-| ISC | [boolbase](https://github.com/fb55/boolbase) | 1.0.0 | Felix Boehm |
 | MIT | [bowser](https://github.com/lancedikson/bowser) | 2.11.0 | Dustin Diaz |
 | MIT | [boxen](https://github.com/sindresorhus/boxen#readme) | 7.1.1 | Sindre Sorhus |
 | MIT | [bplist-parser](https://github.com/nearinfinity/node-bplist-parser) | 0.2.0 | Joe Ferner |
@@ -228,10 +228,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [croner](https://hexagon.github.io/croner) | 8.0.1 | Hexagon |
 | MIT | [cross-spawn](https://github.com/moxystudio/node-cross-spawn) | 7.0.3 | André Cruz |
 | MIT | [crossws](https://github.com/unjs/crossws#readme) | 0.2.4 |  |
-| BSD-2-Clause | [css-select](https://github.com/fb55/css-select#readme) | 5.1.0 | Felix Boehm |
 | MIT | [css-tree](https://github.com/csstree/csstree#readme) | 2.3.1 | Roman Dvornov |
-| BSD-2-Clause | [css-what](https://github.com/fb55/css-what#readme) | 6.1.0 | Felix Böhm |
-| MIT | [cssom](https://github.com/NV/CSSOM#readme) | 0.5.0 | Nikita Vasilyev |
 | MIT | [csstype](https://github.com/frenic/csstype#readme) | 3.1.3 | Fredrik Nicol |
 | MIT | [dax-sh](https://github.com/dsherret/dax#readme) | 0.39.2 |  |
 | MIT | [db0](https://github.com/unjs/db0#readme) | 0.1.4 |  |
@@ -251,11 +248,7 @@ The following projects have been included in the tree in some way. Not all may b
 | Apache-2.0 | [detect-libc](https://github.com/lovell/detect-libc#readme) | 2.0.3 | Lovell Fuller |
 | MIT | [dir-glob](https://github.com/kevva/dir-glob#readme) | 3.0.1 | Kevin Mårtensson |
 | MIT | [discontinuous-range](https://github.com/dtudury/discontinuous-range) | 1.0.0 | David Tudury |
-| MIT | [dom-serializer](https://github.com/cheeriojs/dom-serializer#readme) | 2.0.0 | Felix Boehm |
-| BSD-2-Clause | [domelementtype](https://github.com/fb55/domelementtype#readme) | 2.3.0 | Felix Boehm |
-| BSD-2-Clause | [domhandler](https://github.com/fb55/domhandler#readme) | 5.0.3 | Felix Boehm |
 | (MPL-2.0 OR Apache-2.0) | [dompurify](https://github.com/cure53/DOMPurify) | 3.1.3 | Dr.-Ing. Mario Heiderich, Cure53 |
-| BSD-2-Clause | [domutils](https://github.com/fb55/domutils#readme) | 3.1.0 | Felix Boehm |
 | MIT | [dot-prop](https://github.com/sindresorhus/dot-prop#readme) | 8.0.2 | Sindre Sorhus |
 | BSD-2-Clause | [dotenv](https://github.com/motdotla/dotenv#readme) | 16.4.5 |  |
 | MIT | [duplexer](https://github.com/Raynos/duplexer) | 0.1.2 | Raynos |
@@ -265,13 +258,12 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [elysia](https://github.com/elysiajs/elysia) | 1.0.20 | saltyAom |
 | MIT | [emoji-regex](https://mths.be/emoji-regex) | 9.2.2 | Mathias Bynens |
 | MIT | [encodeurl](https://github.com/pillarjs/encodeurl#readme) | 1.0.2 |  |
-| BSD-2-Clause | [entities](https://github.com/fb55/entities#readme) | 4.5.0 | Felix Boehm |
 | MIT | [error-stack-parser](https://www.stacktracejs.com) | 2.1.4 |  |
 | MIT | [error-stack-parser-es](https://github.com/antfu/error-stack-parser-es#readme) | 0.1.1 |  |
 | MIT | [es-define-property](https://github.com/ljharb/es-define-property#readme) | 1.0.0 | Jordan Harband |
 | MIT | [es-errors](https://github.com/ljharb/es-errors#readme) | 1.3.0 | Jordan Harband |
 | MIT | [es-module-lexer](https://github.com/guybedford/es-module-lexer#readme) | 1.5.0 | Guy Bedford |
-| MIT | [esbuild](https://github.com/evanw/esbuild#readme) | 0.20.2 |  |
+| MIT | [esbuild](https://github.com/evanw/esbuild#readme) | 0.21.5 |  |
 | MIT | [escalade](https://github.com/lukeed/escalade#readme) | 3.1.2 | Luke Edwards |
 | MIT | [escape-html](https://github.com/component/escape-html#readme) | 1.0.3 |  |
 | MIT | [escape-string-regexp](https://github.com/sindresorhus/escape-string-regexp#readme) | 5.0.0 | Sindre Sorhus |
@@ -325,9 +317,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [hasown](https://github.com/inspect-js/hasOwn#readme) | 2.0.2 | Jordan Harband |
 | MIT | [hookable](https://github.com/unjs/hookable#readme) | 5.5.3 |  |
 | MIT | [html-entities](https://github.com/mdevils/html-entities#readme) | 2.3.3 | Marat Dulin |
-| MIT | [html-escaper](https://github.com/WebReflection/html-escaper) | 3.0.3 | Andrea Giammarchi |
 | MIT | [html-to-image](https://github.com/bubkoo/html-to-image#readme) | 1.11.11 | bubkooo |
-| MIT | [htmlparser2](https://github.com/fb55/htmlparser2#readme) | 9.1.0 | Felix Boehm |
 | MIT | [http-errors](https://github.com/jshttp/http-errors#readme) | 2.0.0 | Jonathan Ong |
 | MIT | [http-proxy](https://github.com/http-party/node-http-proxy#readme) | 1.18.1 | Charlie Robbins |
 | MIT | [http-shutdown](https://github.com/thedillonb/http-shutdown#readme) | 1.2.2 | Dillon Buchanan |
@@ -357,10 +347,10 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [knitwork](https://github.com/unjs/knitwork#readme) | 1.1.0 |  |
 | MIT | [kolorist](https://github.com/marvinhagemeister/kolorist#readme) | 1.8.0 | Marvin Hagemeister |
 | MIT | [kysely](https://github.com/kysely-org/kysely#readme) | 0.27.3 | Sami Koskimäki |
+| MIT | [kysely-postgres-js](https://github.com/igalklebanov/kysely-postgres-js) | 2.0.0 | Igal Klebanov |
 | MIT | [lazystream](https://github.com/jpommerening/node-lazystream) | 1.0.1 | Jonas Pommerening |
 | MIT | [lilconfig](https://github.com/antonk52/lilconfig#readme) | 2.1.0 | antonk52 |
 | MIT | [lines-and-columns](https://github.com/eventualbuddha/lines-and-columns#readme) | 1.2.4 | Brian Donovan |
-| ISC | [linkedom](https://github.com/WebReflection/linkedom#readme) | 0.18.0 | Andrea Giammarchi |
 | MIT | [listhen](https://github.com/unjs/listhen#readme) | 1.7.2 |  |
 | MIT | [load-tsconfig](https://www.npmjs.com/package/load-tsconfig) | 0.2.5 |  |
 | MIT | [local-pkg](https://github.com/antfu/local-pkg#readme) | 0.5.0 | Anthony Fu |
@@ -370,8 +360,9 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [lodash.defaults](https://lodash.com/) | 4.2.0 | John-David Dalton |
 | MIT | [lodash.isarguments](https://lodash.com/) | 3.1.0 | John-David Dalton |
 | MIT | [lodash.sortby](https://lodash.com/) | 4.7.0 | John-David Dalton |
-| ISC | [lru-cache](https://github.com/isaacs/node-lru-cache#readme) | 10.2.0 | Isaac Z. Schlueter |
+| ISC | [lru-cache](https://github.com/isaacs/node-lru-cache#readme) | 5.1.1 | Isaac Z. Schlueter |
 | MIT | [magic-string](https://github.com/rich-harris/magic-string#readme) | 0.30.10 | Rich Harris |
+| MIT | [magic-string-ast](https://github.com/sxzz/magic-string-ast#readme) | 0.5.0 |  |
 | MIT | [magicast](https://github.com/unjs/magicast#readme) | 0.2.11 |  |
 | MIT | [make-dir](https://github.com/sindresorhus/make-dir#readme) | 3.1.0 | Sindre Sorhus |
 | MIT | [markdown-extensions](https://github.com/sindresorhus/markdown-extensions#readme) | 2.0.0 | Sindre Sorhus |
@@ -407,7 +398,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [normalize-path](https://github.com/jonschlinkert/normalize-path) | 3.0.0 | Jon Schlinkert |
 | MIT | [npm-run-path](https://github.com/sindresorhus/npm-run-path#readme) | 5.3.0 | Sindre Sorhus |
 | ISC | [npmlog](https://github.com/npm/npmlog#readme) | 5.0.1 | Isaac Z. Schlueter |
-| BSD-2-Clause | [nth-check](https://github.com/fb55/nth-check) | 2.1.1 | Felix Boehm |
 | MIT | [nypm](https://github.com/unjs/nypm#readme) | 0.3.8 |  |
 | MIT | [object-assign](https://github.com/sindresorhus/object-assign#readme) | 4.1.1 | Sindre Sorhus |
 | MIT | [object-hash](https://github.com/puleos/object-hash) | 2.2.0 | Scott Puleo |
@@ -432,15 +422,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [pathe](https://github.com/unjs/pathe#readme) | 1.1.2 |  |
 | MIT | [perfect-debounce](https://github.com/unjs/perfect-debounce#readme) | 1.0.0 |  |
 | MIT | [periscopic](https://github.com/Rich-Harris/periscopic#readme) | 3.1.0 |  |
-| MIT | [pg](https://github.com/brianc/node-postgres) | 8.11.5 | Brian Carlson |
-| MIT | [pg-cloudflare](https://github.com/brianc/node-postgres#readme) | 1.1.1 |  |
-| MIT | [pg-connection-string](https://github.com/brianc/node-postgres/tree/master/packages/pg-connection-string) | 2.6.4 | Blaine Bublitz |
-| ISC | [pg-int8](https://github.com/charmander/pg-int8#readme) | 1.0.1 |  |
 | MIT | [pg-mem](https://github.com/oguimbal/pg-mem#readme) | 2.8.1 | Olivier Guimbal |
-| MIT | [pg-pool](https://github.com/brianc/node-pg-pool#readme) | 3.6.2 | Brian M. Carlson |
-| MIT | [pg-protocol](https://github.com/brianc/node-postgres#readme) | 1.6.1 |  |
-| MIT | [pg-types](https://github.com/brianc/node-pg-types) | 2.2.0 | Brian M. Carlson |
-| MIT | [pgpass](https://github.com/hoegaarden/pgpass#readme) | 1.0.5 | Hannes Hörl |
 | MIT | [pgsql-ast-parser](https://github.com/oguimbal/pgsql-ast-parser#readme) | 12.0.1 | Olivier Guimbal |
 | ISC | [picocolors](https://github.com/alexeyraspopov/picocolors#readme) | 1.0.0 | Alexey Raspopov |
 | MIT | [picomatch](https://github.com/micromatch/picomatch) | 2.3.1 | Jon Schlinkert |
@@ -448,13 +430,11 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [pkg-types](https://github.com/unjs/pkg-types#readme) | 1.0.3 |  |
 | MIT | [postcss](https://postcss.org/) | 8.4.38 | Andrey Sitnik |
 | MIT | [postcss-load-config](https://github.com/postcss/postcss-load-config#readme) | 3.1.4 | Michael Ciniawky |
-| MIT | [postgres-array](https://github.com/bendrucker/postgres-array#readme) | 2.0.0 | Ben Drucker |
-| MIT | [postgres-bytea](https://github.com/bendrucker/postgres-bytea#readme) | 1.0.0 | Ben Drucker |
-| MIT | [postgres-date](https://github.com/bendrucker/postgres-date#readme) | 1.0.7 | Ben Drucker |
-| MIT | [postgres-interval](https://github.com/bendrucker/postgres-interval#readme) | 1.2.0 | Ben Drucker |
+| Unlicense | [postgres](https://github.com/porsager/postgres) | 3.4.4 | Rasmus Porsager |
 | MIT | [pretty-bytes](https://github.com/sindresorhus/pretty-bytes#readme) | 6.1.1 | Sindre Sorhus |
 | MIT | [process](https://github.com/shtylman/node-process#readme) | 0.11.10 | Roman Shtylman |
 | MIT | [process-nextick-args](https://github.com/calvinmetcalf/process-nextick-args) | 2.0.1 |  |
+| MIT | [psl](https://github.com/lupomontero/psl#readme) | 1.9.0 | Lupo Montero |
 | MIT | [punycode](https://mths.be/punycode) | 2.3.1 | Mathias Bynens |
 | MIT | [queue-microtask](https://github.com/feross/queue-microtask) | 1.2.3 | Feross Aboukhadijeh |
 | MIT | [queue-tick](https://github.com/mafintosh/queue-tick) | 1.0.1 | Mathias Buus |
@@ -501,6 +481,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [sirv](https://github.com/lukeed/sirv#readme) | 2.0.4 | Luke Edwards |
 | MIT | [slash](https://github.com/sindresorhus/slash#readme) | 5.1.0 | Sindre Sorhus |
 | MIT | [smob](https://github.com/Tada5hi/smob#readme) | 1.5.0 | Peter Placzek |
+| MIT | [sns-cloudflare-validator](https://github.com/devinstewart/sns-cloudflare-validator#readme) | 1.0.1 | Devin Stewart |
 | MIT | [solid-js](https://solidjs.com) | 1.8.16 | Ryan Carniato |
 | MIT | [solid-mdx](https://www.npmjs.com/package/solid-mdx) | 0.0.7 |  |
 | MIT | [solid-prevent-scroll](https://corvu.dev/docs/utilities/prevent-scroll) | 0.1.7 | Jasmin Noetzli |
@@ -509,7 +490,6 @@ The following projects have been included in the tree in some way. Not all may b
 | BSD-3-Clause | [source-map](https://github.com/mozilla/source-map) | 0.8.0-beta.0 | Nick Fitzgerald |
 | BSD-3-Clause | [source-map-js](https://github.com/7rulnik/source-map-js) | 1.2.0 | Valentin 7rulnik Semirulnik |
 | MIT | [source-map-support](https://github.com/evanw/node-source-map-support#readme) | 0.5.21 |  |
-| ISC | [split2](https://github.com/mcollina/split2#readme) | 4.2.0 | Matteo Collina |
 | MIT | [stackframe](https://www.stacktracejs.com) | 1.3.4 |  |
 | MIT | [standard-as-callback](https://github.com/luin/asCallback#readme) | 2.1.0 | luin |
 | MIT | [starback](https://github.com/zuramai/starback.js#readme) | 2.1.6 | zuramai |
@@ -549,7 +529,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [type-detect](https://github.com/chaijs/type-detect#readme) | 4.0.8 | Jake Luer |
 | (MIT OR CC0-1.0) | [type-fest](https://github.com/sindresorhus/type-fest#readme) | 3.13.1 | Sindre Sorhus |
 | MIT | [ufo](https://github.com/unjs/ufo#readme) | 1.5.3 |  |
-| ISC | [uhyphen](https://github.com/WebReflection/uhyphen#readme) | 0.2.0 | Andrea Giammarchi |
 | MIT | [unconfig](https://github.com/antfu/unconfig#readme) | 0.3.12 | Anthony Fu |
 | MIT | [uncrypto](https://github.com/unjs/uncrypto#readme) | 0.1.3 |  |
 | MIT | [unctx](https://github.com/unjs/unctx#readme) | 2.3.1 |  |
@@ -561,6 +540,7 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [unocss](https://github.com/unocss/unocss#readme) | 0.58.3 | Anthony Fu |
 | MIT | [unplugin](https://github.com/unjs/unplugin#readme) | 1.10.1 |  |
 | MIT | [unplugin-icons](https://github.com/unplugin/unplugin-icons#readme) | 0.18.5 | Anthony Fu |
+| MIT | [unplugin-macros](https://github.com/unplugin/unplugin-macros#readme) | 0.13.0 | 三咲智子 |
 | MIT | [unstorage](https://github.com/unjs/unstorage#readme) | 1.10.2 |  |
 | MIT | [untildify](https://github.com/sindresorhus/untildify#readme) | 4.0.0 | Sindre Sorhus |
 | MIT | [untun](https://github.com/unjs/untun#readme) | 0.1.3 |  |
@@ -572,7 +552,8 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [uuid](https://github.com/uuidjs/uuid#readme) | 9.0.1 |  |
 | ISC | [validate-html-nesting](https://github.com/MananTank/validate-html-nesting#readme) | 1.2.2 | Manan Tank |
 | Unknown | [vinxi](https://www.npmjs.com/package/vinxi) | 0.3.11 | Nikhil Saraf |
-| MIT | [vite](https://vitejs.dev) | 5.2.8 | Evan You |
+| MIT | [vite](https://vitejs.dev) | 5.3.1 | Evan You |
+| MIT | [vite-node](https://github.com/vitest-dev/vitest/blob/main/packages/vite-node#readme) | 1.6.0 | Anthony Fu |
 | MIT | [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect#readme) | 0.7.42 | Anthony Fu |
 | MIT | [vite-plugin-solid](https://github.com/solidjs/vite-plugin-solid#readme) | 2.9.1 | Alexandre Mouton-Brady |
 | MIT | [vitefu](https://github.com/svitejs/vitefu#readme) | 0.2.5 |  |
@@ -586,7 +567,6 @@ The following projects have been included in the tree in some way. Not all may b
 | MIT | [wrap-ansi](https://github.com/chalk/wrap-ansi#readme) | 8.1.0 | Sindre Sorhus |
 | ISC | [wrappy](https://github.com/npm/wrappy) | 1.0.2 | Isaac Z. Schlueter |
 | MIT | [xml-js](https://github.com/nashwaan/xml-js#readme) | 1.6.11 | Yousuf Almarzooqi |
-| MIT | [xtend](https://github.com/Raynos/xtend) | 4.0.2 | Raynos |
 | ISC | [y18n](https://github.com/yargs/y18n) | 5.0.8 | Ben Coe |
 | ISC | [yallist](https://github.com/isaacs/yallist#readme) | 3.1.1 | Isaac Z. Schlueter |
 | ISC | [yaml](https://eemeli.org/yaml/v1/) | 1.10.2 | Eemeli Aro |
