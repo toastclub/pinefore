@@ -28,6 +28,7 @@ export const templateTypes = [
   "security/token-created",
   "sign-up",
   "deleted-account",
+  'prereg'
 ] as const;
 
 let _templates = templates()
