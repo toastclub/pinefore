@@ -40,7 +40,9 @@ export const sendEmail = async (
   data?: Record<string, string>
 ) => {
   const client = createClient();
+  console.log(_templates)
   let target= _templates[template];
+  console.log(target)
   let targetText = target.contents;
   if (data) {
     targetText = targetText.replace(
