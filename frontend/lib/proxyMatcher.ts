@@ -14,3 +14,12 @@ export function toProxyURL(url: string): string | null {
   if (!match) return null;
   return `/api/helper/media/proxy/${match[0]}/${match[1]}`;
 }
+
+export function getMediaType(url: URL) {
+  switch (proxyMatcher(url)?.[0]) {
+    case "yt":
+      return "video";
+    default:
+      return null;
+  }
+}
