@@ -39,6 +39,7 @@ export const sendEmail = async (
   template: (typeof templateTypes)[number],
   data?: Record<string, string>
 ) => {
+  console.log(_templates)
   const client = createClient();
   console.log(_templates)
   let target= _templates[template];
