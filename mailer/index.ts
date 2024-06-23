@@ -1,13 +1,13 @@
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { templates, layout } from "./macros" with { type: 'macro' };
+import { AwsClient } from "aws4fetch";
 
+const ENDPOINT =
+  "https://email.us-east-2.amazonaws.com/v2/email/outbound-emails";
 export const createClient = () => {
-  return new SESClient({
+  return new AwsClient({
     region: process.env.AWS_REGION,
-    credentials: {
-      accessKeyId: process.env.MAIL_KEY_ID!,
-      secretAccessKey: process.env.MAIL_SECRET!,
-    },
+    accessKeyId: process.env.MAIL_KEY_ID!,
+    secretAccessKey: process.env.MAIL_SECRET!,
   });
 };
 
@@ -28,22 +28,19 @@ export const templateTypes = [
   "security/token-created",
   "sign-up",
   "deleted-account",
-  'prereg'
+  "prereg",
 ] as const;
 
-let _templates = templates()
-let layouts = layout()
+let _templates = templates();
+let layouts = layout();
 
 export const sendEmail = async (
   to: string,
   template: (typeof templateTypes)[number],
   data?: Record<string, string>
 ) => {
-  console.log(_templates)
   const client = createClient();
-  console.log(_templates)
-  let target= _templates[template];
-  console.log(target)
+  let target = _templates[template];
   let targetText = target.contents;
   if (data) {
     targetText = targetText.replace(
@@ -51,28 +48,33 @@ export const sendEmail = async (
       (match, key) => data[key] || match
     );
   }
-  let htmlData = layouts.replace('{title}', target.title).replace('{contents}', targetText)
-  const command = new SendEmailCommand({
-    Source: '"The Pinefore Computer" <computer@pinefore.com>',
+  let htmlData = layouts
+    .replace("{title}", target.title)
+    .replace("{contents}", targetText);
+  const command = {
+    FromEmailAddress: '"The Pinefore Computer" <computer@pinefore.com>',
     Destination: {
       ToAddresses: [to],
     },
     ReplyToAddresses: ["evan@boehs.org"],
-    Message: {
-      Subject: {
-        Data: target.title,
-      },
-      Body: {
-        Html: {
-          Charset: "UTF-8",
-          Data: htmlData,
+    Content: {
+      Simple: {
+        Subject: {
+          Data: target.title,
         },
-        Text: {
-          Charset: "UTF-8",
-          Data: targetText,
+        Body: {
+          Html: {
+            Charset: "UTF-8",
+            Data: htmlData,
+          },
+          Text: {
+            Charset: "UTF-8",
+            Data: targetText,
+          },
         },
       },
     },
-  });
-  await client.send(command).catch(console.error)
+  };
+  let res = await client.fetch(ENDPOINT, { body: JSON.stringify(command) });
+  console.log(await res.text());
 };
