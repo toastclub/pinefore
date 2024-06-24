@@ -121,7 +121,8 @@ export function decodeToAST(
     // if it is a joiner
     if (
       joiners.includes(data[i] as any) &&
-      !(data[i] == "!" && data[i + 1] == "=")
+      !(data[i] == "!" && data[i + 1] == "=") &&
+      nestingLevel === 0
     ) {
       workingTree[workingTree.length - 1].concluded = true;
       workingTree.push({ type: "oper", data: data[i], concluded: true });
@@ -141,7 +142,7 @@ export function decodeToAST(
 
 type ColumnType = "string" | "number" | "date" | "array";
 
-type ColumnSchema = {
+export type ColumnSchema = {
   [column: string]:
     | {
         type: ColumnType;
@@ -161,8 +162,6 @@ const allowedOperators: Record<ColumnType, (typeof operators)[number][]> = {
   array: ["="],
 };
 
-function exprValidator(ast: AST, i: number, columns: ColumnSchema) {}
-
 export function integrityCheck(ast: AST, columns: ColumnSchema) {
   let columnNames = Object.keys(columns);
   if (ast[ast.length - 1].type == "str" && !ast[ast.length - 1].concluded) {
@@ -178,7 +177,7 @@ export function integrityCheck(ast: AST, columns: ColumnSchema) {
     // basic checks
     if (cur.type == "parn") {
       let check = integrityCheck(ast[i].data as AST, columns);
-      if (ast[i - 1].data == "!") {
+      if (ast[i - 1]?.data == "!") {
         finalSt.operations.push({
           mode: "NOT",
           operations: [check],
@@ -186,6 +185,7 @@ export function integrityCheck(ast: AST, columns: ColumnSchema) {
       } else {
         finalSt.operations.push(check);
       }
+      continue;
     }
     if (cur.type == "str") {
       if (ast[i - 1].type != "expr") {
@@ -199,8 +199,8 @@ export function integrityCheck(ast: AST, columns: ColumnSchema) {
         }
       }
       if (
-        !(ast[i - 1].type != "expr" || ast[i - 1].type == "parn") ||
-        !(ast[i + 1].type != "expr" || ast[i + 1].type == "parn")
+        !(ast[i - 1].type == "expr" || ast[i - 1].type == "parn") ||
+        !(ast[i + 1].type == "expr" || ast[i + 1].type == "parn")
       ) {
         throw new Error("Joiners must join expressions or parenthesis");
       }
@@ -211,7 +211,9 @@ export function integrityCheck(ast: AST, columns: ColumnSchema) {
         finalSt.mode = "OR";
       }
       if (cur.data == "+") {
-        hasEncounteredAnd = true;
+        if (finalSt.mode == "OR") {
+          throw new Error("OR cannot be used with AND");
+        }
       }
     }
     // expr validator
@@ -229,19 +231,22 @@ export function integrityCheck(ast: AST, columns: ColumnSchema) {
       if (col.type == "bool" && operator != undefined) {
         throw new Error("Boolean columns cannot have operators");
       }
-      if (col.type != "string" && ast[i + 1].type == "str") {
+      if (col.type != "string" && ast[i + 1]?.type == "str") {
         throw new Error("Non-string columns cannot have strings");
       }
-      if (!operator) {
-        throw new Error("Operator not found");
-      }
       if (col.type == "bool") {
+        if (!columnNames.find((col) => col == cur.data)) {
+          throw new Error("Column not found");
+        }
         finalSt.operations.push({
           column: col.mapsTo,
           operator: "=",
           value: col.true,
         });
         continue;
+      }
+      if (!operator) {
+        throw new Error("Operator not found");
       }
       if (!allowedOperators[col.type].includes(operator)) {
         throw new Error("Operator not allowed for column type");
