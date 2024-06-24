@@ -1,19 +1,26 @@
-type Operator =
-  | "="
-  | "!="
-  | "=="
-  | ">"
-  | "<"
-  | ">="
-  | "<="
-  | "^="
-  | "$="
-  // is contained by
-  | "<@";
+const operators = [
+  "=",
+  "!=",
+  "==",
+  ">",
+  "<",
+  ">=",
+  "<=",
+  "^=",
+  "$=",
+  "<@",
+] as const;
+
+const operatorChars = [...new Set(operators.flatMap((op) => op.split("")))];
+const longestOperator = operators.reduce((a, b) =>
+  a.length > b.length ? a : b
+).length;
+const possiblyOperator = (str: string) =>
+  operators.find((op) => op.startsWith(str));
 
 interface Operation<T extends string | number | boolean | Date | string[]> {
   column: string;
-  operator: Operator;
+  operator: typeof operators;
   value: T;
 }
 
@@ -24,6 +31,8 @@ interface Combiner {
    */
   operations: (Operation<any> | Combiner)[];
 }
+
+const joiners = ["!", "+", "|"] as const;
 
 type AST = ((
   | {
@@ -114,11 +123,49 @@ export function decodeToAST(
       }
       continue;
     }
+    // if it is a joiner
+    if (
+      joiners.includes(data[i] as any) &&
+      !(data[i] == "!" && data[i + 1] == "=")
+    ) {
+      workingTree[workingTree.length - 1].concluded = true;
+      workingTree.push({ type: "oper", data: data[i], concluded: true });
+      continue;
+    }
     // if we are starting an expression
-    if (workingTree[workingTree.length - 1].concluded) {
+    if (
+      workingTree.length == 0 ||
+      workingTree[workingTree.length - 1].concluded
+    ) {
       workingTree.push({ type: "expr", data: "", concluded: false });
     }
     workingTree[workingTree.length - 1].data += data[i];
   }
   return workingTree;
+}
+
+export function integrityCheck(ast: AST) {
+  if (ast[ast.length - 1].type == "str" && !ast[ast.length - 1].concluded) {
+    throw new Error("Strings must be concluded");
+  }
+  for (let i = 0; i < ast.length; i++) {
+    if (ast[i].type == "str") {
+      if (ast[i - 1].type != "expr") {
+        throw new Error("Strings must be preceded by expressions");
+      }
+    }
+    if (ast[i].type == "oper") {
+      if (ast[i].data == "!") {
+        if (ast[i + 1].type != "parn") {
+          throw new Error("NOT must preceed a parenthesis");
+        }
+      }
+      if (
+        !(ast[i - 1].type != "expr" || ast[i - 1].type == "parn") ||
+        !(ast[i + 1].type != "expr" || ast[i + 1].type == "parn")
+      ) {
+        throw new Error("Joiners must join expressions or parenthesis");
+      }
+    }
+  }
 }
