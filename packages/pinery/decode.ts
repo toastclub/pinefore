@@ -164,7 +164,7 @@ const allowedOperators: Record<ColumnType, (typeof operators)[number][]> = {
   array: ["="],
 };
 
-export function integrityCheck(ast: AST, columns: ColumnSchema) {
+export function integrityCheck<T extends ColumnSchema>(ast: AST, columns: T) {
   let columnNames = Object.keys(columns);
   if (ast[ast.length - 1].type == "str" && !ast[ast.length - 1].concluded) {
     throw new Error("Strings must be concluded");
