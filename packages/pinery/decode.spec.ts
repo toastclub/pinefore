@@ -127,4 +127,26 @@ describe("decode", () => {
       });
     });
   });
+  describe("nots", () => {
+    it("joins !(AND) and OR", () => {
+      expect(decode("!(public|read)+unread", schema)).toStrictEqual({
+        mode: "AND",
+        operations: [
+          {
+            mode: "NOT",
+            operations: [
+              {
+                mode: "OR",
+                operations: [
+                  { operator: "=", column: "public", value: true },
+                  { operator: "=", column: "read", value: true },
+                ],
+              },
+            ],
+          },
+          { operator: "=", column: "read", value: false },
+        ],
+      });
+    });
+  });
 });

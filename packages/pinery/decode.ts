@@ -124,7 +124,9 @@ export function decodeToAST(
       !(data[i] == "!" && data[i + 1] == "=") &&
       nestingLevel === 0
     ) {
-      workingTree[workingTree.length - 1].concluded = true;
+      if (workingTree[workingTree.length - 1]) {
+        workingTree[workingTree.length - 1].concluded = true;
+      }
       workingTree.push({ type: "oper", data: data[i], concluded: true });
       continue;
     }
@@ -197,6 +199,7 @@ export function integrityCheck(ast: AST, columns: ColumnSchema) {
         if (ast[i + 1].type != "parn") {
           throw new Error("NOT must preceed a parenthesis");
         }
+        continue;
       }
       if (
         !(ast[i - 1].type == "expr" || ast[i - 1].type == "parn") ||
