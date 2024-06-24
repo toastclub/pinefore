@@ -1,7 +1,7 @@
 const operators = [
-  "=",
   "!=",
   "==",
+  "=",
   ">",
   "<",
   ">=",
@@ -11,16 +11,12 @@ const operators = [
   "<@",
 ] as const;
 
-const operatorChars = [...new Set(operators.flatMap((op) => op.split("")))];
-const longestOperator = operators.reduce((a, b) =>
-  a.length > b.length ? a : b
-).length;
 const possiblyOperator = (str: string) =>
-  operators.find((op) => op.startsWith(str));
+  operators.find((op) => str.startsWith(op));
 
 interface Operation<T extends string | number | boolean | Date | string[]> {
   column: string;
-  operator: typeof operators;
+  operator: (typeof operators)[number];
   value: T;
 }
 
@@ -58,7 +54,6 @@ export function decodeToAST(
     nestingLevel: number;
   }
 ): AST {
-  data = decodeURIComponent(data);
   let isInString = false;
   let nestingLevel = internalData?.nestingLevel ?? 0;
   let workingTree: AST = [];
@@ -144,18 +139,61 @@ export function decodeToAST(
   return workingTree;
 }
 
-export function integrityCheck(ast: AST) {
+type ColumnType = "string" | "number" | "date" | "array";
+
+type ColumnSchema = {
+  [column: string]:
+    | {
+        type: ColumnType;
+        mapsTo: string;
+      }
+    | {
+        type: "bool";
+        mapsTo: string;
+        true: boolean;
+      };
+};
+
+const allowedOperators: Record<ColumnType, (typeof operators)[number][]> = {
+  string: ["=", "!=", "==", "^=", "$="],
+  number: ["=", "!=", ">", "<", ">=", "<="],
+  date: ["=", "!=", ">", "<", ">=", "<="],
+  array: ["="],
+};
+
+function exprValidator(ast: AST, i: number, columns: ColumnSchema) {}
+
+export function integrityCheck(ast: AST, columns: ColumnSchema) {
+  let columnNames = Object.keys(columns);
   if (ast[ast.length - 1].type == "str" && !ast[ast.length - 1].concluded) {
     throw new Error("Strings must be concluded");
   }
+  let hasEncounteredAnd = false;
+  let finalSt: Combiner = {
+    mode: "AND",
+    operations: [],
+  };
   for (let i = 0; i < ast.length; i++) {
-    if (ast[i].type == "str") {
+    let cur = ast[i];
+    // basic checks
+    if (cur.type == "parn") {
+      let check = integrityCheck(ast[i].data as AST, columns);
+      if (ast[i - 1].data == "!") {
+        finalSt.operations.push({
+          mode: "NOT",
+          operations: [check],
+        });
+      } else {
+        finalSt.operations.push(check);
+      }
+    }
+    if (cur.type == "str") {
       if (ast[i - 1].type != "expr") {
         throw new Error("Strings must be preceded by expressions");
       }
     }
-    if (ast[i].type == "oper") {
-      if (ast[i].data == "!") {
+    if (cur.type == "oper") {
+      if (cur.data == "!") {
         if (ast[i + 1].type != "parn") {
           throw new Error("NOT must preceed a parenthesis");
         }
@@ -166,6 +204,99 @@ export function integrityCheck(ast: AST) {
       ) {
         throw new Error("Joiners must join expressions or parenthesis");
       }
+      if (cur.data == "|") {
+        if (hasEncounteredAnd) {
+          throw new Error("OR cannot be used with AND");
+        }
+        finalSt.mode = "OR";
+      }
+      if (cur.data == "+") {
+        hasEncounteredAnd = true;
+      }
+    }
+    // expr validator
+    if (cur.type == "expr") {
+      let colName = columnNames.find((col) =>
+        (cur.data as string).startsWith(col)
+      );
+      if (!colName) {
+        throw new Error("Column not found");
+      }
+      let col = columns[colName];
+      let operator = possiblyOperator(
+        (cur.data as string).slice(colName.length)
+      );
+      if (col.type == "bool" && operator != undefined) {
+        throw new Error("Boolean columns cannot have operators");
+      }
+      if (col.type != "string" && ast[i + 1].type == "str") {
+        throw new Error("Non-string columns cannot have strings");
+      }
+      if (!operator) {
+        throw new Error("Operator not found");
+      }
+      if (col.type == "bool") {
+        finalSt.operations.push({
+          column: col.mapsTo,
+          operator: "=",
+          value: col.true,
+        });
+        continue;
+      }
+      if (!allowedOperators[col.type].includes(operator)) {
+        throw new Error("Operator not allowed for column type");
+      }
+      let afterOperator = (ast[i].data as string).slice(
+        colName.length + operator.length
+      );
+      if (col.type == "number") {
+        if (isNaN(Number(afterOperator))) {
+          throw new Error("Invalid number");
+        }
+        finalSt.operations.push({
+          column: col.mapsTo,
+          operator: operator,
+          value: Number(afterOperator),
+        });
+      }
+      if (col.type == "date") {
+        if (isNaN(Date.parse(afterOperator))) {
+          throw new Error("Invalid date");
+        }
+        finalSt.operations.push({
+          column: col.mapsTo,
+          operator: operator,
+          value: new Date(afterOperator),
+        });
+      }
+      // otherwise it is a string or array
+      if (ast[i + 1]?.type == "str") {
+        if (afterOperator.length != 0) {
+          throw new Error("String must be fully quoted or fully unquoted");
+        }
+        afterOperator = ast[i + 1].data as string;
+      }
+      if (col.type == "string") {
+        finalSt.operations.push({
+          column: col.mapsTo,
+          operator: operator,
+          value: afterOperator,
+        });
+      }
+      if (col.type == "array") {
+        finalSt.operations.push({
+          column: col.mapsTo,
+          operator: operator,
+          value: afterOperator.split(","),
+        });
+      }
     }
   }
+  return finalSt;
+}
+
+export function decode(data: string, columns: ColumnSchema) {
+  data = decodeURIComponent(data);
+  let ast = decodeToAST(data);
+  return integrityCheck(ast, columns);
 }
