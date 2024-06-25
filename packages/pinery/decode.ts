@@ -14,18 +14,22 @@ const operators = [
 const possiblyOperator = (str: string) =>
   operators.find((op) => str.startsWith(op));
 
-interface Operation<T extends string | number | boolean | Date | string[]> {
+export interface Operation<
+  T extends string | number | boolean | Date | string[]
+> {
   column: string;
   operator: (typeof operators)[number];
   value: T;
 }
 
-interface Combiner {
+export type Operations = (Operation<any> | Combiner)[];
+
+export interface Combiner {
   mode: "AND" | "OR" | "NOT";
   /**
    * If mode is "NOT", operations should have only one element
    */
-  operations: (Operation<any> | Combiner)[];
+  operations: Operations;
 }
 
 const joiners = ["!", "+", "|"] as const;
@@ -202,8 +206,16 @@ export function integrityCheck<T extends ColumnSchema>(ast: AST, columns: T) {
         continue;
       }
       if (
-        !(ast[i - 1].type == "expr" || ast[i - 1].type == "parn") ||
-        !(ast[i + 1].type == "expr" || ast[i + 1].type == "parn")
+        !(
+          ast[i - 1].type == "expr" ||
+          ast[i - 1].type == "parn" ||
+          (ast[i - 1].type == "str" && ast[i - 2].type == "expr")
+        ) ||
+        !(
+          ast[i + 1].type == "expr" ||
+          ast[i + 1].type == "parn" ||
+          (ast[i + 1].type == "oper" && ast[i + 1].data == "!")
+        )
       ) {
         throw new Error("Joiners must join expressions or parenthesis");
       }
