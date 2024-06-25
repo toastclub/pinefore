@@ -1,4 +1,7 @@
-const operators = [
+import { ColumnSchema, ColumnType, AST } from "./types";
+import { Combiner } from "./types";
+
+export const operators = [
   "!=",
   "==",
   "=",
@@ -11,41 +14,10 @@ const operators = [
   "<@",
 ] as const;
 
-const possiblyOperator = (str: string) =>
+export const possiblyOperator = (str: string) =>
   operators.find((op) => str.startsWith(op));
 
-export interface Operation<
-  T extends string | number | boolean | Date | string[]
-> {
-  column: string;
-  operator: (typeof operators)[number];
-  value: T;
-}
-
-export type Operations = (Operation<any> | Combiner)[];
-
-export interface Combiner {
-  mode: "AND" | "OR" | "NOT";
-  /**
-   * If mode is "NOT", operations should have only one element
-   */
-  operations: Operations;
-}
-
 const joiners = ["!", "+", "|"] as const;
-
-type AST = ((
-  | {
-      type: "str" | "expr" | "oper";
-      data: string;
-    }
-  | {
-      type: "parn";
-      data: AST | string;
-    }
-) & {
-  concluded: boolean;
-})[];
 
 /**
  *
@@ -145,21 +117,6 @@ export function decodeToAST(
   }
   return workingTree;
 }
-
-type ColumnType = "string" | "number" | "date" | "array";
-
-export type ColumnSchema = {
-  [column: string]:
-    | {
-        type: ColumnType;
-        mapsTo: string;
-      }
-    | {
-        type: "bool";
-        mapsTo: string;
-        true: boolean;
-      };
-};
 
 const allowedOperators: Record<ColumnType, (typeof operators)[number][]> = {
   string: ["=", "!=", "==", "^=", "$="],

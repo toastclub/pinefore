@@ -1,5 +1,6 @@
 import { it, expect, describe } from "bun:test";
-import { ColumnSchema, decode, decodeToAST } from "./decode";
+import { decode, decodeToAST } from "./decode";
+import { ColumnSchema } from "./types";
 
 describe("decodeToAST", () => {
   it("understands strings", () => {
