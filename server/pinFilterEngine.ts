@@ -36,11 +36,10 @@ type RequiredTables = "userentities" | "entities" | "tags";
 
 export function pinFilterEngine(
   filter: string,
-  db: SelectQueryBuilder<RequiredDb, RequiredTables, {}>
+  db: ExpressionBuilder<RequiredDb, RequiredTables>
 ) {
   let query = decode(filter, pinFilterSchema);
-  db = db.where((d) => recursiveCombiner(query, d));
-  return db;
+  return recursiveCombiner(query, db);
 }
 
 function recursiveOperations(
