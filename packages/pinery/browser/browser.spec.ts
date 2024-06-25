@@ -10,12 +10,12 @@ const schema = {
 describe("browser decode", () => {
   let str = "user_id=1+created_at>2021-01-01+tags=tag1,tag2+tags!=tag3";
   let output = {
-    user_id: [["=", 1]],
-    created_at: [[">", new Date("2021-01-01")]],
-    tags: [
-      ["=", ["tag1", "tag2"]],
-      ["!=", ["tag3"]],
-    ],
+    user_id: { "=": 1 },
+    created_at: { ">": new Date("2021-01-01") },
+    tags: {
+      "=": ["tag1", "tag2"],
+      "!=": ["tag3"],
+    },
   };
   it("can decode a simple query", () => {
     // @ts-expect-error

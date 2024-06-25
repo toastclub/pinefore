@@ -57,7 +57,7 @@ export function decode<T extends ColumnSchema>(
     }
     last.data += data[i];
   }
-  let res: BrowserResponse<T> = {};
+  let res: BrowserResponse<T> = {} as BrowserResponse<T>;
   for (let i = 0; i < workingTree.length; i++) {
     let cur = workingTree[i];
     let colName = Object.keys(schema).find((col) =>
@@ -69,26 +69,24 @@ export function decode<T extends ColumnSchema>(
     let col = schema[colName];
     let operator = possiblyOperator((cur.data as string).slice(colName.length));
     let remaining = cur.data.slice(colName.length + (operator?.length || 0));
-    if (!res[colName]) res[colName] = [];
+    if (!res[colName]) res[colName] = {};
     if (col.type == "bool") res[col.mapsTo] = col.true;
-    else if (col.type == "number")
-      // @ts-expect-error
-      res[colName].push([operator, Number(remaining)]);
+    else if (col.type == "number") res[colName][operator] = Number(remaining);
     else if (col.type == "date")
       // @ts-expect-error
-      res[colName].push([operator, new Date(remaining)]);
+      res[colName][operator] = new Date(remaining);
     else if (col.type == "array")
       // @ts-expect-error
-      res[colName].push([operator, remaining.split(",").map((r) => r.trim())]);
+      res[colName][operator] = remaining.split(",").map((r) => r.trim());
     // @ts-expect-error
-    else res[colName].push([operator, remaining]);
+    else res[colName][operator] = remaining;
   }
   return res;
 }
 
-export function encode(
-  data: Record<string, boolean | [(typeof operators)[number], any][]>,
-  schema: ColumnSchema
+export function encode<T extends ColumnSchema>(
+  data: BrowserResponse<ColumnSchema>,
+  schema: T
 ) {
   let res = [];
   for (let [key, value] of Object.entries(data)) {
@@ -101,7 +99,7 @@ export function encode(
       );
       if (schemaKey) res.push(schemaKey);
     } else {
-      for (let [operator, v2] of value) {
+      for (let [operator, v2] of Object.entries(value)) {
         if (typeof v2.getMonth === "function")
           res.push(`${key}${operator}${v2.toISOString().substring(0, 10)}`);
         else if (Array.isArray(v2))

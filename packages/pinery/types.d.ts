@@ -48,14 +48,18 @@ export type ColumnSchema = {
 
 type OpString = (typeof operators)[number];
 
+type BrowserSubType<T> = {
+  [K in OpString]: T;
+};
+
 type GetBrowserType<T extends ColumnType | "bool"> = T extends "string"
-  ? [[OpString, string]]
+  ? BrowserSubType<string>
   : T extends "number"
-  ? [[OpString, number]]
+  ? BrowserSubType<number>
   : T extends "date"
-  ? [[OpString, Date]]
+  ? BrowserSubType<Date>
   : T extends "array"
-  ? [[OpString, string[]]]
+  ? BrowserSubType<string[]>
   : T extends "bool"
   ? boolean
   : never;
