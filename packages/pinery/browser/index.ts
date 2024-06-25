@@ -97,7 +97,7 @@ export function encode(
           schema[k].true == value
       );
       if (schemaKey) res.push(schemaKey);
-    } else
+    } else {
       for (let [operator, v2] of value) {
         if (typeof v2.getMonth === "function")
           res.push(`${key}${operator}${v2.toISOString().substring(0, 10)}`);
@@ -105,6 +105,7 @@ export function encode(
           res.push(`${key}${operator}${v2.join(",")}`);
         else res.push(`${key}${operator}${v2}`);
       }
+    }
   }
   return res.join("+");
 }

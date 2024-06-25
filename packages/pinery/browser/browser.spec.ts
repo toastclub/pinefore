@@ -23,6 +23,10 @@ describe("browser decode", () => {
   });
   it("can encode a simple query", () => {
     // @ts-expect-error
+    expect(encode(output, schema)).toStrictEqual(str);
+  });
+  it("can reencode a simple query", () => {
+    // @ts-expect-error
     expect(encode(decode(str, schema), schema)).toStrictEqual(str);
   });
 });
