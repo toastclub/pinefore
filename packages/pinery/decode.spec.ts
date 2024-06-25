@@ -147,5 +147,31 @@ describe("decode", () => {
         ],
       });
     });
+    it("joins * and !(.)", () => {
+      expect(decode("public+!(read)", schema)).toStrictEqual({
+        mode: "AND",
+        operations: [
+          { operator: "=", column: "public", value: true },
+          {
+            mode: "NOT",
+            operations: [
+              {
+                mode: "AND",
+                operations: [{ operator: "=", column: "read", value: true }],
+              },
+            ],
+          },
+        ],
+      });
+    });
+    it("joins ='' and .", () => {
+      expect(decode("title=''+read", schema)).toStrictEqual({
+        mode: "AND",
+        operations: [
+          { operator: "=", column: "title", value: "" },
+          { operator: "=", column: "read", value: true },
+        ],
+      });
+    });
   });
 });
