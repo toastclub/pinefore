@@ -2,7 +2,7 @@
  * @fileoverview Lightweight encoding and decoding for *good enough* functionality.
  */
 
-import { operators, possiblyOperator } from "../decode";
+import { allowedOperators, operators, possiblyOperator } from "../decode";
 import { BrowserResponse, ColumnSchema } from "../types";
 const joiners = ["!", "+", "|"] as const;
 
@@ -58,6 +58,13 @@ export function decode<T extends ColumnSchema>(
     last.data += data[i];
   }
   let res: BrowserResponse<T> = {} as BrowserResponse<T>;
+  Object.keys(schema).forEach((key) => {
+    if (schema[key].type == "bool") res[key] = undefined;
+    else
+      res[key] = Object.fromEntries(
+        allowedOperators[schema[key].type].map((op) => [op, undefined])
+      );
+  });
   for (let i = 0; i < workingTree.length; i++) {
     let cur = workingTree[i];
     let colName = Object.keys(schema).find((col) =>
@@ -69,7 +76,6 @@ export function decode<T extends ColumnSchema>(
     let col = schema[colName];
     let operator = possiblyOperator((cur.data as string).slice(colName.length));
     let remaining = cur.data.slice(colName.length + (operator?.length || 0));
-    if (!res[colName]) res[colName] = {};
     if (col.type == "bool") res[col.mapsTo] = col.true;
     else if (col.type == "number") res[colName][operator] = Number(remaining);
     else if (col.type == "date")
@@ -81,6 +87,7 @@ export function decode<T extends ColumnSchema>(
     // @ts-expect-error
     else res[colName][operator] = remaining;
   }
+  console.log(res);
   return res;
 }
 
@@ -98,9 +105,12 @@ export function encode<T extends ColumnSchema>(
           schema[k].true == value
       );
       if (schemaKey) res.push(schemaKey);
+    } else if (value == undefined) {
+      continue;
     } else {
       for (let [operator, v2] of Object.entries(value)) {
-        if (typeof v2.getMonth === "function")
+        if (v2 == undefined) continue;
+        else if (typeof v2.getMonth === "function")
           res.push(`${key}${operator}${v2.toISOString().substring(0, 10)}`);
         else if (Array.isArray(v2))
           res.push(`${key}${operator}${v2.join(",")}`);
