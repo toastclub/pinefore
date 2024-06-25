@@ -3,10 +3,13 @@
  */
 
 import { operators, possiblyOperator } from "../decode";
-import { ColumnSchema } from "../types";
+import { BrowserResponse, ColumnSchema } from "../types";
 const joiners = ["!", "+", "|"] as const;
 
-export function decode(data: string, schema: ColumnSchema) {
+export function decode<T extends ColumnSchema>(
+  data: string,
+  schema: T
+): BrowserResponse<T> {
   let isInString = false;
   let nestingLevel = 0;
   let workingTree: { concluded: boolean; data: string }[] = [];
@@ -54,7 +57,7 @@ export function decode(data: string, schema: ColumnSchema) {
     }
     last.data += data[i];
   }
-  let res: Record<string, boolean | [(typeof operators)[number], any][]> = {};
+  let res: BrowserResponse<T> = {};
   for (let i = 0; i < workingTree.length; i++) {
     let cur = workingTree[i];
     let colName = Object.keys(schema).find((col) =>

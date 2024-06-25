@@ -2,20 +2,14 @@ import {
   ExpressionBuilder,
   ExpressionWrapper,
   Nullable,
-  SelectQueryBuilder,
   SqlBool,
   sql,
 } from "kysely";
-import {
-  ColumnSchema,
-  Combiner,
-  Operation,
-  Operations,
-  decode,
-} from "oss/packages/pinery";
+import { Combiner, Operation, Operations } from "oss/packages/pinery/types";
+import { decode } from "oss/packages/pinery";
 import { Database } from "../../schema";
 
-export const pinFilterSchema: ColumnSchema = {
+export const pinFilterSchema = {
   public: { type: "bool", mapsTo: "public", true: true },
   private: { type: "bool", mapsTo: "public", true: false },
   read: { type: "bool", mapsTo: "read", true: true },
@@ -25,7 +19,7 @@ export const pinFilterSchema: ColumnSchema = {
   title: { type: "string", mapsTo: "title" },
   tags: { type: "array", mapsTo: "tags" },
   desc: { type: "string", mapsTo: "description" },
-};
+} as const;
 
 type RequiredDb = Database & {
   tags: Nullable<{
