@@ -1,4 +1,4 @@
-import { operators } from "./decode";
+import { allowedOperators, operators } from "./decode";
 
 export interface Operation<
   T extends string | number | boolean | Date | string[]
@@ -48,18 +48,18 @@ export type ColumnSchema = {
 
 type OpString = (typeof operators)[number];
 
-type BrowserSubType<T> = {
-  [K in OpString]: T;
+type BrowserSubType<S extends ColumnType, T> = {
+  [K in (typeof allowedOperators)[S][number]]: T;
 };
 
 type GetBrowserType<T extends ColumnType | "bool"> = T extends "string"
-  ? BrowserSubType<string>
+  ? BrowserSubType<T, string>
   : T extends "number"
-  ? BrowserSubType<number>
+  ? BrowserSubType<T, number>
   : T extends "date"
-  ? BrowserSubType<Date>
+  ? BrowserSubType<T, Date>
   : T extends "array"
-  ? BrowserSubType<string[]>
+  ? BrowserSubType<T, string[]>
   : T extends "bool"
   ? boolean
   : never;

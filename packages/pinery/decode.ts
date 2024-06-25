@@ -118,12 +118,12 @@ export function decodeToAST(
   return workingTree;
 }
 
-const allowedOperators: Record<ColumnType, (typeof operators)[number][]> = {
+export const allowedOperators = {
   string: ["=", "!=", "==", "^=", "$="],
   number: ["=", "!=", ">", "<", ">=", "<="],
   date: ["=", "!=", ">", "<", ">=", "<="],
   array: ["="],
-};
+} as const;
 
 export function integrityCheck<T extends ColumnSchema>(ast: AST, columns: T) {
   let columnNames = Object.keys(columns);
@@ -220,6 +220,7 @@ export function integrityCheck<T extends ColumnSchema>(ast: AST, columns: T) {
       if (!operator) {
         throw new Error("Operator not found");
       }
+      // @ts-expect-error
       if (!allowedOperators[col.type].includes(operator)) {
         throw new Error("Operator not allowed for column type");
       }
