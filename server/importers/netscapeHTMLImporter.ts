@@ -39,24 +39,28 @@ export default function netscapeHTMLImporter(
     if (
       line.startsWith("<DT>") ||
       line.startsWith("<p>") ||
-      line.startsWith("<DL>")
+      line.startsWith("<DL>") ||
+      line.startsWith("<li>")
     ) {
       line = line
         .replace("<DT>", "")
         .replace("<p>", "") // pinboard
         .replace("<DL>", "")
+        .replace("<li>", "") // pocket
         .trim();
     }
-    if (line.startsWith("<A")) {
-      let title = (line.match(/<A.*?>(.*?)</) || [])[1];
-      let url = (line.match(/HREF="(.*?)"/) || [])[1];
+    if (line.startsWith("<A") || line.startsWith("<a")) {
+      let title = (line.match(/<[Aa].*?>(.*?)</) || [])[1];
+      let url = (line.match(/(?:HREF|href)="(.*?)"/) || [])[1];
       if (title == undefined || url == undefined || line.includes('FEEDURL="'))
         continue;
 
-      let tags = line.match(/TAGS="(.*?)"/)?.[1].split(",");
+      let tags = line.match(/(?:TAGS|tags)="(.*?)"/)?.[1].split(",");
       let addedAt =
-        new Date(1000 * Number((line.match(/ADD_DATE="(.*?)"/) || [])[1])) ||
-        undefined;
+        new Date(
+          1000 *
+            Number((line.match(/(?:ADD_DATE|time_added)="(.*?)"/) || [])[1])
+        ) || undefined;
       let modifiedAt =
         new Date(
           1000 * Number((line.match(/LAST_MODIFIED="(.*?)"/) || [])[1])

@@ -86,10 +86,9 @@ function operationHandler(
     cols = column as any;
   }
   if (pinFilterSchema[column as keyof typeof pinFilterEngine].type == "array") {
-    return db(cols, "&&", [value]);
+    return db(cols, "@>", [value]);
   }
   if (operator == "^=") {
-    console.log(cols, value);
     return db(cols, "like", `${value}%`);
   } else if (operator == "$=") {
     return db(cols, "like", sql`${value}%`.$castTo<string>());

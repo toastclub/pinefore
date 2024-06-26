@@ -49,7 +49,7 @@ export type ColumnSchema = {
 type OpString = (typeof operators)[number];
 
 type BrowserSubType<S extends ColumnType, T> = {
-  [K in (typeof allowedOperators)[S][number]]: T;
+  [K in (typeof allowedOperators)[S][number]]: T | null;
 };
 
 type GetBrowserType<T extends ColumnType | "bool"> = T extends "string"

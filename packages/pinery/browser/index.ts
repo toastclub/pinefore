@@ -59,10 +59,10 @@ export function decode<T extends ColumnSchema>(
   }
   let res: BrowserResponse<T> = {} as BrowserResponse<T>;
   Object.keys(schema).forEach((key) => {
-    if (schema[key].type == "bool") res[key] = undefined;
+    if (schema[key].type == "bool") res[key] = null;
     else
       res[key] = Object.fromEntries(
-        allowedOperators[schema[key].type].map((op) => [op, undefined])
+        allowedOperators[schema[key].type].map((op) => [op, null])
       );
   });
   for (let i = 0; i < workingTree.length; i++) {
@@ -87,7 +87,6 @@ export function decode<T extends ColumnSchema>(
     // @ts-expect-error
     else res[colName][operator] = remaining;
   }
-  console.log(res);
   return res;
 }
 
@@ -105,11 +104,11 @@ export function encode<T extends ColumnSchema>(
           schema[k].true == value
       );
       if (schemaKey) res.push(schemaKey);
-    } else if (value == undefined) {
+    } else if (value == null) {
       continue;
     } else {
       for (let [operator, v2] of Object.entries(value)) {
-        if (v2 == undefined) continue;
+        if (v2 == null) continue;
         else if (typeof v2.getMonth === "function")
           res.push(`${key}${operator}${v2.toISOString().substring(0, 10)}`);
         else if (Array.isArray(v2))
