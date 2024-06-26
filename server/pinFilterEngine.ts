@@ -82,7 +82,7 @@ function operationHandler(
     | "tags"
     | ExpressionWrapper<RequiredDb, RequiredTables, string>
     | RawBuilder<unknown>;
-  if (column == "title") {
+  if (column == "title" && value.length > 1) {
     if (operator == "=") {
       cols = sql`user_data_search || title_search`;
     } else {
@@ -91,12 +91,23 @@ function operationHandler(
   } else {
     cols = column as any;
   }
-  console.log(value.length);
-  if (column == "title" && operator == "=" && value.length > 1) {
-    return db(
-      cols,
-      "@@",
-      db.fn("phraseto_tsquery", [sql.lit("english"), sql`${value}`])
+  if (column == "title" && operator == "=") {
+    if (2 > value.length) {
+      return db.lit(true);
+    }
+    return db.parens(
+      db.or([
+        db(
+          cols,
+          "@@",
+          db.fn("phraseto_tsquery", [sql.lit("english"), sql`${value}`])
+        ),
+        db(
+          db.fn("lower", [db.fn.coalesce("title_override", "title")]),
+          "like",
+          "%" + value + "%"
+        ),
+      ])
     );
   }
   if (pinFilterSchema[column as keyof typeof pinFilterEngine].type == "array") {

@@ -2,7 +2,7 @@
  * @fileoverview Lightweight encoding and decoding for *good enough* functionality.
  */
 
-import { allowedOperators, operators, possiblyOperator } from "../decode";
+import { allowedOperators, possiblyOperator } from "../decode";
 import { BrowserResponse, ColumnSchema } from "../types";
 const joiners = ["!", "+", "|"] as const;
 
@@ -108,7 +108,7 @@ export function encode<T extends ColumnSchema>(
       continue;
     } else {
       for (let [operator, v2] of Object.entries(value)) {
-        if (v2 == null) continue;
+        if (v2 == null || (typeof v2 == "string" && v2.length == 0)) continue;
         else if (typeof v2.getMonth === "function")
           res.push(`${key}${operator}${v2.toISOString().substring(0, 10)}`);
         else if (Array.isArray(v2))
