@@ -81,20 +81,24 @@ And then it is your responsibility to convert this query plan into actual SQL. E
 
 Schema aware, you cannot filter on non-existent columns. Values must be of the correct type. Operators must make sense for the column type.
 
+### Browser
+
 There is a browser decoder, which outputs overly simplified query plans that choose not to burden themselves with things like nesting. This is useful for client-side UI filtering. For instance, calling `clientDecode` on `user_id=1+created_at>2021-01-01+tags=tag1,tag2+tags!=tag3` will result in the following object:
 
 ```js
 {
-  user_id: [["=", 1]],
-  created_at: [[">", new Date("2021-01-01")]],
-  tags: [
-    ["=", ["tag1", "tag2"]],
-    ["!=", ["tag3"]],
-  ],
+  user_id: { "=": 1 },
+  created_at: { ">": new Date("2021-01-01") },
+  tags: {
+    "=": ["tag1", "tag2"],
+    "!=": ["tag3"],
+  },
 }
 ```
 
 and `clientEncode` will convert this object back into a query string.
+
+The browser client should use ~`1.5kb` minified, or ~`.7kb` minified and gzipped.
 
 ## Grammar
 
@@ -115,3 +119,20 @@ export const operators = [
 ```
 
 Subexpressions are wrapped in parentheses. The output of subexpressions can be inverted with `!`. The `+` operator is used for AND, and the `|` operator is used for OR. Only one of `+` or `|` can be used in a context. Lists are joined with commas. Booleans do not have values, just the column name. The developer specifies one column name for true, and one for false, within the schema.
+
+## Schema
+
+Here is an example schema:
+
+```ts
+const schema: ColumnSchema = {
+  public: { type: "bool", mapsTo: "public", true: true },
+  private: { type: "bool", mapsTo: "public", true: false },
+  read: { type: "bool", mapsTo: "read", true: true },
+  unread: { type: "bool", mapsTo: "read", true: false },
+  date: { type: "date", mapsTo: "date" },
+  title: { type: "string", mapsTo: "title" },
+  tags: { type: "array", mapsTo: "tags" },
+  desc: { type: "string", mapsTo: "desc" },
+} as const;
+```
