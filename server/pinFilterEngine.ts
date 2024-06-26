@@ -2,6 +2,7 @@ import {
   ExpressionBuilder,
   ExpressionWrapper,
   Nullable,
+  RawBuilder,
   SqlBool,
   sql,
 } from "kysely";
@@ -79,11 +80,24 @@ function operationHandler(
     | "description"
     | "title"
     | "tags"
-    | ExpressionWrapper<RequiredDb, RequiredTables, string>;
+    | ExpressionWrapper<RequiredDb, RequiredTables, string>
+    | RawBuilder<unknown>;
   if (column == "title") {
-    cols = db.cast(db.fn.coalesce("title_override", "title"), "text");
+    if (operator == "=") {
+      cols = sql`user_data_search || title_search`;
+    } else {
+      cols = db.cast(db.fn.coalesce("title_override", "title"), "text");
+    }
   } else {
     cols = column as any;
+  }
+  console.log(value.length);
+  if (column == "title" && operator == "=" && value.length > 1) {
+    return db(
+      cols,
+      "@@",
+      db.fn("phraseto_tsquery", [sql.lit("english"), sql`${value}`])
+    );
   }
   if (pinFilterSchema[column as keyof typeof pinFilterEngine].type == "array") {
     return db(cols, "@>", [value]);
