@@ -76,7 +76,9 @@ export function decode<T extends ColumnSchema>(
     let col = schema[colName];
     let operator = possiblyOperator((cur.data as string).slice(colName.length));
     let remaining = cur.data.slice(colName.length + (operator?.length || 0));
+    // @ts-expect-error
     if (col.type == "bool") res[col.mapsTo] = col.true;
+    // @ts-expect-error
     else if (col.type == "number") res[colName][operator] = Number(remaining);
     else if (col.type == "date")
       // @ts-expect-error

@@ -51,18 +51,13 @@ type OpString = (typeof operators)[number];
 type BrowserSubType<S extends ColumnType, T> = {
   [K in (typeof allowedOperators)[S][number]]: T | null;
 };
-
-type GetBrowserType<T extends ColumnType | "bool"> = T extends "string"
-  ? BrowserSubType<T, string>
-  : T extends "number"
-  ? BrowserSubType<T, number>
-  : T extends "date"
-  ? BrowserSubType<T, Date>
-  : T extends "array"
-  ? BrowserSubType<T, string[]>
-  : T extends "bool"
-  ? boolean
-  : never;
+type GetBrowserType<T extends ColumnType | "bool"> = {
+  string: BrowserSubType<"string", string>;
+  number: BrowserSubType<"number", number>;
+  date: BrowserSubType<"date", Date>;
+  array: BrowserSubType<"array", string[]>;
+  bool: boolean;
+}[T];
 
 export type BrowserResponse<T extends ColumnSchema> = {
   [K in keyof T]: GetBrowserType<T[K]["type"]>;

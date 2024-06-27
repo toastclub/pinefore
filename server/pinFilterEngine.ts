@@ -105,12 +105,14 @@ function operationHandler(
         db(
           db.fn("lower", [db.fn.coalesce("title_override", "title")]),
           "like",
-          "%" + value + "%"
+          "%" + value.toLowerCase() + "%"
         ),
       ])
     );
   }
-  if (pinFilterSchema[column as keyof typeof pinFilterEngine].type == "array") {
+  if (
+    pinFilterSchema[column as keyof typeof pinFilterEngine]?.type == "array"
+  ) {
     return db(cols, "@>", [value]);
   }
   if (operator == "^=") {
