@@ -100,6 +100,16 @@ and `clientEncode` will convert this object back into a query string.
 
 The browser client should use ~`1.5kb` minified, or ~`.7kb` minified and gzipped.
 
+### Title Generation
+
+Using the browser engine, pinery can generate titles for you based on the schema and priorities. Example results:
+
+- `Pins`
+- `Pins between 3/3/22 and 4/3/22`
+- `Pins after 3/3/22 with the tags cats & dogs`
+- `Private pins after...`
+- `Private and unread pins after...`
+
 ## Grammar
 
 The grammar is as follows:
@@ -136,3 +146,7 @@ const schema: ColumnSchema = {
   desc: { type: "string", mapsTo: "desc" },
 } as const;
 ```
+
+## Connecting to databases
+
+Pinery makes no assumptions about your database, though it was designed for SQL. Some database specific code is required. We can get you started with `pinery/db`.
