@@ -6,7 +6,7 @@ let tag = t.Array(t.String({ maxLength: 75 }), {
   examples: [["growing-up", "filmmaking"]],
 });
 
-let importers: {
+export const importers: {
   [key: string]: {
     title: string;
     fileTypes: string[];
@@ -30,9 +30,7 @@ let importers: {
   },
 };
 
-export { importers };
-
-export default {
+const commonSchema = {
   tag,
   tags: t.Optional(
     t.Union([
@@ -55,3 +53,45 @@ export default {
   ),
   password: t.String({ minLength: 8, maxLength: 128 }),
 };
+
+export default commonSchema;
+
+export const modernPin = t.Object({
+  id: t.String(),
+  user_id: t.Number(),
+  url: t.String({
+    examples: ["https://al3x.net/2013/05/23/letter-to-a-young-programmer.html"],
+    format: "uri",
+  }),
+  title: t.String({
+    examples: ["Letter To A Young Programmer Considering A Startup"],
+  }),
+  entity: t.Optional(
+    t.Object({
+      id: t.String(),
+      title: t.String(),
+      created_at: t.String({ format: "date-time" }),
+    })
+  ),
+  description: t.String({ examples: [""] }),
+  tags: t.Nullable(commonSchema.tag),
+  created_at: t.Date({ format: "date-time" }),
+  updated_at: t.Nullable(t.Date({ format: "date-time" })),
+  public: t.Boolean(),
+  read: t.Boolean(),
+});
+
+export const createModernPin = t.Object({
+  url: t.String({
+    examples: ["https://al3x.net/2013/05/23/letter-to-a-young-programmer.html"],
+    format: "uri",
+  }),
+  title: t.String({
+    examples: ["Letter To A Young Programmer Considering A Startup"],
+  }),
+  description: t.Optional(t.String({ examples: [""] })),
+  tags: t.Optional(commonSchema.tags),
+  public: t.Optional(t.Boolean()),
+  read: t.Optional(t.Boolean()),
+  created_at: t.Optional(t.Date({ format: "date-time" })),
+});
