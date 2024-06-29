@@ -1,4 +1,4 @@
-import { stringToBoolean } from "lib/types/stringToBool";
+import { stringToBoolean } from "lib/types";
 
 interface Bookmark {
   title: string;

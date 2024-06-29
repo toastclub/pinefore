@@ -99,7 +99,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
                   eb("tokens.type", "=", "default"),
                 ])
               )
-              .selectAll()
+              .select(["expires", "account_status", "id", "archival_enabled"])
               .executeTakeFirst();
 
             // if the refresh token is outdated
