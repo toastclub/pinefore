@@ -80,7 +80,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
       const user = (await jwt.verify(cookie.token.value)) as
         | false
         | Static<typeof jwtType>;
-      let u = await (async () => {
+      let u = await db.transaction().execute(async (trx) => {
         if (!user) {
           if (cookie.refresh_token.value && cookie.token.value) {
             // THIS IS A SANITY CHECK AND *NOT* A SECURITY FEATURE. We do not check if the token was
@@ -89,7 +89,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
             const jwtPayload = JSON.parse(
               atob(cookie.token.value.split(".")[1])
             );
-            let user = await db
+            let user = await trx
               .selectFrom("tokens")
               .innerJoin("users", "users.id", "tokens.for")
               .where((eb) =>
@@ -104,7 +104,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
 
             // if the refresh token is outdated
             if (user && user.expires < new Date()) {
-              await db
+              await trx
                 .deleteFrom("tokens")
                 .where((eb) =>
                   eb.and([
@@ -126,7 +126,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
               }
             }
 
-            await db
+            await trx
               .updateTable("tokens")
               .where((eb) =>
                 eb.and([
@@ -159,7 +159,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
         }
 
         return user || undefined;
-      })();
+      });
       if (u) {
         return { user: u };
       } else if (allowUnauthenticated == true) {
