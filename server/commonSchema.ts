@@ -59,20 +59,21 @@ export default commonSchema;
 export const modernPin = t.Object({
   id: t.String(),
   user_id: t.Number(),
-  url: t.String({
-    examples: ["https://al3x.net/2013/05/23/letter-to-a-young-programmer.html"],
-    format: "uri",
-  }),
+
   title: t.String({
     examples: ["Letter To A Young Programmer Considering A Startup"],
   }),
-  entity: t.Optional(
-    t.Object({
-      id: t.String(),
-      title: t.String(),
-      created_at: t.String({ format: "date-time" }),
-    })
-  ),
+  entity: t.Object({
+    id: t.String(),
+    title: t.Optional(t.String()),
+    created_at: t.Date({ format: "date-time" }),
+    url: t.String({
+      examples: [
+        "https://al3x.net/2013/05/23/letter-to-a-young-programmer.html",
+      ],
+      format: "uri",
+    }),
+  }),
   description: t.String({ examples: [""] }),
   tags: t.Nullable(commonSchema.tag),
   created_at: t.Date({ format: "date-time" }),
