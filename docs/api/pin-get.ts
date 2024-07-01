@@ -13,6 +13,6 @@ export const pinGetSchema = {
       t.Union([t.Literal("user"), t.Literal("community"), t.Literal("network")])
     ),
     count: t.Optional(t.Numeric({ maximum: 1000, default: 30 })),
-    offset: t.Optional(t.Numeric({ default: 0 })),
+    page: t.Optional(t.Numeric({ default: 0 })),
   }),
 };
