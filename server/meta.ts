@@ -1,5 +1,6 @@
 import { rootDomain } from "./helpers/root-domain";
 import stringSimilarity from "./helpers/string-similarity";
+import { decode } from "html-entities";
 
 export async function getMeta(u: string) {
   let url = new URL(decodeURIComponent(u));
@@ -34,6 +35,6 @@ export async function getMeta(u: string) {
     }
   }
   return {
-    title: titleMatch || null,
+    title: titleMatch ? decode(titleMatch) : null,
   };
 }

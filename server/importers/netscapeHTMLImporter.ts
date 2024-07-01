@@ -1,4 +1,5 @@
 import { stringToBoolean } from "lib/types";
+import { decode } from "html-entities";
 
 interface Bookmark {
   title: string;
@@ -54,7 +55,7 @@ export default function netscapeHTMLImporter(
       let url = (line.match(/(?:HREF|href)="(.*?)"/) || [])[1];
       if (title == undefined || url == undefined || line.includes('FEEDURL="'))
         continue;
-
+      title = decode(title);
       let tags = line.match(/(?:TAGS|tags)="(.*?)"/)?.[1].split(",");
       let addedAt =
         new Date(
