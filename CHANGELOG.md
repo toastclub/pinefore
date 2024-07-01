@@ -66,3 +66,18 @@
 - Pinboard
   - 2nd
     - Pinboard auth
+
+## May
+
+- Pinboard
+  - 28-30: Pinboard
+- 23rd
+  - API Docs
+- 20th
+  - Initial auth
+- 19th
+  - Initial payments
+- 18th
+  - Backend title fetch/parsing
+- 16th
+  - Login page
