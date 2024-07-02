@@ -1,11 +1,12 @@
 import { Elysia, Static, t } from "elysia";
 import { HttpError } from "#/plugins/error";
 import { jwt } from "@elysiajs/jwt";
-import { db } from "lib/db";
-import { sql } from "kysely";
+import { dbMiddleware } from "lib/db";
+import { Kysely, sql } from "kysely";
 import { getRequestEvent } from "solid-js/web";
 import bcrypt from "bcryptjs";
 import { createHash } from "node:crypto";
+import { Database } from "../../schema";
 
 const jwtType = t.Object({
   id: t.Number(),
@@ -68,7 +69,8 @@ interface AuthResponse {
 export const requireAuth = <T extends boolean>(allowRead: T) =>
   new Elysia({ name: "requireAuth" })
     .use(authPlugin)
-    .derive({ as: "scoped" }, async ({ jwt, cookie, request }) => {
+    .use(dbMiddleware)
+    .derive({ as: "scoped" }, async ({ jwt, cookie, request, db }) => {
       let allowUnauthenticated = request.method == "GET" && allowRead;
       if (
         (!cookie.token.value || !cookie.refresh_token.value) &&
@@ -174,7 +176,11 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
       }
     });
 
-export async function validatePw(password: string, userId: number) {
+export async function validatePw(
+  password: string,
+  userId: number,
+  db: Kysely<Database>
+) {
   const user = await db
     .selectFrom("users")
     .select(["password", "id", "email"])
@@ -192,7 +198,8 @@ export async function validatePw(password: string, userId: number) {
 
 export async function updatePasswordForAuthenticatedUser(
   newPassword: string,
-  userId: number
+  userId: number,
+  db: Kysely<Database>
 ) {
   const user = await db
     .updateTable("users")
@@ -224,7 +231,7 @@ export async function haveIBeenPwned(password: string) {
   }
 }
 
-export async function deleteOldTokens(userId: number) {
+export async function deleteOldTokens(userId: number, db: Kysely<Database>) {
   await db
     .deleteFrom("tokens")
     .where("for", "=", userId)
