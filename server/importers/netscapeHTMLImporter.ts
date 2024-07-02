@@ -108,6 +108,12 @@ export default function netscapeHTMLImporter(
       workingDescription += line;
     }
   }
+  if (workingDescription.length > 0) {
+    workingDescription = workingDescription.replaceAll(
+      /<blockquote>((.|\n)*?)<\/blockquote>/gm,
+      "> $1\n\n"
+    );
+  }
   return {
     bookmarks,
     feeds,

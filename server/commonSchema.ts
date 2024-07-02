@@ -75,6 +75,7 @@ export const modernPin = t.Object({
     }),
   }),
   description: t.String({ examples: [""] }),
+  htmlDesc: t.Optional(t.String()),
   tags: t.Nullable(commonSchema.tag),
   created_at: t.Date({ format: "date-time" }),
   updated_at: t.Nullable(t.Date({ format: "date-time" })),
