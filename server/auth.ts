@@ -5,7 +5,6 @@ import { dbMiddleware } from "lib/db";
 import { Kysely, sql } from "kysely";
 import { getRequestEvent } from "solid-js/web";
 import bcrypt from "bcryptjs";
-import { createHash } from "node:crypto";
 import { Database } from "../../schema";
 
 const jwtType = t.Object({
@@ -220,8 +219,18 @@ export async function updatePasswordForAuthenticatedUser(
   }
 }
 
+async function digestMessage(message: string) {
+  const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
+  const hashBuffer = await window.crypto.subtle.digest("SHA-256", msgUint8); // hash the message
+  const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
+  const hashHex = hashArray
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join(""); // convert bytes to hex string
+  return hashHex;
+}
+
 export async function haveIBeenPwned(password: string) {
-  let hash = createHash("sha1").update(password).digest("hex").toUpperCase();
+  let hash = (await digestMessage(password)).toUpperCase();
   let hasBeenPwned = await fetch(
     `https://api.pwnedpasswords.com/range/${hash.slice(0, 5)}`
   )
