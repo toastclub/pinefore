@@ -16,7 +16,8 @@ const jwtType = t.Object({
 
 if (
   !process?.env.JWT_SECRET &&
-  !getRequestEvent()?.nativeEvent.context.cloudflare.JWT_SECRET
+  getRequestEvent() &&
+  !getRequestEvent()!.nativeEvent.context.cloudflare.JWT_SECRET
 ) {
   throw new Error("NO JWT SECRET INSIDE OF REQUEST CONTEXT");
 }
