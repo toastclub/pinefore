@@ -14,7 +14,10 @@ const jwtType = t.Object({
   account_status: t.String(),
 });
 
-if (!process?.env.JWT_SECRET && getRequestEvent()) {
+if (
+  !process?.env.JWT_SECRET &&
+  !getRequestEvent()?.nativeEvent.context.cloudflare.JWT_SECRET
+) {
   throw new Error("NO JWT SECRET INSIDE OF REQUEST CONTEXT");
 }
 export const authPlugin = new Elysia({ name: "authPlugin" }).use(
@@ -23,7 +26,10 @@ export const authPlugin = new Elysia({ name: "authPlugin" }).use(
     // because the code above would've thrown. afaik, the cf runtime runs everything once
     // as a sanity check, and for some reason doesn't populate process.env
     // still, this is a hack and I should feel ashamed.
-    secret: process?.env.JWT_SECRET || "TEMP_AT_SERVER_BOOT",
+    secret:
+      process?.env.JWT_SECRET ||
+      getRequestEvent()?.nativeEvent.context.cloudflare.JWT_SECRET ||
+      "TEMP_AT_SERVER_BOOT",
     name: "jwt",
     exp: "20m",
     //schema: jwtType,
