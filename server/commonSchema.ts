@@ -18,6 +18,11 @@ export const importers: {
     fileTypes: ["text/html"],
     fileExtensions: [".html"],
   },
+  pinefore: {
+    title: "Pinefore Backup",
+    fileTypes: ["application/json"],
+    fileExtensions: [".json"],
+  },
   delicious: {
     title: "Delicious XML",
     fileTypes: ["text/xml"],
@@ -27,6 +32,16 @@ export const importers: {
     title: "Pinboard JSON",
     fileTypes: ["application/json"],
     fileExtensions: [".json"],
+  },
+};
+
+export const exporters: {
+  [key: string]: {
+    title: string;
+  };
+} = {
+  pinefore: {
+    title: "Pinefore Backup",
   },
 };
 
