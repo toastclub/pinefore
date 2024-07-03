@@ -6,6 +6,7 @@ import { Kysely, sql } from "kysely";
 import { getRequestEvent } from "solid-js/web";
 import bcrypt from "bcryptjs";
 import { Database } from "../../schema";
+import { loggerMiddleware } from "./logger";
 
 const jwtType = t.Object({
   id: t.Number(),
@@ -76,7 +77,8 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
   new Elysia({ name: "requireAuth" })
     .use(authPlugin)
     .use(dbMiddleware)
-    .derive({ as: "scoped" }, async ({ jwt, cookie, request, db }) => {
+    .use(loggerMiddleware)
+    .derive({ as: "scoped" }, async ({ jwt, cookie, request, db, logger }) => {
       let allowUnauthenticated = request.method == "GET" && allowRead;
       if (
         (!cookie.token.value || !cookie.refresh_token.value) &&
@@ -84,11 +86,12 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
       ) {
         throw new HttpError(401, "Unauthorized");
       }
-
+      console.log("req");
       const user = (await jwt.verify(cookie.token.value)) as
         | false
         | Static<typeof jwtType>;
-      let u = await db.transaction().execute(async (trx) => {
+      console.log(cookie.token.value);
+      let u = await (async () => {
         if (!user) {
           if (cookie.refresh_token.value && cookie.token.value) {
             // THIS IS A SANITY CHECK AND *NOT* A SECURITY FEATURE. We do not check if the token was
@@ -97,54 +100,71 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
             const jwtPayload = JSON.parse(
               atob(cookie.token.value.split(".")[1])
             );
-            let user = await trx
-              .selectFrom("tokens")
-              .innerJoin("users", "users.id", "tokens.for")
-              .where((eb) =>
-                eb.and([
-                  eb("token", "=", cookie.refresh_token.value),
-                  eb("for", "=", jwtPayload.id),
-                  eb("tokens.type", "=", "default"),
-                ])
-              )
-              .select(["expires", "account_status", "id", "archival_enabled"])
-              .executeTakeFirst();
+            let start = performance.now();
+            let user = await db.transaction().execute(async (trx) => {
+              let user = await trx
+                .selectFrom("tokens")
+                .innerJoin("users", "users.id", "tokens.for")
+                .where((eb) =>
+                  eb.and([
+                    eb("token", "=", cookie.refresh_token.value),
+                    eb("for", "=", jwtPayload.id),
+                    eb("tokens.type", "=", "default"),
+                  ])
+                )
+                .select(["expires", "account_status", "id", "archival_enabled"])
+                .executeTakeFirst();
 
-            // if the refresh token is outdated
-            if (user && user.expires < new Date()) {
+              // if the refresh token is outdated
+              if (user && user.expires < new Date()) {
+                await trx
+                  .deleteFrom("tokens")
+                  .where((eb) =>
+                    eb.and([
+                      eb("token", "=", cookie.refresh_token.value),
+                      eb("for", "=", jwtPayload.id),
+                    ])
+                  )
+                  .execute();
+                user = undefined;
+                logger.log("Deleted outdated refresh token", {
+                  duration: performance.now() - start,
+                });
+              }
+
+              if (!user) {
+                cookie.refresh_token.expires = undefined;
+                cookie.token.expires = undefined;
+                if (allowUnauthenticated) {
+                  return undefined;
+                } else {
+                  throw new HttpError(401, "Unauthorized");
+                }
+              }
+
               await trx
-                .deleteFrom("tokens")
+                .updateTable("tokens")
                 .where((eb) =>
                   eb.and([
                     eb("token", "=", cookie.refresh_token.value),
                     eb("for", "=", jwtPayload.id),
                   ])
                 )
-                .execute();
-              user = undefined;
-            }
+                .set("expires", sql`(now() + interval '30 days')`)
+                .executeTakeFirst()!;
 
+              logger.log("Extended token", {
+                duration: performance.now() - start,
+              });
+              return user;
+            });
             if (!user) {
-              cookie.refresh_token.expires = undefined;
-              cookie.token.expires = undefined;
               if (allowUnauthenticated) {
                 return undefined;
               } else {
                 throw new HttpError(401, "Unauthorized");
               }
             }
-
-            await trx
-              .updateTable("tokens")
-              .where((eb) =>
-                eb.and([
-                  eb("token", "=", cookie.refresh_token.value),
-                  eb("for", "=", jwtPayload.id),
-                ])
-              )
-              .set("expires", sql`(now() + interval '30 days')`)
-              .executeTakeFirst()!;
-
             let newJwt = await jwt.sign({
               id: user.id,
               account_status: user.account_status,
@@ -155,6 +175,11 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
               | false
               | Static<typeof jwtType>;
             cookie.token.value = newJwt;
+            cookie.token.maxAge = 60 * 60 * 24 * 30;
+            cookie.token.sameSite = "strict";
+            cookie.token.httpOnly = true;
+            cookie.token.secure = !(import.meta.env.MODE == "development");
+            cookie.token.path = "/";
             return newJwtVerified || undefined;
           }
           cookie.refresh_token.expires = undefined;
@@ -167,7 +192,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
         }
 
         return user || undefined;
-      });
+      })();
       if (u) {
         return { user: u };
       } else if (allowUnauthenticated == true) {
