@@ -86,11 +86,9 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
       ) {
         throw new HttpError(401, "Unauthorized");
       }
-      console.log("req");
       const user = (await jwt.verify(cookie.token.value)) as
         | false
         | Static<typeof jwtType>;
-      console.log(cookie.token.value);
       let u = await (async () => {
         if (!user) {
           if (cookie.refresh_token.value && cookie.token.value) {
