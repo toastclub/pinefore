@@ -47,7 +47,6 @@ export default async function pineforeJsonImporter(
         .select(["id", "url"])
         .execute();
     });
-
   let user_pins = await db
     .insertInto("userentities")
     .values(
@@ -68,16 +67,20 @@ export default async function pineforeJsonImporter(
   let tagRes = await db
     .insertInto("entitytags")
     .values(
-      tags.map((t) => ({
-        tag: t!.tag,
-        user_id,
-        entity_id: eRes.find((e) => e.url === t!.entity_id)!.id!,
-        user_entity: user_pins.find(
-          (p) => p.id === eRes.find((e) => e.url === t!.entity_id)!.id!
-        )!.id!,
-      }))
+      tags.flatMap((t) => {
+        let m = eRes.find((e) => e.url === t!.entity_id)?.id;
+        if (!m) return [];
+        return [
+          {
+            tag: t!.tag,
+            user_id,
+            entity_id: m,
+            user_entity: user_pins.find((p) => p.entity_id === m)!.id!,
+          },
+        ];
+      })
     )
-    .onConflict((oc) => oc.columns(["tag", "entity_id"]).doNothing())
+    .onConflict((oc) => oc.columns(["tag", "entity_id", "user_id"]).doNothing())
     .execute();
   logger.info(
     `Imported ${user_pins.length} pins and ${tagRes.length} tags from Pinefore JSON, created ${eRes.length} entities.`
