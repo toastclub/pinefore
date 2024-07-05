@@ -20,7 +20,7 @@
     - PUTing to update pin
   - 28th
     - Code quality improvements
-    - Pin creation API
+    - Pin creation API. Its always been possible using the pinboard compatibility, but we want to offer modern APIs for CRUD
 - Softening edges
   - 27th
     - Add ungenerated OG images as placeholders
@@ -29,21 +29,21 @@
     - Filtering by tags and date in sidebar
     - Text search in sidebar
   - 24th
-    - Docs Sidebar
+    - Navigation sidebar for documentation page
 - 23rd
-  - Fix docs
-  - Query engine
+  - Fix documentation. *When docs were open source, the symlink in the codebase caused the bundler to recognize the file, but not read the contents*
+  - "Query engine", a way to construct where clauses in URLs, to be used in pins
 - 22nd
-  - Prereg
+  - Preregistration
 - 20th
-  - Try visual pins
+  - Try visual pins — images for pins of content that is mostly media
 - 19th
-  - Postgres.js
+  - Switch from `pg` to Postgres.js
   - Media Proxy
   - Referral suport on frontend
   - Get IP of user
 - 17th
-  - SES emailing
+  - SES based emailing
 - 15th
   - Importer for netscape style HTML
   - License page
