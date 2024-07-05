@@ -4,8 +4,8 @@
 
 - 1st
   - Pin edit functionality on frontend
-  - Skeleton loader
-  - Title generation
+  - Skeleton loader for pins, currently still disabled
+  - Filter aware title generation for pin page
 
 ## June
 
@@ -13,21 +13,21 @@
   - 30th
     - Pin editing and deletion on frontend
     - **API Breaking change**: `/pins` returns url under `entity` instead of the top level
-    - Contact page
-    - Tag rec API
+    - Contact page inside docs
+    - Tag recommendation API, and support on the frontend
     - Finish pin CRUD
   - 29th
     - PUTing to update pin
   - 28th
-    - Code QL
+    - Code quality improvements
     - Pin creation API
 - Softening edges
   - 27th
-    - Add OG images
+    - Add ungenerated OG images as placeholders
   - 26th
     - Add indexes to database
-    - Filtering in sidebar
-    - Text search
+    - Filtering by tags and date in sidebar
+    - Text search in sidebar
   - 24th
     - Docs Sidebar
 - 23rd
