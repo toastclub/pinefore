@@ -1,9 +1,41 @@
-import { rootDomain } from "./helpers/root-domain";
-import stringSimilarity from "./helpers/string-similarity";
+import { rootDomain } from "../helpers/root-domain";
+import stringSimilarity from "../helpers/string-similarity";
 import { decode } from "html-entities";
+import { fetchTweet } from "./parsers/x.com";
+import { AiHandler, callCfAiServerside } from "oss/packages/ai/genAi";
+import { generateLLamaTitlePrompt } from "oss/packages/ai/title";
 
-export async function getMeta(u: string) {
+export async function getMeta(
+  u: string,
+  pkg: {
+    ai?: AiHandler;
+  }
+) {
   let url = new URL(decodeURIComponent(u));
+  if (["x.com", "twitter.com"].includes(url.host) && pkg.ai) {
+    let id = url.pathname.split("/")[3];
+    if (id) {
+      let t = await fetchTweet(id);
+      if (t?.data?.text) {
+        let title = await callCfAiServerside(
+          {
+            text: generateLLamaTitlePrompt(t.data.text),
+            model: "@cf/meta/llama-3-8b-instruct",
+          },
+          pkg.ai
+        );
+        if (title) {
+          if (title.includes('"')) {
+            title = title.split('"')[1];
+          }
+        }
+        return {
+          mode: "twitter",
+          title: title || null,
+        };
+      }
+    }
+  }
   let data = await (await fetch(url)).text();
   let titleMatchArr =
     data.match(
@@ -35,6 +67,7 @@ export async function getMeta(u: string) {
     }
   }
   return {
+    mode: "standard",
     title: titleMatch ? decode(titleMatch) : null,
   };
 }
