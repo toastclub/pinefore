@@ -2,6 +2,7 @@
 
 import { HttpError } from "#/plugins/error";
 import { StatusMap } from "elysia";
+import { MODE } from "oss/constants";
 
 const errorStringMap = {
   "missing-input-secret": "The secret parameter was not passed.",
@@ -31,7 +32,7 @@ const NOT_SO_SECRET_TESTING_KEYS = {
 
 export async function captcha(context: { ip?: string; response: string }) {
   const secret =
-    import.meta.env.MODE == "development"
+    MODE == "development"
       ? NOT_SO_SECRET_TESTING_KEYS.always_pass
       : process.env.CAPTCHA_PRIVATEKEY!;
   const formData = new FormData();

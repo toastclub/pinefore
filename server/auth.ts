@@ -7,6 +7,7 @@ import { getRequestEvent } from "solid-js/web";
 import bcrypt from "bcryptjs";
 import { Database } from "../../schema";
 import { cfMiddleware } from "./logger";
+import { MODE } from "oss/constants";
 
 const jwtType = t.Object({
   id: t.Number(),
@@ -171,7 +172,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
               cookie.token.maxAge = 60 * 60 * 24 * 30;
               cookie.token.sameSite = "strict";
               cookie.token.httpOnly = true;
-              cookie.token.secure = !(import.meta.env.MODE == "development");
+              cookie.token.secure = !(MODE == "development");
               cookie.token.path = "/";
               return newJwtVerified || undefined;
             }
