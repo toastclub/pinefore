@@ -5,6 +5,30 @@ import { fetchTweet } from "./parsers/x.com";
 import { AiHandler, callCfAiServerside } from "oss/packages/ai/genAi";
 import { generateLLamaTitlePrompt } from "oss/packages/ai/title";
 
+async function titleGen(text: string, ai: AiHandler | undefined) {
+  if (ai) {
+    let title = await callCfAiServerside(
+      {
+        text: generateLLamaTitlePrompt(text),
+        model: "@cf/meta/llama-3-8b-instruct",
+      },
+      ai
+    );
+    if (title) {
+      if (title.includes('"')) {
+        title = title.split('"')[1];
+      } else if (title.includes("'")) {
+        title = title.split("'")[1];
+      } else if (title.includes("“")) {
+        title = title.split("“")[1];
+      } else if (title.includes("‘")) {
+        title = title.split("‘")[1];
+      }
+    }
+    return title;
+  }
+}
+
 export async function getMeta(
   u: string,
   pkg: {
@@ -21,33 +45,40 @@ export async function getMeta(
         if (t.data.quoted_tweet) {
           txt = `in response to: "${t.data.quoted_tweet}"\n\n${t.data.text}`;
         }
-        let title = await callCfAiServerside(
-          {
-            text: generateLLamaTitlePrompt(txt),
-            model: "@cf/meta/llama-3-8b-instruct",
-          },
-          pkg.ai
-        );
-        console.log(t.data);
-        if (title) {
-          if (title.includes('"')) {
-            title = title.split('"')[1];
-          } else if (title.includes("'")) {
-            title = title.split("'")[1];
-          } else if (title.includes("“")) {
-            title = title.split("“")[1];
-          } else if (title.includes("‘")) {
-            title = title.split("‘")[1];
-          }
+        // https://social.coop/@eb/112797743728441302
+        let title = await titleGen(txt, pkg.ai);
+        let description = "> " + t.data.text;
+        if (t.data.quoted_tweet) {
+          description = `>> ${t.data.quoted_tweet}\n\n> ${t.data.text}`;
+          return {
+            mode: "twitter",
+            title: title,
+            description: description,
+          };
         }
-        return {
-          mode: "twitter",
-          title: title || null,
-        };
       }
     }
   }
   let data = await (await fetch(url)).text();
+  if (data.length < 50000) {
+    if (
+      data.includes(
+        'To use the Mastodon web application, please enable JavaScript. Alternatively, try one of the <a href="https://joinmastodon.org/apps">native apps</a> for Mastodon for your platform.'
+      )
+    ) {
+      try {
+        let mastodata = await (await fetch(url + ".json")).json();
+        let title = mastodata.content
+          ? await titleGen(mastodata.content, pkg.ai)
+          : undefined;
+        return {
+          mode: "mastodon",
+          title: title,
+          description: mastodata.content.replace("</p><p>", "\n\n> "),
+        };
+      } catch (e) {}
+    }
+  }
   let titleMatchArr =
     data.match(
       /(?:(?:(?:og)|(?:twitter)):title" content="(.*)")|(?:<title(?:.*?)>(.*?)<\/title>)/
