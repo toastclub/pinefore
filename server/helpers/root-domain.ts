@@ -1,7 +1,6 @@
-import psl from "psl";
+import { parse } from "tldts";
 export function rootDomain(url: string) {
-  let parsed = psl.parse(url);
-  if (parsed.error) return null;
+  let parsed = parse(url);
   if (
     parsed.subdomain &&
     [
@@ -19,7 +18,7 @@ export function rootDomain(url: string) {
       "zh",
     ].includes(parsed.subdomain)
   )
-    return parsed.sld;
+    return parsed.domainWithoutSuffix;
   // honestly just always return the sld
-  return parsed.sld;
+  return parsed.domainWithoutSuffix;
 }
