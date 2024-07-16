@@ -17,16 +17,27 @@ export async function getMeta(
     if (id) {
       let t = await fetchTweet(id);
       if (t?.data?.text) {
+        let txt = t.data.text;
+        if (t.data.quoted_tweet) {
+          txt = `in response to: "${t.data.quoted_tweet}"\n\n${t.data.text}`;
+        }
         let title = await callCfAiServerside(
           {
-            text: generateLLamaTitlePrompt(t.data.text),
+            text: generateLLamaTitlePrompt(txt),
             model: "@cf/meta/llama-3-8b-instruct",
           },
           pkg.ai
         );
+        console.log(t.data);
         if (title) {
           if (title.includes('"')) {
             title = title.split('"')[1];
+          } else if (title.includes("'")) {
+            title = title.split("'")[1];
+          } else if (title.includes("“")) {
+            title = title.split("“")[1];
+          } else if (title.includes("‘")) {
+            title = title.split("‘")[1];
           }
         }
         return {
