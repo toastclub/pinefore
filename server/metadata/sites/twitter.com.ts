@@ -57,9 +57,9 @@ export interface TweetBase {
 export interface Tweet extends TweetBase {
   __typename: "Tweet";
   favorite_count: number;
-  mediaDetails?: MediaDetails[];
+  /*mediaDetails?: MediaDetails[];
   photos?: TweetPhoto[];
-  video?: TweetVideo;
+  video?: TweetVideo;*/
   conversation_count: number;
   news_action_type: "conversation";
   quoted_tweet?: QuotedTweet;
@@ -86,7 +86,7 @@ export interface QuotedTweet extends TweetBase {
   reply_count: number;
   retweet_count: number;
   favorite_count: number;
-  mediaDetails?: MediaDetails[];
+  //mediaDetails?: MediaDetails[];
   self_thread: {
     id_str: string;
   };
