@@ -149,4 +149,4 @@ const schema: ColumnSchema = {
 
 ## Connecting to databases
 
-Pinery makes no assumptions about your database, though it was designed for SQL. Some database specific code is required. We can get you started with `pinery/db`.
+Pinery makes no assumptions about your database, though it was designed for SQL. Some database specific code is required. A basic entrypoint for kysely users is provided in the kysely folder. It exports a basic recursive function that you can use as demonstrated [here](https://github.com/toastclub/pinefore/blob/main/server/pinFilterEngine.ts)

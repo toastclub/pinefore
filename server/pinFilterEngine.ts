@@ -3,12 +3,12 @@ import {
   ExpressionWrapper,
   Nullable,
   RawBuilder,
-  SqlBool,
   sql,
 } from "kysely";
-import { Combiner, Operation, Operations } from "oss/packages/pinery/types";
+import { Operation } from "oss/packages/pinery/types";
 import { decode } from "oss/packages/pinery";
 import { Database } from "../../schema";
+import { recursiveKyselyCombiner } from "oss/packages/pinery/kysely";
 
 export const pinFilterSchema = {
   public: { type: "bool", mapsTo: "public", true: true },
@@ -34,37 +34,7 @@ export function pinFilterEngine(
   db: ExpressionBuilder<RequiredDb, RequiredTables>
 ) {
   let query = decode(filter, pinFilterSchema);
-  return recursiveCombiner(query, db);
-}
-
-function recursiveOperations(
-  mode: "AND" | "OR",
-  arr: Operations,
-  db: ExpressionBuilder<RequiredDb, RequiredTables>
-): ExpressionWrapper<RequiredDb, RequiredTables, SqlBool> {
-  let fn = (op: Operations[number]) => {
-    if ("mode" in op) {
-      return recursiveCombiner(op, db);
-    } else {
-      return operationHandler(op, db);
-    }
-  };
-  if (mode == "AND") {
-    return db.and(arr.map(fn));
-  } else {
-    return db.or(arr.map(fn));
-  }
-}
-
-function recursiveCombiner(
-  combiner: Combiner,
-  db: ExpressionBuilder<RequiredDb, RequiredTables>
-) {
-  let { mode, operations } = combiner;
-  if (mode == "NOT") {
-    return db.not(recursiveOperations("AND", operations, db));
-  }
-  return recursiveOperations(mode, operations, db);
+  return recursiveKyselyCombiner(query, db, operationHandler);
 }
 
 function operationHandler(
