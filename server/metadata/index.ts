@@ -36,7 +36,7 @@ export async function getMeta(
   }
 ) {
   let url = new URL(decodeURIComponent(u));
-  if (["x.com", "twitter.com"].includes(url.host) && pkg.ai) {
+  if (["x.com", "twitter.com"].includes(url.host)) {
     let id = url.pathname.split("/")[3];
     if (id) {
       let t = await fetchTweet(id);
@@ -52,7 +52,7 @@ export async function getMeta(
           description = `>> ${t.data.quoted_tweet}\n\n> ${t.data.text}`;
           return {
             mode: "twitter",
-            title: title,
+            title: title || null,
             description: description,
           };
         }
@@ -68,14 +68,22 @@ export async function getMeta(
     ) {
       try {
         let mastodata = await (await fetch(url + ".json")).json();
-        let title = mastodata.content
-          ? await titleGen(mastodata.content, pkg.ai)
-          : undefined;
-        return {
-          mode: "mastodon",
-          title: title,
-          description: mastodata.content.replace("</p><p>", "\n\n> "),
-        };
+        if (mastodata?.content) {
+          let title = mastodata.content
+            ? await titleGen(mastodata.content, pkg.ai)
+            : null;
+          return {
+            mode: "mastodon",
+            title: title || null,
+            description:
+              "> " +
+              (mastodata.content as string)
+                .replaceAll("</p><p>", "\n\n> ")
+                .replaceAll("<p>", "")
+                .replaceAll("</p>", "")
+                .replaceAll("<br />", "\n> "),
+          };
+        }
       } catch (e) {}
     }
   }
@@ -111,5 +119,6 @@ export async function getMeta(
   return {
     mode: "standard",
     title: titleMatch ? decode(titleMatch) : null,
+    description: null,
   };
 }
