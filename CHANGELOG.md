@@ -2,30 +2,32 @@
 
 ## July
 
-- 1st
-  - Pin edit functionality on frontend
-  - Skeleton loader for pins, currently still disabled
-  - Filter aware title generation for pin page
-- 2nd
-  - Perf improvements
-  - Fix bug in password validation
-- 3rd
-  - JSON importer
-
-🏝️ Vacation 🏝️
-
-- 14th
-  - RGB 👀
-  - GET other users
-- 15th
-  - Tag network API (get related tags)
-  - Domain API (get entities on domain)
-  - BIMI support for emails (no pfp because certs cost 1k)
+- 17th
+  - [Pinery] Expose part of Pinery SQL as generic for reuse
+  - Toasts for already existing pins
 - 16th
   - AI experiment for mastodon and twitter posts
   - Fix bug that caused submission to fail ([#6](https://github.com/toastclub/pinefore/issues/6))
   - Fix skeleton loader
   - Log errors to baselime
+- 15th
+  - Tag network API (get related tags)
+  - Domain API (get entities on domain)
+  - BIMI support for emails (no pfp because certs cost 1k)
+- 14th
+  - RGB 👀
+  - GET other users
+ 
+🏝️ Vacation 🏝️
+- 3rd
+  - JSON importer
+- 2nd
+  - Perf improvements
+  - Fix bug in password validation
+- 1st
+  - Pin edit functionality on frontend
+  - Skeleton loader for pins, currently still disabled
+  - Filter aware title generation for pin page
 
 ## June
 
