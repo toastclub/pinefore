@@ -8,7 +8,7 @@ Given the following query string: `unread+!(date=2023-03-03)+tags=tag1,tag2`
 
 `decodeToAST` outputs:
 
-```js
+```javascript
 [
   {
     type: "expr",
@@ -42,7 +42,7 @@ Given the following query string: `unread+!(date=2023-03-03)+tags=tag1,tag2`
 
 This is parsed into a query plan by `decode()`, which is schema aware.:
 
-```js
+```javascript
 {
   mode: "AND",
   operations: [
@@ -85,7 +85,7 @@ Schema aware, you cannot filter on non-existent columns. Values must be of the c
 
 There is a browser decoder, which outputs overly simplified query plans that choose not to burden themselves with things like nesting. This is useful for client-side UI filtering. For instance, calling `clientDecode` on `user_id=1+created_at>2021-01-01+tags=tag1,tag2+tags!=tag3` will result in the following object:
 
-```js
+```javascript
 {
   user_id: { "=": 1 },
   created_at: { ">": new Date("2021-01-01") },
@@ -114,7 +114,7 @@ Using the browser engine, pinery can generate titles for you based on the schema
 
 The grammar is as follows:
 
-```ts
+```typescript
 export const operators = [
   "!=", // not equal
   "==", // strict equal (string)
@@ -134,7 +134,7 @@ Subexpressions are wrapped in parentheses. The output of subexpressions can be i
 
 Here is an example schema:
 
-```ts
+```typescript
 const schema: ColumnSchema = {
   public: { type: "bool", mapsTo: "public", true: true },
   private: { type: "bool", mapsTo: "public", true: false },
