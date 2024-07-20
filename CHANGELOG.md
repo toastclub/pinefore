@@ -2,6 +2,8 @@
 
 ## July
 
+- 19th
+  - Bugfixes
 - 17th
   - [Pinery] Expose part of Pinery SQL as generic for reuse
   - Toasts for already existing pins
