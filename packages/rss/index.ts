@@ -20,6 +20,7 @@ export interface RSSFeed {
   title?: string;
   subtitle?: string;
   lastUpdated?: string;
+  language?: string;
 }
 
 export interface RSSItem {
@@ -88,13 +89,18 @@ export async function fetchRSSFeed(
   if (res.status === 304 && !options.alwaysFetch) {
     return { mode: null, data: null, status: "not-modified", extra };
   }
-  const parsed = xml2js(await res.text(), {
+  const parsed: any = xml2js(await res.text(), {
     compact: true,
     ignoreComment: true,
     alwaysArray: true,
   });
   if (parsed.feed?.[0] != undefined) {
     return { mode: "atom", data: atomParser(parsed), extra };
+  }
+  if (parsed.rss?.[0] != undefined) {
+    if (parsed.rss[0]._attributes?.version === "2.0") {
+      return { mode: "rss", data: rssParser(parsed.rss[0]), extra };
+    }
   }
   return { mode: null, data: null, status: "not-parseable", extra };
 }
