@@ -1,5 +1,6 @@
 import { xml2js } from "xml-js";
 import { atomParser } from "./atom";
+import { rssParser } from "./rss";
 
 const USER_AGENT =
   "Pinefore/1.0 ( https://pinefore.com; like FeedFetcher-Google)";
@@ -48,7 +49,7 @@ export type RSSFeedResponse = (
        *
        * - If the feed contains the `feed` top level element, it is assumed to be an Atom feed.
        */
-      mode: "rss" | "atom" /*| "json" | "rdf" | "rss-0.9"*/;
+      mode: "rss" | "atom" | "rdf" /*| "json" | "rss-0.9"*/;
       data: RSSFeed;
     }
   | {
@@ -96,11 +97,12 @@ export async function fetchRSSFeed(
   });
   if (parsed.feed?.[0] != undefined) {
     return { mode: "atom", data: atomParser(parsed), extra };
-  }
-  if (parsed.rss?.[0] != undefined) {
+  } else if (parsed.rss?.[0] != undefined) {
     if (parsed.rss[0]._attributes?.version === "2.0") {
       return { mode: "rss", data: rssParser(parsed.rss[0]), extra };
     }
+  } else if (parsed["rdf:RDF"]?.[0] != undefined) {
+    return { mode: "rdf", data: rssParser(parsed["rdf:RDF"][0]), extra };
   }
   return { mode: null, data: null, status: "not-parseable", extra };
 }

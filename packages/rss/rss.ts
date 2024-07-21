@@ -1,3 +1,8 @@
+/**
+ * Rest in peace, Aaron Swartz.
+ * I pledge to build this project in your honour.
+ */
+
 import { RSSFeed, RSSItem } from ".";
 
 export function rssParser(data: any) {
@@ -14,11 +19,15 @@ export function rssParser(data: any) {
 }
 
 function rssItemParser(data: any): RSSItem | null {
+  if (data.link[0]?._text === undefined) {
+    return null;
+  }
   let item = {
     title: data.title[0]?._text,
     link: data.link[0]?._text,
     guid: data.guid[0]?._text,
-    content: data["content:encoded"][0]?._text,
+    content:
+      data["dc:content"]?.[0]?._text || data["content:encoded"][0]?._text,
     summary: data.description[0]?._text,
     pubDate: data.pubDate[0]?._text,
     isoDate: data.pubDate[0]?._text,
