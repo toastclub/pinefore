@@ -1,5 +1,5 @@
 import { Kysely } from "kysely";
-import { Database } from "../../schema";
+import { Database } from "../../../schema";
 import { fetchRSSFeed } from "oss/packages/rss";
 import { BaselimeLogger } from "@baselime/edge-logger";
 
