@@ -5,9 +5,12 @@ import { chunks } from "lib/types";
 export default async function rssCron(db: Kysely<Database>, queue: any) {
   let needsUpdate = await db
     .selectFrom("rssfeeds")
-    .select(["url", "id"])
+    .select(["url", "id", "last_fetched_at"])
     .where("next_fetch_time", "<", (c) => c.fn<Date>("now"))
     .execute();
+  if (needsUpdate.length === 0) {
+    return;
+  }
   /**
    * There are a few possibly incorrect assumptions at play here:
    * 1. It is assumed that the queue worker will also be bounded by the 50 subrequest limit
