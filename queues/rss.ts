@@ -54,7 +54,10 @@ async function runOnFeed(
     .updateTable("rssfeeds")
     .set({
       last_fetched_at: new Date(),
-      next_fetch_time: getBackoff(new Date(feed.last_fetched_at)),
+      next_fetch_time: getBackoff(
+        // TODO: it would be better to use feed hashes but we aren't doing that right now
+        new Date(feed.last_fetched_at || Date.now() + 1000 * 60 * 60 * 12)
+      ),
     })
     .execute();
   await itms;
