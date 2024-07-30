@@ -1,6 +1,7 @@
 import { Kysely } from "kysely";
 import { Database } from "../../schema";
 import { fetchRSSFeed } from "oss/packages/rss";
+import { BaselimeLogger } from "@baselime/edge-logger";
 
 async function runOnFeed(
   db: Kysely<Database>,
@@ -8,11 +9,55 @@ async function runOnFeed(
     id: number;
     url: string;
     last_fetched_at: string;
-  }
+  },
+  logger?: BaselimeLogger
 ) {
   const res = await fetchRSSFeed(feed.url, {
     lastFetched: feed.last_fetched_at,
   });
+  if (res.data == null) {
+    logger?.error("Failed to fetch RSS feed", {
+      url: feed.url,
+      error: res.status,
+    });
+    return;
+  }
+  const entities = await db
+    .insertInto("entities")
+    .values(
+      res.data.items.flatMap((item) => {
+        if (item.link == undefined) return [];
+        return [
+          {
+            url: item.link,
+            title: item.title || "",
+            posted_at: item.isoDate ? new Date(item.isoDate) : null,
+          },
+        ];
+      })
+    )
+    .onConflict((oc) => oc.column("url").doNothing())
+    .returning(["id", "url"])
+    .execute();
+  let itms = db
+    .insertInto("rssfeeditems")
+    .values(
+      entities.map((entity) => ({
+        feed_id: feed.id,
+        entity_id: entity.id,
+        discovered_at: new Date(),
+      }))
+    )
+    .onConflict((oc) => oc.columns(["feed_id", "entity_id"]).doNothing())
+    .execute();
+  await db
+    .updateTable("rssfeeds")
+    .set({
+      last_fetched_at: new Date(),
+      next_fetch_time: getBackoff(new Date(feed.last_fetched_at)),
+    })
+    .execute();
+  await itms;
 }
 
 function getBackoff(lastUpdate: Date) {
