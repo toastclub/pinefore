@@ -65,7 +65,33 @@ export async function getTimemap(
     depot = depot.sort(() => Math.random() - 0.5);
   }
   const u = new URL(
-    mementoDepots[depot[0]].TimeMap.replace("{url}", url.toString())
+    mementoDepots[depot[0]].TimeMap.replaceAll("{url}", url.toString())
   );
   let res = await fetch(u);
+  if (res.status != 200) {
+    depot.shift();
+    return getTimemap(depot, url, options);
+  }
+  const t = await res.text();
+  return t
+    .split("\n")
+    .map((l) => l.split(";").map((l) => l.trim()))
+    .flatMap((row) => {
+      const rel = row[1];
+      if (
+        !(
+          rel == 'rel="memento"' ||
+          rel == 'rel="first memento"' ||
+          rel == 'rel="last memento"'
+        )
+      ) {
+        return [];
+      }
+      // dt matcher
+      const dt = row[2].match(/datetime="([^"]+)"/)?.[1];
+      if (!dt) {
+        return [];
+      }
+      return [{ url: row[0].slice(1, -1), tz: new Date(dt) }];
+    });
 }
