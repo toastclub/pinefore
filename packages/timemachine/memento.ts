@@ -56,7 +56,7 @@ export async function getTimemap(
      * @default "sequential"
      */
     mode: "shuffle" | "sequential";
-  }
+  } = { mode: "sequential" }
 ) {
   if (typeof depot === "string") {
     depot = [depot];

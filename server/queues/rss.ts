@@ -1,7 +1,8 @@
 import { Kysely } from "kysely";
 import { Database } from "../../../schema";
-import { fetchRSSFeed } from "oss/packages/rss";
+import { fetchRSSFeed, RSSFeedResponse } from "oss/packages/rss";
 import { BaselimeLogger } from "@baselime/edge-logger";
+import { getTimemap } from "oss/packages/timemachine/memento";
 
 async function runOnFeed(
   db: Kysely<Database>,
@@ -61,6 +62,45 @@ async function runOnFeed(
     })
     .execute();
   await itms;
+}
+
+async function backfillFeed(feed: RSSFeedResponse, url: string, limit: number) {
+  let tm = await getTimemap(["wayback"], url);
+  // sort newest first
+  function reduce(feed: RSSFeedResponse) {
+    if (feed.data == null) {
+      return false;
+    }
+    let _last =
+      feed.data.items[feed.data.items.length - 1].isoDate ||
+      feed.data.lastUpdated;
+    if (_last == undefined) {
+      return false;
+    }
+    let last = new Date(_last);
+    tm = tm
+      .sort((a, b) => b.tz.getTime() - a.tz.getTime())
+      .filter((m) => m.tz > last);
+  }
+  if (reduce(feed) == false) {
+    return;
+  }
+  for (let i = 0; i < limit; i++) {
+    let _feed = await fetchRSSFeed(tm[0].url, {
+      lastFetched: tm[0].tz.toISOString(),
+    });
+    if (_feed.data == null) {
+      break;
+    }
+    // todo: dedupe
+    feed.data!.items = feed.data!.items.concat(_feed.data.items);
+    if (_feed.data.items.length < 2) {
+      break;
+    }
+    if (reduce(_feed) == false) {
+      return;
+    }
+  }
 }
 
 function getBackoff(lastUpdate: Date) {
