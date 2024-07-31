@@ -15,9 +15,11 @@ OSS has the following additional advantages:
 - Documentation is inherently more ambiguous than code
 - Users can verify their data is stored responsibly
 
+The apps and the extension are both open source. The frontend & backend are developed in a monorepo, **and this monorepo is about 25% open source** (in total, we estimate that nearly 50% of our code will be OSS). The open source components includes most middleware and helper functions. The closed source code is mostly the "glue" between these interesting pieces (eg. the router, the database). We are ultimately running a business, and we intend to offer paying customers the very best. The success of the business allows me to devote more time to the project. By open sourcing the more interesting parts, we intend to foster a community of "competitors" on the fediverse, that offer different takes on this problem. In other words, instead of a homogenous cluster of instances, we want many unique variants.
+
 ## Notes
 
-- There are no docs here. That's due to an edgecase in our build system, arising from symlinks
-- Contributions are accepted, however local development is expected to be difficult
-- The database schema is not included
+- The docs used to be here, but they aren't anymore. That's due to an edgecase in our build system, arising from symlinks
+- Contributions are accepted, however local development is expected to be difficult due to the fact that not everything is open source
+- The database schema is currently not included, but in some cases it can be inferred from usage
 - The package.json is currently not included, due to the file system structure
