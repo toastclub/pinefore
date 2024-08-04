@@ -1,0 +1,25 @@
+{
+  "name": "oss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20240729.0",
+    "aws4fetch": "^1.0.18",
+    "elysia": "^1.0.27",
+    "html-entities": "^2.3.3",
+    "kysely": "^0.27.4",
+    "satori": "^0.10.14",
+    "yoga-wasm-web": "^0.3.3",
+    "unplugin-macros": "^0.13.0",
+    "bcryptjs": "^2.4.3",
+    "@resvg/resvg-wasm": "^2.6.2"
+  }
+}
