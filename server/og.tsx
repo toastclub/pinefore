@@ -9,7 +9,6 @@ async function getTitle(path: string) {
   const u = new URL(path, BASE_URL);
   if (path.startsWith("pins")) {
     let filter = u.searchParams.get("where");
-    console.log(u, filter);
     if (filter) {
       {
         return {
@@ -35,7 +34,6 @@ async function getTitle(path: string) {
 }
 
 export async function generateOG(path: string) {
-  console.log(path);
   const font = fetch(`${BASE_URL}/fonts/fernbold.otf`);
   const bg = fetch(`${BASE_URL}/branding/og/ogbg.jpeg`)
     .then((res) => res.arrayBuffer())
