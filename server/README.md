@@ -2,7 +2,7 @@
 
 Lib files that are run exclusively on the server side of the application.
 
-### Folders
+## Folders
 
 ### CRON
 
