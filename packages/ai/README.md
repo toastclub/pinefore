@@ -13,5 +13,5 @@ We have periodically experimented with AI for the following purposes:
 We've experimented with AI when it [enhances user experience](https://boehs.org/node/old-tech), but we have not found, thus far, applications of it that outweigh the following concerns:
 
 1. **Training**: AI companies train on data that was not collected with consent, which is against our values
-2. **Energy Consumption**: Every feature is a trade-off between user experience and energy consumption. We have not found applications of AI that's worth the energy it consumes
+2. **Energy Consumption**: AI burns immense amounts of energy. We have not found applications of AI that's worth the energy it consumes
 3. **Hallucination**: If AI generates incorrect information, that will have disastrous consequences for our community.
