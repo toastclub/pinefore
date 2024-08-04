@@ -2,7 +2,15 @@ import { BASE_URL } from "oss/constants";
 import { toTitleString } from "oss/packages/pinery/title/title";
 import { pinFilterSchema } from "./pinFilterEngine";
 import { decode } from "oss/packages/pinery/browser";
-import { ImageResponse } from "workers-og";
+
+import { initWasm, Resvg } from "@resvg/resvg-wasm";
+import satori, { init } from "satori/wasm";
+import initYoga from "yoga-wasm-web";
+import yogaWasm from "yoga-wasm-web/dist/yoga.wasm";
+import resvgWasm from "@resvg/resvg-wasm/index_bg.wasm";
+
+const initialize = async () =>
+  Promise.all([await initWasm(resvgWasm), init(await initYoga(yogaWasm))]);
 
 async function getTitle(path: string) {
   const u = new URL(path, BASE_URL);
@@ -55,6 +63,7 @@ export async function generateOG(path: string) {
       await (await fetch(`${BASE_URL}/branding/og/pinefore.png`)).arrayBuffer()
     );
   }
+  await initialize();
   const string = {
     type: "div",
     props: {
@@ -111,7 +120,7 @@ export async function generateOG(path: string) {
       ],
     },
   };
-  return new ImageResponse(string, {
+  const svg = await satori(string, {
     width: 1200,
     height: 630,
     fonts: [
@@ -121,4 +130,6 @@ export async function generateOG(path: string) {
       },
     ],
   });
+  const png = new Resvg(svg).render().asPng();
+  return png;
 }
