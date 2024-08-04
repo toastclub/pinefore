@@ -6,22 +6,19 @@ import { decode } from "oss/packages/pinery/browser";
 import { initWasm, Resvg } from "@resvg/resvg-wasm";
 import satori, { init } from "satori/wasm";
 import initYoga from "yoga-wasm-web";
-console.log("aa");
 
-import _YOGA_WASM from "yoga-wasm-web/dist/yoga.wasm?url";
-import _RESVG_WASM from "@resvg/resvg-wasm/index_bg.wasm?url";
+import { RESVG_WASM, YOGA_WASM } from "oss/og.macro" with { type: "macro"}
 
+let initialized = false;
 const initialize = async () => {
-  let RESVG_WASM: string = _RESVG_WASM;
-  RESVG_WASM = RESVG_WASM.replace("/_build", "");
+  if (initialized) return;
   const { default: resvgWasm } = await import(
     /* @vite-ignore */ `${RESVG_WASM}?module`
   );
-  let YOGA_WASM: string = _YOGA_WASM;
-  YOGA_WASM = YOGA_WASM.replace("/_build", "");
   const { default: yogaWasm } = await import(
     /* @vite-ignore */ `${YOGA_WASM}?module`
   );
+  initialized = true;
   return Promise.all([
     await initWasm(resvgWasm),
     init(await initYoga(yogaWasm)),
