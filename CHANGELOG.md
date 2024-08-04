@@ -1,9 +1,14 @@
 # 2024
 
+## August
+
+- 1st-3rd: Bugfixes
+
 ## July
 
-- 19th
-  - Bugfixes
+- 31st: Show pins on tag pages
+- 21st-30th: Begin RSS, Archive, and Queues support
+- 19th: Bugfixes
 - 17th
   - [Pinery] Expose part of Pinery SQL as generic for reuse
   - Toasts for already existing pins
@@ -19,8 +24,9 @@
 - 14th
   - RGB 👀
   - GET other users
- 
+
 🏝️ Vacation 🏝️
+
 - 3rd
   - JSON importer
 - 2nd
@@ -55,7 +61,7 @@
   - 24th
     - Navigation sidebar for documentation page
 - 23rd
-  - Fix documentation. *When docs were open source, the symlink in the codebase caused the bundler to recognize the file, but not read the contents*
+  - Fix documentation. _When docs were open source, the symlink in the codebase caused the bundler to recognize the file, but not read the contents_
   - "Query engine", a way to construct where clauses in URLs, to be used in pins
 - 22nd
   - Preregistration
@@ -81,8 +87,8 @@
   - 9th
     - Cute IDs
     - CommonSchema
-   - 7th
-     - Update Password / Reset
+  - 7th
+    - Update Password / Reset
   - 6th
     - User session management
   - 3rd
