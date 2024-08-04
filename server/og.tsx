@@ -1,9 +1,8 @@
-import satori from "satori";
-import { Resvg } from "@resvg/resvg-js";
 import { BASE_URL } from "oss/constants";
 import { toTitleString } from "oss/packages/pinery/title/title";
 import { pinFilterSchema } from "./pinFilterEngine";
 import { decode } from "oss/packages/pinery/browser";
+import { ImageResponse } from "workers-og";
 
 async function getTitle(path: string) {
   const u = new URL(path, BASE_URL);
@@ -112,7 +111,7 @@ export async function generateOG(path: string) {
       ],
     },
   };
-  const svg = await satori(string, {
+  return new ImageResponse(string, {
     width: 1200,
     height: 630,
     fonts: [
@@ -122,6 +121,4 @@ export async function generateOG(path: string) {
       },
     ],
   });
-  const png = new Resvg(svg).render().asPng();
-  return png;
 }
