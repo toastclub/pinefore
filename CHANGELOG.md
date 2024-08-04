@@ -2,6 +2,7 @@
 
 ## August
 
+- 3rd: Toasts for error messages
 - 1st-3rd: Bugfixes
 
 ## July
