@@ -6,11 +6,27 @@ import { decode } from "oss/packages/pinery/browser";
 import { initWasm, Resvg } from "@resvg/resvg-wasm";
 import satori, { init } from "satori/wasm";
 import initYoga from "yoga-wasm-web";
-import yogaWasm from "yoga-wasm-web/dist/yoga.wasm";
-import resvgWasm from "@resvg/resvg-wasm/index_bg.wasm";
+console.log("aa");
 
-const initialize = async () =>
-  Promise.all([await initWasm(resvgWasm), init(await initYoga(yogaWasm))]);
+import _YOGA_WASM from "yoga-wasm-web/dist/yoga.wasm?url";
+import _RESVG_WASM from "@resvg/resvg-wasm/index_bg.wasm?url";
+
+const initialize = async () => {
+  let RESVG_WASM: string = _RESVG_WASM;
+  RESVG_WASM = RESVG_WASM.replace("/_build", "");
+  const { default: resvgWasm } = await import(
+    /* @vite-ignore */ `${RESVG_WASM}?module`
+  );
+  let YOGA_WASM: string = _YOGA_WASM;
+  YOGA_WASM = YOGA_WASM.replace("/_build", "");
+  const { default: yogaWasm } = await import(
+    /* @vite-ignore */ `${YOGA_WASM}?module`
+  );
+  return Promise.all([
+    await initWasm(resvgWasm),
+    init(await initYoga(yogaWasm)),
+  ]);
+};
 
 async function getTitle(path: string) {
   const u = new URL(path, BASE_URL);
