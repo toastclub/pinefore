@@ -20,27 +20,60 @@ async function getTitle(path: string) {
   if (path.startsWith("pins")) {
     let filter = u.searchParams.get("where");
     if (filter) {
-      {
-        return {
-          title: toTitleString(
-            pinFilterSchema,
-            [
-              "Pins",
-              { type: "created", dontIncludeK: true },
-              { type: "title" },
-              { type: "tags" },
-            ],
-            decode(filter, pinFilterSchema)
-          ),
-        };
-      }
+      return {
+        title: toTitleString(
+          pinFilterSchema,
+          [
+            "Pins",
+            { type: "created", dontIncludeK: true },
+            { type: "title" },
+            { type: "tags" },
+          ],
+          decode(filter, pinFilterSchema)
+        ),
+      };
     }
     return {
       title: "Pins",
       subtitle: "",
     };
   }
-  return undefined;
+  if (path.startsWith("tag/")) {
+    const tag = u.pathname.split("/")[2];
+    return {
+      title: {
+        type: "h1",
+        props: {
+          style: {
+            fontSize: "50px",
+            margin: "0",
+            color: "#000",
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+          },
+          children: [
+            "Tag:",
+            {
+              type: "span",
+              props: {
+                style: {
+                  background: "#ddd",
+                  padding: "5px 10px",
+                  borderRadius: "9999px",
+                },
+                children: "#" + tag,
+              },
+            },
+          ],
+        },
+      },
+    };
+  }
+  return {
+    title: "",
+    subtitle: "",
+  };
 }
 
 export async function generateOG(path: string) {
@@ -61,7 +94,7 @@ export async function generateOG(path: string) {
       },
     }));
   const title = await getTitle(path);
-  if (!title) {
+  if (!title || title.title == "") {
     return Buffer.from(
       await (await fetch(`${BASE_URL}/branding/og/pinefore.png`)).arrayBuffer()
     );
@@ -103,13 +136,15 @@ export async function generateOG(path: string) {
                     paddingTop: "40px",
                   },
                   children: [
-                    {
-                      type: "h1",
-                      props: {
-                        style: { fontSize: "50px", margin: "0" },
-                        children: title.title,
-                      },
-                    },
+                    typeof title.title == "string"
+                      ? {
+                          type: "h1",
+                          props: {
+                            style: { fontSize: "50px", margin: "0" },
+                            children: title.title,
+                          },
+                        }
+                      : title.title,
                     {
                       type: "p",
                       props: {
