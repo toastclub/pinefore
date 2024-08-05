@@ -3,20 +3,16 @@ import { toTitleString } from "oss/packages/pinery/title/title";
 import { pinFilterSchema } from "./pinFilterEngine";
 import { decode } from "oss/packages/pinery/browser";
 
-import { initWasm, Resvg } from "@resvg/resvg-wasm";
-import satori, { init } from "satori/wasm";
-import initYoga from "yoga-wasm-web";
+import satori from "satori";
+import { Resvg, initWasm } from "@resvg/resvg-wasm";
+import resvgwasm from "../../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
 
-import resvgWasm from "../../../oss/node_modules/yoga-wasm-web/dist/yoga.wasm";
-import yogaWasm from "../../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
-
-let initialized = false;
 const initialize = async () => {
-  if (initialized) return;
-  initialized = true;
-  let a = await initWasm(resvgWasm);
-  let b = await init(await initYoga(yogaWasm));
-  return [a, b];
+  try {
+    await initWasm(resvgwasm as WebAssembly.Module);
+  } catch (error) {
+    console.error("Resvg wasm not initialized");
+  }
 };
 
 async function getTitle(path: string) {
