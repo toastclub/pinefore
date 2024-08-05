@@ -11,7 +11,6 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@cloudflare/workers-types": "^4.20240729.0",
     "@resvg/resvg-wasm": "^2.6.2",
     "aws4fetch": "^1.0.18",
     "bcryptjs": "^2.4.3",
@@ -22,10 +21,10 @@
     "satori": "^0.10.14",
     "tldts": "^6.1.31",
     "unplugin-macros": "^0.13.0",
-    "workers-og": "^0.0.24",
     "yoga-wasm-web": "^0.3.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240729.0",
     "@types/bcryptjs": "^2.4.6"
   }
 }
