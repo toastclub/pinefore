@@ -7,22 +7,16 @@ import { initWasm, Resvg } from "@resvg/resvg-wasm";
 import satori, { init } from "satori/wasm";
 import initYoga from "yoga-wasm-web";
 
-import { RESVG_WASM, YOGA_WASM } from "oss/og.macro" with { type: "macro"}
+import resvgWasm from "../../../oss/node_modules/yoga-wasm-web/dist/yoga.wasm";
+import yogaWasm from "../../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
 
 let initialized = false;
 const initialize = async () => {
   if (initialized) return;
-  const { default: resvgWasm } = await import(
-    /* @vite-ignore */ `${RESVG_WASM}?module`
-  );
-  const { default: yogaWasm } = await import(
-    /* @vite-ignore */ `${YOGA_WASM}?module`
-  );
   initialized = true;
-  return Promise.all([
-    await initWasm(resvgWasm),
-    init(await initYoga(yogaWasm)),
-  ]);
+  let a = await initWasm(resvgWasm);
+  let b = await init(await initYoga(yogaWasm));
+  return [a, b];
 };
 
 async function getTitle(path: string) {
