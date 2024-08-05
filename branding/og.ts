@@ -50,7 +50,7 @@ async function getTitleUi(path: string) {
         type: "h1",
         props: {
           style: {
-            fontSize: "50px",
+            fontSize: "75px",
             margin: "0",
             color: "#000",
             display: "flex",
@@ -142,7 +142,7 @@ export async function generateOG(path: string) {
                 type: "div",
                 props: {
                   style: {
-                    maxWidth: "80%",
+                    maxWidth: "75%",
                     display: "flex",
                     flexDirection: "column",
                     paddingLeft: "40px",
@@ -153,7 +153,7 @@ export async function generateOG(path: string) {
                       ? {
                           type: "h1",
                           props: {
-                            style: { fontSize: "50px", margin: "0" },
+                            style: { fontSize: "75px", margin: "0" },
                             children: title.title,
                           },
                         }
@@ -161,7 +161,11 @@ export async function generateOG(path: string) {
                     {
                       type: "p",
                       props: {
-                        style: { color: "#A8A8A8", fontSize: "28px" },
+                        style: {
+                          color: "#A8A8A8",
+                          fontSize: "38px",
+                          margin: "0",
+                        },
                         children: title?.subtitle || "",
                       },
                     },
