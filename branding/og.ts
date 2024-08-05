@@ -1,6 +1,6 @@
 import { BASE_URL } from "oss/constants";
 import { toTitleString } from "oss/packages/pinery/title/title";
-import { pinFilterSchema } from "./pinFilterEngine";
+import { pinFilterSchema } from "../server/pinFilterEngine";
 import { decode } from "oss/packages/pinery/browser";
 
 import satori, { init } from "satori/wasm";
@@ -8,6 +8,7 @@ import { Resvg, initWasm } from "@resvg/resvg-wasm";
 import resvgwasm from "../../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
 import yogawasm from "../../../oss/node_modules/yoga-wasm-web/dist/yoga.wasm";
 import initYoga from "yoga-wasm-web";
+import { getSubtitle, getTitle } from "./title";
 
 const initialize = async () => {
   try {
@@ -19,7 +20,7 @@ const initialize = async () => {
   }
 };
 
-async function getTitle(path: string) {
+async function getTitleUi(path: string) {
   const u = new URL(path, BASE_URL);
   if (path.startsWith("pins")) {
     let filter = u.searchParams.get("where");
@@ -74,6 +75,13 @@ async function getTitle(path: string) {
       },
     };
   }
+  const tit = getTitle(path);
+  if (tit) {
+    return {
+      title: tit,
+      subtitle: getSubtitle(path) || "",
+    };
+  }
   return {
     title: "",
     subtitle: "",
@@ -97,7 +105,7 @@ export async function generateOG(path: string) {
         },
       },
     }));
-  const title = await getTitle(path);
+  const title = await getTitleUi(path);
   if (!title || title.title == "") {
     return Buffer.from(
       await (await fetch(`${BASE_URL}/branding/og/pinefore.png`)).arrayBuffer()
@@ -107,6 +115,7 @@ export async function generateOG(path: string) {
     return (await font).text();
   }
   await initialize();
+  console.log(title);
   const string = {
     type: "div",
     props: {
