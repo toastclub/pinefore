@@ -11,10 +11,12 @@
 		"target": "es2022",
 		"allowJs": true,
 		"moduleDetection": "force",
-		"isolatedModules": true
+		"isolatedModules": true,
+		"paths": {
+			"#/*": ["../server/*"],
+			"~/*": ["./*"],
+			"lib/*": ["../lib/*"],
+		}
 	},
 	"exclude": ["node_modules", "dist", "test"],
-    "paths": {
-        "#/*": ["../server/*"]
-    }
 }

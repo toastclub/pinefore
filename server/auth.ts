@@ -1,13 +1,13 @@
 import { Elysia, Static, t } from "elysia";
-import { HttpError } from "#/plugins/error";
+import { HttpError } from "../../server/plugins/error";
 import { jwt } from "@elysiajs/jwt";
-import { dbMiddleware } from "lib/db";
+import { dbMiddleware } from "../../server/db";
 import { Kysely, sql } from "kysely";
-import { getRequestEvent } from "solid-js/web";
 import bcrypt from "bcryptjs";
 import { Database } from "../../schema";
 import { cfMiddleware } from "./logger";
-import { MODE } from "oss/constants";
+import { MODE } from "../constants";
+import * as process from "node:process";
 
 const jwtType = t.Object({
   id: t.Number(),
@@ -15,11 +15,7 @@ const jwtType = t.Object({
   account_status: t.String(),
 });
 
-if (
-  !process?.env.JWT_SECRET &&
-  getRequestEvent() &&
-  !getRequestEvent()!.nativeEvent.context.cloudflare.JWT_SECRET
-) {
+if (!process?.env.JWT_SECRET) {
   throw new Error("NO JWT SECRET INSIDE OF REQUEST CONTEXT");
 }
 export const authPlugin = new Elysia({ name: "authPlugin" }).use(
@@ -28,10 +24,7 @@ export const authPlugin = new Elysia({ name: "authPlugin" }).use(
     // because the code above would've thrown. afaik, the cf runtime runs everything once
     // as a sanity check, and for some reason doesn't populate process.env
     // still, this is a hack and I should feel ashamed.
-    secret:
-      process?.env.JWT_SECRET ||
-      getRequestEvent()?.nativeEvent.context.cloudflare.JWT_SECRET ||
-      "TEMP_AT_SERVER_BOOT",
+    secret: process?.env.JWT_SECRET || "TEMP_AT_SERVER_BOOT",
     name: "jwt",
     exp: "20m",
     //schema: jwtType,
