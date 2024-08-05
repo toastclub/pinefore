@@ -26,7 +26,7 @@ const jwtType = t.Object({
 import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 
 export const authPlugin = new Elysia({ name: "authPlugin" }).derive(
-  { as: "local" },
+  { as: "scoped" },
   ({ env }) => {
     if (!env.JWT_SECRET) {
       throw new Error("JWT_SECRET not set");
