@@ -25,41 +25,45 @@ const jwtType = t.Object({
 
 import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 
+export function getAuth(env: { JWT_SECRET?: string }) {
+  if (!env.JWT_SECRET) {
+    throw new Error("JWT_SECRET not set");
+  }
+  const secret = new TextEncoder().encode(env.JWT_SECRET);
+  return {
+    jwt: {
+      sign: async (payload: JWTPayload) => {
+        let jwt = new SignJWT({
+          ...payload,
+          nbf: undefined,
+          exp: undefined,
+        }).setProtectedHeader({
+          alg: "HS256",
+        });
+
+        jwt = jwt.setExpirationTime("20m");
+
+        return jwt.sign(secret);
+      },
+      verify: async (token: string) => {
+        if (!token) {
+          return false;
+        }
+        try {
+          const data: any = (await jwtVerify(token, secret)).payload;
+          return data;
+        } catch (_) {
+          return false;
+        }
+      },
+    },
+  };
+}
+
 export const authPlugin = new Elysia({ name: "authPlugin" }).derive(
   { as: "scoped" },
   ({ env }) => {
-    if (!env.JWT_SECRET) {
-      throw new Error("JWT_SECRET not set");
-    }
-    const secret = new TextEncoder().encode(env.JWT_SECRET);
-    return {
-      jwt: {
-        sign: async (payload: JWTPayload) => {
-          let jwt = new SignJWT({
-            ...payload,
-            nbf: undefined,
-            exp: undefined,
-          }).setProtectedHeader({
-            alg: "HS256",
-          });
-
-          jwt = jwt.setExpirationTime("20m");
-
-          return jwt.sign(secret);
-        },
-        verify: async (token: string) => {
-          if (!token) {
-            return false;
-          }
-          try {
-            const data: any = (await jwtVerify(token, secret)).payload;
-            return data;
-          } catch (_) {
-            return false;
-          }
-        },
-      },
-    };
+    return getAuth(env);
   }
 );
 
@@ -95,12 +99,12 @@ if the token isn't correct (likely expired) or there is no token
 
 export const requireAuth = <T extends boolean>(allowRead: T) =>
   new Elysia({ name: "requireAuth" })
-    .use(authPlugin)
     .use(dbMiddleware)
     .use(cfMiddleware)
     .derive(
       { as: "scoped" },
-      async ({ jwt, cookie, request, db, logger, waitUntil }) => {
+      async ({ cookie, request, db, logger, waitUntil, env }) => {
+        const { jwt } = getAuth(env);
         let allowUnauthenticated = request.method == "GET" && allowRead;
         if (
           (!cookie.token.value || !cookie.refresh_token.value) &&
