@@ -3,13 +3,17 @@ import { toTitleString } from "oss/packages/pinery/title/title";
 import { pinFilterSchema } from "./pinFilterEngine";
 import { decode } from "oss/packages/pinery/browser";
 
-import satori from "satori";
+import satori, { init } from "satori/wasm";
 import { Resvg, initWasm } from "@resvg/resvg-wasm";
 import resvgwasm from "../../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
+import yogawasm from "../../../oss/node_modules/yoga-wasm-web/dist/yoga.wasm";
+import initYoga from "yoga-wasm-web";
 
 const initialize = async () => {
   try {
     await initWasm(resvgwasm as WebAssembly.Module);
+    const yoga = await initYoga(yogawasm as WebAssembly.Module);
+    init(yoga);
   } catch (error) {
     console.error(error);
   }
