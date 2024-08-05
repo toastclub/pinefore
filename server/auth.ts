@@ -23,16 +23,11 @@ const jwtType = t.Object({
   account_status: t.String(),
 });
 
-import {
-  SignJWT,
-  jwtVerify,
-  type JWTPayload,
-  type JWSHeaderParameters,
-  type KeyLike,
-} from "jose";
+import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 
-export const authPlugin = () =>
-  new Elysia({ name: "authPlugin" }).derive({ as: "scoped" }, ({ env }) => {
+export const authPlugin = new Elysia({ name: "authPlugin" }).derive(
+  { as: "local" },
+  ({ env }) => {
     if (!env.JWT_SECRET) {
       throw new Error("JWT_SECRET not set");
     }
@@ -65,7 +60,8 @@ export const authPlugin = () =>
         },
       },
     };
-  });
+  }
+);
 
 /*
 if there is no token and you are not allowed to read the page unauthenticated
