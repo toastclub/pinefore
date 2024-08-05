@@ -1,13 +1,21 @@
 import { Elysia, Static, t } from "elysia";
 import { HttpError } from "../../server/plugins/error";
-import { jwt } from "@elysiajs/jwt";
 import { dbMiddleware } from "../../server/db";
 import { Kysely, sql } from "kysely";
 import bcrypt from "bcryptjs";
 import { Database } from "../../schema";
 import { cfMiddleware } from "./logger";
 import { MODE } from "../constants";
-import * as process from "node:process";
+
+export interface JWTPayloadSpec {
+  iss?: string;
+  sub?: string;
+  aud?: string | string[];
+  jti?: string;
+  nbf?: number;
+  exp?: number;
+  iat?: number;
+}
 
 const jwtType = t.Object({
   id: t.Number(),
@@ -15,21 +23,49 @@ const jwtType = t.Object({
   account_status: t.String(),
 });
 
-if (!process?.env.JWT_SECRET) {
-  throw new Error("NO JWT SECRET INSIDE OF REQUEST CONTEXT");
-}
-export const authPlugin = new Elysia({ name: "authPlugin" }).use(
-  jwt({
-    // it doesn't matter if this is undefined when there isn't a request.
-    // because the code above would've thrown. afaik, the cf runtime runs everything once
-    // as a sanity check, and for some reason doesn't populate process.env
-    // still, this is a hack and I should feel ashamed.
-    secret: process?.env.JWT_SECRET || "TEMP_AT_SERVER_BOOT",
-    name: "jwt",
-    exp: "20m",
-    //schema: jwtType,
-  })
-);
+import {
+  SignJWT,
+  jwtVerify,
+  type JWTPayload,
+  type JWSHeaderParameters,
+  type KeyLike,
+} from "jose";
+
+export const authPlugin = () =>
+  new Elysia({ name: "authPlugin" }).derive({ as: "scoped" }, ({ env }) => {
+    if (!env.JWT_SECRET) {
+      throw new Error("JWT_SECRET not set");
+    }
+    const secret = new TextEncoder().encode(env.JWT_SECRET);
+    return {
+      jwt: {
+        sign: async (payload: JWTPayload) => {
+          let jwt = new SignJWT({
+            ...payload,
+            nbf: undefined,
+            exp: undefined,
+          }).setProtectedHeader({
+            alg: "HS256",
+          });
+
+          jwt = jwt.setExpirationTime("20m");
+
+          return jwt.sign(secret);
+        },
+        verify: async (token: string) => {
+          if (!token) {
+            return false;
+          }
+          try {
+            const data: any = (await jwtVerify(token, secret)).payload;
+            return data;
+          } catch (_) {
+            return false;
+          }
+        },
+      },
+    };
+  });
 
 /*
 if there is no token and you are not allowed to read the page unauthenticated
@@ -152,10 +188,9 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
                 })()
               );
 
-              let newJwt = await jwt.sign({
+              let newJwt = await jwt!.sign({
                 id: user.id,
                 account_status: user.account_status,
-                // @ts-expect-error
                 archival_enabled: user.archival_enabled,
               });
               let newJwtVerified = (await jwt.verify(newJwt)) as

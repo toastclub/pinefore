@@ -12,17 +12,17 @@
   "type": "module",
   "dependencies": {
     "@cloudflare/workers-types": "^4.20240729.0",
-    "@elysiajs/jwt": "^1.0.2",
     "@resvg/resvg-wasm": "^2.6.2",
     "aws4fetch": "^1.0.18",
     "bcryptjs": "^2.4.3",
     "elysia": "^1.0.27",
     "html-entities": "^2.3.3",
+    "jose": "^5.6.3",
     "kysely": "^0.27.4",
     "satori": "^0.10.14",
+    "tldts": "^6.1.31",
     "unplugin-macros": "^0.13.0",
-    "yoga-wasm-web": "^0.3.3",
-    "tldts": "^6.1.31"
+    "yoga-wasm-web": "^0.3.3"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6"
