@@ -7,11 +7,13 @@ import satori from "satori";
 import { Resvg, initWasm } from "@resvg/resvg-wasm";
 import resvgwasm from "../../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
 
+import font from "../../web/public/fonts/fernbold.otf";
+
 const initialize = async () => {
   try {
     await initWasm(resvgwasm as WebAssembly.Module);
   } catch (error) {
-    console.error("Resvg wasm not initialized");
+    console.error(error);
   }
 };
 
@@ -44,7 +46,6 @@ async function getTitle(path: string) {
 }
 
 export async function generateOG(path: string) {
-  const font = fetch(`${BASE_URL}/fonts/fernbold.otf`);
   const bg = fetch(`${BASE_URL}/branding/og/ogbg.jpeg`)
     .then((res) => res.arrayBuffer())
     .then((a) => ({
@@ -128,7 +129,7 @@ export async function generateOG(path: string) {
     height: 630,
     fonts: [
       {
-        data: await (await font).arrayBuffer(),
+        data: font,
         name: "Fernvar",
       },
     ],
