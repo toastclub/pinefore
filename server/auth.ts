@@ -103,7 +103,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
     .use(cfMiddleware)
     .derive(
       { as: "scoped" },
-      async ({ cookie, request, db, logger, waitUntil, env }) => {
+      async ({ cookie, request, db, waitUntil, env }) => {
         const { jwt } = getAuth(env);
         let allowUnauthenticated = request.method == "GET" && allowRead;
         if (
@@ -150,7 +150,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
                         ])
                       )
                       .execute();
-                    logger.log("Deleted outdated refresh token", {
+                    console.log("Deleted outdated refresh token", {
                       duration: performance.now() - start,
                     });
                     return;
@@ -181,7 +181,7 @@ export const requireAuth = <T extends boolean>(allowRead: T) =>
                     .set("expires", sql`(now() + interval '30 days')`)
                     .executeTakeFirst()!;
 
-                  logger.log("Extended token", {
+                  console.log("Extended token", {
                     duration: performance.now() - start,
                   });
                   return;

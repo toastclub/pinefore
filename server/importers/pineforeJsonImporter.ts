@@ -2,7 +2,6 @@ import { Static } from "elysia";
 import { modernPin } from "../commonSchema";
 import { Kysely } from "kysely";
 import { Database } from "../../../schema";
-import type { BaselimeLogger } from "@baselime/edge-logger";
 import { userEntityBuilderStart } from "be/lib/entity";
 import { jsonBuildObject } from "kysely/helpers/postgres";
 import { id } from "lib/id";
@@ -12,10 +11,9 @@ export default async function pineforeJsonImporter(
     pins: Static<typeof modernPin>[];
   },
   user_id: number,
-  db: Kysely<Database>,
-  logger: BaselimeLogger
+  db: Kysely<Database>
 ) {
-  logger.info("Importing pins from Pinefore JSON");
+  console.info("Importing pins from Pinefore JSON");
   let entities = json.pins.map((pin) => {
     return {
       url: pin.entity.url,
@@ -82,7 +80,7 @@ export default async function pineforeJsonImporter(
     )
     .onConflict((oc) => oc.columns(["tag", "entity_id", "user_id"]).doNothing())
     .execute();
-  logger.info(
+  console.info(
     `Imported ${user_pins.length} pins and ${tagRes.length} tags from Pinefore JSON, created ${eRes.length} entities.`
   );
   return eRes.length;
@@ -90,12 +88,11 @@ export default async function pineforeJsonImporter(
 
 export async function pineforeJsonExporter(
   user_id: number,
-  db: Kysely<Database>,
-  logger: BaselimeLogger
+  db: Kysely<Database>
 ): Promise<{
   pins: Static<typeof modernPin>[];
 }> {
-  logger.info(`Export requested for ${user_id}`);
+  console.info(`Export requested for ${user_id}`);
   let res = await userEntityBuilderStart(db, { isMe: true })
     .select((e) =>
       jsonBuildObject({

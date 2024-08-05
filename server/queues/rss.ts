@@ -1,7 +1,6 @@
 import { Kysely } from "kysely";
 import { Database } from "../../../schema";
 import { fetchRSSFeed, RSSFeedResponse } from "oss/packages/rss";
-import { BaselimeLogger } from "@baselime/edge-logger";
 import { getTimemap } from "oss/packages/timemachine/memento";
 
 async function runOnFeed(
@@ -10,14 +9,13 @@ async function runOnFeed(
     id: number;
     url: string;
     last_fetched_at: string;
-  },
-  logger?: BaselimeLogger
+  }
 ) {
   const res = await fetchRSSFeed(feed.url, {
     lastFetched: feed.last_fetched_at,
   });
   if (res.data == null) {
-    logger?.error("Failed to fetch RSS feed", {
+    console.error("Failed to fetch RSS feed", {
       url: feed.url,
       error: res.status,
     });
