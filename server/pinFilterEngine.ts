@@ -5,10 +5,10 @@ import {
   RawBuilder,
   sql,
 } from "kysely";
-import { Operation } from "~/packages/pinery/types";
-import { decode } from "~/packages/pinery";
+import { Operation } from "oss/packages/pinery/types";
+import { decode } from "oss/packages/pinery";
 import { Database } from "../../schema";
-import { recursiveKyselyCombiner } from "~/packages/pinery/kysely";
+import { recursiveKyselyCombiner } from "oss/packages/pinery/kysely";
 
 export const pinFilterSchema = {
   public: { type: "bool", mapsTo: "public", true: true },

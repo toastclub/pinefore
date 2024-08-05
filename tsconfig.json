@@ -13,8 +13,8 @@
 		"moduleDetection": "force",
 		"isolatedModules": true,
 		"paths": {
-			"#/*": ["../server/*"],
-			"~/*": ["./*"],
+			"be/*": ["../server/*"],
+			"oss/*": ["./*"],
 			"lib/*": ["../lib/*"],
 		}
 	},

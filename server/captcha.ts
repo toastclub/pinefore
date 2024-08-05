@@ -1,6 +1,6 @@
 /// Adapted from https://github.com/cloudflare/pages-plugins/blob/main/packages/turnstile/functions/index.ts
 
-import { HttpError } from "#/plugins/error";
+import { HttpError } from "be/plugins/error";
 import { StatusMap } from "elysia";
 import { MODE } from "../constants";
 
