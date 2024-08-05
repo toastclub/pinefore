@@ -8,6 +8,7 @@ import { Resvg, initWasm } from "@resvg/resvg-wasm";
 import resvgwasm from "../../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
 
 import font from "../../web/public/fonts/fernbold.otf";
+import img from "../../web/public/branding/og/ogbg.jpeg";
 
 const initialize = async () => {
   try {
@@ -46,21 +47,19 @@ async function getTitle(path: string) {
 }
 
 export async function generateOG(path: string) {
-  const bg = fetch(`${BASE_URL}/branding/og/ogbg.jpeg`)
-    .then((res) => res.arrayBuffer())
-    .then((a) => ({
-      type: "img",
-      props: {
-        src: a,
-        style: {
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-        },
+  const bg = {
+    type: "img",
+    props: {
+      src: img,
+      style: {
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        top: 0,
+        left: 0,
       },
-    }));
+    },
+  };
   const title = await getTitle(path);
   if (!title) {
     return Buffer.from(
