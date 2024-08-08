@@ -29,6 +29,12 @@ Cron tasks often run to push tasks onto the queue.
 
 All ranking code for the site.
 
+### Storage
+
+File storage code for the site. Not all of this code is used in production.
+
+One goal of our project is to have very little platform dependency. This means that we can easily switch between cloud providers or even host our own servers. We currently use Cloudflare R2 for workers in production, but we'd like to have a drop-in replacement for this service. We currently have two: `S3` which abstracts any S3-like storage service, and `Local` which is a local file storage service.
+
 ## Files
 
 ### Middleware
