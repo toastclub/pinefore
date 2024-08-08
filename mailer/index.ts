@@ -3,11 +3,15 @@ import { AwsClient } from "aws4fetch";
 
 const ENDPOINT =
   "https://email.us-east-2.amazonaws.com/v2/email/outbound-emails";
-export const createClient = () => {
+export const createClient = (env: {
+  AWS_REGION: string;
+  MAIL_KEY_ID: string;
+  MAIL_SECRET: string;
+}) => {
   return new AwsClient({
-    region: process.env.AWS_REGION,
-    accessKeyId: process.env.MAIL_KEY_ID!,
-    secretAccessKey: process.env.MAIL_SECRET!,
+    region: env.AWS_REGION,
+    accessKeyId: env.MAIL_KEY_ID,
+    secretAccessKey: env.MAIL_SECRET,
   });
 };
 
@@ -37,9 +41,10 @@ let layouts = layout();
 export const sendEmail = async (
   to: string,
   template: (typeof templateTypes)[number],
-  data?: Record<string, string>
+  env: { AWS_REGION: string; MAIL_KEY_ID: string; MAIL_SECRET: string },
+  data?: Record<string, string>,
 ) => {
-  const client = createClient();
+  const client = createClient(env);
   let target = _templates[template];
   let targetText = target.contents;
   if (data) {

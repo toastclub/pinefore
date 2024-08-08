@@ -30,11 +30,15 @@ const NOT_SO_SECRET_TESTING_KEYS = {
   token_already_spent: "3x0000000000000000000000000000000AA",
 };
 
-export async function captcha(context: { ip?: string; response: string }) {
+export async function captcha(context: {
+  ip?: string;
+  response: string;
+  env: any;
+}) {
   const secret =
     MODE == "development"
       ? NOT_SO_SECRET_TESTING_KEYS.always_pass
-      : process.env.CAPTCHA_PRIVATEKEY!;
+      : context.env.CAPTCHA_PRIVATEKEY!;
   const formData = new FormData();
   formData.set("secret", secret);
   formData.set("response", context.response);

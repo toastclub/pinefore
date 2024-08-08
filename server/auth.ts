@@ -60,12 +60,11 @@ export function getAuth(env: { JWT_SECRET?: string }) {
   };
 }
 
-export const authPlugin = new Elysia({ name: "authPlugin" }).derive(
-  { as: "scoped" },
-  ({ env }) => {
+export const authPlugin = new Elysia({ name: "authPlugin" })
+  .use(cfMiddleware)
+  .derive({ as: "scoped" }, ({ env }) => {
     return getAuth(env);
-  }
-);
+  });
 
 /*
 if there is no token and you are not allowed to read the page unauthenticated
