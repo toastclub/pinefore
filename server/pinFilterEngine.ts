@@ -20,6 +20,7 @@ export const pinFilterSchema = {
   title: { type: "string", mapsTo: "title" },
   tags: { type: "array", mapsTo: "tags" },
   desc: { type: "string", mapsTo: "description" },
+  domain: { type: "string", mapsTo: "domain" },
 } as const;
 
 type RequiredDb = Database & {
@@ -52,6 +53,10 @@ function operationHandler(
     | "tags"
     | ExpressionWrapper<RequiredDb, RequiredTables, string>
     | RawBuilder<unknown>;
+
+  if (column == "domain") {
+    return sql`${value} = split_part(url, '/', 3)`;
+  }
   if (column == "title" && value.length > 1) {
     if (operator == "=") {
       cols = sql`user_data_search || title_search`;

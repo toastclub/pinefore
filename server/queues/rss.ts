@@ -2,6 +2,7 @@ import { Kysely } from "kysely";
 import { Database } from "../../../schema";
 import { fetchRSSFeed, RSSFeedResponse } from "oss/packages/rss";
 import { getTimemap } from "oss/packages/timemachine/memento";
+import { rootDomain } from "../helpers/root-domain";
 
 async function runOnFeed(
   db: Kysely<Database>,
@@ -29,6 +30,7 @@ async function runOnFeed(
         return [
           {
             url: item.link,
+            domain: rootDomain(item.link),
             title: item.title || "",
             posted_at: item.isoDate ? new Date(item.isoDate) : null,
           },

@@ -155,7 +155,9 @@ export class S3Provider implements StorageProvider {
       body: value,
       headers,
     });
-    return res;
+    return {
+      key: path,
+    };
   }
   async delete(path: string) {
     return await this.client.fetch(this.endpoint + path, { method: "DELETE" });

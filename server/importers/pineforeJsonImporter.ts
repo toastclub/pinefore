@@ -5,6 +5,7 @@ import { Database } from "../../../schema";
 import { userEntityBuilderStart } from "be/lib/entity";
 import { jsonBuildObject } from "kysely/helpers/postgres";
 import { id } from "lib/id";
+import { rootDomain } from "../helpers/root-domain";
 
 export default async function pineforeJsonImporter(
   json: {
@@ -17,6 +18,7 @@ export default async function pineforeJsonImporter(
   let entities = json.pins.map((pin) => {
     return {
       url: pin.entity.url,
+      domain: rootDomain(pin.entity.url),
       title: "",
     };
   });
