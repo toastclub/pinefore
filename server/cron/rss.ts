@@ -1,8 +1,12 @@
 import { Kysely } from "kysely";
-import { Database } from "../../schema";
+import { Database } from "../../../schema";
 import { chunks } from "lib/types";
+import { MiniQueueMessage } from "../queues/types";
 
-export default async function rssCron(db: Kysely<Database>, queue: any) {
+export default async function rssCron(
+  db: Kysely<Database>,
+  queue: Queue<MiniQueueMessage>
+) {
   let needsUpdate = await db
     .selectFrom("rssfeeds")
     .select(["url", "id", "last_fetched_at"])
@@ -11,15 +15,14 @@ export default async function rssCron(db: Kysely<Database>, queue: any) {
   if (needsUpdate.length === 0) {
     return;
   }
-  /**
-   * There are a few possibly incorrect assumptions at play here:
-   * 1. It is assumed that the queue worker will also be bounded by the 50 subrequest limit
-   * 2. It is assumed that with n max batch size, this limit will not be exceeded, however
-   * this is possible if enough large tasks get pushed, if enough feeds redirect, etc
-   * 3. It is assumed that the attempt to batch will be cheaper. If this is not the case,
-   * we can adapt.
-   */
+
   for (const chunk of chunks(needsUpdate, 10)) {
-    queue.send(chunk);
+    queue.send({
+      type: "rss",
+      body: chunk.map((c) => ({
+        ...c,
+        last_fetched_at: c.last_fetched_at.toISOString(),
+      })),
+    });
   }
 }
