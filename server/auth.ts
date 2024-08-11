@@ -1,10 +1,13 @@
 import { Elysia, Static, t } from "elysia";
-import { HttpError } from "../../server/plugins/error";
-import { dbMiddleware } from "../../server/db";
 import { Kysely, sql } from "kysely";
 import bcrypt from "bcryptjs";
+import { SignJWT, jwtVerify, type JWTPayload } from "jose";
+
+import { HttpError } from "be/plugins/error";
+import { dbMiddleware } from "be/db";
+
 import { Database } from "../../schema";
-import { cfMiddleware } from "./logger";
+import { cfMiddleware } from "./cf";
 import { MODE } from "../constants";
 
 export interface JWTPayloadSpec {
@@ -23,39 +26,41 @@ const jwtType = t.Object({
   account_status: t.String(),
 });
 
-import { SignJWT, jwtVerify, type JWTPayload } from "jose";
-
 export function getAuth(env: { JWT_SECRET?: string }) {
   if (!env.JWT_SECRET) {
     throw new Error("JWT_SECRET not set");
   }
   const secret = new TextEncoder().encode(env.JWT_SECRET);
+  async function sign(payload: JWTPayload) {
+    let jwt = new SignJWT({
+      ...payload,
+      nbf: undefined,
+      exp: undefined,
+    })
+      .setProtectedHeader({
+        alg: "HS256",
+      })
+      .setExpirationTime("20m");
+
+    return jwt.sign(secret);
+  }
+
+  async function verify(token: string) {
+    if (!token) {
+      return false;
+    }
+    try {
+      const data: any = (await jwtVerify(token, secret)).payload;
+      return data;
+    } catch (_) {
+      return false;
+    }
+  }
+
   return {
     jwt: {
-      sign: async (payload: JWTPayload) => {
-        let jwt = new SignJWT({
-          ...payload,
-          nbf: undefined,
-          exp: undefined,
-        }).setProtectedHeader({
-          alg: "HS256",
-        });
-
-        jwt = jwt.setExpirationTime("20m");
-
-        return jwt.sign(secret);
-      },
-      verify: async (token: string) => {
-        if (!token) {
-          return false;
-        }
-        try {
-          const data: any = (await jwtVerify(token, secret)).payload;
-          return data;
-        } catch (_) {
-          return false;
-        }
-      },
+      sign,
+      verify,
     },
   };
 }

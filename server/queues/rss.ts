@@ -60,6 +60,7 @@ async function runOnFeed(
         new Date(feed.last_fetched_at || Date.now() + 1000 * 60 * 60 * 12)
       ),
     })
+    .where("id", "=", feed.id)
     .execute();
   await itms;
 }
@@ -111,10 +112,4 @@ function getBackoff(lastUpdate: Date) {
   const backoff = Math.pow(hours, 0.3) - 1 * jitter;
   const clamped = Math.min(Math.max(backoff, 0.25), 24);
   return new Date(Date.now() + clamped * 60 * 60 * 1000);
-}
-
-export default async function rssQueue(db: Kysely<Database>, queue: any) {
-  const feed = await fetchRSSFeed(queue.url, {
-    lastFetched: queue.last_fetched_at,
-  });
 }
