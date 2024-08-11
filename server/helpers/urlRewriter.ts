@@ -1,10 +1,24 @@
 import { MaybePromise } from "elysia";
 
+function removeUTM(url: URL) {
+  for (const key of [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+  ]) {
+    url.searchParams.delete(key);
+  }
+  return url;
+}
+
 export default async function urlRewriter(url: string) {
-  const u = new URL(url);
+  let u = new URL(url);
   if (u.hostname == "youtu.be") {
     return "https://youtube.com/watch?v=" + u.pathname.slice(1);
   }
+  u = removeUTM(u);
   // remove url shorteners
   if (
     [
