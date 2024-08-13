@@ -1,5 +1,5 @@
 import Elysia from "elysia";
-import { Env } from "../../server/index";
+import { Env } from "be/index";
 
 type waitUntil = (promise: Promise<unknown>) => Promise<void>;
 

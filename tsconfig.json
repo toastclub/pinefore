@@ -16,6 +16,7 @@
 			"be/*": ["../server/*"],
 			"oss/*": ["./*"],
 			"lib/*": ["../lib/*"],
+			"schema": ["../schema.ts"]
 		}
 	},
 	"exclude": ["node_modules", "dist", "test"],

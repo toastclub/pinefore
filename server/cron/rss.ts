@@ -1,5 +1,5 @@
 import { Kysely } from "kysely";
-import { Database } from "../../../schema";
+import { Database } from "schema";
 import { chunks } from "lib/types";
 import { MiniQueueMessage } from "../queues/types";
 

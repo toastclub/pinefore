@@ -1,5 +1,4 @@
-import { rootDomain } from "../helpers/root-domain";
-import stringSimilarity from "../helpers/string-similarity";
+import { rootDomain, stringSimilarity } from "../helpers";
 import { decode } from "html-entities";
 
 export default function extractTitle(html: string, url: URL) {

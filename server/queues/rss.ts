@@ -1,17 +1,17 @@
 import { Kysely } from "kysely";
-import { Database } from "../../../schema";
+import { Database } from "schema";
+
 import { fetchRSSFeed, RSSFeedResponse } from "oss/packages/rss";
 import { getTimemap } from "oss/packages/timemachine/memento";
-import { rootDomain } from "../helpers/root-domain";
+import { rootDomain } from "oss/server/helpers";
 
-async function runOnFeed(
-  db: Kysely<Database>,
-  feed: {
-    id: number;
-    url: string;
-    last_fetched_at: string;
-  }
-) {
+import { RSSQueueBody } from "./types";
+
+export async function feedsQueue(db: Kysely<Database>, feeds: RSSQueueBody[]) {
+  return Promise.all(feeds.map((f) => runOnFeed(db, f)));
+}
+
+async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
   const res = await fetchRSSFeed(feed.url, {
     lastFetched: feed.last_fetched_at,
   });
@@ -20,7 +20,7 @@ async function runOnFeed(
       url: feed.url,
       error: res.status,
     });
-    return;
+    return res;
   }
   const entities = await db
     .insertInto("entities")
@@ -63,6 +63,7 @@ async function runOnFeed(
     .where("id", "=", feed.id)
     .execute();
   await itms;
+  return res;
 }
 
 async function backfillFeed(feed: RSSFeedResponse, url: string, limit: number) {

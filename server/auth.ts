@@ -6,9 +6,9 @@ import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 import { HttpError } from "be/plugins/error";
 import { dbMiddleware } from "be/db";
 
-import { Database } from "../../schema";
+import { Database } from "schema";
 import { cfMiddleware } from "./cf";
-import { MODE } from "../constants";
+import { MODE } from "oss/constants";
 
 export interface JWTPayloadSpec {
   iss?: string;

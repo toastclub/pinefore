@@ -1,11 +1,11 @@
 import { Static } from "elysia";
 import { modernPin } from "../commonSchema";
 import { Kysely } from "kysely";
-import { Database } from "../../../schema";
+import { Database } from "schema";
 import { userEntityBuilderStart } from "be/lib/entity";
 import { jsonBuildObject } from "kysely/helpers/postgres";
 import { id } from "lib/id";
-import { rootDomain } from "../helpers/root-domain";
+import { rootDomain } from "../helpers";
 
 export default async function pineforeJsonImporter(
   json: {
