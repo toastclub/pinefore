@@ -1,7 +1,7 @@
 import Elysia from "elysia";
 import { Env } from "be/index";
 
-type waitUntil = (promise: Promise<unknown>) => Promise<void>;
+export type waitUntil = (promise: Promise<unknown>) => Promise<void>;
 
 export const cfMiddleware = new Elysia({ name: "logger" }).derive(
   { as: "global" },

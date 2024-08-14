@@ -1,14 +1,14 @@
-import { Elysia, Static, t } from "elysia";
+import { Cookie, Elysia, Static, t } from "elysia";
 import { Kysely, sql } from "kysely";
 import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 
 import { HttpError } from "be/plugins/error";
-import { dbMiddleware } from "be/db";
 
 import { Database } from "schema";
-import { cfMiddleware } from "./cf";
+import { cfMiddleware, waitUntil } from "./cf";
 import { MODE } from "oss/constants";
+import { Env } from "be/index";
 
 export interface JWTPayloadSpec {
   iss?: string;
@@ -71,7 +71,7 @@ export const authPlugin = new Elysia({ name: "authPlugin" })
     return getAuth(env);
   });
 
-/*
+/**
 if there is no token and you are not allowed to read the page unauthenticated
         return Unauthorized
 if the token is correct
@@ -100,139 +100,139 @@ if the token isn't correct (likely expired) or there is no token
         else  // this is redundant, see very first statement
             return unauthorized
 */
+export async function handleAuth(
+  {
+    cookie,
+    request,
+    db,
+    waitUntil,
+    env,
+  }: {
+    cookie: Record<string, Cookie<any>>;
+    request: Request<unknown, CfProperties<unknown>>;
+    db: Kysely<Database>;
+    waitUntil: waitUntil;
+    env: Env;
+  },
+  allowRead: boolean
+) {
+  const { jwt } = getAuth(env);
+  let allowUnauthenticated = request.method == "GET" && allowRead;
+  if (
+    (!cookie.token.value || !cookie.refresh_token.value) &&
+    !allowUnauthenticated
+  ) {
+    throw new HttpError(401, "Unauthorized");
+  }
+  let user = (await jwt.verify(cookie.token.value)) as
+    | false
+    | Static<typeof jwtType>;
+  let u = await (async () => {
+    if (!user) {
+      if (cookie.refresh_token.value && cookie.token.value) {
+        // THIS IS A SANITY CHECK AND *NOT* A SECURITY FEATURE. We do not check if the token was
+        // *ever* signed by us here, we just filter in case it helps the query planner.
+        // if the attacker has the user's refresh token, it is already game over.
+        const jwtPayload = JSON.parse(atob(cookie.token.value.split(".")[1]));
+        let start = performance.now();
+        let user = await db
+          .selectFrom("tokens")
+          .innerJoin("users", "users.id", "tokens.for")
+          .where((eb) =>
+            eb.and([
+              eb("token", "=", cookie.refresh_token.value),
+              eb("for", "=", jwtPayload.id),
+              eb("tokens.type", "=", "default"),
+            ])
+          )
+          .select(["expires", "account_status", "id", "archival_enabled"])
+          .executeTakeFirst();
 
-export const requireAuth = <T extends boolean>(allowRead: T) =>
-  new Elysia({ name: "requireAuth" })
-    .use(dbMiddleware)
-    .use(cfMiddleware)
-    .derive(
-      { as: "scoped" },
-      async ({ cookie, request, db, waitUntil, env }) => {
-        const { jwt } = getAuth(env);
-        let allowUnauthenticated = request.method == "GET" && allowRead;
-        if (
-          (!cookie.token.value || !cookie.refresh_token.value) &&
-          !allowUnauthenticated
-        ) {
-          throw new HttpError(401, "Unauthorized");
-        }
-        let user = (await jwt.verify(cookie.token.value)) as
-          | false
-          | Static<typeof jwtType>;
-        let u = await (async () => {
-          if (!user) {
-            if (cookie.refresh_token.value && cookie.token.value) {
-              // THIS IS A SANITY CHECK AND *NOT* A SECURITY FEATURE. We do not check if the token was
-              // *ever* signed by us here, we just filter in case it helps the query planner.
-              // if the attacker has the user's refresh token, it is already game over.
-              const jwtPayload = JSON.parse(
-                atob(cookie.token.value.split(".")[1])
-              );
-              let start = performance.now();
-              let user = await db
-                .selectFrom("tokens")
-                .innerJoin("users", "users.id", "tokens.for")
+        // if the refresh token is outdated
+        if (user && user.expires < new Date()) {
+          await waitUntil(
+            (async () => {
+              db.deleteFrom("tokens")
                 .where((eb) =>
                   eb.and([
                     eb("token", "=", cookie.refresh_token.value),
                     eb("for", "=", jwtPayload.id),
-                    eb("tokens.type", "=", "default"),
                   ])
                 )
-                .select(["expires", "account_status", "id", "archival_enabled"])
-                .executeTakeFirst();
-
-              // if the refresh token is outdated
-              if (user && user.expires < new Date()) {
-                await waitUntil(
-                  (async () => {
-                    db.deleteFrom("tokens")
-                      .where((eb) =>
-                        eb.and([
-                          eb("token", "=", cookie.refresh_token.value),
-                          eb("for", "=", jwtPayload.id),
-                        ])
-                      )
-                      .execute();
-                    console.log("Deleted outdated refresh token", {
-                      duration: performance.now() - start,
-                    });
-                    return;
-                  })()
-                );
-                user = undefined;
-              }
-
-              if (!user) {
-                cookie.refresh_token.expires = undefined;
-                cookie.token.expires = undefined;
-                if (allowUnauthenticated) {
-                  return undefined;
-                } else {
-                  throw new HttpError(401, "Unauthorized");
-                }
-              }
-              await waitUntil(
-                (async () => {
-                  await db
-                    .updateTable("tokens")
-                    .where((eb) =>
-                      eb.and([
-                        eb("token", "=", cookie.refresh_token.value),
-                        eb("for", "=", jwtPayload.id),
-                      ])
-                    )
-                    .set("expires", sql`(now() + interval '30 days')`)
-                    .executeTakeFirst()!;
-
-                  console.log("Extended token", {
-                    duration: performance.now() - start,
-                  });
-                  return;
-                })()
-              );
-
-              let newJwt = await jwt!.sign({
-                id: user.id,
-                account_status: user.account_status,
-                archival_enabled: user.archival_enabled,
+                .execute();
+              console.log("Deleted outdated refresh token", {
+                duration: performance.now() - start,
               });
-              let newJwtVerified = (await jwt.verify(newJwt)) as
-                | false
-                | Static<typeof jwtType>;
-              cookie.token.value = newJwt;
-              cookie.token.maxAge = 60 * 60 * 24 * 30;
-              cookie.token.sameSite = "strict";
-              cookie.token.httpOnly = true;
-              cookie.token.secure = !(MODE == "development");
-              cookie.token.path = "/";
-              return newJwtVerified || undefined;
-            }
-            cookie.refresh_token.expires = undefined;
-            cookie.token.expires = undefined;
-            if (allowUnauthenticated) {
-              return undefined;
-            } else {
-              throw new HttpError(401, "Unauthorized");
-            }
-          }
-
-          return user || undefined;
-        })();
-        if (u) {
-          return { user: u };
-        } else if (allowUnauthenticated == true) {
-          return { user: u };
-        } else {
-          throw new HttpError(401, "Unauthorized");
+              return;
+            })()
+          );
+          user = undefined;
         }
+
+        if (!user) {
+          cookie.refresh_token.expires = undefined;
+          cookie.token.expires = undefined;
+          if (allowUnauthenticated) {
+            return undefined;
+          } else {
+            throw new HttpError(401, "Unauthorized");
+          }
+        }
+        await waitUntil(
+          (async () => {
+            await db
+              .updateTable("tokens")
+              .where((eb) =>
+                eb.and([
+                  eb("token", "=", cookie.refresh_token.value),
+                  eb("for", "=", jwtPayload.id),
+                ])
+              )
+              .set("expires", sql`(now() + interval '30 days')`)
+              .executeTakeFirst()!;
+
+            console.log("Extended token", {
+              duration: performance.now() - start,
+            });
+            return;
+          })()
+        );
+
+        let newJwt = await jwt!.sign({
+          id: user.id,
+          account_status: user.account_status,
+          archival_enabled: user.archival_enabled,
+        });
+        let newJwtVerified = (await jwt.verify(newJwt)) as
+          | false
+          | Static<typeof jwtType>;
+        cookie.token.value = newJwt;
+        cookie.token.maxAge = 60 * 60 * 24 * 30;
+        cookie.token.sameSite = "strict";
+        cookie.token.httpOnly = true;
+        cookie.token.secure = !(MODE == "development");
+        cookie.token.path = "/";
+        return newJwtVerified || undefined;
       }
-    )
-    .onError(({ error }) => {
-      if (error instanceof Response) {
-        return error;
+      cookie.refresh_token.expires = undefined;
+      cookie.token.expires = undefined;
+      if (allowUnauthenticated) {
+        return undefined;
+      } else {
+        throw new HttpError(401, "Unauthorized");
       }
-    });
+    }
+
+    return user || undefined;
+  })();
+  if (u) {
+    return { user: u };
+  } else if (allowUnauthenticated == true) {
+    return { user: u };
+  } else {
+    throw new HttpError(401, "Unauthorized");
+  }
+}
 
 export async function validatePw(
   password: string,
