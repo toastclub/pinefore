@@ -1,6 +1,7 @@
-import { Env } from "be/index";
+import { Env } from "$index";
+import { db } from "$db";
+
 import rssCron from "./rss";
-import { db } from "be/db";
 
 export async function handleCron(event: ScheduledController, env: Env) {
   const kysely = db(env.HYPERDRIVE.connectionString);

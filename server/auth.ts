@@ -3,12 +3,12 @@ import { Kysely, sql } from "kysely";
 import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 
-import { HttpError } from "be/plugins/error";
+import { HttpError } from "$plugins/error";
+import { Env } from "$index";
 
 import { Database } from "schema";
 import { cfMiddleware, waitUntil } from "./cf";
 import { MODE } from "oss/constants";
-import { Env } from "be/index";
 
 export interface JWTPayloadSpec {
   iss?: string;
@@ -290,7 +290,7 @@ export async function haveIBeenPwned(password: string) {
     .then((r) => r.split("\n").map((x) => x.split(":")))
     .then((r) => r.some(([hashSuffix]) => hashSuffix == hash.slice(5)));
   if (hasBeenPwned) {
-    throw new HttpError(401, undefined, [
+    throw new HttpError(400, undefined, [
       [
         "password",
         "Please choose a password that hasn't been leaked in a data breach.",

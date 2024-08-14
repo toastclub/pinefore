@@ -1,8 +1,10 @@
-import { MessageBatch } from "@cloudflare/workers-types";
-import { Env } from "be/index";
-import { db } from "be/db";
+import type { MessageBatch } from "@cloudflare/workers-types";
+import type { MiniQueueMessage } from "./types";
+
 import { feedsQueue } from "./rss";
-import { MiniQueueMessage } from "./types";
+
+import { Env } from "$index";
+import { db } from "$db";
 
 export default async function handleQueue(
   event: MessageBatch<MiniQueueMessage>,
