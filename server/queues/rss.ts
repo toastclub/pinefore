@@ -1,9 +1,10 @@
 import { Kysely } from "kysely";
 import { Database } from "schema";
 
-import { fetchRSSFeed, RSSFeedResponse } from "oss/packages/rss";
-import { getTimemap } from "oss/packages/timemachine/memento";
-import { rootDomain } from "oss/server/helpers";
+import { fetchRSSFeed, RSSFeedResponse } from "!packages/rss";
+import { getTimemap } from "!packages/timemachine/memento";
+
+import { rootDomain } from "!server/helpers";
 
 import { RSSQueueBody } from "./types";
 

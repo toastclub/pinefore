@@ -5,7 +5,7 @@ import { id } from "lib/id";
 import { createEffect, createSignal, untrack } from "solid-js";
 import { createStore } from "solid-js/store";
 import { createConnectivitySignal } from "@solid-primitives/connectivity";
-import { createModernPin, modernPin } from "oss/server/commonSchema";
+import { createModernPin, modernPin } from "!server/commonSchema";
 import { Static } from "elysia";
 
 type ModernPin = Static<typeof modernPin>;

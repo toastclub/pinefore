@@ -1,7 +1,7 @@
-import { BASE_URL } from "oss/constants";
-import { toTitleString } from "oss/packages/pinery/title/title";
+import { BASE_URL } from "!constants";
+import { toTitleString } from "!packages/pinery/title/title";
 import { pinFilterSchema } from "../server/pinFilterEngine";
-import { decode } from "oss/packages/pinery/browser";
+import { decode } from "!packages/pinery/browser";
 
 import satori, { init } from "satori/wasm";
 import { Resvg, initWasm } from "@resvg/resvg-wasm";

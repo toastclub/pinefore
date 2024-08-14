@@ -1,5 +1,5 @@
 import { readdirSync, readFileSync } from "node:fs";
-import parse from "oss/server/helpers/snarkdown";
+import parse from "!server/helpers/snarkdown";
 
 export function templates(): {
   [key: string]: {

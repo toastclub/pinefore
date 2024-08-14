@@ -1,6 +1,6 @@
 import { fetchTweet } from "./sites/twitter.com";
-import { AiHandler, callCfAiServerside } from "oss/packages/ai/genAi";
-import { generateLLamaTitlePrompt } from "oss/packages/ai/title";
+import { AiHandler, callCfAiServerside } from "!packages/ai/genAi";
+import { generateLLamaTitlePrompt } from "!packages/ai/title";
 import extractTitle from "./title";
 
 async function titleGen(text: string, ai: AiHandler | undefined) {

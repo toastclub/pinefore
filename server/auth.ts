@@ -8,7 +8,7 @@ import { Env } from "$index";
 
 import { Database } from "schema";
 import { cfMiddleware, waitUntil } from "./cf";
-import { MODE } from "oss/constants";
+import { MODE } from "!constants";
 
 export interface JWTPayloadSpec {
   iss?: string;

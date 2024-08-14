@@ -14,7 +14,7 @@
 		"isolatedModules": true,
 		"paths": {
 			"$*": ["../server/*"],
-			"oss/*": ["./*"],
+			"!*": ["./*"],
 			"lib/*": ["../lib/*"],
 			"schema": ["../schema.ts"]
 		}
