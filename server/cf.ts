@@ -1,5 +1,5 @@
 import Elysia from "elysia";
-import { Env } from "$index";
+import type { Env } from "$index";
 
 export type waitUntil = (promise: Promise<unknown>) => Promise<void>;
 

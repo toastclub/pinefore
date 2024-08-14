@@ -1,4 +1,4 @@
-import { Env } from "$index";
+import type { Env } from "$index";
 import { db } from "$db";
 
 import rssCron from "./rss";

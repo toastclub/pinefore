@@ -3,7 +3,7 @@ import type { MiniQueueMessage } from "./types";
 
 import { feedsQueue } from "./rss";
 
-import { Env } from "$index";
+import type { Env } from "$index";
 import { db } from "$db";
 
 export default async function handleQueue(

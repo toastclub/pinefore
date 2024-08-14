@@ -8,7 +8,7 @@ function randomBetween0and1() {
   return buffer[0] / 4294967295;
 }
 
-function shouldSampleStatusCode(statusCode) {
+function shouldSampleStatusCode(statusCode: string | number) {
   let samplingRate = 30;
   statusCode = String(statusCode);
 

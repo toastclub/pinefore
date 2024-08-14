@@ -1,5 +1,7 @@
 // https://docs.google.com/document/d/1VG8HIyz361zGduWgNG7R_R8Xkv0OOJ8b5C9QKeCjU0c/view#heading=h.5s2qlonhpm36
 
+import type { Env } from "$index";
+
 async function browserAiAPIAvailable() {
   // @ts-expect-error
   if (typeof window == "undefined" || window.ai == undefined) {
@@ -59,7 +61,7 @@ export async function callCfAiServerside(
 }
 
 export function genAiHandlerFromEnv(
-  env: Record<string, any>
+  env: (Env & Record<string, any>) | undefined
 ): AiHandler | undefined {
   if (env?.CF_AI_ACCOUNT_ID && env?.CF_AI_TOKEN) {
     return {
@@ -71,7 +73,7 @@ export function genAiHandlerFromEnv(
       accountId: process.env.CF_AI_ACCOUNT_ID,
       token: process.env.CF_AI_TOKEN,
     };
-  } else if (env.AI) {
+  } else if (env?.AI) {
     return {
       function: env.AI,
     };

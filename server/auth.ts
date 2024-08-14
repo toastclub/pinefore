@@ -4,21 +4,11 @@ import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 
 import { HttpError } from "$plugins/error";
-import { Env } from "$index";
+import type { Env } from "$index";
 
 import { Database } from "schema";
 import { cfMiddleware, waitUntil } from "./cf";
 import { MODE } from "!constants";
-
-export interface JWTPayloadSpec {
-  iss?: string;
-  sub?: string;
-  aud?: string | string[];
-  jti?: string;
-  nbf?: number;
-  exp?: number;
-  iat?: number;
-}
 
 const jwtType = t.Object({
   id: t.Number(),
