@@ -2,9 +2,9 @@
 
 We have periodically experimented with AI for the following purposes:
 
-| Topic                                                       | Status                                                     |
-| ----------------------------------------------------------- | ---------------------------------------------------------- |
-| Generating titles when there is no title (eg Twit or Masto) | 🙈 [Suspended](https://social.coop/@eb/112797743728441302) |
+| Topic                                                   | Status                                                     |
+| ------------------------------------------------------- | ---------------------------------------------------------- |
+| Generating titles when there is none (eg Twit or Masto) | 🙈 [Suspended](https://social.coop/@eb/112797743728441302) |
 
 - 🙈 Suspended: The experiment has been suspended and is not currently active on the live site
 - 🚧 In Progress: The experiment is currently in development

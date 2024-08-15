@@ -2,7 +2,7 @@
 
 import { HttpError } from "$plugins/error";
 import { StatusMap } from "elysia";
-import { MODE } from "../constants";
+import { MODE } from "../../constants";
 
 const errorStringMap = {
   "missing-input-secret": "The secret parameter was not passed.",

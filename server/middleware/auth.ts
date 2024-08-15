@@ -7,7 +7,7 @@ import { HttpError } from "$plugins/error";
 import type { Env } from "$index";
 
 import { Database } from "schema";
-import { cfMiddleware, waitUntil } from "./cf";
+import { cfMiddleware, waitUntil } from "../middlewares/cf";
 import { MODE } from "!constants";
 
 const jwtType = t.Object({
