@@ -4,9 +4,17 @@ Lib files that are run exclusively on the server side of the application.
 
 ## Folders
 
+### Archive
+
+Scripts for downloading websites. Archive scripts are only partially open source.
+
 ### Cron
 
 Background tasks
+
+- RSS
+- Paying users
+- Archive purges
 
 ### Helpers
 
@@ -21,7 +29,7 @@ See local README.md
 
 Metadata extraction code for various sites. May be turned into a package.
 
-### Middlewares
+### Middleware
 
 #### auth.ts
 

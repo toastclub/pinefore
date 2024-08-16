@@ -1,8 +1,10 @@
-/// Adapted from https://github.com/cloudflare/pages-plugins/blob/main/packages/turnstile/functions/index.ts
+/**
+ * Adapted from https://github.com/cloudflare/pages-plugins/blob/main/packages/turnstile/functions/index.ts
+ */
 
 import { HttpError } from "$plugins/error";
 import { StatusMap } from "elysia";
-import { MODE } from "../../constants";
+import { MODE } from "!constants";
 
 const errorStringMap = {
   "missing-input-secret": "The secret parameter was not passed.",

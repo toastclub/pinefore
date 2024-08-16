@@ -1,7 +1,7 @@
-import { Kysely } from "kysely";
-import { Database } from "schema";
+import type { Kysely } from "kysely";
+import type { Database } from "schema";
 import { chunks } from "lib/types";
-import { MiniQueueMessage } from "../queues/types";
+import type { MiniQueueMessage } from "../queues/types";
 
 export default async function rssCron(
   db: Kysely<Database>,
