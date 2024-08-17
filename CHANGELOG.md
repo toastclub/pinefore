@@ -2,6 +2,10 @@
 
 ## August
 
+- 11th-???: Various changes to CRON; Queues; RSS; and Archives.
+- 10th: Root domain filtering
+- 4th-14th: Huge internal migration began. The backend and frontend used to be deployed together, but now they are separate, with their own `package.json`. This should help security and should make control much easier due to less bundling.
+- 4th, 5th: OG image generation
 - 3rd: Toasts for error messages
 - 1st-3rd: Bugfixes
 
