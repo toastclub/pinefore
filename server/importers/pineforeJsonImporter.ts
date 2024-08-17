@@ -1,7 +1,7 @@
-import { Static } from "elysia";
-import { modernPin } from "../commonSchema";
-import { Kysely } from "kysely";
-import { Database } from "schema";
+import type { Static } from "elysia";
+import type { modernPin } from "../commonSchema";
+import type { Kysely } from "kysely";
+import type { Database } from "schema";
 import { userEntityBuilderStart } from "$lib/entity";
 import { jsonBuildObject } from "kysely/helpers/postgres";
 import { id } from "lib/id";

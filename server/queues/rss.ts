@@ -1,12 +1,12 @@
-import { Kysely } from "kysely";
-import { Database } from "schema";
+import type { Kysely } from "kysely";
+import type { Database } from "schema";
 
 import { fetchRSSFeed, RSSFeedResponse } from "!packages/rss";
 import { getTimemap } from "!packages/timemachine/memento";
 
 import { rootDomain } from "!server/helpers";
 
-import { RSSQueueBody } from "./types";
+import type { RSSQueueBody } from "./types";
 
 export async function feedsQueue(db: Kysely<Database>, feeds: RSSQueueBody[]) {
   return Promise.all(feeds.map((f) => runOnFeed(db, f)));

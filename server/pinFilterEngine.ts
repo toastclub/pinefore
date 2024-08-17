@@ -7,7 +7,7 @@ import {
 } from "kysely";
 import type { Operation } from "!packages/pinery/types";
 import { decode } from "!packages/pinery";
-import { Database } from "schema";
+import type { Database } from "schema";
 import { recursiveKyselyCombiner } from "!packages/pinery/kysely";
 
 export const pinFilterSchema = {

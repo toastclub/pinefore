@@ -1,12 +1,12 @@
 import { Cookie, Elysia, Static, t } from "elysia";
-import { Kysely, sql } from "kysely";
+import { type Kysely, sql } from "kysely";
 import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify, type JWTPayload } from "jose";
 
 import { HttpError } from "$plugins/error";
 import type { Env } from "$index";
 
-import { Database } from "schema";
+import type { Database } from "schema";
 import { cfMiddleware, waitUntil } from "../middleware/cf";
 import { MODE } from "!constants";
 
