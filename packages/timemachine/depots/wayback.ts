@@ -3,7 +3,7 @@ export function getRawWaybackURL(url: string | URL) {
     url = new URL(url);
   }
   const path = url.pathname.split("/");
-  path[1] = path[1] + "_id";
+  path[1] = path[1] + "id_";
   url.pathname = path.join("/");
   return url;
 }

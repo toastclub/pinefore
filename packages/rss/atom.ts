@@ -11,9 +11,9 @@ export function atomParser(data: any) {
       feed.link = element._attributes.href;
     }
   });
-  feed.title = data.feed[0]?.title[0]?._text;
-  feed.subtitle = data.feed[0]?.subtitle[0]?._text;
-  let updated_at = data.feed[0]?.updated[0]?._text;
+  feed.title = data.feed[0]?.title[0]?._text?.[0];
+  feed.subtitle = data.feed[0]?.subtitle[0]?._text?.[0];
+  let updated_at = data.feed[0]?.updated[0]?._text?.[0];
   if (updated_at) {
     updated_at = new Date(updated_at);
     if (!Number.isNaN(updated_at.getTime())) {
@@ -29,14 +29,14 @@ function atomEntryParser(entry: any) {
     return null;
   }
   let item: RSSItem = {
-    title: entry.title[0]?._text,
-    link: entry.link[0]?._attributes.href,
-    guid: entry.id[0]?._text,
-    content: entry.content[0]?._text,
-    summary: entry.summary[0]?._text,
-    pubDate: entry.published[0]?._text,
-    isoDate: entry.updated[0]?._text,
-    creator: entry.author[0]?.name[0]?._text,
+    title: entry.title?.[0]?._text?.[0],
+    link: entry.link?.[0]?._attributes.href,
+    guid: entry.id?.[0]?._text?.[0],
+    content: entry.content?.[0]?._text?.[0],
+    summary: entry.summary?.[0]?._text?.[0],
+    pubDate: entry.published?.[0]?._text?.[0],
+    isoDate: entry.updated?.[0]?._text?.[0],
+    creator: entry.author?.[0]?.name[0]?._text?.[0],
     categories: entry.category?.map((c: any) => c._attributes.term),
   };
   return item;

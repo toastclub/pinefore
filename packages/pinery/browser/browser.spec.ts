@@ -10,8 +10,22 @@ const schema = {
 describe("browser decode", () => {
   let str = "user_id=1+created_at>2021-01-01+tags=tag1,tag2+tags!=tag3";
   let output = {
-    user_id: { "=": 1 },
-    created_at: { ">": new Date("2021-01-01") },
+    user_id: {
+      "!=": null,
+      "<": null,
+      "<=": null,
+      "=": 1,
+      ">": null,
+      ">=": null,
+    },
+    created_at: {
+      "!=": null,
+      "<": null,
+      "<=": null,
+      "=": null,
+      ">": new Date("2021-01-01"),
+      ">=": null,
+    },
     tags: {
       "=": ["tag1", "tag2"],
       "!=": ["tag3"],

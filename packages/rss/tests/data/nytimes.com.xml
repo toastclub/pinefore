@@ -1,0 +1,598 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:nyt="http://www.nytimes.com/namespaces/rss/2.0" version="2.0">
+  <channel>
+    <title>NYT &gt; Top Stories</title>
+    <link>https://www.nytimes.com</link>
+    <atom:link href="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml" rel="self" type="application/rss+xml"></atom:link>
+    <description></description>
+    <language>en-us</language>
+    <copyright>Copyright 2024 The New York Times Company</copyright>
+    <lastBuildDate>Sun, 18 Aug 2024 21:00:36 +0000</lastBuildDate>
+    <pubDate>Sun, 18 Aug 2024 19:37:05 +0000</pubDate>
+    <image>
+      <title>NYT &gt; Top Stories</title>
+      <url>https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png</url>
+      <link>https://www.nytimes.com</link>
+    </image>
+    <item>
+      <title>The 47 Seconds That Saved Kamala Harris’s Political Career</title>
+      <link>https://www.nytimes.com/2024/08/18/us/politics/kamala-harris-2010-debate.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/politics/kamala-harris-2010-debate.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/politics/kamala-harris-2010-debate.html" rel="standout"></atom:link>
+      <description>Nearly 14 years ago, Kamala Harris’s opponent in the California attorney general’s race gave an answer at a little-watched debate that was frank — and fateful for the future Democratic presidential nominee.</description>
+      <dc:creator>Shane Goldmacher</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 18:13:37 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Attorneys General</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Harris, Kamala D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">California</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Debates (Political)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Political Advertising</category>
+      <media:content height="1802" medium="image" url="https://static01.nyt.com/images/2024/08/14/multimedia/00pol-harris-ag01-photo-lbkh/00pol-harris-ag01-photo-lbkh-mediumSquareAt3X-v4.jpg" width="1800"></media:content>
+      <media:credit>Rich Pedroncelli/Associated Press</media:credit>
+      <media:description>Steve Cooley, left, then the district attorney of Los Angeles County, and Kamala Harris at a debate during their race for California attorney general in 2010.</media:description>
+    </item>
+    <item>
+      <title>How Kamala Harris Made Her Mark as Vice President</title>
+      <link>https://www.nytimes.com/2024/08/18/us/politics/kamala-harris-vice-president-record.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/politics/kamala-harris-vice-president-record.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/politics/kamala-harris-vice-president-record.html" rel="standout"></atom:link>
+      <description>As President Biden’s understudy, Ms. Harris did not often get to lead on signature issues. But she found roles to play on abortion rights, gun safety and a Supreme Court appointment.</description>
+      <dc:creator>Peter Baker and Zolan Kanno-Youngs</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 07:00:41 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Harris, Kamala D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Joseph R Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Vice Presidents and Vice Presidency (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Abortion</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Gun Control</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Supreme Court (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Jackson, Ketanji Brown (1970- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Illegal Immigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Dobbs v Jackson Women&#39;s Health Organization (Supreme Court Decision)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Content Type: Personal Profile</category>
+      <media:content height="1799" medium="image" url="https://static01.nyt.com/images/2024/08/18/multimedia/18dc-harris-record-top-sub-qpmj/18dc-harris-record-top-sub-qpmj-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+    </item>
+    <item>
+      <title>To Undecided Voters, Harris Is Famous, but Unknown. They Want to Learn More.</title>
+      <link>https://www.nytimes.com/2024/08/18/us/politics/undecided-voters-kamala-harris-donald-trump.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/politics/undecided-voters-kamala-harris-donald-trump.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/politics/undecided-voters-kamala-harris-donald-trump.html" rel="standout"></atom:link>
+      <description>Vice President Kamala Harris has lit a fire among loyal Democrats. But many voters still want to know more about what she stands for.</description>
+      <dc:creator>Jeremy W. Peters</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 17:52:24 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Polls and Public Opinion</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Democratic National Convention</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Republican Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Harris, Kamala D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">United States</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/18/multimedia/18nat-undecided-top-mhkf/18nat-undecided-top-mhkf-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+      <media:description>Vice President Kamala Harris at Wake Tech Community College in Raleigh, N.C.</media:description>
+    </item>
+    <item>
+      <title>In JD Vance’s Backyard, Conspiracy Theories About Migrants and Voting Abound</title>
+      <link>https://www.nytimes.com/2024/08/18/us/politics/vance-ohio-conspiracy-theory-immigration.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/politics/vance-ohio-conspiracy-theory-immigration.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/politics/vance-ohio-conspiracy-theory-immigration.html" rel="standout"></atom:link>
+      <description>A far-right plank on immigration that is rooted in a baseless theory has found purchase among Republicans and right-leaning independents in parts of Ohio.</description>
+      <dc:creator>Jazmine Ulloa and Maddie McGarvey</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 18:06:49 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Conspiracy Theories</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Illegal Immigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Voter Fraud (Election Fraud)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Immigration and Emigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Right-Wing Extremism and Alt-Right</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Republican Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Vance, J D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Ohio</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/08/17/multimedia/17pol-vance-ohio-immig01-photo-wpkj/17pol-vance-ohio-immig01-photo-wpkj-mediumSquareAt3X-v2.jpg" width="1800"></media:content>
+      <media:description>Demographic and cultural changes in Ohio over the past decade have made conditions ripe for conspiracy theories about immigration to spread.</media:description>
+    </item>
+    <item>
+      <title>Fact-Checking Trump’s and Harris’s Attacks on Each Other’s Policies</title>
+      <link>https://www.nytimes.com/2024/08/17/us/politics/trump-harris-fact-check-policies-records.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/17/us/politics/trump-harris-fact-check-policies-records.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/17/us/politics/trump-harris-fact-check-policies-records.html" rel="standout"></atom:link>
+      <description>We examine the two candidates’ criticisms of each other’s policies, promises and records.</description>
+      <dc:creator>Linda Qiu</dc:creator>
+      <pubDate>Sat, 17 Aug 2024 09:02:13 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Harris, Kamala D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Agriculture Department</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Illegal Immigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Health Insurance and Managed Care</category>
+      <media:content height="1650" medium="image" url="https://static01.nyt.com/images/2024/08/17/multimedia/17dc-factcheck-mlbc/17dc-factcheck-mlbc-mediumSquareAt3X.jpg" width="1650"></media:content>
+      <media:credit>Doug Mills/The New York Times; Erin Schaff/The New York Times</media:credit>
+      <media:description>Former President Donald J. Trump has used a variety of attack lines on Vice President Kamala Harris, while she has sought to contrast her background as a prosecutor and attorney general with his conviction for falsifying business records.</media:description>
+    </item>
+    <item>
+      <title>Protesters Will Converge on Chicago. City Leaders Say They’re Prepared.</title>
+      <link>https://www.nytimes.com/2024/08/18/us/chicago-dnc-protests.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/chicago-dnc-protests.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/chicago-dnc-protests.html" rel="standout"></atom:link>
+      <description>Activists plan to push for policy changes on Gaza as Democrats hold their convention. Chicago officials are confident they will avoid a repeat of the chaos that unfolded in 1968.</description>
+      <dc:creator>Mitch Smith and Nicholas Bogel-Burroughs</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 16:47:41 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Demonstrations, Protests and Riots</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Democratic National Convention</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Chicago (Ill)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Israel-Gaza War (2023- )</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/08/18/multimedia/18nat-chicago-protests--01-lfcz/18nat-chicago-protests--01-lfcz-mediumSquareAt3X-v2.jpg" width="1800"></media:content>
+      <media:credit>Jamie Kelter Davis for The New York Times</media:credit>
+      <media:description>A security perimeter has been established around the United Center in Chicago, where the convention will take place.</media:description>
+    </item>
+    <item>
+      <title>For Democratic Convention Goers in Chicago, Migrants Issue Comes Into Full View</title>
+      <link>https://www.nytimes.com/2024/08/18/us/chicago-migrants-democratic-convention.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/chicago-migrants-democratic-convention.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/chicago-migrants-democratic-convention.html" rel="standout"></atom:link>
+      <description>The crisis continues to play out on the city’s streets, reminding Democrats of a potential liability — border crossings — ahead of the election.</description>
+      <dc:creator>Julie Bosman, Emily Schmall and Jamie Kelter Davis</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 09:00:55 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Illegal Immigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Labor and Jobs</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Asylum, Right of</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Democratic National Convention</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Homeless Persons</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Sidewalks</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Immigration Shelters</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Immigration and Emigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hispanic-Americans</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Immigration Detention</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Street Vendors (Non-Food)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Migrant Labor (Non-Agriculture)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Elections</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Home Depot Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">United Center (Chicago, Ill)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Abbott, Gregory W (1957- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Johnson, Brandon (Chicago, Ill, Politician)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Chicago (Ill)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Ecuador</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Latin America</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">South America</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Texas</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Venezuela</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/08/13/multimedia/nat-migrants-chicago-top-jmzw/nat-migrants-chicago-top-jmzw-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:description>More than 46,000 migrants have arrived in Chicago since late 2022, the majority on buses from the southern border.</media:description>
+    </item>
+    <item>
+      <title>JB Pritzker Is Ready to Party at a Convention He Made Happen</title>
+      <link>https://www.nytimes.com/2024/08/18/us/politics/pritzker-democratic-convention.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/politics/pritzker-democratic-convention.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/politics/pritzker-democratic-convention.html" rel="standout"></atom:link>
+      <description>An unusual and chaotic set of political circumstances forced Illinois’s billionaire governor to take the lead in securing the Democratic convention for Chicago.</description>
+      <dc:creator>Jonathan Weisman</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 12:28:26 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Democratic National Convention</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Democratic National Committee</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Johnson, Brandon (Chicago, Ill, Politician)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Pritzker, J B</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Duckworth, L Tammy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Chicago (Ill)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Illinois</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <media:content height="1799" medium="image" url="https://static01.nyt.com/images/2024/08/18/multimedia/18pol-pritzker01-photo-gkzq/18pol-pritzker01-photo-gkzq-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Jim Vondruska for The New York Times</media:credit>
+      <media:description>“In Illinois, Democrats deliver,” Gov. JB Pritzker said in an email when asked for his pitch for the convention.</media:description>
+    </item>
+    <item>
+      <title>‘The Blind Side’ Made Him Famous. But He Has a Different Story to Tell.</title>
+      <link>https://www.nytimes.com/2024/08/18/magazine/blind-side-michael-oher.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/magazine/blind-side-michael-oher.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/magazine/blind-side-michael-oher.html" rel="standout"></atom:link>
+      <description>The football player Michael Oher believes his early life was misrepresented by the Oscar-winning movie and the book it was based on.</description>
+      <dc:creator>Michael Sokolove</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 09:01:26 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Football</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Oher, Michael</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Baltimore Ravens</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">University of Mississippi</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Books and Literature</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">The Blind Side: Evolution of a Game (Book)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">The Blind Side (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Tuohy, Leigh Anne</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Tuohy, Sean</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Suits and Litigation (Civil)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Content Type: Personal Profile</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Race and Ethnicity</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/18/magazine/18mag-blindside/18mag-blindside-mediumSquareAt3X-v2.jpg" width="1800"></media:content>
+      <media:credit>Joshua Rashaad McFadden for The New York Times</media:credit>
+    </item>
+    <item>
+      <title>Alain Delon, French Film Star, Dead at 88</title>
+      <link>https://www.nytimes.com/2024/08/18/obituaries/alain-delon-dead.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/obituaries/alain-delon-dead.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/obituaries/alain-delon-dead.html" rel="standout"></atom:link>
+      <description>The César-winning actor was an international favorite in the 1960s and ’70s, often sought after by the era’s great auteurs.</description>
+      <dc:creator>Anita Gates</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 19:35:15 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Deaths (Obituaries)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Delon, Alain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Actors and Actresses</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">France</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">La Piscine (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Le Cercle Rouge (Movie)</category>
+    </item>
+    <item>
+      <title>Where to Stream the Films of Alain Delon</title>
+      <link>https://www.nytimes.com/2024/08/18/movies/alain-delon-streaming.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/movies/alain-delon-streaming.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/movies/alain-delon-streaming.html" rel="standout"></atom:link>
+      <description>A look at 10 standout films featuring the actor, who died on Sunday at 88.</description>
+      <dc:creator>Elisabeth Vincentelli</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 15:51:23 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Delon, Alain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">La Piscine (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Le Cercle Rouge (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Mr. Klein (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">The Leopard (Movie)</category>
+      <media:content height="1485" medium="image" url="https://static01.nyt.com/images/2022/04/25/arts/delon-klein1/delon-klein1-mediumSquareAt3X.jpg" width="1486"></media:content>
+      <media:credit>Rialto Pictures</media:credit>
+      <media:description>Alain Delon in &#34;Mr. Klein.&#34;</media:description>
+    </item>
+    <item>
+      <title>Joe Biden’s Interrupted Presidency</title>
+      <link>https://www.nytimes.com/2024/08/18/magazine/joe-biden-president-legacy.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/magazine/joe-biden-president-legacy.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/magazine/joe-biden-president-legacy.html" rel="standout"></atom:link>
+      <description>He sought the office nearly all his life. When he finally got there, it brought out his best — and eventually his worst.</description>
+      <dc:creator>Robert Draper</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 09:01:57 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Joseph R Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Harris, Kamala D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Obama, Barack</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Senate</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2020</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+    </item>
+    <item>
+      <title>Six Takeaways From the Magazine’s Profile of Joe Biden</title>
+      <link>https://www.nytimes.com/2024/08/18/magazine/biden-presidency-legacy-takeaways.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/magazine/biden-presidency-legacy-takeaways.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/magazine/biden-presidency-legacy-takeaways.html" rel="standout"></atom:link>
+      <description>His decision to quit the race ended a remarkable chapter in American political history — and started one that may yet define his legacy.</description>
+      <dc:creator>Robert Draper</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 09:03:53 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Joseph R Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Harris, Kamala D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Obama, Barack</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Senate</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/25/magazine/25mag-Biden-images-10/25mag-Biden-images-10-mediumSquareAt3X-v2.jpg" width="1800"></media:content>
+      <media:credit>Haiyun Jiang for The New York Times</media:credit>
+    </item>
+    <item>
+      <title>Companies Hope Making Offices Like Hotels Will Lure Workers Back</title>
+      <link>https://www.nytimes.com/2024/08/18/business/office-design-work-resort.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/business/office-design-work-resort.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/business/office-design-work-resort.html" rel="standout"></atom:link>
+      <description>Hoping to lure workers back to their desks, companies are designing “work resorts,” luxe spaces meant to compete with the comforts and versatility of their living room.</description>
+      <dc:creator>Stacey Freed</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 16:51:59 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Real Estate (Commercial)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Workplace Environment</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Architecture</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Interior Design and Furnishings</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hotels and Travel Lodgings</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/07/multimedia/00WORK-RESORTS-01-bkwt/00WORK-RESORTS-01-bkwt-mediumSquareAt3X-v2.jpg" width="1800"></media:content>
+      <media:credit>Jim Wilson/The New York Times</media:credit>
+      <media:description>A man working from a co-working space at Springline in Menlo Park, Calif. Springline is a “work resort,” which means its office space designs have taken a page from boutique hotels.</media:description>
+    </item>
+    <item>
+      <title>Attack by Israeli Settlers in West Bank Sends Palestinians Fleeing</title>
+      <link>https://www.nytimes.com/2024/08/18/world/middleeast/israel-settlers-attack-jit-west-bank.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/world/middleeast/israel-settlers-attack-jit-west-bank.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/world/middleeast/israel-settlers-attack-jit-west-bank.html" rel="standout"></atom:link>
+      <description>Residents of the village in the Israeli-occupied West Bank say one Palestinian man was killed by rampaging settlers. Israel’s military confirmed the village was attacked.</description>
+      <dc:creator>Raja Abdulrahim</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 04:01:11 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">West Bank</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Palestinians</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Israeli Settlements</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Murders, Attempted Murders and Homicides</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Vandalism</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Israel</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Gaza Strip</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Israel-Gaza War (2023- )</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/16/multimedia/16mideast-crisis-west-bank-jit-zgbj/16mideast-crisis-west-bank-jit-zgbj-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Sergey Ponomarev for The New York Times</media:credit>
+      <media:description>The aftermath of an attack on the village of Jit in the Israeli-occupied West Bank.</media:description>
+    </item>
+    <item>
+      <title>Blinken Travels to Israel Amid Push for Gaza Cease-Fire</title>
+      <link>https://www.nytimes.com/2024/08/18/world/middleeast/blinken-israel-gaza-hamas.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/world/middleeast/blinken-israel-gaza-hamas.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/world/middleeast/blinken-israel-gaza-hamas.html" rel="standout"></atom:link>
+      <description>Prime Minister Benjamin Netanyahu cautioned that the negotiations were “very complex,” as the secretary of state flew to Israel to try to clinch a deal.</description>
+      <dc:creator>Isabel Kershner</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 19:08:55 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Israel-Gaza War (2023- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Israel</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Gaza Strip</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Hamas</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Iran</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Hezbollah</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Houthis</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/18/multimedia/18mideast-leadall-gvpf/18mideast-leadall-gvpf-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Pool photo by Kevin Mohatt</media:credit>
+      <media:description>Secretary of State Antony J. Blinken landed in Tel Aviv on Sunday and was scheduled to meet in Jerusalem with Prime Minister Benjamin Netanyahu on Monday.</media:description>
+    </item>
+    <item>
+      <title>Russians Fleeing Ukraine’s Advance Border Regions Rush to Kursk</title>
+      <link>https://www.nytimes.com/2024/08/18/world/europe/kursk-russia-ukraine-incursion.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/world/europe/kursk-russia-ukraine-incursion.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/world/europe/kursk-russia-ukraine-incursion.html" rel="standout"></atom:link>
+      <description>In the regional capital, those who left their homes as Ukrainian forces tore into western Russia are uncertain whether they can ever return to their old lives.</description>
+      <dc:creator>Nanna Heitmann</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 09:03:38 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Russian Invasion of Ukraine (2022)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Ukraine</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Russia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Kursk (Russia)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Refugees and Displaced Persons</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">vis-photo</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/08/16/multimedia/16russia-kursk-01-promo/16russia-kursk-01-khbp-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Nanna Heitmann for The New York Times</media:credit>
+    </item>
+    <item>
+      <title>Ukraine’s Incursion Into Russia: What to Know</title>
+      <link>https://www.nytimes.com/article/ukraine-russia-kursk-incursion-war.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/article/ukraine-russia-kursk-incursion-war.html</guid>
+      <atom:link href="https://www.nytimes.com/article/ukraine-russia-kursk-incursion-war.html" rel="standout"></atom:link>
+      <description>The incursion caught Russia by surprise and signified a shift in tactics for Kyiv after more than two years of war with Russia.</description>
+      <dc:creator>Andrew E. Kramer, Constant Méheut, Kim Barker, Anton Troianovski and Cassandra Vinograd</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 10:29:35 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Russian Invasion of Ukraine (2022)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Putin, Vladimir V</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Syrsky, Oleksandr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Zelensky, Volodymyr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Belgorod (Russia)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Bryansk (Russia)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Russia</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/08/13/multimedia/13ukraine-attack-wwk-01-zlhb/13ukraine-attack-wwk-01-zlhb-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>David Guttenfelder for The New York Times</media:credit>
+      <media:description>Ukrainian men carrying a dead Russian soldier in a body bag after finding him in the rubble of a destroyed Russian border post on Monday.</media:description>
+    </item>
+    <item>
+      <title>Statue of John Lewis Replaces a Confederate Memorial in Georgia</title>
+      <link>https://www.nytimes.com/2024/08/18/us/john-lewis-statue-decatur-georgia.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/john-lewis-statue-decatur-georgia.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/john-lewis-statue-decatur-georgia.html" rel="standout"></atom:link>
+      <description>The 12-foot-tall bronze statue of the civil rights leader was commissioned after Mr. Lewis died in 2020. It stands where a Confederate memorial was erected in 1908.</description>
+      <dc:creator>Amanda Holpuch</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 16:39:02 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Civil Rights Movement (1954-68)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Monuments and Memorials (Structures)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Demonstrations, Protests and Riots</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Sculpture</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Civil War (US) (1861-65)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Civil Rights and Liberties</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Lewis, John R</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Student Nonviolent Coordinating Committee (SNCC)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Georgia</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/18/multimedia/18xp-lewis1-mfjw/18xp-lewis1-mfjw-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Ron Harris/Associated Press</media:credit>
+      <media:description>A statue of John Lewis, the civil rights leader, outside the DeKalb County Courthouse. It will officially be unveiled on Aug. 24.</media:description>
+    </item>
+    <item>
+      <title>Young Artists Rode a $712 Million Boom. Then Came the Bust.</title>
+      <link>https://www.nytimes.com/2024/08/18/arts/design/young-artists-auctions-collectors.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/arts/design/young-artists-auctions-collectors.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/arts/design/young-artists-auctions-collectors.html" rel="standout"></atom:link>
+      <description>Artists saw six-figure sales and heard promises of stardom. But with the calamitous downturn in the art market, many collectors bolted — and prices plummeted.</description>
+      <dc:creator>Zachary Small and Julia Halperin</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 17:21:54 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Auctions</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Collectors and Collections</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Art</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Zuckerman, Allison (Artist)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Christie&#39;s</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Phillips Auctioneers LLC</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Amani Lewis</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Emmanuel Taku</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">United States</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/08/19/multimedia/00artist-plummet-01-lewis-wkzb/00artist-plummet-lewis-wkzb-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Ysa Pérez for The New York Times</media:credit>
+      <media:description>Amani Lewis, shown with a 2024 painting, “Galatians 6:2 — the carriers,” in an artspace in Miami. Another work’s value plummeted by 90 percent. The painter said, “It feels like ‘We’re done with Amani Lewis.’”</media:description>
+    </item>
+    <item>
+      <title>Joe Manchin Has Some Unsolicited Advice for Kamala Harris and the Democrats</title>
+      <link>https://www.nytimes.com/2024/08/18/opinion/joe-manchin-kamala-harris.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/opinion/joe-manchin-kamala-harris.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/opinion/joe-manchin-kamala-harris.html" rel="standout"></atom:link>
+      <description>The senator from West Virginia assesses the Democratic Party and its path to victory in November.</description>
+      <dc:creator>Michelle Cottle</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 11:12:19 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Manchin, Joe III</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Harris, Kamala D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Joseph R Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Law and Legislation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Mines and Mining</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">West Virginia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Schumer, Charles E</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">McConnell, Mitch</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Boehner, John A</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Sanders, Bernard</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/19/multimedia/18cottle-01-pqfh/18cottle-01-pqfh-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Jonno Rattman for The New York Times</media:credit>
+    </item>
+    <item>
+      <title>Trump Has Turned the Democratic Party Into a Pitiless Machine</title>
+      <link>https://www.nytimes.com/2024/08/18/opinion/pelosi-trump-biden-harris.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/opinion/pelosi-trump-biden-harris.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/opinion/pelosi-trump-biden-harris.html" rel="standout"></atom:link>
+      <description>The former president’s victory made it ruthlessly pragmatic.</description>
+      <dc:creator>Ezra Klein</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 05:00:07 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Democratic Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Republican Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Joseph R Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/08/18/multimedia/18klein-lhcb/18klein-lhcb-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Jim Lo Scalzo/EPA, via Shutterstock</media:credit>
+    </item>
+    <item>
+      <title>Jim Foley’s Legacy Helped Change Hostage Policy</title>
+      <link>https://www.nytimes.com/2024/08/18/opinion/jim-foley-hostage-policy.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/opinion/jim-foley-hostage-policy.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/opinion/jim-foley-hostage-policy.html" rel="standout"></atom:link>
+      <description>Americans held captive overseas deserve all of our help.</description>
+      <dc:creator>Diane Foley</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 17:49:20 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Foley, James (1973-2014)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Islamic State in Iraq and Syria (ISIS)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Joseph R Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Kidnapping and Hostages</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Murders, Attempted Murders and Homicides</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kotey, Alexanda</category>
+    </item>
+    <item>
+      <title>Harris Can Change Biden’s Policy on Israel Just by Upholding the Law</title>
+      <link>https://www.nytimes.com/2024/08/18/opinion/biden-israel-policy-harris.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/opinion/biden-israel-policy-harris.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/opinion/biden-israel-policy-harris.html" rel="standout"></atom:link>
+      <description>The longstanding Leahy law can — and should — change Middle East policy.</description>
+      <dc:creator>Peter Beinart</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 15:30:06 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Israel-Gaza War (2023- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Israel</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Gaza Strip</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Foreign Aid</category>
+      <category domain="">Leahy law</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Harris, Kamala D</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">War Crimes, Genocide and Crimes Against Humanity</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Blinken, Antony J</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/09/15/multimedia/15b-vqpg/15b-vqpg-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Nathan Howard/Reuters</media:credit>
+    </item>
+    <item>
+      <title>Northwell Health Is Starting Its Own Film Studio After Starring in Documentaries</title>
+      <link>https://www.nytimes.com/2024/08/17/nyregion/northwell-health-hospitals-film-television.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/17/nyregion/northwell-health-hospitals-film-television.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/17/nyregion/northwell-health-hospitals-film-television.html" rel="standout"></atom:link>
+      <description>The Northwell Health system allowed filmmakers to make documentaries following its doctors, nurses and patients. It went so well, the hospital is starting a studio to make its own.</description>
+      <dc:creator>Joseph Goldstein</dc:creator>
+      <pubDate>Sat, 17 Aug 2024 16:30:28 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hospitals</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Television</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Documentary Films and Programs</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Doctors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Northwell Health</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Netflix Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">New York City</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Upper East Side (Manhattan, NY)</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/16/nyregion/16northwell-shows/16northwell-shows-mediumSquareAt3X-v2.jpg" width="1800"></media:content>
+      <media:credit>Stephanie Keith/Netflix</media:credit>
+      <media:description>On the set of Netflix’s “Lenox Hill,” set in a real-life hospital owned by Northwell Health.</media:description>
+    </item>
+    <item>
+      <title>Who Won Big in the Supreme Court’s Latest Term? The ‘Regulated Community.’</title>
+      <link>https://www.nytimes.com/2024/08/09/business/supreme-court-regulated-community.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/09/business/supreme-court-regulated-community.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/09/business/supreme-court-regulated-community.html" rel="standout"></atom:link>
+      <description>The phrase, used across industries to signify a shared subjugation to regulatory fiat, has been popping up after three Supreme Court decisions last month.</description>
+      <dc:creator>Lydia DePillis</dc:creator>
+      <pubDate>Fri, 09 Aug 2024 09:04:54 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Regulation and Deregulation of Industry</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Suits and Litigation (Civil)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Chevron v Natural Resources Defense Council (Supreme Court Decision)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Decisions and Verdicts</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Supreme Court (US)</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/11/business/11shoptalk-regulated-comm-illo/11shoptalk-regulated-comm-illo-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Melanie Lambrick</media:credit>
+    </item>
+    <item>
+      <title>3 More Victims of 1921 Tulsa Race Massacre Found With Gunshot Wounds</title>
+      <link>https://www.nytimes.com/2024/08/18/us/tulsa-race-massacre-victims-gunshot.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/us/tulsa-race-massacre-victims-gunshot.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/us/tulsa-race-massacre-victims-gunshot.html" rel="standout"></atom:link>
+      <description>Officials are exhuming bodies to learn more about the victims of one of the worst racial attacks in U.S. history.</description>
+      <dc:creator>Hank Sanders</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 15:00:51 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hate Crimes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Black People</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Tulsa Race Riot (1921)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Oaklawn Cemetery (Tulsa, Okla)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Tulsa (Okla)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Deaths (Fatalities)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Murders, Attempted Murders and Homicides</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Archaeology and Anthropology</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/19/multimedia/19xp-tulsa-lmqv/19xp-tulsa-lmqv-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Mike Simons/Tulsa World, via Associated Press</media:credit>
+      <media:description>Crews at the Oaklawn Cemetery during an excavation of bodies from the 1921 Tulsa Race Massacre. Three victims were exhumed and determined to show evidence of gunshot wounds.</media:description>
+    </item>
+    <item>
+      <title>Elon Musk Closes X Operations in Brazil Over Fight With Judge</title>
+      <link>https://www.nytimes.com/2024/08/18/world/americas/elon-musk-x-brazil.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/18/world/americas/elon-musk-x-brazil.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/18/world/americas/elon-musk-x-brazil.html" rel="standout"></atom:link>
+      <description>The billionaire said he would shutter his social network’s Brazil operations instead of complying with a Brazilian judge’s orders to suspend accounts.</description>
+      <dc:creator>Jack Nicas</dc:creator>
+      <pubDate>Sun, 18 Aug 2024 18:38:34 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Moraes, Alexandre de (1968- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Musk, Elon</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Brazil</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">X (Formerly Twitter)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Supreme Federal Court (Brazil)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Folha de Sao Paulo</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bolsonaro, Jair (1955- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Censorship</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/08/18/multimedia/18brazil-x-cwtv/18brazil-x-cwtv-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Gonzalo Fuentes/Reuters</media:credit>
+      <media:description>Elon Musk in Paris last year. Mr. Musk, who owns the social network X, has been in a monthslong feud with a Brazilian Supreme Court judge, Alexandre de Moraes, over what he considers censorship of conservative voices on the platform.</media:description>
+    </item>
+    <item>
+      <title>AJ Aquino and Dr. David Poon, Advocates Who Reunite International Couples, Get Married</title>
+      <link>https://www.nytimes.com/2024/08/16/style/aj-aquino-david-poon-wedding-advocacy.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/08/16/style/aj-aquino-david-poon-wedding-advocacy.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/08/16/style/aj-aquino-david-poon-wedding-advocacy.html" rel="standout"></atom:link>
+      <description>AJ Aquino met Dr. David Poon while visiting Toronto from Ireland in 2017. During the pandemic, she visited him and was turned away. And so began their efforts to help other couples reunite.</description>
+      <dc:creator>Tammy LaGorce</dc:creator>
+      <pubDate>Fri, 16 Aug 2024 14:52:39 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Weddings and Engagements</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Coronavirus (2019-nCoV)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Quarantines</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Canada</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Toronto (Ontario)</category>
+    </item>
+  </channel>
+</rss>

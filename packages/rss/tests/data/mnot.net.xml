@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>mark nottingham</title>
+  <link rel="alternate" type="text/html" href="https://www.mnot.net/blog/" />
+  <link rel="self" type="application/atom+xml" href="https://www.mnot.net/blog/index.atom" />
+  <id>tag:www.mnot.net,2010-11-11:/blog//1</id>
+  <updated>2024-08-05T23:18:37Z</updated>
+  <subtitle></subtitle>
+
+  <entry>
+    <title>Are Internet Standards Competitive or Collaborative?</title>
+    <link rel="alternate" type="text/html" href="https://www.mnot.net/blog/2024/07/16/collaborative_standards" />
+    <id>https://www.mnot.net/blog/2024/07/16/collaborative_standards</id>
+    <updated>2024-07-16T00:00:00Z</updated>
+    <author>
+        <name>Mark Nottingham</name>
+        <uri>https://www.mnot.net/personal/</uri>
+    </author>
+    <summary>It&apos;s often assumed that standards work is inherently competitive. This post examines why Internet standards are often more collaborative than competitive, and outlines some implications of this approach.</summary>
+
+	<category term="Standards" />
+
+	<category term="Internet and Web" />
+
+    <content type="html" xml:lang="en" xml:base="https://www.mnot.net/blog/2024/07/16/collaborative_standards">
+  	  <![CDATA[<p class="intro">Itâ€™s often assumed that standards work is inherently competitive. After all, the legal reason for Standards Developing Organisations (SDOs) to exist at all is as a shelter from prosecution for what would otherwise be anti-competitive behaviour.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<p>That description evokes images of hard-fought, zero-sum negotiation where companies use whatever dirty tricks they can to steer the outcome and consolidate whatever market power they can.</p>
+
+<p>And that does happen. Iâ€™ve experienced that testosterone-soaked style of standardisation in the â€™00s when IBM, Microsoft, and Oracle attempted to standardise Web Services (i.e., machine-to-machine communication using XML) at the W3C. It <a href="/blog/2006/05/10/vendors">did not end well</a>.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
+
+<p class="hero">Thankfully, the reality of modern Internet and Web standards work differs greatly from that experience. While companies are still competing in relevant markets, and still use standards as strategic tools â€“ and yes, sometimes they behave badly â€“ both the culture and processes of these bodies are geared heavily towards <strong>collaboration</strong> and <strong>cooperation</strong>.</p>
+
+<p>In part, thatâ€™s due to the history of the Internet and the Web. Both were projects born from collaborative, non-commercial efforts in research environments that reward cooperation. Early on, these attitudes were embedded into the cultures of both the IETF and W3C: Web Services was an anomaly because corporate interests brought that effort from the â€˜outside.â€™</p>
+
+<p>This tendency can be seen in everything from the IETFâ€™s â€˜<a href="https://www.ietf.org/about/introduction/#participants">we participate as individuals, there is no membership</a>â€™ ethic to W3Câ€™s focus on building a <a href="https://www.w3.org/policies/code-of-conduct/">positive working environment</a>. When someone attempts to steer an outcome to benefit one company or appears to act in bad faith, people notice â€“ these things are frowned upon.</p>
+
+<p>Internet and Web standards work also tend to attract people who believe in the mission of these organisations â€“ often to the point where they identify more with the standards work than their current employer. In fact, itâ€™s not uncommon for people to shift from company to company over their careers while still working on the same standards, and without appreciably changing their perspectives on what the correct outcomes are.</p>
+
+<p>As a result, long-term standards participants in these bodies often build strong relationships with each other: through years of interaction, they come to understand each otherâ€™s points of view, quirks of behaviour, and red lines. That doesnâ€™t mean they always agree, of course. However, those relationships form the backbone of how much of Internet standards work gets done.</p>
+
+<p>Another factor worth mentioning: as SDOs have matured, theyâ€™ve created increasingly elaborate process mechanisms and cross-cutting reviews of aspects like security, privacy, operability, and more. In practice, these checks and balances tend to reward collaborative work and discourage unilateral behaviour.</p>
+
+<p>All of this means that itâ€™s best to think of these as communities, rather than mere gatherings of competitors. Thatâ€™s not to say that they always get along or even that theyâ€™re <em>healthy</em> communities â€“ sometimes things get <a href="https://www.nytimes.com/2021/04/13/technology/racist-computer-engineering-terms-ietf.html">very bad indeed</a>.<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> Iâ€™m also not suggesting that companies do not behave competitively in Internet standards: itâ€™s just that competition happens in a more subtle way. Rather than trying to use standards as a way to direct markets towards themselves, companies more often compete in implementation and delivery â€“ building value on top of whatâ€™s standardised.</p>
+
+<p>And, to be clear, this is specific to Internet-related standards bodies; other places often still follow the â€˜old ways,â€™ from what I gather.</p>
+
+<h3 id="an-aside-on-collaboration-and-innovation">An Aside on Collaboration and Innovation</h3>
+
+<p>All of this might sound counterintuitive if you take the view that innovation primarily comes from deep within companies that produce things â€“ firms that cannily use interoperability to consolidate their market share, or grudgingly share their valuable work with others under pain of anti-trust prosecution. Carliss Baldwin and Eric von Hippel persuasively argue against this view in <a href="https://pubsonline.informs.org/doi/10.1287/orsc.1100.0618"><em>Modeling a Paradigm Shift: From Producer Innovation to User and Open Collaborative Innovation</em></a>:</p>
+
+<blockquote>
+  <p>We have seen, and expect to continue to see, single-user innovation and open collaborative innovation growing in importance relative to producer innovation in most sectors of the economy. We do not believe that producer innovation will disappear, but we do expect it to become less pervasive and ubiquitous than was the case during most of the 20th century, and to be combined with user and open collaborative innovation in many settings.</p>
+</blockquote>
+
+<p>Most interestingly, they point out that decreasing design and communication costs brought by â€“ wait for it â€“ technical innovations like the Internet mean that open collaboration becomes a viable model for innovation in more and more cases.</p>
+
+<p>In short, under the right circumstances, success becomes more likely when cooperating as opposed to attempting to innovate on your own. Open collaborative efforts like Internet standards can be a significant source of innovation, and in some circumstances a distinctly superior one. I think this is an important point to consider when contemplating innovation and competition policies.</p>
+
+<h3 id="some-less-obvious-implications">Some Less Obvious Implications</h3>
+
+<p>The collaborative nature of modern Internet standards work has some interesting implications, and some can be seen as downsides â€“ or at least features that we need to be well aware of.</p>
+
+<p>Most importantly, it means that SDOs have distinct cultures with values and norms. This isnâ€™t surprising to anyone familiar with organisational theory, but it can seem exclusionary or even hostile to those who donâ€™t share them. Outsiders may need to do considerable work to get â€˜up to speedâ€™ with those values and norms if they want to be successful in these bodies. Even then, they may face roadblocks if their goals and values arenâ€™t aligned with that of those already entrenched in the organisation.</p>
+
+<p>It also means that these bodies are opinionated about the work they take on: Internet SDOs donâ€™t typically â€˜rubber stampâ€™ proposals from outside. Because they are communities with context and specific expertise, what they produce is â€˜flavouredâ€™ by the values and even tastes of those communities. Again, this can be difficult to understand for those who just want their proposal standardised. This factor also limits the ability of these organisations to address problems outside their areas of expertise: theyâ€™re not generic venues for any kind of standards work (a more common model elsewhere).</p>
+
+<p>The clubby nature of collaboration can sit very uneasily with the competitive aspects that are inevitably still present in much of this work. Outcomes are heavily influenced by who shows up: three router vendors collaborating well are likely to come up with something that works well for router vendors. However, if the work negatively affects other parties who show up later and try to change things, integrating their viewpoints can be challenging, because they will be seen as going against an established (albeit smaller) consensus (see also the <a href="/blog/2024/07/05/open_internet_standards">previous discussion of the limits of openness</a>).</p>
+
+<p>When there is contention over how to apply values to standards work (or over the values themselves) a collaborative SDO can struggle to manage the resulting confrontation, especially if their culture is primarily oriented towards â€˜friendlyâ€™ engagements. For example, many still harbour significant bitterness regarding the well-documented disagreement about <a href="https://www.eff.org/deeplinks/2013/10/lowering-your-standards">DRM in HTML</a> and how it was resolved. The <a href="https://cyberlaw.stanford.edu/press/do-not-track-privacy-tool-used-millions-people-doesnt-do-anything">Do Not Track specification failed</a> because the participants couldnâ€™t agree on the meaning of the term, and because <a href="/blog/2024/03/13/voluntary">adoption of Internet standards is voluntary</a>. It remains to be seen whether the very divergent views of the advertising, publishing, and privacy communities can be reconciled in <a href="https://patcg.github.io">more recent efforts</a>.</p>
+
+<p>Ultimately, these factors put pressure on the SDOâ€™s governance: a well-governed venue will assure that collaboration functions well, while avoiding capture by narrow interests and assuring that all affected parties have an opportunity to participate â€“ even if they arenâ€™t a good â€˜cultural fitâ€™.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>See, for example, <a href="https://eur-lex.europa.eu/eli/treaty/tfeu_2008/art_101/oj">TFEU Article 101(3)</a>, which exempts an agreement between competitors â€“ including those in standards bodies â€“ that â€œcontributes to improving the production or distribution of goods or to promoting technical or economic progress, while allowing consumers a fair share of the resulting benefit[â€¦]â€Â <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>To get a sense of what Web Services standards felt like in music video form, try watching <em><a href="https://www.youtube-nocookie.com/embed/NUC2EQvdzmY?si=NgG4OUSNhCFeqY_o">Nobody Speak</a></em> from DJ Shadow (warning: lyrics).Â <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>Note that the IETF culture has changed in significant ways since that article was published.Â <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]>
+    </content>
+  </entry>
+
+  <entry>
+    <title>Openness in Internet Standards: Necessary, but Insufficient</title>
+    <link rel="alternate" type="text/html" href="https://www.mnot.net/blog/2024/07/05/open_internet_standards" />
+    <id>https://www.mnot.net/blog/2024/07/05/open_internet_standards</id>
+    <updated>2024-07-05T00:00:00Z</updated>
+    <author>
+        <name>Mark Nottingham</name>
+        <uri>https://www.mnot.net/personal/</uri>
+    </author>
+    <summary>The phrase &apos;Open Standards&apos; is widely used but not well-understood. Let&apos;s take a look at what openness in standards is, with a focus on whether and how it helps to legitimise the design and maintenance of the Internet.</summary>
+
+	<category term="Standards" />
+
+	<category term="Internet and Web" />
+
+    <content type="html" xml:lang="en" xml:base="https://www.mnot.net/blog/2024/07/05/open_internet_standards">
+  	  <![CDATA[<p class="intro">The phrase â€˜Open Standardsâ€™ is widely used but not well-understood, to the point that the Open Source Initiative <a href="https://opensource.org/blog/open-source-and-open-standards">calls it</a> â€˜a feel-good term with no actual technical meaning.â€™</p>
+
+<p class="intro">As weâ€™ll see thatâ€™s an overstatement, but there are still significant confusion about and differences in what â€˜open standardâ€™ means in practice. Letâ€™s take a look at what openness in standards is, with a focus on whether and how it helps to legitimise the design and maintenance of the Internet.</p>
+
+<h3 id="defining-open-standards">Defining Open Standards</h3>
+
+<p>First, letâ€™s review what some governments think open means in the context of standards. The phrase comes up in a number of legal documents, mostly focused on government procurement and trade.</p>
+
+<p>In the US, OMB Circular A-119 fills that role, and is also referenced in some aspects of competition law. It <a href="https://www.whitehouse.gov/wp-content/uploads/2020/07/revised_circular_a-119_as_of_1_22.pdf">says openness in standards means</a>:</p>
+
+<blockquote>
+  <p>The procedures or processes used are open to interested parties. Such parties are provided meaningful opportunities to participate in standards development on a non-discriminatory basis. The procedures or processes for participating in standards development and for developing the standard are transparent.</p>
+</blockquote>
+
+<p>The corresponding document in Europe is <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32012R1025">Regulation 1025/2012</a>, and says a standard is open when</p>
+
+<blockquote>
+  <p>the technical specifications were developed on the basis of open decision-making accessible to all interested parties in the market or markets affected by those technical specifications [â€¦]</p>
+</blockquote>
+
+<p>In both cases, <em>openness</em> is referring to the process used to produce a standard: it needs to be open to all potentially interested parties. Note that these definitions donâ€™t say anything about the decision-making process itself, just access to it.</p>
+
+<p>In contrast, the <a href="https://www.gov.uk/government/publications/open-standards-principles/open-standards-principles#Defining-open-standards">UK Governmentâ€™s <em>Open Standards Principles</em></a> focuses on <em>availability</em> in its definition of open standards:</p>
+
+<blockquote>
+  <p>Open standards give users permission to copy, distribute and use technology freely or at low cost.</p>
+</blockquote>
+
+<p>In practice, these views donâ€™t really conflict: the procurement guidance from the US and EU also talk about availability, and the UK guidelines cover â€˜fair and transparent processes.â€™ They do, however, use â€˜open standardâ€™ to mean different things, which can cause confusion.</p>
+
+<p>There are plenty more of examples from <a href="https://en.wikipedia.org/wiki/Open_standard#By_legislative_or_governmental_bodies">legislation around the world</a> that also touch on these two themes. Perhaps pragmatically, the <a href="https://www.internetsociety.org/policybriefs/openstandards/">Internet Society</a> avoids conflict and defines them has having both attributes:</p>
+
+<blockquote>
+  <p>Open standards are publicly available and developed via processes that are transparent and open to broad participation. In contrast, proprietary standards are privately owned by one or more entities that control their distribution and access.</p>
+</blockquote>
+
+<p>But what do these things actually mean in practice for Internet standards?</p>
+
+<h3 id="1-availability-as-openness">1. Availability as Openness</h3>
+
+<p>Letâ€™s start with availability, which begs the question: <em>for what purpose</em>? The UK definition lists â€˜copy, distribute, and useâ€™, and Iâ€™d add another â€“ permission to change the standard.</p>
+
+<p>The first sense of a standardâ€™s availability is straightforward: <em>what do you need to do to get a copy of it, and can you give it to other people</em>? This isnâ€™t a small thing; many standards bodies charge for their products, and substantial fees can be a barrier not only to implementation, but also independent review. Thankfully, itâ€™s long been a norm that Internet and Web standards are free to obtain over the Internet itself, and can be freely distributed.</p>
+
+<p>Second, thereâ€™s the question of availability in the sense of <em>implementing</em> open standards â€“ namely, do you need to license any patents to do so? The intricacies of patents in the IETF and W3C have some interesting properties, but thatâ€™s a topic thatâ€™s too big to cover here. Suffice it to say that both have measures in place to discourage â€˜submarineâ€™ patents from those who participate in the standards process.</p>
+
+<p class="hero">With those meanings covered, letâ€™s consider the ability to <em>modify</em> an Internet standard. If you want to publish a derivative of an IETF RFC or W3C Recommendation, youâ€™ll need to get permission, because both organisations retain copyright in their works, using very different mechanisms.</p>
+
+<p>In the IETF, the original authors of the RFC retain copyright, giving a <a href="https://trustee.ietf.org/wp-content/uploads/RFC_Author_License.pdf">license</a> to the IETF Trust to allow it to be published. In theory, that allows the authors to publish a derivative work on their own or give someone else a license to do so. In practice this doesnâ€™t happen, because most RFCs are collaborations between much larger groups than just the authors, and getting sufficient permission sorted out is impractical. Recently, there was a <a href="https://datatracker.ietf.org/doc/draft-thomson-gendispatch-rfc-derivatives/">proposal to allow modification of IETF RFCs</a>, but that seems to have caused enough discomfort in the community to make its adoption unlikely.</p>
+
+<p>W3C, meanwhile, requires authors to transfer copyright to the Consortium. By default, <a href="https://www.w3.org/copyright/document-license-2023/">its document license</a> also doesnâ€™t allow modifications, much like the IETF. Interestingly, however, <a href="https://docs.google.com/spreadsheets/d/1HoETgAJN_urpcL_2cVg8mjxeIQjGZWItfrwINmSXrGk/edit?gid=472443117#gid=472443117">some</a> W3C documents have been published under a <a href="https://www.w3.org/copyright/software-license-2023/">more permissive license</a> that <em>does</em> allow â€˜forkingâ€™ the specification. Most famously, this was used to shift the HTML specification out of the W3Câ€™s hands and into the <a href="https://whatwg.org/">WHATWG</a>.</p>
+
+<p>How, though, does the ability to modify a standard impact its openness?</p>
+
+<p>Think of copyright as a centralising force: the entity that controls the definition of the standard controls its future, because they have a monopoly on it. As Iâ€™ve <a href="/blog/2023/12/19/standards-and-centralization">written before</a>, centralization <em>can</em> be used for good â€“ especially if itâ€™s to encourage interoperability, and even more so if itâ€™s used to gate-keep in the interest of the common good with appropriate governance. When a standards body is well-run, is responsive to the community using its work, and financially healthy, Iâ€™d argue itâ€™s probably filling this role well.</p>
+
+<p>If it isnâ€™t one or more of these things, however, that monopoly becomes a liability. For example, if the standards body is captured by malevolent interests or simply loses financial viability, it can put its community of users in an awkward position indeed. Even absent those extreme circumstances, locking a standard into one venue creates a moral hazard: that the standard will remain there not because that venue is the best steward for it, but because it controls the copyright.</p>
+
+<h3 id="2-openness-of-standards-processes">2. Openness of Standards Processes</h3>
+
+<p>The other senses of â€˜opennessâ€™ in standards pertains to the process used to produce them. How open a process is perceived to be can result in the SDOâ€™s legitimacy â€“ and their monopoly over the standard â€“ being either bolstered or questioned.</p>
+
+<p>On the face of it, the mechanism is straightforward: a standards process that is â€˜accessible to all interested partiesâ€™ enhances <em>input legitimacy</em> by including more diverse views into the work. However, itâ€™s important to inspect some assumptions that are commonly made about the impact of this kind of openness.</p>
+
+<p>First, just because someone has the theoretical ability to participate, it doesnâ€™t mean that they actually can. Standards work has a notoriously steep learning curve; being effective requires great technical expertise, significant time, and frequent international travel to build influence, relationships and understanding. Yes, SDOs use online tools like mailing lists, videoconferencing, and GitHub to allow remote participation, but they are a poor substitute for face-to-face interaction, hallway discussions and sharing a meal (and, often, a drink). And, even people who follow Internet standards full time arenâ€™t aware of every development in every specification, because thereâ€™s simply too much going on.</p>
+
+<p>Together, this means that the number of people actually paying attention to a particular standards development can be quite small, unless it captures the broader imagination. It also means that only those with sufficient incentive to invest resources will participate in a long-term effort.</p>
+
+<p>Second, even those that show up might not have influence over the outcome. While standards decisions might be based upon consensus, there are <a href="/blog/2024/05/24/consensus">many pitfalls in its application</a>, and the combination of a large body of standards work and few experts (per above) often means that a small group of specialised experts â€˜ownsâ€™ each established area of interest, acting as gatekeepers to change. If you have an â€˜outsiderâ€™ idea that is counter to the thinking of those experts, youâ€™re unlikely to get it successfully adopted.</p>
+
+<p>Third, standards bodies are not and fundamentally cannot be representative, in a democratic sense. They are not accountable to an electorate, there is no <em>demos</em>, and thus they have no meaningful authority based upon whoever does show up. At most, openness creates a presumption that those with the knowledge, resources, interest, and dedication had the <em>opportunity</em> to show up.</p>
+
+<p>In combination, these factors constrain the input legitimacy gained by openness so much as to make it negligible. In practice, standards organisations derive most of their legitimacy from throughput (e.g., checks and balances in their processes) and output (the success of what they actually produce).</p>
+
+<p>Thatâ€™s not to minimise the importance of diversity and external engagement in SDOs. Efforts to both onboard new people into these cultures and to reach out to those affected by their work is critical, in my opinion (so much so that I wrote a whole <a href="/blog/2020/08/28/for_the_users">RFC about it</a>). However, standards bodies should never consider themselves to have democratic legitimacy, think that mere openness is enough to justify a decision, or that their processes donâ€™t require regular scrutiny and improvement.</p>
+
+<h3 id="an-aside-on-the-m-word">An Aside on the â€˜Mâ€™ Word</h3>
+
+<p>A word that often comes up in conjunction with â€˜open standardsâ€™ is â€˜multistakeholder.â€™</p>
+
+<p>This Rorschach test of a word has bugged me for a while â€“ it means so many things to so many people. So much, in fact, that I recently went to a <a href="https://gig-arts.eu/conference/gig-arts-2024/">conference on multistakeholderism in Internet governance</a> to delve into why this term is so often used but so rarely defined.</p>
+
+<p>My suspicions were confirmed: this is a word that means very little, <em>except</em> when you use it in the context of its opposite: multilateral governance (for example, through the United Nations). Really, <em>multistakeholder</em> just means <em>not multilateral</em>.</p>
+
+<p>In particular, being characterised as multistakeholder does not imply that there are specific classes of â€˜stakeholdersâ€™, or that they have specific rights or representation in the process. So while Internet standards are multistakeholder in the sense that theyâ€™re not government-led, that says nothing about their nature beyond that fact.</p>
+
+<p>If this topic is interesting to you, I highly recommend reading the transcript of <a href="https://www.internetgovernance.org/2024/06/07/the-power-to-govern-ourselves-multistakeholders-states-and-collective-action/">Milton Muellerâ€™s keynote from that conference</a>.</p>
+
+<h3 id="necessary-but-insufficient">Necessary, but Insufficient</h3>
+
+<p>All of this leads to the conclusion that openness of process is clearly necessary to legitimise the work of SDOs and help assure that anti-competitive behaviour doesnâ€™t arise. However, it isnâ€™t sufficient to assure <em>good governance</em>.</p>
+
+<p>Furthermore, itâ€™s reasonable to say that standards bodies that choose to keep a monopoly on the specifications themselves (thereby withholding <em>that</em> dimension of openness) necessarily subject themselves to increased scrutiny regarding the quality of their governance. What good governance looks like in Internet standards is a theme that Iâ€™ll return to.</p>]]>
+    </content>
+  </entry>
+
+  <entry>
+    <title>Consensus in Internet Standards</title>
+    <link rel="alternate" type="text/html" href="https://www.mnot.net/blog/2024/05/24/consensus" />
+    <id>https://www.mnot.net/blog/2024/05/24/consensus</id>
+    <updated>2024-05-24T00:00:00Z</updated>
+    <author>
+        <name>Mark Nottingham</name>
+        <uri>https://www.mnot.net/personal/</uri>
+    </author>
+    <summary>Itâ€™s common for voluntary technical standards developing organisations (SDOs such as the IETF and W3C) to make decisions by consensus, rather than (for example) voting. This post explores why we use consensus, what it is, how it works in Internet standards and when its use can become problematic.</summary>
+
+	<category term="Standards" />
+
+	<category term="Internet and Web" />
+
+    <content type="html" xml:lang="en" xml:base="https://www.mnot.net/blog/2024/05/24/consensus">
+  	  <![CDATA[<p class="intro">Itâ€™s common for voluntary technical standards developing organisations (<em>SDOs</em> such as the <a href="https://ietf.org/">IETF</a> and <a href="https://w3.org/">W3C</a>) to make decisions by <em>consensus</em>, rather than (for example) voting. This post explores why we use consensus, what it is, how it works in Internet standards and when its use can become problematic.</p>
+
+<h3 id="why-consensus">Why consensus?</h3>
+
+<p>SDOs have several motivations for using consensus. Most often, consensus decisions are seen as a way to avoid the potential for gaming and politics that comes with voting systems. If everyone can live with the result, itâ€™s more likely that the result reflects a diversity of viewpoints.</p>
+
+<p>The IETF also has a pragmatic reason: since there is no formal membership in the IETF, thereâ€™s no way to determine whoâ€™s eligible to vote.</p>
+
+<p>However, thereâ€™s also a less obvious policy motivation to use this approach. Several legal frameworks encourage or even require standards decisions to be made by consensus.</p>
+
+<p>For example, <a href="https://www.whitehouse.gov/wp-content/uploads/2020/07/revised_circular_a-119_as_of_1_22.pdf">OMB Circular 119-A</a> encourages the US government to prefer consensus standards for the products they buy. <a href="https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title15-section4301&amp;edition=prelim">US anti-trust laws regarding standards bodies</a> also reference this document.</p>
+
+<p>Annex II of <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32012R1025#d1e32-29-1">EU Regulation 1025/2012</a> provides similar guidelines for standards adopted by the EU.</p>
+
+<p>Even the WTO gets in on the act; their <a href="https://docs.wto.org/dol2fe/Pages/SS/directdoc.aspx?filename=q:/G/TBT/1R14.pdf&amp;Open=True">recommendations regarding technical barriers to trade</a> state that â€˜consensus procedures should be established that seek to take into account the views of all parties concerned and to reconcile any conflicting arguments.â€™</p>
+
+<p>These legal encouragements strongly motivate SDOs to adopt consensus as the basis of their decision-making, and are reflected in the <a href="https://open-stand.org/resources/infographics/">OpenStand principles</a> adopted by the IETF, W3C, and IEEE.</p>
+
+<h3 id="what-is-consensus">What is consensus?</h3>
+
+<p>The <a href="https://www.oed.com/search/dictionary/?scope=Entries&amp;q=consensus">OED definition of consensus</a> is:</p>
+
+<blockquote>
+  <p>Agreement in opinion, feeling, or purpose among a group of people, esp. in the context of decision-making. Also: the collective unanimous opinion ofâ€¦</p>
+</blockquote>
+
+<p>Note that unanimity is one option, but not required. This mirrors OMB Circular 119-Aâ€™s explanation of consensus as:</p>
+
+<blockquote>
+  <p>[â€¦] general agreement, but not necessarily unanimity. During the development of consensus, comments and objections are considered using fair, impartial, open, and transparent processes.</p>
+</blockquote>
+
+<p>Likewise, in EU Regulation 1025/2012:</p>
+
+<blockquote>
+  <p>Consensus means a general agreement, characterised by the absence of sustained opposition to substantial issues by any important part of the concerned interests and by a process that involves seeking to take into account the views of all parties concerned and to reconcile any conflicting arguments. Consensus does not imply unanimity.</p>
+</blockquote>
+
+<p class="hero">These definitions share a characterisation of the nature of a consensus agreement and they also hint that the process used to achieve that consensus must have certain properties. However, they do not mandate a particular process.</p>
+
+<p>In the IETF, <a href="https://www.rfc-editor.org/rfc/rfc2418#section-3.3">RFC 2418: <em>Working Group Guidelines and Procedures</em> Section 3.3</a> says:</p>
+
+<blockquote>
+  <p>IETF consensus does not require that all participants agree although this is, of course, preferred.  In general, the dominant view of the working group shall prevail.  (However, it must be noted that â€œdominanceâ€ is not to be determined on the basis of volume or persistence, but rather a more general sense of agreement.) Consensus can be determined by a show of hands, humming, or any other means on which the WG agrees (by rough consensus, of course).  Note that 51% of the working group does not qualify as â€œrough consensusâ€ and 99% is better than rough.  It is up to the Chair to determine if rough consensus has been reached.</p>
+</blockquote>
+
+<p>Note especially the concept of â€˜rough consensusâ€™ here, which is judged by the chair and can be appealed to higher authorities.</p>
+
+<p>Meanwhile, the <a href="https://www.w3.org/2023/Process-20231103/#consensus-building">W3C Process</a> defines consensus as:</p>
+
+<blockquote>
+  <p>A substantial number of individuals in the set support the decision and there is no sustained objection from anybody in the set. Individuals in the set <em>may</em> abstain. Abstention is either an explicit expression of no opinion or silence by an individual in the set.</p>
+</blockquote>
+
+<p>In this more strict and mechanical definition, the emphasis is on the absence of <em>any</em> â€˜sustainedâ€™ objection. In theory, one person can hold up the declaration of consensus; when this happens, W3C calls this â€˜dissentâ€™:</p>
+
+<blockquote>
+  <p>In some cases, even after careful consideration of all points of view, a group might find itself unable to reach consensus. The Chair <em>may</em> record a decision where there is dissent so that the group can make progress (for example, to produce a deliverable in a timely manner). Dissenters cannot stop a groupâ€™s work simply by saying that they cannot live with a decision. When the Chair believes that the Group has duly considered the legitimate concerns of dissenters as far as is possible and reasonable, the group <em>should</em> move on.</p>
+
+  <p>Groups <em>should</em> favor proposals that create the weakest objections. This is preferred over proposals that are supported by a large majority but that cause strong objections from a few people.</p>
+</blockquote>
+
+<p>If a dissenter is dissatisfied with a decision, they can register their unhappiness as a <a href="https://www.w3.org/2023/Process-20231103/#registering-objections">Formal Objection</a>, which invokes a new and somewhat onerous appeal process, in the formation of a <a href="https://www.w3.org/2023/Process-20231103/#addressing-fo">Council</a>.</p>
+
+<h3 id="how-does-consensus-work">How does consensus work?</h3>
+
+<p>Consensus is not easy or expedient: it requires everyone to listen, understand othersâ€™ positions, and be flexible in adapting to the needs of others. While some issues can be decided easily if there is significant common ground between participants, this is often not the case, and working through such differences can require significant time â€“ both in discussion as well as away from others reflecting on what path forward might be viable.</p>
+
+<p>Successful consensus requires a â€˜<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=363840">good faith commitment to honest debate</a>â€™: someone participating in bad faith (e.g., behaving inauthentically, strategically, or otherwise) can be catastrophically disruptive to this process. As a result, seasoned standards participants tend to be very sensitive to bad-faith arguments, and known to disregard or even shun those who appear to use them.</p>
+
+<p class="hero">Used with nuance, consensus can be a powerful decision-making tool. People with positions that are fundamentally at odds with each other can iterate over their understanding of the problem and find shared ground and become bought into a shared solution. A consensus result is often one that no one is completely happy with, and some might be quite unhappy with it, but critically, they donâ€™t contest the legitimacy of the outcome â€“ often, itâ€™s just enough that they have a chance to be heard and understood.</p>
+
+<p>For example, during the standardisation of <a href="https://quicwg.org/">QUIC</a> there was strong disagreement between some network operators and other parties (including both implementers and privacy advocates) about making information available to networks. Through extensive discourse and an iterative set of proposals, we were able to agree on including the â€˜spin bitâ€™ as an optional-to-implement feature. Neither side was enthusiastic about this outcome, but we were able to produce a standard that was satisfactory to all.</p>
+
+<p>Good consensus can also show the humility and maturity of the group. When we were standardising HTTP/2, there were a few issues we went back and forth on extensively, before realising we didnâ€™t have enough context to make an informed decision â€“ even though a decision still need to be made to ship the protocol. In those cases, we decided that progress was more important than any faction â€˜winningâ€™, and so we came to a consensus to abide by the <a href="https://httpwg.org/wg-materials/interim-14-06/minutes.html#frame-type-extensibility">result of a coin flip</a>.</p>
+
+<h3 id="where-can-consensus-go-wrong">Where can consensus go wrong?</h3>
+
+<p>When and how to determine consensus is very cultural: what people believe consensus is (and is not) has a significant effect on the outcome of a decision. Perhaps because of this, a few different failure modes for consensus in Internet standards setting are more common than they should be.</p>
+
+<p class="hero">One kind of failure happens when the bar for consensus is set too high â€“ effectively <em>requiring unanimity instead of consensus</em>. If everyone has to agree, one intransigent (or just disagreeable) person can withhold permission to progress.</p>
+
+<p>The IETF explicitly addresses this kind of failure with the culture of â€˜rough consensusâ€™, which explicitly acknowledges that consensus need not be unanimous; the important factor is that the reason for disagreement is understood.</p>
+
+<p>In contrast, the W3Câ€™s characterisation of <em>any</em> dissent as a lack of consensus can be problematic if misapplied, because it risks creating a culture of avoiding dissent. While the Process document clearly indicates that dissent is manageable, the cultural expectations (as well as the potential for extra overhead if dissent turns into a Formal Objection) can cause a group to get â€˜stuckâ€™ on a decision.</p>
+
+<p class="hero">Another common failure mode is encountered when a decision-maker falls into the trap of <em>treating consensus-gathering like voting</em>. While polls that gauge support or dissent for a proposal are a useful tool, they canâ€™t be taken as indicators of consensus, and canâ€™t alone decide the issue.</p>
+
+<p>Pete Resnickâ€™s excellent <a href="https://www.rfc-editor.org/rfc/rfc7282.html">RFC 7282: <em>On Consensus and Humming in the IETF</em></a> is a fantastic exploration of the subtleties here, and well worth a read. For example:</p>
+
+<blockquote>
+  <p>Any finding of rough consensus needs, at some level, to provide a reasoned explanation to the person(s) raising the issue of why their concern is not going to be accommodated. A good outcome is for the objector to understand the decision taken and accept the outcome, even though their particular issue is not being accommodated in the final product.</p>
+</blockquote>
+
+<p class="hero"><em>Lack of engagement</em> can easily be mistaken for consensus. As a chair, itâ€™s sometimes difficult to know if everyone agrees but just canâ€™t be bothered to speak up, or if no one is paying attention. Having proper notification, communication, and multiple process steps that check for engagement can mitigate this risk.</p>
+
+<p class="hero"><em>Inappropriate use of consensus</em> on trivial matters ignores the considerable overhead of the consensus-gathering process. For example, decisions about purely editorial matters like document organisation, terminology, and presentation shouldnâ€™t be determined by consensus, because good-faith participants will quickly become exhausted and lose interest.</p>
+
+<p>That doesnâ€™t mean that these decision-makers shouldnâ€™t consult and respond to suggestions about these matters; only that the consensus process isnâ€™t appropriate for them, and another decision-making structure (often, delegated authority) is more appropriate.</p>
+
+<p class="hero">A final failing is often referred to as <em>consensus by exhaustion</em>. Too strong a drive for â€œperfectâ€ consensus creates a culture where those who are willing to â€œstick it outâ€ get to decide by default, because everyone else tires of waiting for a decision to be made. When this happens, the resulting decisions tend to favour those who are most invested in the work instead of the broader community.</p>
+
+<p>Those are the failings of consensus that Iâ€™ve seen most often. If you can think of more or have other thoughts, Iâ€™d love to hear them.</p>]]>
+    </content>
+  </entry>
+
+  <entry>
+    <title>Modularity: Enabling Interoperability and Competition</title>
+    <link rel="alternate" type="text/html" href="https://www.mnot.net/blog/2024/05/10/design-rules-vol-one" />
+    <id>https://www.mnot.net/blog/2024/05/10/design-rules-vol-one</id>
+    <updated>2024-05-10T00:00:00Z</updated>
+    <author>
+        <name>Mark Nottingham</name>
+        <uri>https://www.mnot.net/personal/</uri>
+    </author>
+    <summary>Mandated interoperability is often highlighted as a way to improve competition on the Internet. However, most of the interoperability we see there today was established voluntarily: mandating it is relatively uncharted territory, with many potential pitfalls.</summary>
+
+	<category term="Tech Regulation" />
+
+    <content type="html" xml:lang="en" xml:base="https://www.mnot.net/blog/2024/05/10/design-rules-vol-one">
+  	  <![CDATA[<p class="intro">Mandated interoperability is often highlighted as a way to improve competition on the Internet. However, most of the interoperability we see there today was established <a href="https://www.mnot.net/blog/2024/03/13/voluntary">voluntarily</a>: mandating it is relatively uncharted territory, with many potential pitfalls.</p>
+
+<p>Giving policymakers a better understanding of how interoperability comes about could help. A regulator that appreciates the motivations and constraints faced when designing APIs has a better chance of identifying (in-)appropriate ones â€“ even if their target isnâ€™t willing to fully cooperate.</p>
+
+<p>This line of thinking recently led me to a more than twenty year old resource thatâ€™s <a href="https://academic.oup.com/icc/article/32/1/1/6972656">often called a â€œseminal workâ€</a> but strangely isnâ€™t cited much in either Internet governance <em>or</em> API design circles, as far as I can tell: <em><a href="https://direct.mit.edu/books/book/1856/Design-RulesThe-Power-of-Modularity">Design Rules Volume 1: The Power of Modularity</a></em> by <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=6417">Carliss Y. Baldwin</a> and <a href="https://en.wikipedia.org/wiki/Kim_B._Clark">Kim B. Clark</a>.</p>
+
+<p>Their ambitions were not small:</p>
+<blockquote>
+  <p>[W]e want to explain how and why the computer industry changed from a quasi-monopoly into a large â€œmodular cluster.â€<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> [â€¦] In particular, one of most the important forces shaping the evolution of these designs was the drive toward modularity.</p>
+</blockquote>
+
+<p>For me this was an engrossing read, even though (and perhaps because) a fair bit is already intuitive to a practitioner.</p>
+
+<p><em>Chapter 3: What is Modularity?</em> explains concepts like <em>abstraction</em>, <em>isolation</em>, <em>information hiding</em>, and <em>interface</em> that are well known in industry:</p>
+<blockquote>
+  <p>A complex system can be managed by dividing it up into smaller pieces and looking at each one separately. When the complexity of one of the elements crosses a certain threshold, that complexity can be isolated by defining a separate abstraction that has a simple interface. The abstraction hides the complexity of the element; the interface indicates how the element interacts with the larger system.</p>
+</blockquote>
+
+<p>followed by a detailed explanation of â€˜how individuals with knowledge can split apart a large design with many innate interdependencies, and thereby create a modular design and task structure.â€™</p>
+
+<p><em>Chapter 9: Design Options and Design Evolution</em> goes on to consider the economic impact of modularity:</p>
+<blockquote>
+  <p>It is useful to divide the large set of all complex adaptive systems into two categories: (1) systems in which the so-called adaptive plan is in the hands of a few agents; and (2) systems in which the adaptive plan is decentralized to many independent agents.</p>
+</blockquote>
+
+<p>Yes, <a href="https://www.rfc-editor.org/rfc/rfc9518.html">decentralisation</a> fits in here too. Then, focusing on the benefits of the latter category of systems:</p>
+<blockquote>
+  <p>Modularization permits individuals (or firms) to mix and match alternative designs of the modules of a system. The â€œrightsâ€ to mix and match are options with quantifiable value in the greater economic system. A modularization multiplies design options and at the same time disperses them so that they can be â€œpicked upâ€ by many people, without the permission of any central architect or planner. The pursuit of valuable options by many decentralized actors in turn accelerates the rate of change of the system as a whole.
+[â€¦]
+Modularity creates design options and in so doing can radically change the market value of a given set of designs.</p>
+</blockquote>
+
+<p><em>Chapter 14: The Emergence of Modular Clusters</em> reinforces this:</p>
+<blockquote>
+  <p>A modular design makes possible decentralized <em>design evolution.</em> In the presence of advanced capital markets, a modular design also makes possible decentralized <em>industry evolution.</em> In other words, when an artifact with a modular design is created in an economy with advanced capital markets, subindustries of firms and markets organized around modules may emerge and evolve in parallel with the module designs themselves.</p>
+</blockquote>
+
+<p>And then <em>Chapter 15: Competition among Hidden Modules and Industry Evolution</em> begins:</p>
+<blockquote>
+  <p>Modular clusters, by definition, â€œplay hostâ€ to modular design evolution. Hence, unless and until an artifact design has been modularized, there is no cause for a modular cluster to form. Following a modularization, we have seen, there will be a concomitant multiplication and decentralization of design options. The number of workgroups engaged in design (and production) will go up, while, simultaneously, the forces of transactions and agency costs that tend to bind workgroups together into firms will diminish. Depending on the balance of these and other forces acting on the industry, a modular cluster (or clusters) may then emerge as a viable form for the industry to take.</p>
+</blockquote>
+
+<p>In other words: yet more support for interoperability through modularity and decentralization as a remedy to competition and centralization issues â€“ this time from an economic perspective. I think thatâ€™s important, because regulators have a lot more history with economists than they do with tech folks.</p>
+
+<p class="hero">These are, of course, just a few highlights, and there are many more keen observations throughout; if you find these quotes interesting, I recommend you read the whole work.</p>
+
+<p>I liked this book because thereâ€™s considerable value in having these observations written down in a well-reasoned, rigorous framework: itâ€™s one thing if the industry says it does things for particular reasons in its many books about the topic, but itâ€™s another when itâ€™s done with the appropriate theoretical context and rigour from the â€˜outside.â€™</p>
+
+<p>I also enjoyed it because it ties together so many of the things Iâ€™m currently interested in: APIs, interoperability, competition, and decentralization.  Critically, thereâ€™s also followup work which is even more relevant â€“ but Iâ€™ll write about that separately.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>In later interviews, Baldwin has said that the term <em>ecosystem</em> won out over her <em>modular clusters</em>.Â <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]>
+    </content>
+  </entry>
+
+  <entry>
+    <title>No One Should Have That Much Power</title>
+    <link rel="alternate" type="text/html" href="https://www.mnot.net/blog/2024/04/29/power" />
+    <id>https://www.mnot.net/blog/2024/04/29/power</id>
+    <updated>2024-04-29T00:00:00Z</updated>
+    <author>
+        <name>Mark Nottingham</name>
+        <uri>https://www.mnot.net/personal/</uri>
+    </author>
+    <summary>Itâ€™s a common spy thriller trope. Thereâ€™s a special key that can unlock something critical â€“ business records, bank vaults, government secrets, nuclear weapons, maybe all of the above, worldwide.</summary>
+
+	<category term="Internet and Web" />
+
+	<category term="Tech Regulation" />
+
+    <content type="html" xml:lang="en" xml:base="https://www.mnot.net/blog/2024/04/29/power">
+  	  <![CDATA[<p class="intro">Itâ€™s a common spy thriller trope. Thereâ€™s a special key that can unlock something critical â€“ business records, bank vaults, government secrets, nuclear weapons, maybe all of the above, worldwide.</p>
+
+<p>Our hero has to stop this key from falling into bad peopleâ€™s hands, or recover it before itâ€™s too late. Perhaps at one point they utter something like the title of this post. You walk out of the theatre two hours later entertained but wondering why someone would be silly enough to create such a powerful artefact.</p>
+
+<p>In a surprising move, law enforcement officials are once again <a href="https://www.europol.europa.eu/cms/sites/default/files/documents/EDOC-%231384205-v1-Joint_Declaration_of_the_European_Police_Chiefs.PDF">calling for such a thing to be created</a>. <a href="https://www.theage.com.au/national/australia-news-live-coalition-pushes-compulsory-age-limits-for-social-media-australians-hit-by-tax-surge-20240424-p5fm4z.html?post=p55wk1#p55wk1">Repeatedly</a>.</p>
+
+<p>These authorities and their proxies say that they must have access to encrypted communications to keep us safe. They have been doing so for years â€“ at first bluntly, now in a more subtle way. Encryption backdoors arenâ€™t politically viable, so they take pains to say that they donâ€™t want them while at the same time asking for a level of access that cannot be achieved except through backdooring encryption.</p>
+
+<p>If you create a way to recover messages sent through a service, thatâ€™s a backdoor. If you run some code that evaluates messages on the endpoints and flags them if they meet some criteria, that isnâ€™t an improvement; itâ€™s a backdoor that can be <a href="https://youtu.be/DplqxrH6Xbg?t=3471">abused in myriad ways</a>. Centralising access to encrypted content <a href="https://www.rfc-editor.org/rfc/rfc9518.html">creates unavoidable systemic risks</a>.</p>
+
+<p>This means that any such mechanism has to be handled like weapons-grade plutonium: losing control is a disaster of epic (or even existential) proportions. The few national governments who have nuclear capability <a href="https://www.nti.org/analysis/articles/overview-of-the-cns-global-incidents-and-trafficking-database/">struggle greatly to manage that risk</a>; why would we intentionally entrust something as powerful to every government in the world or potentially even every local police department? Or will it be just a privileged few governments that will have access?</p>
+
+<p class="hero">The current crop of suggestions seem to concede that governments shouldnâ€™t have direct access. Instead, they want services to backdoor themselves and act as gatekeepers to law enforcement. Thatâ€™s not an improvement; itâ€™s still centralized, and it makes these companies responsible for any misuse of the data that they have access to, requiring everyone on the planet to trust a few big tech companies with our private and most intimate conversations â€“ hardly a direction that society wants to go in in 2024.  â€˜Trust me, Iâ€™m in chargeâ€™ is a poor model of governance or security.</p>
+
+<p>These â€˜solutionsâ€™ also ignore the reality that the â€˜bad guysâ€™ will just use other tools to communicate; information is information. That will leave law abiding people giving up their privacy and security for little societal gain.</p>
+
+<p class="hero">Law enforcement has more power than ever before because of digital technology. They are able to collect, process, summarise and track much more efficiently and at much greater scale. Genuinely new insights and capabilities are possible. So, when they want access to encrypted data because things have â€˜gone darkâ€™, itâ€™s reasonable to ask â€˜as compared to what?â€™</p>
+
+<p>No one should have that much power, because messaging and other encrypted services have become peopleâ€™s memories, their casual hallway chats, their intimate whispers. Yes, there is longstanding legal precedent for searching someoneâ€™s papers and home, but the barriers to doing so are considerable â€“ not just those imposed by law, but also <em>physics</em>. There are few such inherent limits on a key that can trivially enable access to what amounts to anyoneâ€™s mind or identify anyone who thinks about a particular topic. Law enforcement struggles to solve real and serious problems, but the power theyâ€™re asking for is too vast and too easily misused, and they are failing to appreciate how it would operate on a global Internet.</p>
+
+<p>One of the assumptions built into these calls is that if the tech community would <em><a href="https://www.eff.org/deeplinks/2023/07/uk-government-very-close-eroding-encryption-worldwide">just nerd harder</a></em>, a solution could be somehow magically found that preserved privacy and security while letting the â€˜good guysâ€™ have access. With all respect to the valuable work that law enforcement does to protect society, itâ€™s equally as valid to ask them to <em>just police harder</em>.</p>]]>
+    </content>
+  </entry>
+
+</feed>

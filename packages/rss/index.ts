@@ -78,6 +78,7 @@ export async function fetchRSSFeed(
     headers["If-Modified-Since"] = options.lastFetched;
   }
   if (options.etag) {
+    options.etag = options.etag.replace("W/", "");
     headers["If-None-Match"] = options.etag.startsWith('"')
       ? options.etag
       : `"${options.etag}"`;

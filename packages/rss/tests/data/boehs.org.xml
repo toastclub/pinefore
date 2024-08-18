@@ -1,0 +1,298 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/notallfeedsaregross.css"?>
+<?xml-stylesheet href="/main.css"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <warn>
+    DO NOT BE DECEIVED! YOU ARE READING AN ATOM FEED!!!! IF THIS IS INTENTIONAL, PLEASE PASTE THIS URL INTO YOUR FEED READER, OTHERWISE REMOVE .XML FROM THE END OF THE URL.
+  </warn>
+  <author>
+    <name>Evan Boehs</name>
+    <email>evan@mylastname.org</email>
+  </author>
+  <title>Evan Boehs in the blog</title>
+  <subtitle>A fleshed out story, one you just might want to read.</subtitle>
+  <link href="https://boehs.org/{{collectionsControl[value[0]].single or value[0] | slugshive}}/{{ value[1] | slugshive }}.xml" rel="self"/>
+  <link href="https://boehs.org"/>
+  <icon>/favicon.ico</icon>
+  <updated>2024-08-04T15:31:53Z</updated>
+  <id>Evan Boehs/in/blog</id>
+
+  <entry style="--light: #0a74a0">
+    <title>Apple Should Use Intelligence to Get It into Their Heads That We Don&#39;t Want This.</title>
+    <link href="https://boehs.org/node/apple-intelligence"/>
+    <updated>2024-08-04T15:31:53Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/apple-intelligence" xlink:type="simple">/node/apple-intelligence</id>
+    <content type="html">/node/apple-intelligence.html</content>
+
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>I Don&#39;t Hate Technology When It Works.</title>
+    <link href="https://boehs.org/node/old-tech"/>
+    <updated>2024-05-18T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/old-tech" xlink:type="simple">/node/old-tech</id>
+    <content type="html">/node/old-tech.html</content>
+    <summary>Why boring tech was actually not really boring, and why I want it back</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Bountysource Stole at Least $21,000 from Open Source Developers</title>
+    <link href="https://boehs.org/node/bountysource"/>
+    <updated>2024-05-03T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/bountysource" xlink:type="simple">/node/bountysource</id>
+    <content type="html">/node/bountysource.html</content>
+    <summary>This is why people say the open source ecosystem sucks.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>It’s Been a Year and Georgia.gov Continues to Be Hacked</title>
+    <link href="https://boehs.org/node/medicicnes"/>
+    <updated>2024-04-26T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/medicicnes" xlink:type="simple">/node/medicicnes</id>
+    <content type="html">/node/medicicnes.html</content>
+    <summary>Illegal drug transactions facilitated through Georgia&#39;s employee portal</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>You Have Power: Making Truth Social Comply with the Agpl</title>
+    <link href="https://boehs.org/node/truth-social"/>
+    <updated>2024-04-13T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/truth-social" xlink:type="simple">/node/truth-social</id>
+    <content type="html">/node/truth-social.html</content>
+    <summary>Defending Mastodon from Donald Trump&#39;s social media</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Llms Are This Close to Destroying the Internet</title>
+    <link href="https://boehs.org/node/llms-destroying-internet"/>
+    <updated>2024-04-11T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/llms-destroying-internet" xlink:type="simple">/node/llms-destroying-internet</id>
+    <content type="html">/node/llms-destroying-internet.html</content>
+    <summary>Complacency whilst the AI consumes</summary>
+  </entry>
+  <entry style="--light: #FD5E53">
+    <title>Thank You, Goodbye</title>
+    <link href="https://boehs.org/node/a-break"/>
+    <updated>2024-04-04T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/a-break" xlink:type="simple">/node/a-break</id>
+    <content type="html">/node/a-break.html</content>
+    <summary>Excitement and Stress: Why I Took A Break In April</summary>
+  </entry>
+  <entry style="--light: #068177">
+    <title>Everything I Know About the XZ Backdoor</title>
+    <link href="https://boehs.org/node/everything-i-know-about-the-xz-backdoor"/>
+    <updated>2024-03-29T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/everything-i-know-about-the-xz-backdoor" xlink:type="simple">/node/everything-i-know-about-the-xz-backdoor</id>
+    <content type="html">/node/everything-i-know-about-the-xz-backdoor.html</content>
+    <summary>Please note: This is being updated in real-time. The intent is to make sense of lots of simultaneous discoveries</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Is (My) RSS Dead?</title>
+    <link href="https://boehs.org/node/is-(my)-rss-dead"/>
+    <updated>2024-03-25T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/is-(my)-rss-dead" xlink:type="simple">/node/is-(my)-rss-dead</id>
+    <content type="html">/node/is-(my)-rss-dead.html</content>
+    <summary>RSS Analytics! RSSLytics!!!</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Free the T</title>
+    <link href="https://boehs.org/node/free-the-t"/>
+    <updated>2024-03-17T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/free-the-t" xlink:type="simple">/node/free-the-t</id>
+    <content type="html">/node/free-the-t.html</content>
+    <summary>A plee to the Massachusetts bay transportation overlords.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Internet Evanescence</title>
+    <link href="https://boehs.org/node/internet-evanescence"/>
+    <updated>2024-02-13T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/internet-evanescence" xlink:type="simple">/node/internet-evanescence</id>
+    <content type="html">/node/internet-evanescence.html</content>
+    <summary>What to do about a world that forgets</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>&quot;App Store Levels Playing Field and Supports Developers&quot;</title>
+    <link href="https://boehs.org/node/private-apis"/>
+    <updated>2024-01-26T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/private-apis" xlink:type="simple">/node/private-apis</id>
+    <content type="html">/node/private-apis.html</content>
+    <summary>A comprehensive analysis of Apple&#39;s purported fairness from a developer&#39;s perspective.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Npm Install Everything, and the Complete and Utter Chaos That Follows</title>
+    <link href="https://boehs.org/node/npm-everything"/>
+    <updated>2024-01-05T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/npm-everything" xlink:type="simple">/node/npm-everything</id>
+    <content type="html">/node/npm-everything.html</content>
+    <summary>how one little joke can get so, so out of hand</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Bridging the Gap Between Swift &amp; Rust</title>
+    <link href="https://boehs.org/node/uniffi"/>
+    <updated>2023-12-20T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/uniffi" xlink:type="simple">/node/uniffi</id>
+    <content type="html">/node/uniffi.html</content>
+    <summary>Using UniFFI to call rust functions from my SwiftUI codebase</summary>
+  </entry>
+  <entry style="--light: #068177">
+    <title>Here Are the 1000 Most Common Words Across 1 Million Love Letters</title>
+    <link href="https://boehs.org/node/1000-words"/>
+    <updated>2023-04-09T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/1000-words" xlink:type="simple">/node/1000-words</id>
+    <content type="html">/node/1000-words.html</content>
+
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>My Notes on Speed</title>
+    <link href="https://boehs.org/node/my-notes-on-speed"/>
+    <updated>2023-01-02T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/my-notes-on-speed" xlink:type="simple">/node/my-notes-on-speed</id>
+    <content type="html">/node/my-notes-on-speed.html</content>
+    <summary>the nitty gritty of making (static) websites really fast that they didn&#39;t teach you in school.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Be(ing)fake</title>
+    <link href="https://boehs.org/node/be(ing)fake"/>
+    <updated>2023-01-01T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/be(ing)fake" xlink:type="simple">/node/be(ing)fake</id>
+    <content type="html">/node/be(ing)fake.html</content>
+
+  </entry>
+  <entry style="--light: #FD5E53">
+    <title>Lastpass Is Worse Than You Think</title>
+    <link href="https://boehs.org/node/lastpass"/>
+    <updated>2022-05-12T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/lastpass" xlink:type="simple">/node/lastpass</id>
+    <content type="html">/node/lastpass.html</content>
+    <summary>How does it live on?</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Deleting My CSS for a Day</title>
+    <link href="https://boehs.org/node/css-naked-day"/>
+    <updated>2022-04-09T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/css-naked-day" xlink:type="simple">/node/css-naked-day</id>
+    <content type="html">/node/css-naked-day.html</content>
+    <summary>On April 9th, I deleted my CSS. It was a huge learning opportunity</summary>
+  </entry>
+  <entry style="--light: #ccc">
+    <title>A Non Exhaustive Guide to Privacy Focused Analytics</title>
+    <link href="https://boehs.org/node/analytics"/>
+    <updated>2022-03-22T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/analytics" xlink:type="simple">/node/analytics</id>
+    <content type="html">/node/analytics.html</content>
+    <summary>A list of &quot;privacy&quot; focused analytics with evaluations for each one</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>A Cool Use for CSS Variables</title>
+    <link href="https://boehs.org/node/css-variables"/>
+    <updated>2022-03-21T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/css-variables" xlink:type="simple">/node/css-variables</id>
+    <content type="html">/node/css-variables.html</content>
+    <summary>How I added dynamic coloring to my website, and how you can too.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>11ty Aliases the Right Way</title>
+    <link href="https://boehs.org/node/11ty-aliases"/>
+    <updated>2022-03-20T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/11ty-aliases" xlink:type="simple">/node/11ty-aliases</id>
+    <content type="html">/node/11ty-aliases.html</content>
+    <summary>A short little tutorial on how to make redirects in 11ty that aren&#39;t awful.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Zero Maintenance Taxonomies in 11ty</title>
+    <link href="https://boehs.org/node/11ty-taxonomies"/>
+    <updated>2022-03-12T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/11ty-taxonomies" xlink:type="simple">/node/11ty-taxonomies</id>
+    <content type="html">/node/11ty-taxonomies.html</content>
+    <summary>Taxonomies in 11ty have always been hard. Sure, we have collections, but for when we want advanced features like categories and authors, it all falls apart. I found a solution. Introducing taxonomies that work so well they feel (almost) native!</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>When Banks Fail</title>
+    <link href="https://boehs.org/node/when-banks-fail"/>
+    <updated>2022-02-28T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/when-banks-fail" xlink:type="simple">/node/when-banks-fail</id>
+    <content type="html">/node/when-banks-fail.html</content>
+    <summary>When a country is airgapped and income streams run dry, what is left?</summary>
+  </entry>
+  <entry style="--light: #FD5E53">
+    <title>Github Considered Harmful</title>
+    <link href="https://boehs.org/node/github-considered-harmful"/>
+    <updated>2022-02-28T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/github-considered-harmful" xlink:type="simple">/node/github-considered-harmful</id>
+    <content type="html">/node/github-considered-harmful.html</content>
+    <summary>Is GitHub *commit*ed to *pull*ing people in the wrong direction?
+*ba dum tis*
+</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Astro&#39;s Honeymoon Phase</title>
+    <link href="https://boehs.org/node/astro-s-honeymoon-phase"/>
+    <updated>2022-02-22T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/astro-s-honeymoon-phase" xlink:type="simple">/node/astro-s-honeymoon-phase</id>
+    <content type="html">/node/astro-s-honeymoon-phase.html</content>
+
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Standing Out</title>
+    <link href="https://boehs.org/node/standing-out"/>
+    <updated>2022-01-29T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/standing-out" xlink:type="simple">/node/standing-out</id>
+    <content type="html">/node/standing-out.html</content>
+    <summary>Skiing, the crowds, and overdoing it.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>You&#39;re Being Manipulated by Interledger</title>
+    <link href="https://boehs.org/node/interledger"/>
+    <updated>2021-11-21T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/interledger" xlink:type="simple">/node/interledger</id>
+    <content type="html">/node/interledger.html</content>
+    <summary>Look ma, I found a fake charity!</summary>
+  </entry>
+  <entry style="--light: #068177">
+    <title>Community Values</title>
+    <link href="https://boehs.org/node/community-values"/>
+    <updated>2021-09-27T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/community-values" xlink:type="simple">/node/community-values</id>
+    <content type="html">/node/community-values.html</content>
+    <summary>Is it possible to build a digital utopia?
+Yes, probably.
+My handbook for guiding communities.
+</summary>
+  </entry>
+  <entry style="--light: #FD5E53">
+    <title>Brave Is Not an Ethical Browser</title>
+    <link href="https://boehs.org/node/not-brave"/>
+    <updated>2021-09-10T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/not-brave" xlink:type="simple">/node/not-brave</id>
+    <content type="html">/node/not-brave.html</content>
+    <summary>Attacks on Brendan Eich and his potential motivations for making a browser.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>A Domain, Much More</title>
+    <link href="https://boehs.org/node/a-domain-much-more"/>
+    <updated>2021-09-01T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/a-domain-much-more" xlink:type="simple">/node/a-domain-much-more</id>
+    <content type="html">/node/a-domain-much-more.html</content>
+
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Why?</title>
+    <link href="https://boehs.org/node/why"/>
+    <updated>2021-08-21T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/why" xlink:type="simple">/node/why</id>
+    <content type="html">/node/why.html</content>
+    <summary>Starting my digital garden, or, hello world.</summary>
+  </entry>
+  <entry style="--light: #0a74a0">
+    <title>Syncthing</title>
+    <link href="https://boehs.org/node/syncthing"/>
+    <updated>2021-08-21T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/syncthing" xlink:type="simple">/node/syncthing</id>
+    <content type="html">/node/syncthing.html</content>
+    <summary>A showcase of syncthing for everything!</summary>
+  </entry>
+  <entry style="--light: #FD5E53">
+    <title>Khan</title>
+    <link href="https://boehs.org/node/khan"/>
+    <updated>2021-07-01T00:00:00Z</updated>
+    <id xmlns:xlink="https://boehs.org/node/khan" xlink:type="simple">/node/khan</id>
+    <content type="html">/node/khan.html</content>
+
+  </entry>
+</feed>

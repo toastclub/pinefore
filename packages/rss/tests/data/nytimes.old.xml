@@ -1,0 +1,396 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:nyt="http://www.nytimes.com/namespaces/rss/2.0" version="2.0">
+  <channel>
+    <title>NYT &gt; Top Stories</title>
+    <link>https://www.nytimes.com</link>
+    <atom:link href="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml" rel="self" type="application/rss+xml"></atom:link>
+    <description></description>
+    <language>en-us</language>
+    <copyright>Copyright 2024 The New York Times Company</copyright>
+    <lastBuildDate>Mon, 01 Apr 2024 01:15:59 +0000</lastBuildDate>
+    <pubDate>Mon, 01 Apr 2024 01:13:47 +0000</pubDate>
+    <image>
+      <title>NYT &gt; Top Stories</title>
+      <url>https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png</url>
+      <link>https://www.nytimes.com</link>
+    </image>
+    <item>
+      <title>The Lawyers Using Defamation Lawsuits to Address Political Disinformation</title>
+      <link>https://www.nytimes.com/2024/03/31/us/politics/defamation-lawsuits-michael-gottlieb.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/us/politics/defamation-lawsuits-michael-gottlieb.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/us/politics/defamation-lawsuits-michael-gottlieb.html" rel="standout"></atom:link>
+      <description>Michael J. Gottlieb is part of a cadre of lawyers deploying defamation, one of the oldest areas of the law, against a tide of political disinformation.</description>
+      <dc:creator>Elizabeth Williamson</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 19:11:54 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Libel and Slander</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Suits and Litigation (Civil)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Legal Profession</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Content Type: Personal Profile</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2020</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Voter Fraud (Election Fraud)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Conspiracy Theories</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Rumors and Misinformation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Gottlieb, Michael J (Attorney)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Freeman, Ruby</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Moss, Shaye</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Giuliani, Rudolph W</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Rich, Seth Conrad (1989-2017)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Jones, Alex (1974- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Alefantis, James (1974- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Hunter</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Protect Democracy (Nonprofit)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Infowars</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Washington Times</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Georgia</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/03/29/multimedia/29dc-defamation-01-jvzw/29dc-defamation-01-jvzw-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Jason Andrew for The New York Times</media:credit>
+      <media:description>“I’ve always despised bullies that pick on defenseless or seemingly defenseless people,” said Michael J. Gottlieb, who has represented clients targeted by political disinformation.</media:description>
+    </item>
+    <item>
+      <title>A Russian Defector’s Killing Raises Specter of Hit Squads</title>
+      <link>https://www.nytimes.com/2024/03/31/world/europe/russian-defector-murder-spain.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/world/europe/russian-defector-murder-spain.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/world/europe/russian-defector-murder-spain.html" rel="standout"></atom:link>
+      <description>The death in Spain of Maksim Kuzminov, a pilot who delivered a helicopter and secret documents to Ukraine, has raised fears that the Kremlin is again targeting its enemies.</description>
+      <dc:creator>Michael Schwirtz and José Bautista</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 12:37:51 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Russia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defectors (Political)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kuzminov, Maksim (d 2024)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Assassinations and Attempted Assassinations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Espionage and Intelligence Services</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Classified Information and State Secrets</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Russian Invasion of Ukraine (2022)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Villajoyosa (Spain)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Ukraine</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/03/28/multimedia/00russia-spain-fghv/00russia-spain-fghv-mediumSquareAt3X-v2.jpg" width="1800"></media:content>
+      <media:credit>Rafa Arjones/Informacion.Es, via Reuters</media:credit>
+      <media:description>Police officers investigating the parking garage in Villajoyosa, Spain, where the body of a Russian defector, Maksim Kuzminov, was found in February.</media:description>
+    </item>
+    <item>
+      <title>Israeli Protests Against Netanyahu Intensify as Cease-Fire Talks Resume</title>
+      <link>https://www.nytimes.com/2024/03/31/world/middleeast/netanyahu-israel-protests-cease-fire.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/world/middleeast/netanyahu-israel-protests-cease-fire.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/world/middleeast/netanyahu-israel-protests-cease-fire.html" rel="standout"></atom:link>
+      <description>Thousands have taken to the streets of Israel to demand that Prime Minister Benjamin Netanyahu be replaced.</description>
+      <dc:creator>Adam Rasgon, Vivian Yee and Javier C. Hernández</dc:creator>
+      <pubDate>Mon, 01 Apr 2024 00:09:56 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Netanyahu, Benjamin</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Israel</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Israel-Gaza War (2023- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Demonstrations, Protests and Riots</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Gaza Strip</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Kidnapping and Hostages</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Hamas</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Jerusalem (Israel)</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/03/31/multimedia/31mideast-ledeall-vpbm/31mideast-ledeall-vpbm-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Ohad Zwigenberg/Associated Press</media:credit>
+      <media:description>The Israeli police dispersed people protesting exemptions for ultra-Orthodox Jews from mandatory military service in Jerusalem on Sunday.</media:description>
+    </item>
+    <item>
+      <title>Ewan McGregor and Mary Elizabeth Winstead Check In to ‘A Gentleman in Moscow’</title>
+      <link>https://www.nytimes.com/2024/03/31/arts/television/a-gentleman-in-moscow-ewan-mcgregor-mary-elizabeth-winstead.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/arts/television/a-gentleman-in-moscow-ewan-mcgregor-mary-elizabeth-winstead.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/arts/television/a-gentleman-in-moscow-ewan-mcgregor-mary-elizabeth-winstead.html" rel="standout"></atom:link>
+      <description>The actors, who met while filming “Fargo” in 2017, are now married and have reunited onscreen in “A Gentleman in Moscow.”</description>
+      <dc:creator>Alexis Soloski</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 09:02:17 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Television</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Showtime</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Paramount Plus</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">McGregor, Ewan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Winstead, Mary Elizabeth (1984- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Content Type: Personal Profile</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Actors and Actresses</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">A Gentleman in Moscow (TV Program)</category>
+      <media:content height="1799" medium="image" url="https://static01.nyt.com/images/2024/03/31/multimedia/31-mcgregor-winstead-ztqg/31-mcgregor-winstead-ztqg-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Thea Traff for The New York Times</media:credit>
+      <media:description>Ewan McGregor said “there’s no downside” to working with his wife, Mary Elizabeth Winstead. “It’s as good as it could be, really,” he said.</media:description>
+    </item>
+    <item>
+      <title>New York’s Easter Parade and Bonnet Festival Brought Out Spring’s Best Style</title>
+      <link>https://www.nytimes.com/2024/03/31/style/new-york-citys-easter-parade-where-springs-in-full-bloom.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/style/new-york-citys-easter-parade-where-springs-in-full-bloom.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/style/new-york-citys-easter-parade-where-springs-in-full-bloom.html" rel="standout"></atom:link>
+      <description>Spectators showed up to celebrate the season.</description>
+      <dc:creator>Simbarashe Cha</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 23:18:30 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Easter and Holy Week</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Parades</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Fifth Avenue (Manhattan, NY)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hats and Caps</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Fashion and Apparel</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">vis-photo</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/03/31/multimedia/31STYLEOUTSIDE-EASTERPARADE-01-zqjm/31STYLEOUTSIDE-EASTERPARADE-01-zqjm-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:description>Boutonnières and top hats made appearances at the parade.</media:description>
+    </item>
+    <item>
+      <title>Water Crisis in India’s Silicon Valley</title>
+      <link>https://www.nytimes.com/2024/03/31/world/asia/india-bangalore-water.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/world/asia/india-bangalore-water.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/world/asia/india-bangalore-water.html" rel="standout"></atom:link>
+      <description>Bengaluru gets plenty of rain. But the city did not properly adapt as its soaring population strained traditional water sources.</description>
+      <dc:creator>Damien Cave and Atul Loke</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 15:04:59 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Water</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Rain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Reservoirs</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Aquifers</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Bangalore (India)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Urban Areas</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/03/28/multimedia/00india-water-01-bkmw/00india-water-01-bkmw-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:description>Filling up with subsidized water at a government distribution center in the Indian city of Bengaluru, also known as Bangalore.</media:description>
+    </item>
+    <item>
+      <title>Kongjian Yu Has a Plan for Urban Flooding: ‘Sponge Cities’</title>
+      <link>https://www.nytimes.com/2024/03/28/climate/sponge-cities-kongjian-yu.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/28/climate/sponge-cities-kongjian-yu.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/28/climate/sponge-cities-kongjian-yu.html" rel="standout"></atom:link>
+      <description>A landscape architect in China has a surprising strategy to help manage surges of water from storms supercharged by climate change.</description>
+      <dc:creator>Richard Schiffman</dc:creator>
+      <pubDate>Thu, 28 Mar 2024 17:09:49 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">China</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Floods</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Global Warming</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Urban Areas</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Area Planning and Renewal</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Yu, Kongjian</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/03/15/multimedia/00cli-spongecities-01-vbwl/00cli-spongecities-01-vbwl-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Mark Schiefelbein/Associated Press</media:credit>
+      <media:description>Kongjian Yu at his office in Beijing. “We’ve been using the conventional drainage infrastructure for 200 years and we haven’t solved the flooding problem,” he said.</media:description>
+    </item>
+    <item>
+      <title>Istanbul Mayor Headed for Re-election, in Blow to Erdogan’s Party</title>
+      <link>https://www.nytimes.com/2024/03/31/world/middleeast/istanbul-mayor-race-turkey.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/world/middleeast/istanbul-mayor-race-turkey.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/world/middleeast/istanbul-mayor-race-turkey.html" rel="standout"></atom:link>
+      <description>The opposition chalked up gains against President Recep Tayyip Erdogan’s ruling party in local elections across Turkey amid voter anger about the economy.</description>
+      <dc:creator>Ben Hubbard and Safak Timur</dc:creator>
+      <pubDate>Mon, 01 Apr 2024 00:02:07 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Imamoglu, Ekrem</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Erdogan, Recep Tayyip</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Istanbul (Turkey)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Elections, Mayors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Justice and Development Party (Turkey)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Turkey</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/03/31/multimedia/31istanbul-election-mtvh/31istanbul-election-mtvh-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Tolga Uluturk/EPA, via Shutterstock</media:credit>
+      <media:description>Supporters of Mayor Ekrem Imamoglu in Istanbul on Sunday.</media:description>
+    </item>
+    <item>
+      <title>‘Cowboy Carter’ Review: Beyoncé’s Country Is America. Every Bit of It.</title>
+      <link>https://www.nytimes.com/2024/03/31/arts/music/beyonce-cowboy-carter-review.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/arts/music/beyonce-cowboy-carter-review.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/arts/music/beyonce-cowboy-carter-review.html" rel="standout"></atom:link>
+      <description>On the bold, sprawling “Cowboy Carter,” the superstar plays fast and loose — and twangy — with genre.</description>
+      <dc:creator>Jon Pareles</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 14:57:04 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Knowles, Beyonce</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Cowboy Carter (Album)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Country Music</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Pop and Rock Music</category>
+    </item>
+    <item>
+      <title>Watch These Cute Videos of Babies (and Learn Something, Too)</title>
+      <link>https://www.nytimes.com/2024/03/31/us/dan-wuori-child-development-videos.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/us/dan-wuori-child-development-videos.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/us/dan-wuori-child-development-videos.html" rel="standout"></atom:link>
+      <description>A social media account features smiley toddlers, while also offering positive lessons about child development.</description>
+      <dc:creator>Dana Goldstein</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 09:01:54 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Parenting</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Video Recordings, Downloads and Streaming</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Babies and Infants</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Education (Pre-School)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Child Care</category>
+    </item>
+    <item>
+      <title>Trump Is Financially Ruining the Republican Party</title>
+      <link>https://www.nytimes.com/2024/03/31/opinion/trump-fundraising.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/opinion/trump-fundraising.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/opinion/trump-fundraising.html" rel="standout"></atom:link>
+      <description>How do you build a strong party when your money is also going to a candidate’s legal bills?</description>
+      <dc:creator>Michelle Cottle</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 10:00:06 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2024</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Campaign Finance</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Lara (1982- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Joseph R Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Johnson, Mike (1972- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Republican National Committee</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Republican Party</category>
+      <media:content height="1799" medium="image" url="https://static01.nyt.com/images/2024/04/01/multimedia/31cottle1-bkmp/31cottle1-bkmp-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Mark Peterson for The New York Times</media:credit>
+    </item>
+    <item>
+      <title>An Idyll on the Shores of a Toxic Lake</title>
+      <link>https://www.nytimes.com/2024/03/29/opinion/climate-art-salton-sea-bombay-beach.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/29/opinion/climate-art-salton-sea-bombay-beach.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/29/opinion/climate-art-salton-sea-bombay-beach.html" rel="standout"></atom:link>
+      <description>The town of Bombay Beach, Calif., offers its residents a tight-knit community in the midst of catastrophe.</description>
+      <dc:creator>Jaime Lowe and Nicholas Albrecht</dc:creator>
+      <pubDate>Sat, 30 Mar 2024 18:26:58 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Bombay Beach (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Salton Sea</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Global Warming</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Air Pollution</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Water Pollution</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Poverty</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Art</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Heat and Heat Waves</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hurricane Hilary (2023)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Lakes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">vis-photo</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/03/31/multimedia/29lowe9-lpfb/29lowe9-lpfb-mediumSquareAt3X.jpg" width="1800"></media:content>
+    </item>
+    <item>
+      <title>You Don’t Have to Freak Out About Boeing Planes</title>
+      <link>https://www.nytimes.com/2024/03/31/opinion/boeing-plane-safety.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/opinion/boeing-plane-safety.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/opinion/boeing-plane-safety.html" rel="standout"></atom:link>
+      <description>Commercial aviation remains miraculously safe, far more so than all the alternative ways of traveling.</description>
+      <dc:creator>Zeynep Tufekci</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 10:00:15 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Airlines and Airplanes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Aviation Accidents, Safety and Disasters</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Pilots</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Boeing 737 Max Groundings and Safety Concerns (2019)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Boeing Company</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Federal Aviation Administration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Regulation and Deregulation of Industry</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">United States</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Alaska Air Group Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Ethiopian Airlines</category>
+    </item>
+    <item>
+      <title>We Still Haven’t Figured Out How to Beat ISIS</title>
+      <link>https://www.nytimes.com/2024/03/31/opinion/isis-russia-terrorism-attack.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/opinion/isis-russia-terrorism-attack.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/opinion/isis-russia-terrorism-attack.html" rel="standout"></atom:link>
+      <description>Stripping the Islamic State of its self-proclaimed caliphate is not the same as beating it.</description>
+      <dc:creator>Christopher P. Costa and Colin P. Clarke</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 13:00:12 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Islamic State in Iraq and Syria (ISIS)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Islamic State Khorasan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Taliban</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Afghanistan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Syria</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Philippines</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Russia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Terrorism</category>
+      <media:content height="1801" medium="image" url="https://static01.nyt.com/images/2024/03/31/multimedia/31costa-bcqj/31costa-bcqj-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Maxim Shemetov/Reuters</media:credit>
+    </item>
+    <item>
+      <title>Buttigieg Calls on Congress for More Money to Collapsed Baltimore Bridge</title>
+      <link>https://www.nytimes.com/2024/03/31/us/politics/buttigieg-congress-baltimore-bridge.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/us/politics/buttigieg-congress-baltimore-bridge.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/us/politics/buttigieg-congress-baltimore-bridge.html" rel="standout"></atom:link>
+      <description>Mr. Buttigieg, the transportation secretary, was joined by the Baltimore mayor and Maryland governor in describing the collapse as a matter of national importance.</description>
+      <dc:creator>Minho Kim</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 19:43:31 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Bridges and Tunnels</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Economy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Accidents and Safety</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Army Corps of Engineers</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Transportation Department (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Buttigieg, Pete (1982- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Moore, Wes (1978- )</category>
+      <media:content height="1799" medium="image" url="https://static01.nyt.com/images/2024/03/31/multimedia/31dc-buttigieg-hkpt/31dc-buttigieg-hkpt-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Pete Kiehart for The New York Times</media:credit>
+      <media:description>“I hope and expect this, too, will be a bipartisan priority,” Transportation Secretary Pete Buttigieg said on Sunday.</media:description>
+    </item>
+    <item>
+      <title>California Highway 1 Collapse Leaves 2,000 Tourists Stranded</title>
+      <link>https://www.nytimes.com/2024/03/31/us/california-highway-1-collapse-stranded.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/us/california-highway-1-collapse-stranded.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/us/california-highway-1-collapse-stranded.html" rel="standout"></atom:link>
+      <description>Many stayed in temporary shelters, hotels and campgrounds overnight on Saturday, while some slept in their cars.</description>
+      <dc:creator>Edgar Sandoval</dc:creator>
+      <pubDate>Mon, 01 Apr 2024 00:35:49 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Travel and Vacations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Weather</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Traffic Accidents and Safety</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Rain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Landslides and Mudslides</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Roads and Traffic</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">National Weather Service</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Transportation Department (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Big Sur (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">California</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Highway 1 (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Los Angeles (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Monterey (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">San Diego (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">San Francisco (Calif)</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/03/31/multimedia/31nat-ca-highway-jmvl/31nat-ca-highway-jmvl-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Ian C. Bates for The New York Times</media:credit>
+      <media:description>Construction crews working on patching damaged parts of Highway 1 last year.</media:description>
+    </item>
+    <item>
+      <title>How Patty Murray Won $1 Billion for Child Care as Congress Is Deadlocked</title>
+      <link>https://www.nytimes.com/2024/03/29/us/politics/patty-murray-child-care-budget-senate.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/29/us/politics/patty-murray-child-care-budget-senate.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/29/us/politics/patty-murray-child-care-budget-senate.html" rel="standout"></atom:link>
+      <description>A self-described “mom in tennis shoes,” now the Senate Appropriations Committee leader, managed to win an increase in child care subsidies in a spending freeze.</description>
+      <dc:creator>Catie Edmondson</dc:creator>
+      <pubDate>Sat, 30 Mar 2024 15:30:44 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Child Care</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Law and Legislation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Federal Budget (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Head Start Program</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Education (Pre-School)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Federal Aid (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Senate Committee on Appropriations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Biden, Joseph R Jr</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Murray, Patty</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">DeLauro, Rosa L</category>
+      <media:content height="1800" medium="image" url="https://static01.nyt.com/images/2024/03/29/multimedia/29dc-murray-01-kpmw/29dc-murray-01-kpmw-mediumSquareAt3X.jpg" width="1800"></media:content>
+      <media:credit>Kent Nishimura for The New York Times</media:credit>
+      <media:description>One of Senator Patty Murray’s highest priorities is funding for child care, an issue that historically has had few powerful constituencies on Capitol Hill.</media:description>
+    </item>
+    <item>
+      <title>Lorraine Graves, Pioneering Harlem Ballerina, Dies at 66</title>
+      <link>https://www.nytimes.com/2024/03/31/arts/music/lorraine-graves-pioneering-harlem-ballerina-dies-at-66.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/31/arts/music/lorraine-graves-pioneering-harlem-ballerina-dies-at-66.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/31/arts/music/lorraine-graves-pioneering-harlem-ballerina-dies-at-66.html" rel="standout"></atom:link>
+      <description>Tall and commanding, she dazzled audiences as a principal dancer for the groundbreaking Dance Theater of Harlem for nearly two decades.</description>
+      <dc:creator>Alex Williams</dc:creator>
+      <pubDate>Sun, 31 Mar 2024 15:48:04 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Deaths (Obituaries)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Dancing</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Black People</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Graves, Lorraine (1957-2024)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Dance Theater of Harlem</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Mitchell, Arthur</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">The Firebird (Ballet)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Giselle (Ballet)</category>
+    </item>
+    <item>
+      <title>‘Gladiators,’ That ’90s Show, Is Back With Extra Muscle in Britain</title>
+      <link>https://www.nytimes.com/2024/03/29/arts/television/gladiators-bbc.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2024/03/29/arts/television/gladiators-bbc.html</guid>
+      <atom:link href="https://www.nytimes.com/2024/03/29/arts/television/gladiators-bbc.html" rel="standout"></atom:link>
+      <description>A reboot of “Gladiators,” the musclebound 1990s staple, has attracted millions of viewers in Britain. Is appointment television back?</description>
+      <dc:creator>Rory Smith</dc:creator>
+      <pubDate>Fri, 29 Mar 2024 09:03:57 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Television</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Ratings (Audience Measurement)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Contests and Prizes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Gladiators (TV Program)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">British Broadcasting Corp</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Great Britain</category>
+    </item>
+  </channel>
+</rss>
