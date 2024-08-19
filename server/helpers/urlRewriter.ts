@@ -16,7 +16,7 @@ function removeUTM(url: URL) {
 export default async function urlRewriter(url: string) {
   let u = new URL(url);
   if (u.hostname == "youtu.be") {
-    return "https://youtube.com/watch?v=" + u.pathname.slice(1);
+    return "https://www.youtube.com/watch?v=" + u.pathname.slice(1);
   }
   u = removeUTM(u);
   // remove url shorteners
@@ -39,23 +39,29 @@ export default async function urlRewriter(url: string) {
       "rebrand.ly",
       "shorturl.at",
       "tinyurl.com",
-    ].includes(u.hostname)
+    ].includes(u.host)
   ) {
     return await fetch(url).then((r): MaybePromise<string | undefined> => {
-      if (![301, 308].includes(r.status)) return;
-      let loc = r.headers.get("location");
+      if (!r.redirected) return;
+      let loc = r.url;
       if (!loc) return url;
       return urlRewriter(loc);
     });
   }
   // amputator
-  if (
-    (u.hostname == "www.google.com" || u.hostname == "www.bing.com") &&
-    u.pathname.startsWith("/amp/s/")
-  ) {
-    return urlRewriter("https://" + u.pathname.slice(7));
+  if (u.hostname == "www.google.com" || u.hostname == "www.bing.com") {
+    if (u.pathname.startsWith("/amp/s/")) {
+      return urlRewriter("https://" + u.pathname.slice(7));
+    }
+    if (u.pathname.startsWith("/amp/")) {
+      return urlRewriter("https://" + u.pathname.slice(5));
+    }
   }
   if (u.hostname == "www.ampproject.org") {
     return urlRewriter("https://" + u.searchParams.get("url")!);
   }
+  if (u.hostname.endsWith("cdn.ampproject.org")) {
+    return urlRewriter("https://" + u.pathname.slice(3));
+  }
+  return u.toString();
 }

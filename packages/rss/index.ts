@@ -91,7 +91,7 @@ export async function fetchRSSFeed(
   if (res.status === 304 && !options.alwaysFetch) {
     return { mode: null, data: null, status: "not-modified", extra };
   }
-  const parsed: any = xml2js(await res.text(), {
+  let parsed: any = xml2js(await res.text(), {
     compact: true,
     ignoreComment: true,
     alwaysArray: true,
@@ -100,10 +100,14 @@ export async function fetchRSSFeed(
     return { mode: "atom", data: atomParser(parsed), extra };
   } else if (parsed.rss?.[0] != undefined) {
     if (parsed.rss[0]._attributes?.version === "2.0") {
+      console.log(url);
       return { mode: "rss", data: rssParser(parsed.rss[0]), extra };
     }
   } else if (parsed["rdf:RDF"]?.[0] != undefined) {
-    return { mode: "rdf", data: rssParser(parsed["rdf:RDF"][0]), extra };
+    parsed = parsed["rdf:RDF"][0];
+    parsed.channel[0].item = parsed.item;
+    delete parsed.item;
+    return { mode: "rdf", data: rssParser(parsed), extra };
   }
   return { mode: null, data: null, status: "not-parseable", extra };
 }

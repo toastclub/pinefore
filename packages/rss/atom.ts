@@ -32,7 +32,7 @@ function atomEntryParser(entry: any) {
     title: entry.title?.[0]?._text?.[0],
     link: entry.link?.[0]?._attributes.href,
     guid: entry.id?.[0]?._text?.[0],
-    content: entry.content?.[0]?._text?.[0],
+    content: entry.content?.[0]?._text?.[0] || entry.content?.[0]?._cdata?.[0],
     summary: entry.summary?.[0]?._text?.[0],
     pubDate: entry.published?.[0]?._text?.[0],
     isoDate: entry.updated?.[0]?._text?.[0],

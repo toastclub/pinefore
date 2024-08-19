@@ -81,5 +81,4 @@ export const sendEmail = async (
     },
   };
   let res = await client.fetch(ENDPOINT, { body: JSON.stringify(command) });
-  console.log(await res.text());
 };

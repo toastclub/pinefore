@@ -2,8 +2,9 @@ import { fetchTweet } from "./sites/twitter.com";
 import { AiHandler, callCfAiServerside } from "!packages/ai/genAi";
 import { generateLLamaTitlePrompt } from "!packages/ai/title";
 import extractTitle from "./title";
+import fetchToot from "./sites/mastodon";
 
-async function titleGen(text: string, ai: AiHandler | undefined) {
+export async function titleGen(text: string, ai: AiHandler | undefined) {
   if (ai) {
     let title = await callCfAiServerside(
       {
@@ -48,43 +49,21 @@ export async function getMeta(
         let description = "> " + t.data.text;
         if (t.data.quoted_tweet) {
           description = `>> ${t.data.quoted_tweet}\n\n> ${t.data.text}`;
-          return {
-            mode: "twitter",
-            title: title || null,
-            description: description,
-          };
         }
+        return {
+          mode: "twitter",
+          title: title || null,
+          description: description,
+        };
       }
     }
   }
+  let possiblyMastodon = url.pathname
+    .split("/")?.[1]
+    ?.match(/@?([A-z0-9._%+-]+)(?:@([A-z0-9.-]+\.[A-z]{2,}))?/);
   let data = await (await fetch(url)).text();
-  if (data.length < 50000) {
-    if (
-      data.includes(
-        'To use the Mastodon web application, please enable JavaScript. Alternatively, try one of the <a href="https://joinmastodon.org/apps">native apps</a> for Mastodon for your platform.'
-      )
-    ) {
-      try {
-        let mastodata = await (await fetch(url + ".json")).json();
-        if (mastodata?.content) {
-          let title = mastodata.content
-            ? await titleGen(mastodata.content, pkg.ai)
-            : null;
-          return {
-            mode: "mastodon",
-            title: title || null,
-            description:
-              "> " +
-              (mastodata.content as string)
-                .replaceAll("</p><p>", "\n\n> ")
-                .replaceAll("<p>", "")
-                .replaceAll("</p>", "")
-                .replaceAll("<br />", "\n> "),
-          };
-        }
-      } catch (e) {}
-    }
-  }
+  let masto = await fetchToot(url, data, pkg);
+  if (masto) return masto;
   return {
     mode: "standard",
     title: extractTitle(data, url),
