@@ -1,5 +1,6 @@
 import { test, expect, describe } from "bun:test";
-import { haveIBeenPwned } from "!server/middleware/auth";
+import { haveIBeenPwned, validatePw } from "!server/middleware/auth";
+import { db } from "$db";
 /*
 test("Is logged in", async () => {
   let res = await client.user.me.get({
@@ -20,4 +21,9 @@ describe("Pwned Passwords", () => {
       haveIBeenPwned("AISIJKKCXKLZIWUIALAIH@HJKHZl;KKJDS")
     ).resolves.not.toBe({});
   });
+});
+
+test("Verify password", async () => {
+  expect(validatePw("password", 1, db(""))).rejects.toThrow();
+  expect(validatePw("bobbyeatstables", 1, db(""))).resolves.toBeObject();
 });

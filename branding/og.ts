@@ -5,8 +5,8 @@ import { decode } from "!packages/pinery/browser";
 
 import satori, { init } from "satori/wasm";
 import { Resvg, initWasm } from "@resvg/resvg-wasm";
-import resvgwasm from "../../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
-import yogawasm from "../../../oss/node_modules/yoga-wasm-web/dist/yoga.wasm";
+import resvgwasm from "../../oss/node_modules/@resvg/resvg-wasm/index_bg.wasm";
+import yogawasm from "../../oss/node_modules/yoga-wasm-web/dist/yoga.wasm";
 import initYoga from "yoga-wasm-web";
 import { getSubtitle, getTitle } from "./title";
 
@@ -115,7 +115,6 @@ export async function generateOG(path: string) {
     return (await font).text();
   }
   await initialize();
-  console.log(title);
   const string = {
     type: "div",
     props: {

@@ -181,7 +181,7 @@ export async function handleAuth(
               .set("expires", sql`(now() + interval '30 days')`)
               .executeTakeFirst()!;
 
-            console.log("Extended token", {
+            console.info("Extended token", {
               duration: performance.now() - start,
             });
             return;

@@ -81,7 +81,7 @@ export const modernPin = t.Object({
   entity: t.Object({
     id: t.String(),
     title: t.Optional(t.String()),
-    created_at: t.Date({ format: "date-time" }),
+    created_at: t.String(),
     url: t.String({
       examples: [
         "https://al3x.net/2013/05/23/letter-to-a-young-programmer.html",
