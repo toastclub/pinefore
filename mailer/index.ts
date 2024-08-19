@@ -35,7 +35,14 @@ export const templateTypes = [
   "prereg",
 ] as const;
 
-let _templates = templates();
+// https://github.com/oven-sh/bun/issues/13398
+// todo: dont do this
+let _templates: {
+  [key: string]: {
+    title: string;
+    contents: string;
+  };
+} = JSON.parse(templates());
 let layouts = layout();
 
 export const sendEmail = async (
