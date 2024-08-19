@@ -58,7 +58,7 @@ export type RSSFeedResponse = (
       status: "error" | "not-modified" | "not-parseable";
     }
 ) & {
-  extra: RSSFeedExtra;
+  extra?: RSSFeedExtra;
 };
 
 /**
@@ -91,7 +91,14 @@ export async function fetchRSSFeed(
   if (res.status === 304 && !options.alwaysFetch) {
     return { mode: null, data: null, status: "not-modified", extra };
   }
-  let parsed: any = xml2js(await res.text(), {
+  return parseRSSFeed(await res.text(), extra);
+}
+
+export function parseRSSFeed(
+  feed: string,
+  extra?: RSSFeedExtra
+): RSSFeedResponse {
+  let parsed: any = xml2js(feed, {
     compact: true,
     ignoreComment: true,
     alwaysArray: true,
@@ -100,7 +107,6 @@ export async function fetchRSSFeed(
     return { mode: "atom", data: atomParser(parsed), extra };
   } else if (parsed.rss?.[0] != undefined) {
     if (parsed.rss[0]._attributes?.version === "2.0") {
-      console.log(url);
       return { mode: "rss", data: rssParser(parsed.rss[0]), extra };
     }
   } else if (parsed["rdf:RDF"]?.[0] != undefined) {

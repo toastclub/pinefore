@@ -12,9 +12,9 @@ export async function feedsQueue(db: Kysely<Database>, feeds: RSSQueueBody[]) {
   return Promise.all(feeds.map((f) => runOnFeed(db, f)));
 }
 
-async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
+export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
   const res = await fetchRSSFeed(feed.url, {
-    lastFetched: feed.last_fetched_at,
+    lastFetched: feed.last_fetched_at || undefined,
   });
   if (res.data == null) {
     console.error("Failed to fetch RSS feed", {
@@ -27,13 +27,17 @@ async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
     .insertInto("entities")
     .values(
       res.data.items.flatMap((item) => {
+        let date = item.isoDate ? new Date(item.isoDate) : null;
+        if (date && isNaN(date.getTime())) {
+          date = null;
+        }
         if (item.link == undefined) return [];
         return [
           {
             url: item.link,
             domain: rootDomain(item.link),
             title: item.title || "",
-            posted_at: item.isoDate ? new Date(item.isoDate) : null,
+            posted_at: date,
           },
         ];
       })
@@ -58,11 +62,12 @@ async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
       last_fetched_at: new Date(),
       next_fetch_time: getBackoff(
         // TODO: it would be better to use feed hashes but we aren't doing that right now
-        new Date(feed.last_fetched_at || Date.now() + 1000 * 60 * 60 * 12)
+        new Date(feed.last_fetched_at || Date.now() - 1000 * 60 * 60 * 12)
       ),
     })
     .where("id", "=", feed.id)
     .execute();
+
   await itms;
   return res;
 }

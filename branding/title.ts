@@ -4,7 +4,6 @@ export function getTitle(route: string) {
   if (segments[segments.length - 1].endsWith("?")) {
     segments[segments.length - 1] = segments[segments.length - 1].slice(0, -1);
   }
-  console.log(segments);
   if (["me", "docs"].includes(segments[0])) {
     segments.shift();
   }

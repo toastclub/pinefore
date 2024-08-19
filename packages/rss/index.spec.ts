@@ -1,44 +1,9 @@
-import { it, expect, describe, beforeAll, spyOn, afterAll } from "bun:test";
+import { it, expect, describe, beforeAll, afterAll, spyOn } from "bun:test";
 import { fetchRSSFeed } from "./index";
-import { readFile } from "fs/promises";
-
-beforeAll(() => {
-  spyOn(global, "fetch").mockImplementation(
-    // @ts-expect-error
-    async (url: RequestInfo, init: RequestInit | undefined) => {
-      if (init?.headers) {
-        const headers = new Headers(init.headers);
-        let etag = headers.get("If-None-Match");
-        if (etag == '"aa"') {
-          return new Response("", {
-            status: 304,
-            headers: {
-              ETag: 'W/"aa"',
-            },
-          });
-        }
-        let host = new URL(url.toString()).host + ".xml";
-        if (host.startsWith("example.com")) {
-          host = "example.com.html";
-        }
-        const file = await readFile(
-          new URL(`./tests/data/${host}`, import.meta.url).pathname,
-          "utf8"
-        );
-        return new Response(file, {
-          status: 200,
-          headers: {
-            ETag: 'W/"aa"',
-          },
-        });
-      }
-    }
-  );
-});
-
+import { proxyFeed } from "./tests/helpers/index";
+beforeAll(proxyFeed);
 afterAll(() => {
-  // @ts-expect-error
-  global.fetch.mockRestore();
+  spyOn(global, "fetch").mockRestore();
 });
 
 describe("general", () => {

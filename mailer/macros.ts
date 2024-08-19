@@ -25,5 +25,10 @@ export function templates() {
 }
 
 export function layout() {
-  return readFileSync(import.meta.dirname + "/wrapper.html", "utf-8");
+  return (
+    readFileSync(import.meta.dirname + "/wrapper.html", "utf-8")
+      // 30% cost reduction lol (like 5 cents a month max)
+      .replace(/(<!--[^]+?->|\s)+/g, " ")
+      .replace(/ (?=<|$)|<\/[tl].>|<.p> *(<[p/])| ?\/?(>)/gi, "$1$2")
+  );
 }

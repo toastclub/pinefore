@@ -2,6 +2,7 @@
 
 ## August
 
+- 18th-19th: Integration test framework; many integration & unit tests (~15% coverage)
 - 11th-???: Various changes to CRON; Queues; RSS; and Archives.
 - 10th: Root domain filtering
 - 4th-14th: Huge internal migration began. The backend and frontend used to be deployed together, but now they are separate, with their own `package.json`. This should help security and should make control much easier due to less bundling.
