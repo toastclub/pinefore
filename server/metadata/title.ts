@@ -1,5 +1,6 @@
 import { rootDomain, stringSimilarity } from "../helpers";
-import { decode } from "html-entities";
+import { unescape } from "@std/html/entities";
+import entityList from "@std/html/named-entity-list.json";
 
 export default function extractTitle(html: string, url: URL) {
   let titleMatchArr =
@@ -31,5 +32,5 @@ export default function extractTitle(html: string, url: URL) {
       }
     }
   }
-  return titleMatch ? decode(titleMatch) : null;
+  return titleMatch ? unescape(titleMatch, { entityList }) : null;
 }

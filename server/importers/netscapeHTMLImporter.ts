@@ -1,5 +1,6 @@
 import { stringToBoolean } from "lib/types";
-import { decode } from "html-entities";
+import { unescape } from "@std/html/entities";
+import entityList from "@std/html/named-entity-list.json" with { type: "json" };
 
 interface Bookmark {
   title: string;
@@ -55,7 +56,7 @@ export default function netscapeHTMLImporter(
       let url = (line.match(/(?:HREF|href)="(.*?)"/) || [])[1];
       if (title == undefined || url == undefined || line.includes('FEEDURL="'))
         continue;
-      title = decode(title);
+      title = unescape(title, { entityList});
       let tags = line.match(/(?:TAGS|tags)="(.*?)"/)?.[1].split(",");
       let addedAt =
         new Date(
