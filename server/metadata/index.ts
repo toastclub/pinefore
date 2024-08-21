@@ -3,6 +3,7 @@ import { AiHandler, callCfAiServerside } from "!packages/ai/genAi";
 import { generateLLamaTitlePrompt } from "!packages/ai/title";
 import extractTitle from "./title";
 import fetchToot from "./sites/mastodon";
+import { getMetadataFromPdf } from "./sites/pdf";
 
 const getExt = (u: URL) =>
   u.pathname.split(/[#?]/)?.[0]?.split(".").pop()?.trim();
@@ -64,13 +65,8 @@ export async function getMeta(
   let data = await (await fetch(url)).text();
   let ext = getExt(url);
   if (ext == "pdf") {
-    let tIdx = data.indexOf("/Title(");
-    let title = data.substring(tIdx + 7, data.indexOf(")", tIdx + 7));
-    return {
-      mode: "pdf",
-      title: title || null,
-      description: null,
-    };
+    let pdf = getMetadataFromPdf(data);
+    if (pdf) return pdf;
   }
   let masto = await fetchToot(url, data, pkg);
   if (masto) return masto;
