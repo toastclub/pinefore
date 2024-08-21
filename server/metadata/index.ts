@@ -4,6 +4,9 @@ import { generateLLamaTitlePrompt } from "!packages/ai/title";
 import extractTitle from "./title";
 import fetchToot from "./sites/mastodon";
 
+const getExt = (u: URL) =>
+  u.pathname.split(/[#?]/)?.[0]?.split(".").pop()?.trim();
+
 export async function titleGen(text: string, ai: AiHandler | undefined) {
   if (ai) {
     let title = await callCfAiServerside(
@@ -58,10 +61,17 @@ export async function getMeta(
       }
     }
   }
-  let possiblyMastodon = url.pathname
-    .split("/")?.[1]
-    ?.match(/@?([A-z0-9._%+-]+)(?:@([A-z0-9.-]+\.[A-z]{2,}))?/);
   let data = await (await fetch(url)).text();
+  let ext = getExt(url);
+  if (ext == "pdf") {
+    let tIdx = data.indexOf("/Title(");
+    let title = data.substring(tIdx + 7, data.indexOf(")", tIdx + 7));
+    return {
+      mode: "pdf",
+      title: title || null,
+      description: null,
+    };
+  }
   let masto = await fetchToot(url, data, pkg);
   if (masto) return masto;
   return {
