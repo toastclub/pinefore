@@ -5,7 +5,7 @@ import entityList from "@std/html/named-entity-list.json";
 export default function extractTitle(html: string, url: URL) {
   let titleMatchArr =
     html.match(
-      /(?:(?:(?:og)|(?:twitter)):title" content="(.*)")|(?:<title(?:.*?)>(.*?)<\/title>)/
+      /(?:(?:(?:og)|(?:twitter)):title" content="([^"]*)")|(?:<title(?:.*?)>(.*?)<\/title>)/
     ) || [];
   let titleMatch = titleMatchArr[1] || titleMatchArr[2] || null;
   if (titleMatch) {
