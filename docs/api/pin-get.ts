@@ -8,7 +8,7 @@ export const pinGetSchema = {
           "A powerful filtering engine. Please refer to the [query engine](/docs/query-engine) documentation for more information.",
       })
     ),
-    user: t.Optional(t.String({ description: "The user ID to look for" })),
+    user: t.Optional(t.Numeric({ description: "The user ID to look for" })),
     scope: t.Optional(
       t.Union([t.Literal("user"), t.Literal("community"), t.Literal("network")])
     ),
