@@ -18,6 +18,9 @@ export function getMetadataFromPdf(data: string) {
     } else {
       title = data.substring(tIdx + 7, data.indexOf(")", tIdx + 7));
     }
+    if (title.length > 200) {
+      return null;
+    }
     return {
       mode: "pdf",
       title: title || null,

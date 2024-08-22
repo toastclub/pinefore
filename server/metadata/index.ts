@@ -4,6 +4,7 @@ import { generateLLamaTitlePrompt } from "!packages/ai/title";
 import extractTitle from "./title";
 import fetchToot from "./sites/mastodon";
 import { getMetadataFromPdf } from "./sites/pdf";
+import { modifyMetadata } from "$lib/scraping/metadata";
 
 const getExt = (u: URL) =>
   u.pathname.split(/[#?]/)?.[0]?.split(".").pop()?.trim();
@@ -62,7 +63,12 @@ export async function getMeta(
       }
     }
   }
-  let data = await (await fetch(url)).text();
+  let headers = modifyMetadata(url.host, new Headers());
+  let data = await (
+    await fetch(url, {
+      headers: headers,
+    })
+  ).text();
   let ext = getExt(url);
   if (ext == "pdf") {
     let pdf = getMetadataFromPdf(data);
