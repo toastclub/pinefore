@@ -1,6 +1,6 @@
 import { parse } from "tldts";
 export function rootDomain(url: string) {
-  let parsed = parse(url);
+  let parsed = parse(url, { allowPrivateDomains: true });
   if (
     parsed.subdomain &&
     [
