@@ -91,8 +91,10 @@ export const modernPin = t.Object({
   }),
   description: t.String({ examples: [""] }),
   tags: t.Nullable(commonSchema.tag),
-  created_at: t.Date({ format: "date-time" }),
-  updated_at: t.Nullable(t.Date({ format: "date-time" })),
+  created_at: t.Union([t.Date(), t.String({ format: "iso-date-time" })]),
+  updated_at: t.Nullable(
+    t.Union([t.Date(), t.String({ format: "iso-date-time" })])
+  ),
   public: t.Boolean(),
   read: t.Boolean(),
 });

@@ -7,5 +7,6 @@ export function recEntities(entity: number, db: Kysely<Database>) {
     .orderBy(
       sql`title_embeddings <=> (SELECT title_embeddings FROM entities WHERE id = ${entity})`
     )
+    .where("id", "!=", entity)
     .limit(10);
 }
