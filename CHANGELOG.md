@@ -4,6 +4,7 @@
 
 August flew by under the radar. Most of the work done was to set ourselves up for success in the future. We added strong testing frameworks, and subdivided our code. In addition, RSS is now supported on the backend. There have been no frontend changes, due to a long standing bug in the development environment. The project initially was in a rapid back-and-forth state where changes could be seen happening daily, but now I prefer to focus on one at a time.
 
+- 23rd: Begin feeds on the frontend; stripe support
 - 21st: Embeddings for reccomendations
 - 18th-19th: Integration test framework; many integration & unit tests (~15% coverage)
 - 11th-???: Various changes to CRON; Queues; RSS; and Archives.
