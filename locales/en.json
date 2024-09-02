@@ -1,0 +1,42 @@
+{
+  "auth": {
+    "acc_conversion": {
+      "desc": "Hi! Welcome to Pinefore! Feel free to poke around, then join our community when it feels right.",
+      "welcome": "Welcome!"
+    },
+    "email": "Email",
+    "login": "Login",
+    "logout": "Logout",
+    "password": "Password",
+    "preregister": "Preregister!",
+    "register": "Register",
+    "reset": {
+      "cta": "Forgot Password?",
+      "send_email": "Email Me!"
+    },
+    "username": "Username"
+  },
+  "legal": {
+    "faq": "FAQ",
+    "privacy": "Privacy",
+    "refund_policy": "Refunds",
+    "terms": "Terms"
+  },
+  "nav": {
+    "community": "Community",
+    "feeds": "Feeds",
+    "network": "Network",
+    "notes": "Notes",
+    "pins": "Pins",
+    "profile": "Profile",
+    "settings": "Settings",
+    "yours": "Yours"
+  },
+  "pins": {
+    "private": "Private",
+    "read_later": "Read Later",
+    "tags": "Tags",
+    "title": "Title",
+    "url": "URL"
+  }
+}

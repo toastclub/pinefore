@@ -1,0 +1,21 @@
+{
+  "auth": {
+    "email": "Correo electrónico",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "password": "Contraseña",
+    "preregister": "¡Preinscribirse!",
+    "register": "Registrarse",
+    "reset": {
+      "cta": "¿Olvidaste tu contraseña?",
+      "send_email": "¡Envíame e-mail!"
+    },
+    "username": "Nombre de usuario"
+  },
+  "legal": {
+    "faq": "Preguntas frecuentes",
+    "privacy": "Privacidad",
+    "refund_policy": "Reembolsos",
+    "terms": "Términos"
+  }
+}
