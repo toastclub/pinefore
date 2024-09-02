@@ -10,7 +10,12 @@ export default async function rssCron(
   let needsUpdate = await db
     .selectFrom("rssfeeds")
     .select(["url", "id", "last_fetched_at"])
-    .where("next_fetch_time", "<", (c) => c.fn<Date>("now"))
+    .where((c) =>
+      c.or([
+        c("next_fetch_time", "<", (c) => c.fn<Date>("now")),
+        c("next_fetch_time", "is", null),
+      ])
+    )
     .execute();
   if (needsUpdate.length === 0) {
     return;
