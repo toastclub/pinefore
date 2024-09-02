@@ -26,7 +26,7 @@ export default async function rssCron(
       type: "rss",
       body: chunk.map((c) => ({
         ...c,
-        last_fetched_at: c.last_fetched_at.toISOString(),
+        last_fetched_at: c.last_fetched_at?.toISOString(),
       })),
     });
   }

@@ -95,7 +95,7 @@ async function backfillFeed(feed: RSSFeedResponse, url: string, limit: number) {
   }
   for (let i = 0; i < limit; i++) {
     let _feed = await fetchRSSFeed(tm[0].url, {
-      lastFetched: tm[0].tz.toISOString(),
+      lastFetched: tm[0]?.tz?.toISOString(),
     });
     if (_feed.data == null) {
       break;
