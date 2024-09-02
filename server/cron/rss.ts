@@ -22,7 +22,7 @@ export default async function rssCron(
   }
 
   for (const chunk of chunks(needsUpdate, 10)) {
-    queue.send({
+    await queue.send({
       type: "rss",
       body: chunk.map((c) => ({
         ...c,
