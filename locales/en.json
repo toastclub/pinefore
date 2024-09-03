@@ -16,6 +16,13 @@
     },
     "username": "Username"
   },
+  "feeds": {
+    "add_feed": "Add Feed",
+    "create_feed": "Create Feed",
+    "feeds": "Feeds",
+    "import_opml": "Import OPML",
+    "save": "Save"
+  },
   "legal": {
     "faq": "FAQ",
     "privacy": "Privacy",
@@ -35,8 +42,56 @@
   "pins": {
     "private": "Private",
     "read_later": "Read Later",
+    "refresh_title": "Refresh",
+    "save": "Pine!",
     "tags": "Tags",
     "title": "Title",
     "url": "URL"
+  },
+  "settings": {
+    "account": {
+      "change_password": "Change",
+      "delete_account_prompt": "Delete Account",
+      "delete_acount": "Delete",
+      "email_prompt": "Change Email",
+      "password": "Password",
+      "password_prompt": "Change Password",
+      "retype_password": "Retype Password"
+    },
+    "billing": {
+      "balance": "Balance",
+      "description": "View Billing History"
+    },
+    "import": {
+      "description": "Freely import & export data from various sources. It's your data, after all."
+    },
+    "pages": {
+      "billing": "Billing",
+      "import": "Import",
+      "preferences": "Preferences",
+      "profile": "Profile",
+      "sessions": "Sessions"
+    },
+    "profile": {
+      "delete_avatar": "Delete",
+      "description_prompt": "What do you pine for?",
+      "upload_avatar": "Upload",
+      "username": "Username",
+      "username_cannot_change": "To change your username, please contact me!"
+    },
+    "secure_area": {
+      "description": "To make significant modifications to your account, enter your password.",
+      "password": "Password",
+      "title": "Secure Area"
+    },
+    "sessions": {
+      "session_types": {
+        "fever": "Fever",
+        "google_reader": "Google Reader",
+        "long_lived": "Long Lived",
+        "pinboard": "Pinboard",
+        "rss": "RSS"
+      }
+    }
   }
 }

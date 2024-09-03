@@ -17,5 +17,11 @@
     "privacy": "Privacidad",
     "refund_policy": "Reembolsos",
     "terms": "Términos"
+  },
+  "nav": {
+    "community": "Comunidad",
+    "feeds": "Fuentes",
+    "network": "Red",
+    "notes": "Notas"
   }
 }
