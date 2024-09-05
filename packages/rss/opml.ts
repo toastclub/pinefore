@@ -34,11 +34,11 @@ export function importOPML(opml: string): RSSOPML {
     items: [],
   };
   if (parsed.opml[0]?.head?.[0]) {
-    working.dateCreated = parsed.opml[0]?.head[0].dateCreated?.[0]?._text;
+    working.dateCreated = parsed.opml[0]?.head[0].dateCreated?.[0]?._text?.[0];
     if (working.dateCreated) {
       working.dateCreated = new Date(working.dateCreated);
     }
-    working.title = parsed.opml[0]?.head[0].title?.[0]?._text;
+    working.title = parsed.opml[0]?.head[0].title?.[0]?._text?.[0];
   }
   let currentCategory: string[] = [];
   let processOutline = (outline: any) => {
