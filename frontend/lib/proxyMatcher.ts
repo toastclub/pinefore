@@ -8,13 +8,6 @@ export function proxyMatcher(url: URL): [string, string] | null {
   return null;
 }
 
-export function toProxyURL(url: string): string | null {
-  const u = new URL(url);
-  const match = proxyMatcher(u);
-  if (!match) return null;
-  return `/api/helper/media/proxy/${match[0]}/${match[1]}`;
-}
-
 export function getMediaType(url: URL) {
   switch (proxyMatcher(url)?.[0]) {
     case "yt":
