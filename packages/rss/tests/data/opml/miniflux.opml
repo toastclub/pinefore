@@ -7,51 +7,16 @@
     <body>
         <outline text="Companies">
             <outline title="Cloudflare" text="Cloudflare" xmlUrl="https://blog.cloudflare.com/rss" htmlUrl="https://blog.cloudflare.com" type="rss"></outline>
-            <outline title="Asahi Linux" text="Asahi Linux" xmlUrl="https://asahilinux.org/blog/index.xml" htmlUrl="https://asahilinux.org/blog/" type="rss"></outline>
             <outline title="Ink &amp; Switch" text="Ink &amp; Switch" xmlUrl="https://www.inkandswitch.com/index.xml" htmlUrl="https://www.inkandswitch.com/" type="rss"></outline>
-            <outline title="Isosceles" text="Isosceles" xmlUrl="https://blog.isosceles.com/rss" htmlUrl="https://blog.isosceles.com/" type="rss"></outline>
         </outline>
         <outline text="Media">
             <outline title="LOW←TECH MAGAZINE" text="LOW←TECH MAGAZINE" xmlUrl="https://solar.lowtechmagazine.com/posts/index.xml" htmlUrl="https://solar.lowtechmagazine.com/posts/" type="rss"></outline>
             <outline title="404 Media" text="404 Media" xmlUrl="https://www.404media.co/rss/" htmlUrl="https://www.404media.co/" type="rss"></outline>
-            <outline title="Asterisk" text="Asterisk" xmlUrl="https://asteriskmag.com/feed" htmlUrl="https://asteriskmag.com" type="rss"></outline>
-            <outline title="Our World in Data" text="Our World in Data" xmlUrl="https://ourworldindata.org/atom.xml" htmlUrl="https://ourworldindata.org" type="rss"></outline>
-            <outline title="Quanta Magazine" text="Quanta Magazine" xmlUrl="https://www.quantamagazine.org/feed" htmlUrl="https://www.quantamagazine.org" type="rss"></outline>
-            <outline title="Quantified Self" text="Quantified Self" xmlUrl="https://quantifiedself.com/feed/" htmlUrl="https://quantifiedself.com" type="rss"></outline>
-            <outline title="Scan of the Month" text="Scan of the Month" xmlUrl="https://www.scanofthemonth.com/scans/rss.xml" htmlUrl="https://www.scanofthemonth.com" type="rss"></outline>
-            <outline title="The Citizen Lab" text="The Citizen Lab" xmlUrl="https://citizenlab.ca/feed" htmlUrl="https://citizenlab.ca" type="rss"></outline>
-            <outline title="The Markup" text="The Markup" xmlUrl="https://themarkup.org/feeds/rss.xml" htmlUrl="https://themarkup.org/" type="rss"></outline>
-            <outline title="The Pudding" text="The Pudding" xmlUrl="https://pudding.cool/feed" htmlUrl="https://pudding.cool" type="rss"></outline>
-            <outline title="Wait But Why" text="Wait But Why" xmlUrl="https://waitbutwhy.com/feed" htmlUrl="https://waitbutwhy.com/" type="rss"></outline>
+            <outline title="Citation Needed (Molly White)" text="Citation Needed (Molly White)" xmlUrl="https://www.citationneeded.news/rss/" htmlUrl="https://www.citationneeded.news/" type="rss"></outline>
         </outline>
         <outline text="People">
-            <outline title="Drew DeVault" text="Drew DeVault" xmlUrl="https://drewdevault.com/blog/index.xml" htmlUrl="https://drewdevault.com" type="rss"></outline>
-            <outline title="Musings (of Benjamin Hollon)" text="Musings (of Benjamin Hollon)" xmlUrl="https://benjaminhollon.com/musings/feed/" htmlUrl="https://benjaminhollon.com/musings/" type="rss"></outline>
-            <outline title="Xe Iaso" text="Xe Iaso" xmlUrl="https://xeiaso.net/blog.rss" htmlUrl="https://xeiaso.net/" type="rss"></outline>
-            <outline title="A Few Thoughts on Cryptographic Engineering (Matthew Green)" text="A Few Thoughts on Cryptographic Engineering (Matthew Green)" xmlUrl="https://blog.cryptographyengineering.com/feed/" htmlUrl="https://blog.cryptographyengineering.com" type="rss"></outline>
-            <outline title="Alexander Obenauer" text="Alexander Obenauer" xmlUrl="https://alexanderobenauer.com/assets/feed/rss.xml" htmlUrl="https://alexanderobenauer.com" type="rss"></outline>
-            <outline title="arun.is" text="arun.is" xmlUrl="https://arun.is/rss.xml" htmlUrl="https://www.arun.is" type="rss"></outline>
-            <outline title="Bartosz Ciechanowski" text="Bartosz Ciechanowski" xmlUrl="https://ciechanow.ski/atom.xml" htmlUrl="https://ciechanow.ski/" type="rss"></outline>
-            <outline title="Blog on Phillip Tennen" text="Blog on Phillip Tennen" xmlUrl="https://axleos.com/blog/index.xml" htmlUrl="https://axleos.com/blog/" type="rss"></outline>
             <outline title="Citation Needed (Molly White)" text="Citation Needed (Molly White)" xmlUrl="https://www.citationneeded.news/rss/" htmlUrl="https://www.citationneeded.news/" type="rss"></outline>
             <outline title="Data Driven Inteligence" text="Data Driven Inteligence" xmlUrl="https://michaelnielsen.org/ddi/feed" htmlUrl="https://michaelnielsen.org/ddi" type="rss"></outline>
-            <outline title="devonzuegel.com" text="devonzuegel.com" xmlUrl="https://devonzuegel.com/feed.xml" htmlUrl="http://devon.postach.io/" type="rss"></outline>
-            <outline title="Fathy Boundjadj" text="Fathy Boundjadj" xmlUrl="https://fathy.fr/rss.xml" htmlUrl="https://fathy.fr" type="rss"></outline>
-            <outline title="julian.digital (Julian Lehr)" text="julian.digital (Julian Lehr)" xmlUrl="https://julian.digital/feed/" htmlUrl="https://julian.digital" type="rss"></outline>
-            <outline title="lcamtuf’s thing" text="lcamtuf’s thing" xmlUrl="https://lcamtuf.substack.com/feed" htmlUrl="https://lcamtuf.substack.com" type="rss"></outline>
-            <outline title="LWSS" text="LWSS" xmlUrl="https://lwss.github.io/feed" htmlUrl="https://lwss.github.io/" type="rss"></outline>
-            <outline title="maia" text="maia" xmlUrl="https://maia.crimew.gay/feed.xml" htmlUrl="https://maia.crimew.gay" type="rss"></outline>
-            <outline title="Manuel Moreale" text="Manuel Moreale" xmlUrl="https://manuelmoreale.com/feed/rss" htmlUrl="https://manuelmoreale.com" type="rss"></outline>
-            <outline title="Michael Orlitzky { articles }" text="Michael Orlitzky { articles }" xmlUrl="https://michael.orlitzky.com/articles/rss.xml" htmlUrl="https://michael.orlitzky.com" type="rss"></outline>
-            <outline title="Nadim Kobeissi" text="Nadim Kobeissi" xmlUrl="https://nadim.computer/rss.xml" htmlUrl="https://nadim.computer" type="rss"></outline>
-            <outline title="notebook from jason" text="notebook from jason" xmlUrl="https://www.fromjason.xyz/p/notebook/feed/feed.xml" htmlUrl="https://www.fromjason.xyz/p/notebook/feed/feed.xml" type="rss"></outline>
-            <outline title="Probably Overthinking It (Allen Downey)" text="Probably Overthinking It (Allen Downey)" xmlUrl="https://www.allendowney.com/blog/feed" htmlUrl="https://www.allendowney.com/blog" type="rss"></outline>
-            <outline title="Rodrigo Copetti" text="Rodrigo Copetti" xmlUrl="https://www.copetti.org/index.xml" htmlUrl="https://www.copetti.org/" type="rss"></outline>
-            <outline title="Stephen Wolfram" text="Stephen Wolfram" xmlUrl="https://writings.stephenwolfram.com/feed/atom/" htmlUrl="https://writings.stephenwolfram.com" type="rss"></outline>
-            <outline title="taylor.town" text="taylor.town" xmlUrl="https://taylor.town/feed" htmlUrl="https://taylor.town/" type="rss"></outline>
-            <outline title="This is important (Sarah Moir)" text="This is important (Sarah Moir)" xmlUrl="https://thisisimportant.net/feed.xml" htmlUrl="https://thisisimportant.net/" type="rss"></outline>
-            <outline title="uncenter" text="uncenter" xmlUrl="https://uncenter.dev/feed.xml" htmlUrl="https://uncenter.dev" type="rss"></outline>
-            <outline title="xyzeva&#39;s blog" text="xyzeva&#39;s blog" xmlUrl="https://kibty.town/blog.rss" htmlUrl="https://kibty.town/" type="rss"></outline>
         </outline>
     </body>
 </opml>
