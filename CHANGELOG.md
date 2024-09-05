@@ -1,5 +1,14 @@
 # 2024
 
+## September
+
+- 5th: Fix login bug where captcha was consumed and not regenerated
+- View transitions
+- Continued support for feeds
+  - Send new items to queue right away
+  - Viewing them on frontend
+  - Queues now work 
+
 ## August
 
 August flew by under the radar. Most of the work done was to set ourselves up for success in the future. We added strong testing frameworks, and subdivided our code. In addition, RSS is now supported on the backend. There have been no frontend changes, due to a long standing bug in the development environment. The project initially was in a rapid back-and-forth state where changes could be seen happening daily, but now I prefer to focus on one at a time.
