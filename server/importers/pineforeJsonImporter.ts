@@ -7,7 +7,7 @@ import { jsonBuildObject } from "kysely/helpers/postgres";
 import { id } from "lib/id";
 import { rootDomain } from "../helpers";
 
-export default async function pineforeJsonImporter(
+export async function pineforeJsonImporter(
   json: {
     pins: Static<typeof modernPin>[];
   },

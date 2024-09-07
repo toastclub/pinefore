@@ -33,6 +33,11 @@ export const importers: {
     fileTypes: ["application/json"],
     fileExtensions: [".json"],
   },
+  opml: {
+    title: "RSS OPML",
+    fileTypes: ["text/xml"],
+    fileExtensions: [".xml", ".opml"],
+  },
 };
 
 export const exporters: {
@@ -42,6 +47,9 @@ export const exporters: {
 } = {
   pinefore: {
     title: "Pinefore Backup",
+  },
+  opml: {
+    title: "RSS OPML",
   },
 };
 

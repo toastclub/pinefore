@@ -14,7 +14,7 @@ interface Bookmark {
   private?: boolean;
 }
 
-export default function netscapeHTMLImporter(
+export function netscapeHTMLImporter(
   file: string,
   options: {
     defaults: {
