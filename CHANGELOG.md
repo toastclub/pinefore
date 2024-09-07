@@ -4,7 +4,7 @@
 
 - While we’ve had a functioning feed backend for a week, the first OPML import was completed successfully on the 6th. This exposed a number of issues
   - Minor: a great deal of issues in our feed parser have been identified
-  - Major: on conflict do nothing increments entity primary keys, which resulted in breakneck increments. A script was created 
+  - Major: on conflict do nothing increments entity primary keys, which resulted in breakneck increments (at a rate of about 100k per hour). A script was created to collapse these gaps, and for the runtime of the script (some ~2s), information was potentially lost. A patch has not yet been created, so RSS fetching has been disabled
 - 6th: OPML importing
 - 5th: Fix login bug where captcha was consumed and not regenerated
 - View transitions
