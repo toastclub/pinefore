@@ -1,3 +1,3 @@
 export * from "./netscapeHTMLImporter";
-export * from "./rssOPMLImporter";
+export * from "./rssOpmlImporter";
 export * from "./pineforeJsonImporter";
