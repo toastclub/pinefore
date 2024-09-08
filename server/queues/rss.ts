@@ -80,7 +80,7 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
       last_fetched_at: new Date(),
       next_fetch_time: getBackoff(
         // TODO: it would be better to use feed hashes but we aren't doing that right now
-        new Date(feed.last_fetched_at || Date.now() - 1000 * 60 * 60 * 12)
+        new Date(res.data.lastUpdated || Date.now() - 1000 * 60 * 60 * 12)
       ),
     })
     .where("id", "=", feed.id)
