@@ -23,26 +23,38 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
     });
     return res;
   }
+  const items = res.data.items.flatMap((item) => {
+    let date = item.isoDate ? new Date(item.isoDate) : null;
+    if (date && isNaN(date.getTime())) {
+      date = null;
+    }
+    if (item.link == undefined) return [];
+    return [
+      {
+        url: item.link,
+        domain: rootDomain(item.link),
+        title: item.title || "",
+        posted_at: date,
+      },
+    ];
+  });
+  let alreadyExistingEntities = await db
+    .selectFrom("entities")
+    .where(
+      "url",
+      "in",
+      items.map((entity) => entity.url)
+    )
+    .select(["url"])
+    .execute();
   const entities = await db
     .insertInto("entities")
     .values(
-      res.data.items.flatMap((item) => {
-        let date = item.isoDate ? new Date(item.isoDate) : null;
-        if (date && isNaN(date.getTime())) {
-          date = null;
-        }
-        if (item.link == undefined) return [];
-        return [
-          {
-            url: item.link,
-            domain: rootDomain(item.link),
-            title: item.title || "",
-            posted_at: date,
-          },
-        ];
+      items.filter((entity) => {
+        return !alreadyExistingEntities.find((a) => a.url === entity.url);
       })
     )
-    .onConflict((oc) => oc.column("url").doNothing())
+    //.onConflict((oc) => oc.column("url").doNothing())
     .returning(["id", "url"])
     .execute();
   let itms = db
@@ -54,7 +66,8 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
         discovered_at: new Date(),
       }))
     )
-    .onConflict((oc) => oc.columns(["feed_id", "entity_id"]).doNothing())
+    // this shouldn't be necessary
+    //.onConflict((oc) => oc.columns(["feed_id", "entity_id"]).doNothing())
     .execute();
   await db
     .updateTable("rssfeeds")

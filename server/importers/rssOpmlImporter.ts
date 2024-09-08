@@ -7,14 +7,32 @@ export async function rssOpmlImporter(
   opml: string,
   db: Kysely<Database>
 ) {
-  const feeds = importOPML(opml).items.filter((feed) => feed.xmlUrl);
+  let feeds = importOPML(opml).items.filter((feed) => feed.xmlUrl);
+  let alreadyExistingFeeds = await db
+    .selectFrom("rssfeeds")
+    .where(
+      "url",
+      "in",
+      feeds.map((feed) => feed.xmlUrl!)
+    )
+    .select(["url"])
+    .execute();
   let dbFeeds = await db
-    .with("feed", (c) =>
-      c
-        .insertInto("rssfeeds")
-        .values(feeds.map((feed) => ({ url: feed.xmlUrl! })))
-        .returning(["id", "url"])
-        .onConflict((oc) => oc.column("url").doNothing())
+    .with(
+      "feed",
+      (c) =>
+        c
+          .insertInto("rssfeeds")
+          .values(
+            feeds
+              // do the filtering here so the union returns the correct values
+              .filter(
+                (f) => !alreadyExistingFeeds.find((a) => a.url === f.xmlUrl)
+              )
+              .map((feed) => ({ url: feed.xmlUrl! }))
+          )
+          .returning(["id", "url"])
+      //.onConflict((oc) => oc.column("url").doNothing())
     )
     .selectFrom("feed")
     .unionAll(
@@ -29,17 +47,24 @@ export async function rssOpmlImporter(
     )
     .select(["id", "url"])
     .execute();
-
+  let alreadyExistingUserFeeds = await db
+    .selectFrom("userfeeds")
+    .where("user_id", "=", user_id)
+    .select(["feed_id"])
+    .execute();
   let inserted = await db
     .insertInto("userfeeds")
     .values(
-      dbFeeds.map((feed) => ({
-        user_id,
-        feed_id: feed.id,
-        feed_name: feeds.find((f) => f.xmlUrl === feed.url)?.title,
-      }))
+      dbFeeds
+        .filter(
+          (feed) => !alreadyExistingUserFeeds.find((a) => a.feed_id === feed.id)
+        )
+        .map((feed) => ({
+          user_id,
+          feed_id: feed.id,
+          feed_name: feeds.find((f) => f.xmlUrl === feed.url)?.title,
+        }))
     )
-    .onConflict((oc) => oc.doNothing())
     .returning(["id"])
     .execute();
   // todo: categories

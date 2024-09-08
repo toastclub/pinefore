@@ -31,10 +31,23 @@ export async function pineforeJsonImporter(
       };
     });
   });
+  let alreadyExists = await db
+    .selectFrom("entities")
+    .where(
+      "url",
+      "in",
+      entities.map((entity) => entity.url)
+    )
+    .select(["url"])
+    .execute();
+  // filter out entities that already exist
+  entities = entities.filter(
+    (e) => !alreadyExists.find((a) => a.url === e.url)
+  );
   let eRes = await db
     .insertInto("entities")
     .values(entities)
-    .onConflict((oc) => oc.column("url").doNothing())
+    //.onConflict((oc) => oc.column("url").doNothing())
     .execute()
     .then(async () => {
       return await db
