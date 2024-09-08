@@ -47,16 +47,22 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
     )
     .select(["url", "id"])
     .execute();
-  const entities = await db
-    .insertInto("entities")
-    .values(
-      items.filter((entity) => {
-        return !alreadyExistingEntities.find((a) => a.url === entity.url);
-      })
-    )
-    //.onConflict((oc) => oc.column("url").doNothing())
-    .returning(["id", "url"])
-    .execute();
+  let entitiesToInsert = items.filter((entity) => {
+    return !alreadyExistingEntities.find((a) => a.url === entity.url);
+  });
+  const entities =
+    entitiesToInsert.length > 0
+      ? await db
+          .insertInto("entities")
+          .values(
+            items.filter((entity) => {
+              return !alreadyExistingEntities.find((a) => a.url === entity.url);
+            })
+          )
+          //.onConflict((oc) => oc.column("url").doNothing())
+          .returning(["id", "url"])
+          .execute()
+      : [];
   let itms = db
     .insertInto("rssfeeditems")
     .values(
