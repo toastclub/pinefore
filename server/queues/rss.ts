@@ -23,71 +23,78 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
     });
     return res;
   }
-  const items = res.data.items.flatMap((item) => {
-    let date = item.isoDate ? new Date(item.isoDate) : null;
-    if (date && isNaN(date.getTime())) {
-      date = null;
-    }
-    if (item.link == undefined) return [];
-    return [
-      {
-        url: item.link,
-        domain: rootDomain(item.link),
-        title: item.title || "",
-        posted_at: date,
-      },
-    ];
-  });
-  let alreadyExistingEntities = await db
-    .selectFrom("entities")
-    .where(
-      "url",
-      "in",
-      items.map((entity) => entity.url)
-    )
-    .select(["url", "id"])
-    .execute();
-  let entitiesToInsert = items.filter((entity) => {
-    return !alreadyExistingEntities.find((a) => a.url === entity.url);
-  });
-  const entities =
-    entitiesToInsert.length > 0
-      ? await db
-          .insertInto("entities")
-          .values(
-            items.filter((entity) => {
-              return !alreadyExistingEntities.find((a) => a.url === entity.url);
-            })
-          )
-          //.onConflict((oc) => oc.column("url").doNothing())
-          .returning(["id", "url"])
-          .execute()
-      : [];
-  let itms = db
-    .insertInto("rssfeeditems")
-    .values(
-      [...entities, ...alreadyExistingEntities].map((entity) => ({
-        feed_id: feed.id,
-        entity_id: entity.id,
-        discovered_at: new Date(),
-      }))
-    )
-    .onConflict((oc) => oc.columns(["feed_id", "entity_id"]).doNothing())
-    .execute();
-  await db
-    .updateTable("rssfeeds")
-    .set({
-      last_fetched_at: new Date(),
-      next_fetch_time: getBackoff(
-        // TODO: it would be better to use feed hashes but we aren't doing that right now
-        new Date(res.data.lastUpdated || Date.now() - 1000 * 60 * 60 * 12)
-      ),
-    })
-    .where("id", "=", feed.id)
-    .execute();
+  try {
+    const items = res.data.items.flatMap((item) => {
+      let date = item.isoDate ? new Date(item.isoDate) : null;
+      if (date && isNaN(date.getTime())) {
+        date = null;
+      }
+      if (item.link == undefined) return [];
+      return [
+        {
+          url: item.link,
+          domain: rootDomain(item.link),
+          title: item.title || "",
+          posted_at: date,
+        },
+      ];
+    });
+    let alreadyExistingEntities = await db
+      .selectFrom("entities")
+      .where(
+        "url",
+        "in",
+        items.map((entity) => entity.url)
+      )
+      .select(["url", "id"])
+      .execute();
+    let entitiesToInsert = items.filter((entity) => {
+      return !alreadyExistingEntities.find((a) => a.url === entity.url);
+    });
+    const entities =
+      entitiesToInsert.length > 0
+        ? await db
+            .insertInto("entities")
+            .values(
+              items.filter((entity) => {
+                return !alreadyExistingEntities.find(
+                  (a) => a.url === entity.url
+                );
+              })
+            )
+            //.onConflict((oc) => oc.column("url").doNothing())
+            .returning(["id", "url"])
+            .execute()
+        : [];
+    let itms = db
+      .insertInto("rssfeeditems")
+      .values(
+        [...entities, ...alreadyExistingEntities].map((entity) => ({
+          feed_id: feed.id,
+          entity_id: entity.id,
+          discovered_at: new Date(),
+        }))
+      )
+      .onConflict((oc) => oc.columns(["feed_id", "entity_id"]).doNothing())
+      .execute();
+    await db
+      .updateTable("rssfeeds")
+      .set({
+        last_fetched_at: new Date(),
+        next_fetch_time: getBackoff(
+          // TODO: it would be better to use feed hashes but we aren't doing that right now
+          new Date(res.data.lastUpdated || Date.now() - 1000 * 60 * 60 * 12)
+        ),
+      })
+      .where("id", "=", feed.id)
+      .execute();
 
-  await itms;
-  return res;
+    await itms;
+    return res;
+  } catch (e) {
+    console.error("Failed to insert feed items", e);
+    return res;
+  }
 }
 
 async function backfillFeed(feed: RSSFeedResponse, url: string, limit: number) {
