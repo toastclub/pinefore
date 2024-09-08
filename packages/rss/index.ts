@@ -1,6 +1,8 @@
 import { xml2js } from "xml-js";
 import { atomParser } from "./atom";
 import { rssParser } from "./rss";
+import { unescape } from "@std/html/entities";
+import entityList from "@std/html/named-entity-list.json" with { type: "json" };
 
 const USER_AGENT =
   "Pinefore/1.0 ( https://pinefore.com; like FeedFetcher-Google)";
@@ -60,6 +62,14 @@ export type RSSFeedResponse = (
 ) & {
   extra?: RSSFeedExtra;
 };
+
+export function textOrCData(data: any) {
+  let d = (data?.[0]?._text?.[0] || data?.[0]?._cdata?.[0])?.trim();
+  if (d) {
+    return unescape(d, { entityList });
+  }
+  return d
+}
 
 /**
  * This fetcher is designed to be failable, and will attempt to parse unsemantic feeds.

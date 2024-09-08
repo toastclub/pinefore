@@ -1,4 +1,4 @@
-import { RSSFeed, RSSItem } from ".";
+import { RSSFeed, RSSItem, textOrCData } from ".";
 
 export function atomParser(data: any) {
   let feed: RSSFeed = {
@@ -29,11 +29,11 @@ function atomEntryParser(entry: any) {
     return null;
   }
   let item: RSSItem = {
-    title: entry.title?.[0]?._text?.[0],
+    title: textOrCData(entry.title),
     link: entry.link?.[0]?._attributes.href,
     guid: entry.id?.[0]?._text?.[0],
-    content: entry.content?.[0]?._text?.[0] || entry.content?.[0]?._cdata?.[0],
-    summary: entry.summary?.[0]?._text?.[0],
+    content: textOrCData(entry.content),
+    summary: textOrCData(entry.summary),
     pubDate: entry.published?.[0]?._text?.[0],
     isoDate: entry.updated?.[0]?._text?.[0],
     creator: entry.author?.[0]?.name[0]?._text?.[0],

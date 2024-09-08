@@ -3,13 +3,13 @@
  * I pledge to build this project in your honour.
  */
 
-import { RSSFeed, RSSItem } from ".";
+import { RSSFeed, RSSItem, textOrCData } from ".";
 
 export function rssParser(data: any) {
   let feed: RSSFeed = {
     items: [],
   };
-  feed.title = data.channel[0]?.title?.[0]?._text?.[0];
+  feed.title = textOrCData(data.channel[0]?.title);
   feed.link = data.channel[0]?.link?.[0]?._text?.[0];
   feed.subtitle = data.channel[0]?.description?.[0]._text?.[0];
   feed.language = data.channel[0]?.language?.[0]?._text?.[0];
@@ -23,13 +23,12 @@ function rssItemParser(data: any): RSSItem | null {
     return null;
   }
   let item = {
-    title: data.title?.[0]?._text?.[0],
+    title: textOrCData(data.title),
     link: data.link?.[0]?._text?.[0],
     guid: data.guid?.[0]?._text?.[0],
     content:
-      data["dc:content"]?.[0]?._text?.[0] ||
-      data["content:encoded"]?.[0]?._text?.[0],
-    summary: data.description?.[0]?._text?.[0],
+      textOrCData(data["dc:content"]) || textOrCData(data["content:encoded"]),
+    summary: textOrCData(data.description),
     pubDate: data.pubDate?.[0]?._text?.[0],
     isoDate: data.pubDate?.[0]?._text?.[0],
     creator:
