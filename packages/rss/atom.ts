@@ -12,7 +12,7 @@ export function atomParser(data: any) {
     }
   });
   feed.title = data.feed[0]?.title[0]?._text?.[0];
-  feed.subtitle = data.feed[0]?.subtitle[0]?._text?.[0];
+  feed.subtitle = textOrCData(data.feed[0]?.subtitle);
   let updated_at = data.feed[0]?.updated[0]?._text?.[0];
   if (updated_at) {
     updated_at = new Date(updated_at);
