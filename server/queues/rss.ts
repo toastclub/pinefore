@@ -45,7 +45,7 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
       "in",
       items.map((entity) => entity.url)
     )
-    .select(["url"])
+    .select(["url", "id"])
     .execute();
   const entities = await db
     .insertInto("entities")
@@ -60,14 +60,13 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
   let itms = db
     .insertInto("rssfeeditems")
     .values(
-      entities.map((entity) => ({
+      [...entities, ...alreadyExistingEntities].map((entity) => ({
         feed_id: feed.id,
         entity_id: entity.id,
         discovered_at: new Date(),
       }))
     )
-    // this shouldn't be necessary
-    //.onConflict((oc) => oc.columns(["feed_id", "entity_id"]).doNothing())
+    .onConflict((oc) => oc.columns(["feed_id", "entity_id"]).doNothing())
     .execute();
   await db
     .updateTable("rssfeeds")
