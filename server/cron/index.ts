@@ -12,6 +12,6 @@ export async function handleCron(event: ScheduledController, env: Env) {
   }
   // Run every 12 minutes to check for RSS
   if (event.cron == "*/12 * * * *") {
-    //await rssCron(kysely, env.MINI_QUEUE);
+    await rssCron(kysely, env.MINI_QUEUE);
   }
 }
