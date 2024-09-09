@@ -9,7 +9,9 @@ import { rootDomain } from "!server/helpers";
 import type { RSSQueueBody } from "./types";
 
 export async function feedsQueue(db: Kysely<Database>, feeds: RSSQueueBody[]) {
-  return Promise.all(feeds.map((f) => runOnFeed(db, f)));
+  for (const feed of feeds) {
+    await runOnFeed(db, feed);
+  }
 }
 
 export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
@@ -146,10 +148,13 @@ async function backfillFeed(feed: RSSFeedResponse, url: string, limit: number) {
 }
 
 function getBackoff(lastUpdate: Date) {
+  // get the number of hours since the last update
   const hours = Math.floor(
     (Date.now() - lastUpdate.getTime()) / 1000 / 60 / 60
   );
+  // add some jitter to the backoff, a multiplier between 0.85 and 1.15
   const jitter = Math.round((0.85 + Math.random() * 0.3) * 100) / 100;
+  // hours^0.3 * jitter
   const backoff = Math.pow(hours, 0.3) - 1 * jitter;
   const clamped = Math.min(Math.max(backoff, 0.25), 24);
   return new Date(Date.now() + clamped * 60 * 60 * 1000);
