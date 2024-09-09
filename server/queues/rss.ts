@@ -21,6 +21,15 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
       url: feed.url,
       error: res.status,
     });
+    await db
+      .updateTable("rssfeeds")
+      .set({
+        next_fetch_time: getBackoff(
+          new Date(feed.last_fetched_at || Date.now() - 1000 * 60 * 60 * 12)
+        ),
+      })
+      .where("id", "=", feed.id)
+      .execute();
     return res;
   }
   try {
