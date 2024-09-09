@@ -15,6 +15,7 @@ export async function feedsQueue(db: Kysely<Database>, feeds: RSSQueueBody[]) {
 }
 
 export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
+  console.log("Running on feed", feed.url);
   const res = await fetchRSSFeed(feed.url, {
     lastFetched: feed.last_fetched_at || undefined,
   });
