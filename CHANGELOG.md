@@ -3,8 +3,12 @@
 ## September
 
 
-- 8th: initial PFP support
-- 8th: Fix for the previous two issues
+- 8th
+  - Beginning profile support
+    - PFPs
+    - Descriptions
+  - Beginning tag editing
+  - Fix for the previous two issues
 - While we’ve had a functioning feed backend for a week, the first OPML import was completed successfully on the 6th. This exposed a number of issues
   - Minor: a great deal of issues in our feed parser have been identified
   - Major: on conflict do nothing increments entity primary keys, which resulted in breakneck increments (at a rate of about 100k per hour). A script was created to collapse these gaps, and for the runtime of the script (some ~2s), information was potentially lost. A patch has not yet been created, so RSS fetching has been disabled
