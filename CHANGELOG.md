@@ -2,7 +2,9 @@
 
 ## September
 
-
+- 9th:
+  - Continued support for profiles
+  - Fix issue with client error for logged out users
 - 8th
   - Beginning profile support
     - PFPs
