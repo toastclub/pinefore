@@ -1,6 +1,6 @@
 import { BASE_URL } from "!constants";
 import { toTitleString } from "!packages/pinery/title/title";
-import { pinFilterSchema } from "../server/pinFilterEngine";
+import { pinFilterSchema } from "../server/filterEngines/pins";
 import { decode } from "!packages/pinery/browser";
 
 import satori, { init } from "satori/wasm";

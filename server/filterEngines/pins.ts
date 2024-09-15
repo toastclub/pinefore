@@ -86,7 +86,7 @@ function operationHandler(
     );
   }
   if (
-    pinFilterSchema[column as keyof typeof pinFilterEngine]?.type == "array"
+    pinFilterSchema[column as keyof typeof pinFilterSchema]?.type == "array"
   ) {
     return db(cols, "@>", [value]);
   }
