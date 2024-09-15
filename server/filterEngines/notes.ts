@@ -1,34 +1,18 @@
-import {
-  ExpressionBuilder,
-  ExpressionWrapper,
-  Nullable,
-  RawBuilder,
-  sql,
-} from "kysely";
+import { ExpressionBuilder, ExpressionWrapper, RawBuilder, sql } from "kysely";
 import type { Operation } from "!packages/pinery/types";
 import { decode } from "!packages/pinery";
 import type { Database } from "schema";
 import { recursiveKyselyCombiner } from "!packages/pinery/kysely";
 
 export const noteFilterSchema = {
-  public: { type: "bool", mapsTo: "public", true: true },
-  private: { type: "bool", mapsTo: "public", true: false },
-  read: { type: "bool", mapsTo: "read", true: true },
-  unread: { type: "bool", mapsTo: "read", true: false },
-  created: { type: "date", mapsTo: "userentities.created_at" },
-  updated: { type: "date", mapsTo: "userentities.updated_at" },
-  title: { type: "string", mapsTo: "title" },
-  tags: { type: "array", mapsTo: "tags" },
-  desc: { type: "string", mapsTo: "description" },
+  created: { type: "date", mapsTo: "entitynotes.created_at" },
+  colour: { type: "string", mapsTo: "colour" },
+  url: { type: "string", mapsTo: "url" },
   domain: { type: "string", mapsTo: "domain" },
 } as const;
 
-type RequiredDb = Database & {
-  tags: Nullable<{
-    tags: string[];
-  }>;
-};
-type RequiredTables = "userentities" | "entities" | "tags";
+type RequiredDb = Database;
+type RequiredTables = "entitynotes" | "entities";
 
 export function noteFilterEngine(
   filter: string,
@@ -44,18 +28,16 @@ function operationHandler(
 ) {
   let { column, operator, value } = op;
   let cols:
-    | "userentities.created_at"
-    | "userentities.updated_at"
-    | "read"
-    | "public"
-    | "description"
-    | "title"
-    | "tags"
+    | "colour"
+    | "url"
+    | "domain"
+    | "entitynotes.created_at"
     | ExpressionWrapper<RequiredDb, RequiredTables, string>
     | RawBuilder<unknown>;
   cols = column as any;
 
   if (
+    // @ts-expect-error no columns are of array type
     noteFilterSchema[column as keyof typeof noteFilterSchema]?.type == "array"
   ) {
     return db(cols, "@>", [value]);
