@@ -2,6 +2,10 @@
 
 ## September
 
+- 10th:
+  - Finish tag editing
+  - → 15th: Note support in API
+  - Feed updating in API
 - 9th:
   - Continued support for profiles
   - Fix issue with client error for logged out users
