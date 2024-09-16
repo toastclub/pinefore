@@ -3,9 +3,7 @@ import { atomParser } from "./atom";
 import { rssParser } from "./rss";
 import { unescape } from "@std/html/entities";
 import entityList from "@std/html/named-entity-list.json" with { type: "json" };
-
-const USER_AGENT =
-  "Pinefore/1.0 ( https://pinefore.com; like FeedFetcher-Google)";
+import { FEED_FETCHER_USER_AGENT } from "!constants";
 
 export interface PaginationLinks {
   self?: string;
@@ -83,7 +81,7 @@ export async function fetchRSSFeed(
     alwaysFetch?: boolean;
   }
 ): Promise<RSSFeedResponse> {
-  const headers = { "User-Agent": USER_AGENT } as Record<string, string>;
+  const headers = { "User-Agent": FEED_FETCHER_USER_AGENT } as Record<string, string>;
   if (options.lastFetched) {
     headers["If-Modified-Since"] = options.lastFetched;
   }
