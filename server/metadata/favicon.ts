@@ -1,8 +1,8 @@
-import { FEED_FETCHER_USER_AGENT } from "!constants";
+import { GENERIC_USER_AGENT } from "!constants";
 
 export async function getFavicon(url: string) {
   let headers = new Headers();
-  headers.set("User-Agent", FEED_FETCHER_USER_AGENT);
+  headers.set("User-Agent", GENERIC_USER_AGENT);
   let data = await fetch(url + "/favicon.ico", { headers });
 
   if (data.status == 200 || data.status == 301) {
