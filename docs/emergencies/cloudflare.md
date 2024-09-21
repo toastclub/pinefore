@@ -1,4 +1,4 @@
-# How to escape Cloudflare
+# How to escape <img width=150 src="https://github.com/user-attachments/assets/9db7ec9d-ceb6-4caf-83a3-11518dbfd158" alt="Cloudflare"/>
 
 ## Aux
 
