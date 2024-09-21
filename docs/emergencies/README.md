@@ -9,3 +9,4 @@ Protocols for handling certain unexpected issues.
 In the event the service provider becomes uninhabitable
 
 - [Cloudflare](/docs/emergencies/cloudflare.md)
+- [AWS](/docs/emergencies/aws.md)
