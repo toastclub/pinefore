@@ -1,6 +1,8 @@
+<img align="right" width=125 src="https://github.com/user-attachments/assets/539735b7-e15b-4e32-9977-72cf3c7727a0"/>
+
 # Server
 
-Lib files that are run exclusively on the server side of the application.
+The library powering Pinefore's backend. The actual router is not open source, but routes are largely built by stringing these modules together.
 
 ## Folders
 
