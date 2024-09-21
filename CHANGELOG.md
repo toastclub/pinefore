@@ -2,6 +2,7 @@
 
 ## September
 
+- 20th: Continued work on feeds and archive. DX improvements.
 - 10th:
   - Finish tag editing
   - → 15th: Note support in API
