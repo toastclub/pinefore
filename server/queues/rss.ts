@@ -30,6 +30,7 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
         next_fetch_time: getBackoff(
           new Date(feed.last_fetched_at || Date.now() - 1000 * 60 * 60 * 12)
         ),
+        status_code: res.status_code,
       })
       .where("id", "=", feed.id)
       .execute();

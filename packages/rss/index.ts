@@ -59,6 +59,7 @@ export type RSSFeedResponse = (
     }
 ) & {
   extra?: RSSFeedExtra;
+  status_code?: number;
 };
 
 export function textOrCData(data: any) {
@@ -97,9 +98,12 @@ export async function fetchRSSFeed(
     extra.etag = res.headers.get("ETag")!;
   }
   if (res.status === 304 && !options.alwaysFetch) {
-    return { mode: null, data: null, status: "not-modified", extra };
+    return { mode: null, data: null, status: "not-modified", extra, status_code: res.status };
   }
-  return parseRSSFeed(await res.text(), extra);
+  return {
+    ...parseRSSFeed(await res.text(), extra),
+    status_code: res.status,
+  };
 }
 
 export function parseRSSFeed(
