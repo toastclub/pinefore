@@ -1,7 +1,7 @@
 // incomplete
 
 import { makePersisted } from "@solid-primitives/storage";
-import { id } from "lib/id";
+import { id } from "!lib/id";
 import { createEffect, createSignal, untrack } from "solid-js";
 import { createStore } from "solid-js/store";
 import { createConnectivitySignal } from "@solid-primitives/connectivity";

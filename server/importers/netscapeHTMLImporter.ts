@@ -1,4 +1,4 @@
-import { stringToBoolean } from "lib/types";
+import { stringToBoolean } from "!lib/types";
 import { unescape } from "@std/html/entities";
 import entityList from "@std/html/named-entity-list.json" with { type: "json" };
 

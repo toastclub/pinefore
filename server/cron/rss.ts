@@ -1,6 +1,6 @@
 import type { Kysely } from "kysely";
 import type { Database } from "schema";
-import { chunks } from "lib/types";
+import { chunks } from "!lib/types";
 import type { MiniQueueMessage } from "../queues/types";
 
 export default async function rssCron(

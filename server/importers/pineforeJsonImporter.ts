@@ -4,7 +4,7 @@ import type { Kysely } from "kysely";
 import type { Database } from "schema";
 import { userEntityBuilderStart } from "$lib/entity";
 import { jsonBuildObject } from "kysely/helpers/postgres";
-import { id } from "lib/id";
+import { id } from "!lib/id";
 import { rootDomain } from "../helpers";
 
 export async function pineforeJsonImporter(
