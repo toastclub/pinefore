@@ -28,3 +28,8 @@ if (feed.status == "error" || feed.status == "not-parsable") {
   console.log(feed.feed);
 }
 ```
+
+## Credits
+
+- Much of our own code is derived from Miniflux's excellent RSS parser: [Miniflux](https://github.com/miniflux/v2/tree/main/internal/reader)
+- In the event of ambiguity, Robert Brennan's [rss-parser](https://github.com/rbren/rss-parser) package was used as a reference
