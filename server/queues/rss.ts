@@ -158,6 +158,7 @@ function getBackoff(lastUpdate: Date) {
   const jitter = Math.round((0.85 + Math.random() * 0.3) * 100) / 100;
   // hours^0.3 * jitter
   const backoff = Math.pow(hours, 0.3) - 1 * jitter;
+  // clamp the backoff to 15 minutes and 24 hours
   const clamped = Math.min(Math.max(backoff, 0.25), 24);
   return new Date(Date.now() + clamped * 60 * 60 * 1000);
 }
