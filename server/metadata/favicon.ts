@@ -15,8 +15,8 @@ export async function getFavicon(url: string) {
   ];
 
   for (const link of html.match(/<link.*?>/g) || []) {
-    let rel = link.match(/rel=((?:"([^"]*)")|(?:[^ "]*)|(?:'([^']*)'))/);
-    let href = link.match(/href=((?:"([^"]*)")|(?:[^ "]*)|(?:'([^']*)'))/);
+    let rel = link.match(/rel=((?:"([^"]*)")|(?:[^ '>"]*)|(?:'([^']*)'))/);
+    let href = link.match(/href=((?:"([^"]*)")|(?:[^ '>"]*)|(?:'([^']*)'))/);
     if (rel && href) {
       if (!href[1].startsWith("/")) href[1] = "/" + href[1];
       if (keys.includes(rel[1].toLowerCase())) {
