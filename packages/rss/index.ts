@@ -56,6 +56,8 @@ export type RSSFeedResponse = (
       mode: null;
       data: null;
       status: "error" | "not-modified" | "not-parseable";
+      error?: any;
+      canPossiblyBeHTML?: boolean;
     }
 ) & {
   extra?: RSSFeedExtra;
@@ -67,7 +69,7 @@ export function textOrCData(data: any) {
   if (d) {
     return unescape(d, { entityList });
   }
-  return d
+  return d;
 }
 
 /**
@@ -82,7 +84,10 @@ export async function fetchRSSFeed(
     alwaysFetch?: boolean;
   }
 ): Promise<RSSFeedResponse> {
-  const headers = { "User-Agent": FEED_FETCHER_USER_AGENT } as Record<string, string>;
+  const headers = { "User-Agent": FEED_FETCHER_USER_AGENT } as Record<
+    string,
+    string
+  >;
   if (options.lastFetched) {
     headers["If-Modified-Since"] = options.lastFetched;
   }
@@ -98,7 +103,13 @@ export async function fetchRSSFeed(
     extra.etag = res.headers.get("ETag")!;
   }
   if (res.status === 304 && !options.alwaysFetch) {
-    return { mode: null, data: null, status: "not-modified", extra, status_code: res.status };
+    return {
+      mode: null,
+      data: null,
+      status: "not-modified",
+      extra,
+      status_code: res.status,
+    };
   }
   return {
     ...parseRSSFeed(await res.text(), extra),
@@ -110,22 +121,28 @@ export function parseRSSFeed(
   feed: string,
   extra?: RSSFeedExtra
 ): RSSFeedResponse {
-  let parsed: any = xml2js(feed, {
-    compact: true,
-    ignoreComment: true,
-    alwaysArray: true,
-  });
-  if (parsed.feed?.[0] != undefined) {
-    return { mode: "atom", data: atomParser(parsed), extra };
-  } else if (parsed.rss?.[0] != undefined) {
-    if (parsed.rss[0]._attributes?.version === "2.0") {
-      return { mode: "rss", data: rssParser(parsed.rss[0]), extra };
-    }
-  } else if (parsed["rdf:RDF"]?.[0] != undefined) {
-    parsed = parsed["rdf:RDF"][0];
-    parsed.channel[0].item = parsed.item;
-    delete parsed.item;
-    return { mode: "rdf", data: rssParser(parsed), extra };
+  let parsed: any;
+  let canPossiblyBeHTML = feed.trim().startsWith("<!DOCTYPE html>") || feed.trim().startsWith("<html>");
+  try {
+    parsed = xml2js(feed, { compact: true, ignoreComment: true });
+  } catch (e) {
+    return { mode: null, data: null, status: "error", error: e, canPossiblyBeHTML, extra };
   }
-  return { mode: null, data: null, status: "not-parseable", extra };
+  try {
+    if (parsed.feed?.[0] != undefined) {
+      return { mode: "atom", data: atomParser(parsed), extra };
+    } else if (parsed.rss?.[0] != undefined) {
+      if (parsed.rss[0]._attributes?.version === "2.0") {
+        return { mode: "rss", data: rssParser(parsed.rss[0]), extra };
+      }
+    } else if (parsed["rdf:RDF"]?.[0] != undefined) {
+      parsed = parsed["rdf:RDF"][0];
+      parsed.channel[0].item = parsed.item;
+      delete parsed.item;
+      return { mode: "rdf", data: rssParser(parsed), extra };
+    }
+  } catch (e) {
+    return { mode: null, data: null, status: "error", canPossiblyBeHTML, error: e, extra };
+  }
+  return { mode: null, data: null, status: "not-parseable", canPossiblyBeHTML, extra };
 }

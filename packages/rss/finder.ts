@@ -48,19 +48,27 @@ function checkForFeedsInHTML(html: string, url: URL) {
 export async function feedFinder(
   url: URL,
   options?: {
-    ignoreCurrentURL?: boolean;
+    /**
+     * If true, the URL passed in will be fetched.
+     * If a string, the string will be used as the response (saving a fetch).
+     * If false, only child URLs will be checked.
+     */
+    currentURL?: string | boolean;
   }
 ) {
   const urlStr = url.toString();
   // 1) Check if the URL is a feed itself
-  if (!options?.ignoreCurrentURL) {
-    const response = await (
-      await fetch(urlStr, {
-        headers: {
-          "User-Agent": GENERIC_USER_AGENT,
-        },
-      })
-    ).text();
+  if (typeof options?.currentURL === "string" || options?.currentURL === true) {
+    const response =
+      typeof options.currentURL === "string"
+        ? options.currentURL
+        : await (
+            await fetch(urlStr, {
+              headers: {
+                "User-Agent": GENERIC_USER_AGENT,
+              },
+            })
+          ).text();
     try {
       const feed = parseRSSFeed(response);
       if (feed.mode) {
