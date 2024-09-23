@@ -2,6 +2,14 @@
 
 ## September
 
+- 23rd:
+  - Some small favicon fetching improvements (10% more favicons).
+    - Save API requests for cached feed icons
+  - Feed finding
+  - OSS /lib
+  - Show existing tags when editing feed tags
+  - Pagination for feeds
+  - Defer stream useMe() to make some of the site work without JS
 - 20th: Continued work on feeds and archive. DX improvements.
 - 10th:
   - Finish tag editing
