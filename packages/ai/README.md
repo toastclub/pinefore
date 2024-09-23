@@ -1,5 +1,7 @@
 # AI
 
+<img align="right" width=125 src="https://github.com/user-attachments/assets/f2dd59ba-b075-4229-a464-af526d8ba427"/>
+
 We have periodically experimented with AI for the following purposes:
 
 | Topic                                                   | Status                                                     |
