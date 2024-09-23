@@ -28,15 +28,18 @@ const LINK_TYPES = [
 function checkForFeedsInHTML(html: string, url: URL) {
   const feeds = new Set<string>();
   for (const link of html.match(/<link.*?>/g) || []) {
-    let rel = link.match(/rel=((?:"([^"]*)")|(?:[^ '>"]*)|(?:'([^']*)'))/);
+    let rel = link.match(/type=((?:"([^"]*)")|(?:[^ '>"]*)|(?:'([^']*)'))/);
     let href = link.match(/href=((?:"([^"]*)")|(?:[^ '>"]*)|(?:'([^']*)'))/);
     if (rel && href) {
       if (!href[1].startsWith("/")) href[1] = "/" + href[1];
+      if (rel[1].startsWith('"')) rel[1] = rel[1].slice(1, -1);
+      if (rel[1].startsWith("'")) rel[1] = rel[1].slice(1, -1);
       if (LINK_TYPES.includes(rel[1].toLowerCase())) {
-        feeds.add(new URL(href[1], url).toString());
+        feeds.add(new URL(href[1].trim(), url).toString());
       }
     }
   }
+  console.log(feeds);
   return feeds;
 }
 

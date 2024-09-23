@@ -133,9 +133,11 @@ export function parseRSSFeed(
   extra?: RSSFeedExtra
 ): RSSFeedResponse {
   let parsed: any;
+  feed = feed.trim();
   let canPossiblyBeHTML =
-    feed.trim().startsWith("<!DOCTYPE html>") ||
-    feed.trim().startsWith("<html>");
+    feed.startsWith("<!DOCTYPE html>") ||
+    feed.startsWith("<html>") ||
+    feed.startsWith("<!doctype html>");
   try {
     parsed = xml2js(feed, {
       compact: true,
