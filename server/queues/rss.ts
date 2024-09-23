@@ -20,10 +20,13 @@ export async function runOnFeed(db: Kysely<Database>, feed: RSSQueueBody) {
     lastFetched: feed.last_fetched_at || undefined,
   });
   if (res.data == null) {
-    console.error("Failed to fetch RSS feed", {
-      url: feed.url,
-      error: res.status,
-    });
+    if (res.status != "not-modified") {
+      console.error({
+        message: '"Failed to fetch RSS feed"',
+        url: feed.url,
+        error: res.status,
+      });
+    }
     await db
       .updateTable("rssfeeds")
       .set({
