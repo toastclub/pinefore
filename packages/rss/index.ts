@@ -181,3 +181,5 @@ export function parseRSSFeed(
     extra,
   };
 }
+
+export { feedFinder } from "./finder";
