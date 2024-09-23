@@ -10,6 +10,7 @@
   - Show existing tags when editing feed tags
   - Pagination for feeds
   - Defer stream useMe() to make some of the site work without JS
+  - Show info at root of API
 - 20th: Continued work on feeds and archive. DX improvements.
 - 10th:
   - Finish tag editing
@@ -33,7 +34,7 @@
 - Continued support for feeds
   - Send new items to queue right away
   - Viewing them on frontend
-  - Queues now work 
+  - Queues now work
 
 ## August
 
