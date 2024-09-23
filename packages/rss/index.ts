@@ -121,8 +121,9 @@ export async function fetchRSSFeed(
       status_code: res.status,
     };
   }
+  let feed = parseRSSFeed(await res.text(), extra);
   return {
-    ...parseRSSFeed(await res.text(), extra),
+    ...feed,
     status_code: res.status,
   };
 }
@@ -136,7 +137,11 @@ export function parseRSSFeed(
     feed.trim().startsWith("<!DOCTYPE html>") ||
     feed.trim().startsWith("<html>");
   try {
-    parsed = xml2js(feed, { compact: true, ignoreComment: true });
+    parsed = xml2js(feed, {
+      compact: true,
+      ignoreComment: true,
+      alwaysArray: true,
+    });
   } catch (e) {
     return {
       mode: null,
