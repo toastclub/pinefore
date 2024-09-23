@@ -56,8 +56,18 @@ export type RSSFeedResponse = (
       mode: null;
       data: null;
       status: "error" | "not-modified" | "not-parseable";
+      /**
+       * The error that occurred during parsing, if any.
+       */
       error?: any;
+      /**
+       * If the feed is not parseable but looks like HTML, this is set to true.
+       */
       canPossiblyBeHTML?: boolean;
+      /**
+       * In the case of an error, the fetched feed is returned.
+       */
+      fetchedFeed?: string;
     }
 ) & {
   extra?: RSSFeedExtra;
@@ -122,11 +132,21 @@ export function parseRSSFeed(
   extra?: RSSFeedExtra
 ): RSSFeedResponse {
   let parsed: any;
-  let canPossiblyBeHTML = feed.trim().startsWith("<!DOCTYPE html>") || feed.trim().startsWith("<html>");
+  let canPossiblyBeHTML =
+    feed.trim().startsWith("<!DOCTYPE html>") ||
+    feed.trim().startsWith("<html>");
   try {
     parsed = xml2js(feed, { compact: true, ignoreComment: true });
   } catch (e) {
-    return { mode: null, data: null, status: "error", error: e, canPossiblyBeHTML, extra };
+    return {
+      mode: null,
+      data: null,
+      status: "error",
+      error: e,
+      canPossiblyBeHTML,
+      fetchedFeed: feed,
+      extra,
+    };
   }
   try {
     if (parsed.feed?.[0] != undefined) {
@@ -142,7 +162,22 @@ export function parseRSSFeed(
       return { mode: "rdf", data: rssParser(parsed), extra };
     }
   } catch (e) {
-    return { mode: null, data: null, status: "error", canPossiblyBeHTML, error: e, extra };
+    return {
+      mode: null,
+      data: null,
+      status: "error",
+      canPossiblyBeHTML,
+      error: e,
+      fetchedFeed: feed,
+      extra,
+    };
   }
-  return { mode: null, data: null, status: "not-parseable", canPossiblyBeHTML, extra };
+  return {
+    mode: null,
+    data: null,
+    status: "not-parseable",
+    canPossiblyBeHTML,
+    fetchedFeed: feed,
+    extra,
+  };
 }
