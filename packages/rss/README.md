@@ -1,5 +1,7 @@
 # RSS
 
+<img align="right" width=125 src="https://github.com/user-attachments/assets/d89d3544-fb66-4776-8cbe-9ba4c21154f4"/>
+
 Pinefore's RSS library.
 
 - Supports RSS 1.0, 2.0, and Atom
