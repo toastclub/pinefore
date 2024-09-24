@@ -1,4 +1,4 @@
-const COLOR_NAMES = [
+const COLOUR_NAMES = [
   "red",
   "orange",
   "yellow",
@@ -8,16 +8,16 @@ const COLOR_NAMES = [
   "pink",
 ];
 
-export function validateColor(color: string) {
-  if (COLOR_NAMES.includes(color)) {
+export function validateColour(colour: string) {
+  if (COLOUR_NAMES.includes(colour)) {
     return true;
   }
   // is it a #fff, #ffffff, or #ffffffff?
-  if (color.match(/^#(?:[0-9a-fA-F]{3}){1,2}$/i)) {
+  if (colour.match(/^#(?:[0-9a-fA-F]{3}){1,2}$/i)) {
     return true;
   }
-  if (color.startsWith("#")) {
+  if (colour.startsWith("#")) {
     return "Invalid Hex";
   }
-  return "Invalid Color Name";
+  return "Invalid Colour Name";
 }

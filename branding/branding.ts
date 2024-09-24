@@ -1,4 +1,4 @@
-export const colors: Record<
+export const colours: Record<
   string,
   {
     pri: string;
