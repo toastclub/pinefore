@@ -4,11 +4,8 @@ import { decode } from "!packages/pinery";
 import type { Database } from "schema";
 import { recursiveKyselyCombiner } from "!packages/pinery/kysely";
 
-export const noteFilterSchema = {
-  created: { type: "date", mapsTo: "entitynotes.created_at" },
-  colour: { type: "string", mapsTo: "colour" },
-  url: { type: "string", mapsTo: "url" },
-  domain: { type: "string", mapsTo: "domain" },
+export const feedFilterSchema = {
+  tags: { type: "array", mapsTo: "tags" },
 } as const;
 
 type RequiredDb = Database;
@@ -18,7 +15,7 @@ export function noteFilterEngine(
   filter: string,
   db: ExpressionBuilder<RequiredDb, RequiredTables>
 ) {
-  let query = decode(filter, noteFilterSchema);
+  let query = decode(filter, feedFilterSchema);
   return recursiveKyselyCombiner(query, db, operationHandler);
 }
 
@@ -28,10 +25,7 @@ function operationHandler(
 ) {
   let { column, operator, value } = op;
   let cols:
-    | "colour"
-    | "url"
-    | "domain"
-    | "entitynotes.created_at"
+    | "tags"
     | ExpressionWrapper<RequiredDb, RequiredTables, string>
     | RawBuilder<unknown>;
   cols = column as any;
