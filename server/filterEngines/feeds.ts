@@ -6,12 +6,20 @@ import { recursiveKyselyCombiner } from "!packages/pinery/kysely";
 
 export const feedFilterSchema = {
   tags: { type: "array", mapsTo: "tags" },
+  feed_id: { type: "number", mapsTo: "ufeeds.id" },
 } as const;
 
-type RequiredDb = Database;
-type RequiredTables = "entitynotes" | "entities";
+type RequiredDb = Database & {
+  ufeeds: {
+    id: number;
+    title: string;
+    tags: string[];
+    url: string;
+  };
+};
+type RequiredTables = "entities" | "rssfeeditems" | "ufeeds";
 
-export function noteFilterEngine(
+export function feedFilterEngine(
   filter: string,
   db: ExpressionBuilder<RequiredDb, RequiredTables>
 ) {
@@ -31,8 +39,7 @@ function operationHandler(
   cols = column as any;
 
   if (
-    // @ts-expect-error no columns are of array type
-    noteFilterSchema[column as keyof typeof noteFilterSchema]?.type == "array"
+    feedFilterSchema[column as keyof typeof feedFilterSchema]?.type == "array"
   ) {
     return db(cols, "@>", [value]);
   }
