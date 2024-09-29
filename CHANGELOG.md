@@ -2,14 +2,18 @@
 
 ## September
 
+Feed support is almost finished. Before G/A, we need to do notes, the extension, archiving, billing, fedi, account deletion, and additional community support
+
+- 25th: Feed bulk editing
+- 24th: Feed filtering
 - 23rd:
   - Some small favicon fetching improvements (10% more favicons).
     - Save API requests for cached feed icons
   - Feed finding
-  - OSS /lib
+  - OSS `/lib`
   - Show existing tags when editing feed tags
   - Pagination for feeds
-  - Defer stream useMe() to make some of the site work without JS
+  - Defer stream `useMe()` to make some of the site work without JS
   - Show info at root of API
 - 20th: Continued work on feeds and archive. DX improvements.
 - 10th:
